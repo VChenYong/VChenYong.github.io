@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Scala.org</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Scala.org"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-02-16 Sat"/>
+<meta name="author" content="YONG"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://thomasf.github.com/solarized-css/solarized-dark.min.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+Yong's Notes
+</div>
+
+<div id="content">
+<h1 class="title">Scala.org</h1>
+
+
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Scala Note</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Scala Functions</a>
+<ul>
+<li><a href="#sec-1-1-1">1.1.1 definition</a></li>
+<li><a href="#sec-1-1-2">1.1.2 ways to define scala functions"</a>
+<ul>
+<li><a href="#sec-1-1-2-1">1.1.2.1 ways to define functions</a></li>
+<li><a href="#sec-1-1-2-2">1.1.2.2 ways to define functions</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-1-3">1.1.3 Function as Object</a></li>
+<li><a href="#sec-1-1-4">1.1.4 tips</a>
+<ul>
+<li><a href="#sec-1-1-4-1">1.1.4.1 foldLeft vs foldRight</a></li>
+<li><a href="#sec-1-1-4-2">1.1.4.2 question :</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2 Scala closures</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1 Closure</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3 scala (co-|contra-)variance</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1 http://qiujj.com/static/Scala-Handbook.htm</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">1.4 Scala Stream</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1 Stream construction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Scala Note</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Scala Functions</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> definition</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<ul>
+<li>A function is a mapping that takes one or more arguments and produces a single result.
+</li>
+<li>exmaple
+
+
+
+<pre class="example">(x:Int, y:Int) =&gt; x+y
+
+// another examplePythagorean triple 
+(a:Int,b:Int,c:Int) = {
+ val aSquare =a*a
+ val bSquare =b*b
+ val cSquare =c*c
+ aSquare+bSquare = cSquare
+}
+</pre>
+
+
+</li>
+<li>A function is defined by using an equation that gives a name for the function, a name for each of its arguments , 
+     and a body that specifies how the result can ve  calculated in term of arguements. 
+
+
+
+<pre class="example">val power :(Int,Int)=&gt;Int = 
+  (base:Int,exp:Int)=&gt;
+  if(exp&lt;=1)  base else base* power(base,exp-1)
+
+</pre>
+
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> ways to define scala functions"</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+
+</div>
+
+<div id="outline-container-1-1-2-1" class="outline-5">
+<h5 id="sec-1-1-2-1"><span class="section-number-5">1.1.2.1</span> ways to define functions</h5>
+<div class="outline-text-5" id="text-1-1-2-1">
+
+<ol>
+<li>val + function Name : ( List of argument Types) =&gt; return Type = (list of arguments)=&gt; function body
+
+
+
+<pre class="example">val add: (Int,Int)=&gt;Int = (x,y)=&gt;x+y 
+</pre>
+
+</li>
+<li>val +function name :(list of Arguments and its types)=&gt; function body
+
+
+
+<pre class="example">val add = (x:Int,y:Int)=&gt;x+y 
+</pre>
+
+</li>
+<li>Use function trait
+
+
+
+<pre class="example">val add:Function3[Int,Int,Int] = (a:Int,b:Int)=&gt; a+b
+//add: (Int, Int) =&gt; Int = &lt;function2&gt;
+</pre>
+
+</li>
+<li>Implementing the appropriate function trait and define it's required Apply method.
+
+
+
+<pre class="example">val add: (Int,Int)=&gt;Int = new Function2 [Int,Int,Int]{
+    def apply(a:Int,b:Int):Int={a+b}
+}
+</pre>
+
+</li>
+<li>Create a new class which extends a certain function
+
+
+
+<pre class="example"> class add (a:Int,b:Int) extends Function2[Int,Int,Int]{
+   def apply(a:Int,b:Int):Int={a+b}
+}
+</pre>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2-2" class="outline-5">
+<h5 id="sec-1-1-2-2"><span class="section-number-5">1.1.2.2</span> ways to define functions</h5>
+<div class="outline-text-5" id="text-1-1-2-2">
+
+<ul>
+<li>def + function Name : ( List of argument Types) =&gt; return Type = (list of arguments)=&gt; function body
+
+
+
+<pre class="example">def add: (Int,Int)=&gt;Int = (x,y)=&gt;x+y
+//add: (Int, Int) =&gt; Int
+</pre>
+
+</li>
+<li>def +function name :(list of Arguments and its types)=&gt; function body
+
+
+
+<pre class="example">def add = (x:Int,y:Int)=&gt;x+y 
+</pre>
+
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Function as Object</h4>
+<div class="outline-text-4" id="text-1-1-3">
+
+<ol>
+<li>Functions are Object in Scala. As scala is staticailly type language, therefore we need to have a type for functions.
+
+<p>
+    FunctionN type  (function1 to function22)
+</p>
+</li>
+<li>It is dangerous to introduce state into your function.
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> tips</h4>
+<div class="outline-text-4" id="text-1-1-4">
+
+
+
+</div>
+
+<div id="outline-container-1-1-4-1" class="outline-5">
+<h5 id="sec-1-1-4-1"><span class="section-number-5">1.1.4.1</span> foldLeft vs foldRight</h5>
+<div class="outline-text-5" id="text-1-1-4-1">
+
+
+
+
+
+<pre class="example">// foldLeft 
+//    1. seed at left
+//    2. loop from the beginning of the list
+val test= List(1,2,3,4).foldLeft("seed")((seed,item)=&gt;seed+item)
+// seed1234
+List(1,2,3,4).foldLeft("seed")((seed,item)=&gt;item+seed)
+//4321seed
+
+
+// foldRight 
+//    1. seed at right
+//    2. loop from the end  of the list
+List(1,2,3,4).foldRight("seed")((item,seed)=&gt;seed+item)
+//seed4321
+List(1,2,3,4).foldRight("seed")((item,seed)=&gt;item+seed)
+//1234seed
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4-2" class="outline-5">
+<h5 id="sec-1-1-4-2"><span class="section-number-5">1.1.4.2</span> question :</h5>
+<div class="outline-text-5" id="text-1-1-4-2">
+
+<ul>
+<li>different between def and Val
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Scala closures</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Closure</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<ol>
+<li>A function contains at least one free varaible is called an open term.
+  In order to get to a fullly functional function, all free varibals have to be bound( turning that open term into a closed term). 
+  For this to be done, the compilier reaches out to the so called lexical envirnment , in which that function was defined and tries to find a binding.
+  This process is called closing over which results in a closed expression or for short Closure
+</li>
+<li>Closure is Scala is dynamic blinding. which means free varibale bind to relative locations in memory that can store values.
+   <b>Attention</b>: this can create side effect.
+ example:
+
+
+
+<pre class="example">var minAge = 18
+val isAdult = (age:Int)=&gt;age&gt;=minAge
+val isQuebecAdult = isAdult(20) // =&gt;true
+minAge = 21
+val isCanadianAdult =isAdult(20) // =&gt;false
+</pre>
+
+</li>
+</ol>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> scala (co-|contra-)variance</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> <a href="http://qiujj.com/static/Scala-Handbook.htm">http://qiujj.com/static/Scala-Handbook.htm</a></h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Scala Stream</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Stream construction</h4>
+<div class="outline-text-4" id="text-1-4-1">
+
+
+
+
+<pre class="example">import Stream._
+empty
+
+1 #:: 2 #:: empty foreach (println _) 
+
+//or 
+
+cons(1, cons(2, empty)) foreach println
+
+</pre>
+
+
+
+
+
+<pre class="example">// fibonacci in stream
+lazy val fs: Stream[Int] = 
+  0 #:: 1 #:: fs.zip(fs.tail).map(p =&gt; p._1 + p._2)
+
+ val fibs: Stream[BigInt] =
+   BigInt(0) #:: BigInt(1) #:: fibs.zip(fibs.tail).map { n =&gt; n._1 + n._2 }
+
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-02-16 Sat</p>
+<p class="author">Author: YONG</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
