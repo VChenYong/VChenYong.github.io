@@ -59,8 +59,7 @@
   .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
                                  font-weight:bold; }
   /*]]>*/-->
-</style>
-<link rel="stylesheet" type="text/css" href="http://thomasf.github.com/solarized-css/solarized-dark.min.css" />
+</style><link rel="stylesheet" type="text/css" href="./styles/style.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -117,6 +116,8 @@ Yong's Notes
 
 <div id="content">
 <h1 class="title">Scala.org</h1>
+
+
 
 
 
@@ -485,6 +486,12 @@ lazy val fs: Stream[Int] =
  val fibs: Stream[BigInt] =
    BigInt(0) #:: BigInt(1) #:: fibs.zip(fibs.tail).map { n =&gt; n._1 + n._2 }
 
+</pre>
+
+
+
+
+<pre class="example">test#+STYLE: &lt;link rel="stylesheet" type="text/css" href="./styles/test.css"/&gt;p
 </pre>
 
 </div>
