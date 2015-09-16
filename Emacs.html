@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2015-09-16 Wed 18:52 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Notes</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="YONG" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="preamble" class="status">
+Yong's Notes
+</div>
+<div id="content">
+<h1 class="title">Emacs Notes</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline5">1. Emacs</a>
+<ul>
+<li><a href="#orgheadline1">1.1. emacs.d</a></li>
+<li><a href="#orgheadline2">1.2. Navigation</a></li>
+<li><a href="#orgheadline3">1.3. Dried mode</a></li>
+<li><a href="#orgheadline4">1.4. Org Mode</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline13">2. Emacs Keys</a>
+<ul>
+<li><a href="#orgheadline6">2.1. Shell Command</a></li>
+<li><a href="#orgheadline7">2.2. Buffer</a></li>
+<li><a href="#orgheadline8">2.3. EDIT</a></li>
+<li><a href="#orgheadline10">2.4. dried mode</a>
+<ul>
+<li><a href="#orgheadline9">2.4.1. change file name</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline11">2.5. Misc</a></li>
+<li><a href="#orgheadline12">2.6. bookmark</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline27">3. EMACS Notes</a>
+<ul>
+<li><a href="#orgheadline26">3.1. Emacs</a>
+<ul>
+<li><a href="#orgheadline14">3.1.1. setup</a></li>
+<li><a href="#orgheadline18">3.1.2. temp</a></li>
+<li><a href="#orgheadline19">3.1.3. emacs git</a></li>
+<li><a href="#orgheadline25">3.1.4. org mode note</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline28">4. Install</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5"><span class="section-number-2">1</span> Emacs</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> emacs.d</h3>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> Navigation</h3>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.3</span> Dried mode</h3>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">1.4</span> Org Mode</h3>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="orgheadline13"><span class="section-number-2">2</span> Emacs Keys</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3">2.1</span> Shell Command</h3>
+<div class="outline-text-3" id="text-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">key binding</td>
+<td class="org-left">command</td>
+<td class="org-left">note</td>
+</tr>
+
+<tr>
+<td class="org-left">M-n</td>
+<td class="org-left">next command</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-up</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-p</td>
+<td class="org-left">Previous command</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-down</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x u</td>
+<td class="org-left">undoTree</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">2.2</span> Buffer</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+C-x 0
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">2.3</span> EDIT</h3>
+<div class="outline-text-3" id="text-2-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">key binding</td>
+<td class="org-left">command</td>
+<td class="org-left">note</td>
+</tr>
+
+<tr>
+<td class="org-left">C-X h</td>
+<td class="org-left">select all</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-_</td>
+<td class="org-left">Undo</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-g C-_</td>
+<td class="org-left">Redo</td>
+<td class="org-left">reverse direction</td>
+</tr>
+
+<tr>
+<td class="org-left">C-y</td>
+<td class="org-left">paste</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-y</td>
+<td class="org-left">Paste</td>
+<td class="org-left">reverse direction</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x C-+</td>
+<td class="org-left">Increase fontsize</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x C--</td>
+<td class="org-left">Decrease  fontsize</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">2.4</span> dried mode</h3>
+<div class="outline-text-3" id="text-2-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Key binding</td>
+<td class="org-left">command</td>
+<td class="org-left">note</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x d</td>
+<td class="org-left">to start dired with a directory</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">s</td>
+<td class="org-left">to toggle sorting order (by date or normal)</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">i</td>
+<td class="org-left">to insert a directory into the current dired buffer.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt; and &gt;</td>
+<td class="org-left">to navigate directories in the buffer</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-M-n and C-M-p</td>
+<td class="org-left">to navigate dirlines.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">RET</td>
+<td class="org-left">to visit the current item in a new buffer.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">^</td>
+<td class="org-left">Goes one directory up</td>
+<td class="org-left">It’s the opposite of RET</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">$</td>
+<td class="org-left">toggles the visibility of the file list under a dirline</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-$</td>
+<td class="org-left">M-$ does so for all the dirlines in the current buffer.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">T</td>
+<td class="org-left">touches the current or all the marked files</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">d</td>
+<td class="org-left">d marks for deletion and X expunges.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">m</td>
+<td class="org-left">m marks files</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">u</td>
+<td class="org-left">u unmarks</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">U</td>
+<td class="org-left">U unmarks all files</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-s a C-s</td>
+<td class="org-left">searches incrementally through all marked files.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">* /</td>
+<td class="org-left">marks all directories and t toggles marked/unmarked files.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">g</td>
+<td class="org-left">refresh the content</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">creates new directories and</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">w</td>
+<td class="org-left">copies marked (or current) items into the kill ring.</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x C-q</td>
+<td class="org-left">to enter wdired which makes the file names in the buffer editable</td>
+<td class="org-left">You can make changes and then hit C-c C-c to save them.</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">$</td>
+<td class="org-left">Hide or show the subdirectory that point is in, and move point to the next subdirectory. This is a toggle. A numeric argument serves as a repeat count</td>
+<td class="org-left">(dired-hide-subdir)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-$</td>
+<td class="org-left">Hide all subdirectories in this Dired buffer, leaving only their header lines</td>
+<td class="org-left">(dired-hide-all)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% u</td>
+<td class="org-left">Rename each of the selected files to an upper-case name</td>
+<td class="org-left">dired-upcase</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% l</td>
+<td class="org-left">Rename each of the selected files to a lower-case name</td>
+<td class="org-left">dired-downcase</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">R</td>
+<td class="org-left">Rename</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">2.4.1</span> change file name</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<ul class="org-ul">
+<li>Goto dried mode : C-X d</li>
+<li>M-X wdired-change-to-wdired-mode</li>
+<li>M+% quety replace</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">2.5</span> Misc</h3>
+<div class="outline-text-3" id="text-2-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">key binding</td>
+<td class="org-left">command</td>
+<td class="org-left">note</td>
+</tr>
+
+<tr>
+<td class="org-left">C-M \</td>
+<td class="org-left">format xml file</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-x whitespace-mode</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-x untabify</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x z</td>
+<td class="org-left">repeat last command</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c .</td>
+<td class="org-left">Insert a Date</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">2.6</span> bookmark</h3>
+<div class="outline-text-3" id="text-2-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Key binding</td>
+<td class="org-left">command</td>
+<td class="org-left">note</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x r m</td>
+<td class="org-left">Set bookmark</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x r b</td>
+<td class="org-left">jumb to a bookmark</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x r l</td>
+<td class="org-left">list all bookmarks</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-x bookmark-delete</td>
+<td class="org-left">select a bookmark to delete</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline27" class="outline-2">
+<h2 id="orgheadline27"><span class="section-number-2">3</span> EMACS Notes</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26"><span class="section-number-3">3.1</span> Emacs</h3>
+<div class="outline-text-3" id="text-3-1">
+</div><div id="outline-container-orgheadline14" class="outline-4">
+<h4 id="orgheadline14"><span class="section-number-4">3.1.1</span> setup</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<ul class="org-ul">
+<li>Here's one keybinding I could not live without.</li>
+</ul>
+<p>
+from <a href="http://whattheemacsd.com/">http://whattheemacsd.com/</a>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-lisp">(global-set-key (kbd "M-j")
+            (lambda ()
+                  (interactive)
+                  (join-line -1)))
+</pre>
+</div>
+
+
+<pre class="example">
+It joins the following line onto this one.
+
+Let's say I want to collapse this paragraph-tag to one line:
+
+  &lt;p class="example"&gt;
+    Some text
+    over multiple
+    lines.
+  &lt;/p&gt;
+With point anywhere on the first line, I simply press M-j multiple times to pull the lines up.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18"><span class="section-number-4">3.1.2</span> temp</h4>
+<div class="outline-text-4" id="text-3-1-2">
+</div><ol class="org-ol"><li><a id="orgheadline15"></a>BookMark<br  /><div class="outline-text-5" id="text-3-1-2-1">
+<ul class="org-ul">
+<li>‘C-x r m’ – set a bookmark at the current location (e.g. in a file)</li>
+<li>‘C-x r b’ – jump to a bookmark</li>
+<li>‘C-x r l’ – list your bookmarks</li>
+<li>‘M-x bookmark-delete’ – delete a bookmark by name</li>
+</ul>
+</div></li>
+
+<li><a id="orgheadline16"></a>Font<br  /><div class="outline-text-5" id="text-3-1-2-2">
+<ul class="org-ul">
+<li>C-x C-+    Increase  (after use +/- to adjust)</li>
+
+<li>C-x C&#x2013;    Decrease</li>
+
+<li>C-x C-o remove the blank lines</li>
+<li>C-o     add a blank line.</li>
+<li>C-x z  Repeating Commands in Emacs. (you can  simple press z after the first command to repeate again.</li>
+</ul>
+</div></li>
+
+
+
+
+
+
+<li><a id="orgheadline17"></a>cua-mode<br  /><div class="outline-text-5" id="text-3-1-2-3">
+<p>
+[M-a]: 
+[M-b]: 用空格(tabs或者spaces)替换所有rect中的字符
+[M-c]: 去掉所有行左侧的空格
+[M-f]: 用单个字符替换所有rect中的字符(提示输入一个字符)
+[M-i]: 对每行中第一个找到的数字进行加1操作(自动把0x开头的当作十六进制数字)
+[M-k]: 剪切rect
+[M-l]: 把rect中的内容全部转换为小写
+[M-m]: 拷贝rect
+[M-n]: 用一串自增的数字替换rect中的每一行(这个功能可以用来给每行编号)
+[M-o]: rect的内容右移，选中的rect用空格填充
+[M-r]: 用字符串替换符满足正则表达式的字符串
+[M-R]: 上下反转
+[M-s]: 把rect中的每一行替换为一个字符串(提示输入)
+[M-t]: 把rect整个替换为一个字符串(提示输入)
+[M-u]: 把rect中的内容全部转换为大写
+[M-|]: 对rect执行一个shell命令
+</p>
+
+
+
+
+<p>
+[M-a]        aligns all words at the left edge of the rectangle
+[M-b]        fills the rectangle with blanks (tabs and spaces)
+[M-c]        closes the rectangle by removing all blanks at the left edge of the rectangle
+[M-f]        fills the rectangle with a single character (prompt)
+v[M-F]        performs text filling on the rectangle
+[M-i]        increases the first number found on each line of the rectangle by the amount given by the numeric prefix argument (default 1) It recognizes 0x&#x2026; as hexadecimal numbers
+[M-k]        kills the rectangle as a normal multi-line text (for paste)
+[M-l]        downcases the rectangle
+[M-m]        kills the rectangle as a normal multi-line text (for paste)
+[M-n]        fills each line of the rectangle with increasing numbers using a supplied format string (prompt)
+[M-o]        opens the rectangle by moving the highlighted text to the right of the rectangle and filling the rectangle with blanks.
+[M-p]        toggles rectangle padding, i.e. insert tabs and spaces to make rectangles truly rectangular
+[M-r]        replaces REGEXP (prompt) by STRING (prompt) in rectangle
+[M-R]        reverse the lines in the rectangle
+[M-s]        fills each line of the rectangle with the same STRING (prompt)
+[M-t]        performs text fill of the rectangle with TEXT (prompt)
+[M-u]        upcases the rectangle
+[M-|]        runs shell command on rectangle
+[M-']        restricts rectangle to lines with CHAR (prompt) at left column
+[M-/]        restricts rectangle to lines matching REGEXP (prompt)
+[C-?]        Shows a brief list of the above commands.
+[M-C-up]
+[M-C-down]        scrolls the lines INSIDE the rectangle up and down; lines scrolled outside the top or bottom of the rectangle are lost, but can be recovered using [C-z].
+</p>
+</div></li></ol>
+</div>
+
+
+<div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19"><span class="section-number-4">3.1.3</span> emacs git</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<ul class="org-ul">
+<li>git-status</li>
+</ul>
+<pre class="example">
+- m - mark the file the cursor is on ATM
+- M - mark all files in buffer
+- u/DEL - unmark file below/above
+- R - resolve conflicts during merge
+- a - add file to repository
+- r - remove file
+- i - add file to ignore list
+- c - commit
+- U - Undo -&gt; revert file
+- l - see log file
+- g - refresh the status buffer
+- q - quit status buffer
+- ? - get help!
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgheadline25" class="outline-4">
+<h4 id="orgheadline25"><span class="section-number-4">3.1.4</span> org mode note</h4>
+<div class="outline-text-4" id="text-3-1-4">
+</div><ol class="org-ol"><li><a id="orgheadline20"></a>checkbox selection<br  /><div class="outline-text-5" id="text-3-1-4-1">
+<p>
+C-c
+</p>
+</div></li>
+
+<li><a id="orgheadline21"></a>org-mode resources<br  /><div class="outline-text-5" id="text-3-1-4-2">
+<ul class="org-ul">
+<li><a href="http://doc.norang.ca/org-mode.html">organize Your Life In Plain Text!</a></li>
+<li><a href="http://orgmode.org/worg/org-tutorials/index.html">Org tutorials</a></li>
+</ul>
+</div></li>
+
+<li><a id="orgheadline22"></a>commands<br  /><div class="outline-text-5" id="text-3-1-4-3">
+<pre class="example">
+- Inserting deadlines or schedules
+  - C-c C-d     (org-deadline)
+  - C-c C-s     (org-schedule)
+  - C-c C-x C-k     (org-mark-entry-for-agenda-action)
+  - C-c / d     (org-check-deadlines)
+  - C-c / b     (org-check-before-date)
+  - C-c / a     (org-check-after-date)
+</pre>
+
+
+<ul class="org-ul">
+<li>Inserting deadlines or schedules</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">C-c  C-d</td>
+<td class="org-left">(org-deadline)</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c C-s</td>
+<td class="org-left">(org-schedule)</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c  C-x C-k</td>
+<td class="org-left">(org-mark-entry-for-agenda-action)</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c  /   d</td>
+<td class="org-left">(org-check-deadlines)</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c  /   b</td>
+<td class="org-left">(org-check-before-date)</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c  /   a</td>
+<td class="org-left">(org-check-after-date)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Shift-Right arrow</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">key</td>
+<td class="org-left">command</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">C-c C-t</td>
+<td class="org-left">Select Todo State</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul class="org-ul">
+<li><p>
+To insert a structural element, type a ‘&lt;’, followed by a template selector and &lt;TAB&gt;. Completion takes effect only when the above keystrokes are typed on a line by itself.
+</p>
+
+<p>
+The following template&lt; selectors are currently supported.
+</p></li>
+</ul>
+<pre class="example">
+- s	#+BEGIN_SRC ... #+END_SRC 
+- e	#+BEGIN_EXAMPLE ... #+END_EXAMPLE
+- q	#+BEGIN_QUOTE ... #+END_QUOTE 
+- v	#+BEGIN_VERSE ... #+END_VERSE 
+- c	#+BEGIN_CENTER ... #+END_CENTER 
+- l	#+BEGIN_LaTeX ... #+END_LaTeX 
+- L	#+LaTeX: 
+- h	#+BEGIN_HTML ... #+END_HTML 
+- H	#+HTML: 
+- a	#+BEGIN_ASCII ... #+END_ASCII 
+- A	#+ASCII: 
+- i	#+INDEX: line 
+- I	#+INCLUDE: line
+</pre>
+
+<ul class="org-ul">
+<li>C-c C-e t     (add the head)   (org-insert-export-options-template)</li>
+
+<li>C-c C-e b     (Export to Html)  ??</li>
+
+<li>C-c C-q    ((org-set-tags-command)</li>
+
+<li>M-shift-RET   (call org-insert-todo-heading)</li>
+
+<li>C-c -      ( rotate list type)</li>
+
+<li>C-c |       ( (org-table-create-or-convert-from-region))</li>
+</ul>
+<p>
+<code>==============================================================================</code>
+Structure Editing
+<code>==============================================================================</code>
+</p>
+
+<ul class="org-ul">
+<li>insert new heading/item at current level          M-RET</li>
+<li>insert new heading after subtree                  C-RET</li>
+<li>insert new TODO entry/checkbox item               M-S-RET</li>
+<li>insert TODO entry/ckbx after subtree              C-S-RET</li>
+<li>turn (head)line into item, cycle item type        C-c -</li>
+<li>turn item/line into headline                      C-c *</li>
+<li>promote/demote heading                            M-LEFT/RIGHT</li>
+<li>promote/demote current subtree                    M-S-LEFT/RIGHT</li>
+<li>move subtree/list item up/down                    M-S-UP/DOWN</li>
+<li>sort subtree/region/plain-list                    C-c ^</li>
+<li>clone a subtree                                   C-c C-x c</li>
+<li>copy visible text                                 C-c C-x v</li>
+<li>kill/copy subtree                                 C-c C-x C-w/M-w</li>
+<li>yank subtree                                      C-c C-x C-y or C-y</li>
+<li>narrow buffer to subtree / widen                  C-x n s/w</li>
+</ul>
+
+
+
+
+
+
+
+<p>
+Inserting deadlines or schedules
+</p>
+
+
+
+<p>
+<code>==============================================================================</code>
+</p>
+<p>
+<code>==============================================================================</code>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">KEY</td>
+<td class="org-left">COMMAND</td>
+<td class="org-left">NOTE</td>
+</tr>
+
+<tr>
+<td class="org-left">C-S-&lt;up/down&gt;</td>
+<td class="org-left">(org-clock-timestamps-up/down)</td>
+<td class="org-left">On CLOCK log lines, increase/decrease both timestamps so that the clock duration keeps the same</td>
+</tr>
+
+<tr>
+<td class="org-left">S-M-&lt;up/down&gt;</td>
+<td class="org-left">(org-timestamp-up/down)</td>
+<td class="org-left">On CLOCK log lines, increase/decrease the timestamp at point and the one of the previous (or the next clock) timestamp by the same duration</td>
+</tr>
+</tbody>
+</table>
+</div></li>
+
+
+
+<li><a id="orgheadline23"></a>tricks<br  /><div class="outline-text-5" id="text-3-1-4-4">
+<ul class="org-ul">
+<li>show all table lines</li>
+</ul>
+<pre class="example">
+#+ATTR_HTML: border="2" rules="all" frame="border"
+</pre>
+
+<pre class="example">
+#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.com/solarized-css/org-info.min.js
+#+STYLE: &lt;link rel="stylesheet" type="text/css" href="http://thomasf.github.com/solarized-css/solarized-dark.min.css" /&gt;
+</pre>
+
+
+
+<p>
+ORGMODE:
+</p>
+
+
+<p>
+M-S up/down
+</p>
+</div></li>
+
+
+
+
+
+
+
+
+<li><a id="orgheadline24"></a>org mode export encoding setting<br  /><div class="outline-text-5" id="text-3-1-4-5">
+<pre class="example">
+18.53 Use utf-8 as default coding system
+
+I use utf-8 as the default coding system for all of my org files.
+
+(setq org-export-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-charset-priority 'unicode)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+</pre>
+</div></li></ol>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline28" class="outline-2">
+<h2 id="orgheadline28"><span class="section-number-2">4</span> Install</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+change the default location for   .emacs.d folder
+</p>
+
+<pre class="example">
+set the environment Varibale 
+
+HOME --&gt; location (C:\YONG\tools\emacs)
+</pre>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2013-02-16 Sat</p>
+<p class="author">Author: YONG</p>
+<p class="date">Created: 2015-09-16 Wed 18:52</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
