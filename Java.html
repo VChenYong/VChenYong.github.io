@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2015-09-16 Wed 19:15 -->
+<!-- 2015-09-18 Fri 21:59 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
-<title>JAVA Notes</title>
+<title>JAVA Notes111</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
 <style type="text/css">
@@ -94,7 +94,8 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+<link rel="stylesheet" type="text/css" href="../styles/style.css"/>
+<link rel="alternate stylesheet" type="text/css" href="../styles/style.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -143,42 +144,27 @@ for the JavaScript code in this tag.
 </script>
 </head>
 <body>
-<div id="preamble" class="status">
-Yong's Notes
-</div>
 <div id="content">
-<h1 class="title">JAVA Notes</h1>
+<h1 class="title">JAVA Notes111</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline47">1. Java</a>
+<li><a href="#orgheadline8">1. Java</a>
 <ul>
-<li><a href="#orgheadline7">1.1. Core Java</a>
+<li><a href="#orgheadline3">1.1. Core Java</a>
 <ul>
-<li><a href="#orgheadline5">1.1.1. Collection</a></li>
-<li><a href="#orgheadline6">1.1.2. Generic</a></li>
+<li><a href="#orgheadline1">1.1.1. Java collection</a></li>
+<li><a href="#orgheadline2">1.1.2. Generic</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline12">1.2. Java IDE</a>
+<li><a href="#orgheadline4">1.2. Design Pattern</a></li>
+<li><a href="#orgheadline6">1.3. Java IDE</a>
 <ul>
-<li><a href="#orgheadline11">1.2.1. Eclipse</a></li>
+<li><a href="#orgheadline5">1.3.1. UML test</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline41">1.3. Design pattern</a>
-<ul>
-<li><a href="#orgheadline19">1.3.1. Creational patterns (创建型模式)</a></li>
-<li><a href="#orgheadline27">1.3.2. Structural patterns (结构型模式)</a></li>
-<li><a href="#orgheadline39">1.3.3. Behavioral patterns (行为型模式)</a></li>
-<li><a href="#orgheadline40">1.3.4. Concurrency patterns</a></li>
-</ul>
-</li>
-<li><a href="#orgheadline46">1.4. Stream(流)</a>
-<ul>
-<li><a href="#orgheadline43">1.4.1. Intermediate example:</a></li>
-<li><a href="#orgheadline45">1.4.2. Terminal exmaple:</a></li>
-</ul>
-</li>
+<li><a href="#orgheadline7">1.4. Java Lambdas    Stream(流)</a></li>
 </ul>
 </li>
 </ul>
@@ -186,197 +172,28 @@ Yong's Notes
 </div>
 
 
-<div id="outline-container-orgheadline47" class="outline-2">
-<h2 id="orgheadline47"><span class="section-number-2">1</span> Java</h2>
+<div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8"><span class="section-number-2">1</span> Java</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orgheadline7" class="outline-3">
-<h3 id="orgheadline7"><span class="section-number-3">1.1</span> Core Java</h3>
+</div><div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.1</span> Core Java</h3>
 <div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgheadline1" class="outline-4">
+<h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> <a href="Java-collection.html">Java collection</a></h4>
+</div>
+<div id="outline-container-orgheadline2" class="outline-4">
+<h4 id="orgheadline2"><span class="section-number-4">1.1.2</span> Generic</h4>
+</div>
+</div>
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">1.2</span> <a href="Design-pattern.html">Design Pattern</a></h3>
+</div>
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3">1.3</span> <a href="Java-IDE.html">Java IDE</a></h3>
+<div class="outline-text-3" id="text-1-3">
 </div><div id="outline-container-orgheadline5" class="outline-4">
-<h4 id="orgheadline5"><span class="section-number-4">1.1.1</span> Collection</h4>
-<div class="outline-text-4" id="text-1-1-1">
-</div><ol class="org-ol"><li><a id="orgheadline4"></a>UML<br  /><ol class="org-ol"><li><a id="orgheadline1"></a>Set<br  /><div class="outline-text-6" id="text-1-1-1-1-1">
-
-<div class="figure">
-<p><img src="./Img/Set.png" alt="Set.png" />
-</p>
-</div>
-</div></li>
-
-<li><a id="orgheadline2"></a>List<br  /><div class="outline-text-6" id="text-1-1-1-1-2">
-
-<div class="figure">
-<p><img src="./Img/List.png" alt="List.png" />
-</p>
-</div>
-</div></li>
-
-<li><a id="orgheadline3"></a>Queues<br  /><div class="outline-text-6" id="text-1-1-1-1-3">
-
-<div class="figure">
-<p><img src="./Img/Queue.png" alt="Queue.png" />
-</p>
-</div>
-</div></li></ol></li></ol>
-</div>
-
-<div id="outline-container-orgheadline6" class="outline-4">
-<h4 id="orgheadline6"><span class="section-number-4">1.1.2</span> Generic</h4>
-</div>
-</div>
-<div id="outline-container-orgheadline12" class="outline-3">
-<h3 id="orgheadline12"><span class="section-number-3">1.2</span> Java IDE</h3>
-<div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-orgheadline11" class="outline-4">
-<h4 id="orgheadline11"><span class="section-number-4">1.2.1</span> Eclipse</h4>
-<div class="outline-text-4" id="text-1-2-1">
-</div><ol class="org-ol"><li><a id="orgheadline8"></a>ShortCut<br  /><div class="outline-text-5" id="text-1-2-1-1">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">keys</th>
-<th scope="col" class="org-left">function</th>
-<th scope="col" class="org-left">notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">Ctrl + J</td>
-<td class="org-left">Increment find forward</td>
-<td class="org-left">None</td>
-</tr>
-
-<tr>
-<td class="org-left">Ctrl + Shift + J</td>
-<td class="org-left">Increment find backward</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">Ctrl + K</td>
-<td class="org-left">find forward</td>
-<td class="org-left">better than Ctrl = F</td>
-</tr>
-
-<tr>
-<td class="org-left">Ctrl+Shift + J</td>
-<td class="org-left">find backward</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">Alt + Up</td>
-<td class="org-left">Move line up</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">Alt + Down</td>
-<td class="org-left">MOve line down</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">Ctrl-Alt + up</td>
-<td class="org-left">Copy selected line(s) above current line</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">Ctrl-Alt + Dwon</td>
-<td class="org-left">Copy selected line(s) below current line</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">Ctrl-O</td>
-<td class="org-left">Quick Outline</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">ctrl+shift+f</td>
-<td class="org-left">Format</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">ctrl+shift+o</td>
-<td class="org-left">Organise import</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">ctrl+shift+t</td>
-<td class="org-left">load class file by classname</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">ctrl+shift+r</td>
-<td class="org-left">load any file by filename</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">alt+shift+m</td>
-<td class="org-left">Extract text-selection as a method</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">alt+shift+l</td>
-<td class="org-left">Extract text-selection as local variable</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">alt+shift+i</td>
-<td class="org-left">inline selected method</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">ctrl+shift+x</td>
-<td class="org-left">uppercase</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">ctrl+shift+y</td>
-<td class="org-left">lowercase</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-
-<tr>
-<td class="org-left">Alt + Shift + S and then press R</td>
-<td class="org-left">getter and setter</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-</tbody>
-</table>
-</div></li>
-<li><a id="orgheadline10"></a>Configurations<br  /><ol class="org-ol"><li><a id="orgheadline9"></a>Eclipse Moonrise UI Theme<br  /><div class="outline-text-6" id="text-1-2-1-2-1">
-<p>
-<a href="https://marketplace.eclipse.org/content/eclipse-moonrise-ui-theme">link</a>
-</p>
-
-<p>
-<b>*</b> UML test
-</p>
-
-
-
-
+<h4 id="orgheadline5"><span class="section-number-4">1.3.1</span> UML test</h4>
+<div class="outline-text-4" id="text-1-3-1">
 
 <div class="figure">
 <p><img src=".Img/orgmode-babel-sequenceuml.png" alt="orgmode-babel-sequenceuml.png" />
@@ -414,187 +231,21 @@ Yong's Notes
 <p><img src="./Img/yong.png" alt="yong.png" />
 </p>
 </div>
-</div></li></ol></li></ol>
-</div>
-</div>
-
-<div id="outline-container-orgheadline41" class="outline-3">
-<h3 id="orgheadline41"><span class="section-number-3">1.3</span> Design pattern</h3>
-<div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-orgheadline19" class="outline-4">
-<h4 id="orgheadline19"><span class="section-number-4">1.3.1</span> Creational patterns (创建型模式)</h4>
-<div class="outline-text-4" id="text-1-3-1">
-</div><ol class="org-ol"><li><a id="orgheadline13"></a>Simple Factory Pattern(简单工厂模式)<br  /></li>
-<li><a id="orgheadline14"></a>Factory Method Pattern(工厂方法模式)<br  /></li>
-<li><a id="orgheadline15"></a>Abstract  Factory Pattern(抽象工厂模式)<br  /></li>
-<li><a id="orgheadline16"></a>Singleton Pattern(单例模式)<br  /></li>
-<li><a id="orgheadline17"></a>Prototype Pattern(原型模式)<br  /></li>
-<li><a id="orgheadline18"></a>Builder Pattern(建造者模式)<br  /></li></ol>
-</div>
-<div id="outline-container-orgheadline27" class="outline-4">
-<h4 id="orgheadline27"><span class="section-number-4">1.3.2</span> Structural patterns (结构型模式)</h4>
-<div class="outline-text-4" id="text-1-3-2">
-</div><ol class="org-ol"><li><a id="orgheadline20"></a>Adapter Pattern(适配器模式)<br  /></li>
-<li><a id="orgheadline21"></a>Bridge Pattern(桥接模式)<br  /></li>
-<li><a id="orgheadline22"></a>Composite Pattern (组合模式)<br  /></li>
-<li><a id="orgheadline23"></a>Decorator Pattern(装饰模式)<br  /></li>
-<li><a id="orgheadline24"></a>Facade Pattern(外观模式)<br  /></li>
-<li><a id="orgheadline25"></a>Flyweight Pattern(享元模式)<br  /></li>
-<li><a id="orgheadline26"></a>Proxy Pattern(代理模式)<br  /></li></ol>
-</div>
-<div id="outline-container-orgheadline39" class="outline-4">
-<h4 id="orgheadline39"><span class="section-number-4">1.3.3</span> Behavioral patterns (行为型模式)</h4>
-<div class="outline-text-4" id="text-1-3-3">
-</div><ol class="org-ol"><li><a id="orgheadline28"></a>Chain of Responsibility Pattern(职责链模式)<br  /></li>
-<li><a id="orgheadline29"></a>Command Pattern(命令模式)<br  /></li>
-<li><a id="orgheadline30"></a>Interpreter Pattern(解释器模式)<br  /></li>
-<li><a id="orgheadline31"></a>Iterator Pattern(迭代器模式)<br  /></li>
-<li><a id="orgheadline32"></a>Mediator Pattern(中介者模式)<br  /></li>
-<li><a id="orgheadline33"></a>Memento Pattern(备忘录模式)<br  /></li>
-<li><a id="orgheadline34"></a>Observer Pattern(观察者模式)<br  /></li>
-<li><a id="orgheadline35"></a>State Pattern(状态模式)<br  /></li>
-<li><a id="orgheadline36"></a>Strategy Pattern(策略模式)<br  /></li>
-<li><a id="orgheadline37"></a>Template Method Pattern(模板方法模式)<br  /></li>
-<li><a id="orgheadline38"></a>Visitor Pattern(访问者模式)<br  /></li></ol>
-</div>
-<div id="outline-container-orgheadline40" class="outline-4">
-<h4 id="orgheadline40"><span class="section-number-4">1.3.4</span> Concurrency patterns</h4>
-<div class="outline-text-4" id="text-1-3-4">
-<p>
-<a href="http://blog.csdn.net/lovelion/article/details/17517213">link</a>
-</p>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgheadline46" class="outline-3">
-<h3 id="orgheadline46"><span class="section-number-3">1.4</span> Stream(流)</h3>
-<div class="outline-text-3" id="text-1-4">
-<p>
-流的操作
-当把一个数据结构包装成 Stream 后，就要开始对里面的元素进行各类操作了。常见的操作可以归类如下。
-</p>
 
-<ul class="org-ul">
-<li>Intermediate：
-map (mapToInt, flatMap 等)、 filter、 distinct、 sorted、 peek、 limit、 skip、 parallel、 sequential、 unordered</li>
-<li>Terminal：
-forEach、 forEachOrdered、 toArray、 reduce、 collect、 min、 max、 count、 anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 iterator</li>
-<li>Short-circuiting：
-anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 limit</li>
-</ul>
-</div>
-
-
-<div id="outline-container-orgheadline43" class="outline-4">
-<h4 id="orgheadline43"><span class="section-number-4">1.4.1</span> Intermediate example:</h4>
-<div class="outline-text-4" id="text-1-4-1">
-</div><ol class="org-ol"><li><a id="orgheadline42"></a>FlatMap<br  /><div class="outline-text-5" id="text-1-4-1-1">
-<pre class="example">
-List&lt;List&lt;Integer&gt;&gt; test = Arrays.asList(
-               Arrays.asList(1),
-               Arrays.asList(2, 3),
-               Arrays.asList(4, 5, 6)
-       );
-
-       test.stream().
-               flatMap((childList) -&gt; childList.stream()).forEach(System.out::println);
-</pre>
-
-<p>
-OutPut:
-</p>
-
-<pre class="example">
-1
-2
-3
-4
-5
-6
-</pre>
-</div></li></ol>
-</div>
-
-
-
-
-
-<div id="outline-container-orgheadline45" class="outline-4">
-<h4 id="orgheadline45"><span class="section-number-4">1.4.2</span> Terminal exmaple:</h4>
-<div class="outline-text-4" id="text-1-4-2">
-</div><ol class="org-ol"><li><a id="orgheadline44"></a>Mutable reduction(可变汇聚)<br  /><div class="outline-text-5" id="text-1-4-2-1">
-<p>
-可变汇聚对应的只有一个方法：collect，正如其名字显示的，它可以把Stream中的要有元素收集到一个结果容器中（比如Collection）
-</p>
-
-
-<p>
-最通用的collect方法的定义（还有其他override方法）：
-</p>
-<pre class="example">
-&lt;R&gt; R collect(Supplier&lt;R&gt; supplier,
-	          BiConsumer&lt;R, ? super T&gt; accumulator,
-	          BiConsumer&lt;R, R&gt; combiner)
-</pre>
-
-<p>
-三个参数的含义:
-</p>
-<ul class="org-ul">
-<li>Supplier supplier是一个工厂函数，用来生成一个新的容器；</li>
-<li>BiConsumer accumulator也是一个函数，用来把Stream中的元素添加到结果容器中；</li>
-<li>BiConsumer combiner还是一个函数，用来把中间状态的多个结果容器合并成为一个（并发的时候会用到）</li>
-</ul>
-
-<pre class="example">
-List&lt;Integer&gt; nums = Arrays.asList(1, 1, null, 2, 3, 4, null, 5, 6, 7, 8, 9, 10);
-
-Map&lt;Integer,String&gt; numtoMapWithoutNUll = nums.stream().filter(num -&gt; num != null).
-
-collect(() -&gt; new HashMap&lt;Integer, String&gt;(),
-
-        (myMap, item) -&gt; myMap.put(item, item.toString()),
-
-        (myMap1, myMap2) -&gt; myMap1.putAll(myMap2));
-</pre>
-
-
-
-<ul class="org-ul">
-<li>第一个函数生成一个新的HashMap实例；</li>
-<li>第二个函数接受两个参数，第一个是前面生成的HashMap对象，二个是stream中包含的元素，函数体就是把stream中的元素加入HashMap对象中。第二个函数被反复调用直到原stream的元素被消费完毕；</li>
-<li>第三个函数也是接受两个参数，这两个都是ArrayList类型的，函数体就是把第二个ArrayList全部加入到第一个中；</li>
-</ul>
-
-
-<pre class="example">
-List&lt;String&gt; G7 = Arrays.asList("USA", "Japan", "France", "Germany", "Italy", "U.K.", "Canada");
-String G7Countries = G7.stream().map(x -&gt; x.toUpperCase()).collect(Collectors.joining(", "));
-System.out.println(G7Countries);
-</pre>
-<p>
-Output: 
-</p>
-<pre class="example">
-USA, JAPAN, FRANCE, GERMANY, ITALY, U.K., CANADA
-</pre>
-
-
-<p>
-<a href="http://www.zhouhaocheng.cn/2015/306.html">link1</a>
-<a href="http://blog.csdn.net/exceptional_derek/article/details/43929539">link2</a>
-</p>
-</div></li></ol>
-</div>
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">1.4</span> <a href="Java-Lambdas.html">Java Lambdas</a>    Stream(流)</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2015-09-16 Wed 19:15</p>
+<p class="date">Created: 2015-09-18 Fri 21:59</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
