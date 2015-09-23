@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2015-09-22 Tue 20:02 -->
+<!-- 2015-09-22 Tue 20:44 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Design Pattern</title>
@@ -149,140 +149,162 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline29">1. Design pattern</a>
+<li><a href="#orgheadline33">1. Design pattern</a>
 <ul>
-<li><a href="#orgheadline7">1.1. Creational patterns (创建型模式)</a>
+<li><a href="#orgheadline11">1.1. Creational patterns (创建型模式)</a>
 <ul>
 <li><a href="#orgheadline1">1.1.1. Simple Factory Pattern(简单工厂模式)</a></li>
-<li><a href="#orgheadline2">1.1.2. Factory Method Pattern(工厂方法模式)</a></li>
-<li><a href="#orgheadline3">1.1.3. Abstract  Factory Pattern(抽象工厂模式)</a></li>
-<li><a href="#orgheadline4">1.1.4. Singleton Pattern(单例模式)</a></li>
-<li><a href="#orgheadline5">1.1.5. Prototype Pattern(原型模式)</a></li>
-<li><a href="#orgheadline6">1.1.6. Builder Pattern(建造者模式)</a></li>
+<li><a href="#orgheadline4">1.1.2. Factory Method Pattern(工厂方法模式)</a></li>
+<li><a href="#orgheadline7">1.1.3. Abstract  Factory Pattern(抽象工厂模式)</a></li>
+<li><a href="#orgheadline8">1.1.4. Singleton Pattern(单例模式)</a></li>
+<li><a href="#orgheadline9">1.1.5. Prototype Pattern(原型模式)</a></li>
+<li><a href="#orgheadline10">1.1.6. Builder Pattern(建造者模式)</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline15">1.2. Structural patterns (结构型模式)</a>
+<li><a href="#orgheadline19">1.2. Structural patterns (结构型模式)</a>
 <ul>
-<li><a href="#orgheadline8">1.2.1. Adapter Pattern(适配器模式)</a></li>
-<li><a href="#orgheadline9">1.2.2. Bridge Pattern(桥接模式)</a></li>
-<li><a href="#orgheadline10">1.2.3. Composite Pattern (组合模式)</a></li>
-<li><a href="#orgheadline11">1.2.4. Decorator Pattern(装饰模式)</a></li>
-<li><a href="#orgheadline12">1.2.5. Facade Pattern(外观模式)</a></li>
-<li><a href="#orgheadline13">1.2.6. Flyweight Pattern(享元模式)</a></li>
-<li><a href="#orgheadline14">1.2.7. Proxy Pattern(代理模式)</a></li>
+<li><a href="#orgheadline12">1.2.1. Adapter Pattern(适配器模式)</a></li>
+<li><a href="#orgheadline13">1.2.2. Bridge Pattern(桥接模式)</a></li>
+<li><a href="#orgheadline14">1.2.3. Composite Pattern (组合模式)</a></li>
+<li><a href="#orgheadline15">1.2.4. Decorator Pattern(装饰模式)</a></li>
+<li><a href="#orgheadline16">1.2.5. Facade Pattern(外观模式)</a></li>
+<li><a href="#orgheadline17">1.2.6. Flyweight Pattern(享元模式)</a></li>
+<li><a href="#orgheadline18">1.2.7. Proxy Pattern(代理模式)</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline27">1.3. Behavioral patterns (行为型模式)</a>
+<li><a href="#orgheadline31">1.3. Behavioral patterns (行为型模式)</a>
 <ul>
-<li><a href="#orgheadline16">1.3.1. Chain of Responsibility Pattern(职责链模式)</a></li>
-<li><a href="#orgheadline17">1.3.2. Command Pattern(命令模式)</a></li>
-<li><a href="#orgheadline18">1.3.3. Interpreter Pattern(解释器模式)</a></li>
-<li><a href="#orgheadline19">1.3.4. Iterator Pattern(迭代器模式)</a></li>
-<li><a href="#orgheadline20">1.3.5. Mediator Pattern(中介者模式)</a></li>
-<li><a href="#orgheadline21">1.3.6. Memento Pattern(备忘录模式)</a></li>
-<li><a href="#orgheadline22">1.3.7. Observer Pattern(观察者模式)</a></li>
-<li><a href="#orgheadline23">1.3.8. State Pattern(状态模式)</a></li>
-<li><a href="#orgheadline24">1.3.9. Strategy Pattern(策略模式)</a></li>
-<li><a href="#orgheadline25">1.3.10. Template Method Pattern(模板方法模式)</a></li>
-<li><a href="#orgheadline26">1.3.11. Visitor Pattern(访问者模式)</a></li>
+<li><a href="#orgheadline20">1.3.1. Chain of Responsibility Pattern(职责链模式)</a></li>
+<li><a href="#orgheadline21">1.3.2. Command Pattern(命令模式)</a></li>
+<li><a href="#orgheadline22">1.3.3. Interpreter Pattern(解释器模式)</a></li>
+<li><a href="#orgheadline23">1.3.4. Iterator Pattern(迭代器模式)</a></li>
+<li><a href="#orgheadline24">1.3.5. Mediator Pattern(中介者模式)</a></li>
+<li><a href="#orgheadline25">1.3.6. Memento Pattern(备忘录模式)</a></li>
+<li><a href="#orgheadline26">1.3.7. Observer Pattern(观察者模式)</a></li>
+<li><a href="#orgheadline27">1.3.8. State Pattern(状态模式)</a></li>
+<li><a href="#orgheadline28">1.3.9. Strategy Pattern(策略模式)</a></li>
+<li><a href="#orgheadline29">1.3.10. Template Method Pattern(模板方法模式)</a></li>
+<li><a href="#orgheadline30">1.3.11. Visitor Pattern(访问者模式)</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline28">1.4. Concurrency patterns</a></li>
+<li><a href="#orgheadline32">1.4. Concurrency patterns</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline29" class="outline-2">
-<h2 id="orgheadline29"><span class="section-number-2">1</span> Design pattern</h2>
+<div id="outline-container-orgheadline33" class="outline-2">
+<h2 id="orgheadline33"><span class="section-number-2">1</span> Design pattern</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orgheadline7" class="outline-3">
-<h3 id="orgheadline7"><span class="section-number-3">1.1</span> Creational patterns (创建型模式)</h3>
+</div><div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">1.1</span> Creational patterns (创建型模式)</h3>
 <div class="outline-text-3" id="text-1-1">
 </div><div id="outline-container-orgheadline1" class="outline-4">
 <h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> Simple Factory Pattern(简单工厂模式)</h4>
 </div>
-<div id="outline-container-orgheadline2" class="outline-4">
-<h4 id="orgheadline2"><span class="section-number-4">1.1.2</span> Factory Method Pattern(工厂方法模式)</h4>
-</div>
-<div id="outline-container-orgheadline3" class="outline-4">
-<h4 id="orgheadline3"><span class="section-number-4">1.1.3</span> Abstract  Factory Pattern(抽象工厂模式)</h4>
-</div>
 <div id="outline-container-orgheadline4" class="outline-4">
-<h4 id="orgheadline4"><span class="section-number-4">1.1.4</span> Singleton Pattern(单例模式)</h4>
+<h4 id="orgheadline4"><span class="section-number-4">1.1.2</span> Factory Method Pattern(工厂方法模式)</h4>
+<div class="outline-text-4" id="text-1-1-2">
+</div><ol class="org-ol"><li><a id="orgheadline2"></a>Define an interface for creating an object, but let subclasses decide which class to instantiate. Lets a class defer instaniation to subclasses.<br  /></li>
+<li><a id="orgheadline3"></a>UML<br  /><div class="outline-text-5" id="text-1-1-2-2">
+
+<div class="figure">
+<p><img src="../Img/FactoryMethod.png" alt="FactoryMethod.png" />
+</p>
 </div>
-<div id="outline-container-orgheadline5" class="outline-4">
-<h4 id="orgheadline5"><span class="section-number-4">1.1.5</span> Prototype Pattern(原型模式)</h4>
+</div></li></ol>
 </div>
-<div id="outline-container-orgheadline6" class="outline-4">
-<h4 id="orgheadline6"><span class="section-number-4">1.1.6</span> Builder Pattern(建造者模式)</h4>
+
+
+
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.1.3</span> Abstract  Factory Pattern(抽象工厂模式)</h4>
+<div class="outline-text-4" id="text-1-1-3">
+</div><ol class="org-ol"><li><a id="orgheadline5"></a>Provide an interface for creating families of related or dependsent objects without specifying their concrete class.<br  /></li>
+<li><a id="orgheadline6"></a>UML<br  /><div class="outline-text-5" id="text-1-1-3-2">
+
+<div class="figure">
+<p><img src="../Img/AbstractFactory.png" alt="AbstractFactory.png" />
+</p>
 </div>
+</div></li></ol>
 </div>
-<div id="outline-container-orgheadline15" class="outline-3">
-<h3 id="orgheadline15"><span class="section-number-3">1.2</span> Structural patterns (结构型模式)</h3>
-<div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-orgheadline8" class="outline-4">
-<h4 id="orgheadline8"><span class="section-number-4">1.2.1</span> Adapter Pattern(适配器模式)</h4>
+
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">1.1.4</span> Singleton Pattern(单例模式)</h4>
 </div>
 <div id="outline-container-orgheadline9" class="outline-4">
-<h4 id="orgheadline9"><span class="section-number-4">1.2.2</span> Bridge Pattern(桥接模式)</h4>
+<h4 id="orgheadline9"><span class="section-number-4">1.1.5</span> Prototype Pattern(原型模式)</h4>
 </div>
 <div id="outline-container-orgheadline10" class="outline-4">
-<h4 id="orgheadline10"><span class="section-number-4">1.2.3</span> Composite Pattern (组合模式)</h4>
+<h4 id="orgheadline10"><span class="section-number-4">1.1.6</span> Builder Pattern(建造者模式)</h4>
 </div>
-<div id="outline-container-orgheadline11" class="outline-4">
-<h4 id="orgheadline11"><span class="section-number-4">1.2.4</span> Decorator Pattern(装饰模式)</h4>
 </div>
-<div id="outline-container-orgheadline12" class="outline-4">
-<h4 id="orgheadline12"><span class="section-number-4">1.2.5</span> Facade Pattern(外观模式)</h4>
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19"><span class="section-number-3">1.2</span> Structural patterns (结构型模式)</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-orgheadline12" class="outline-4">
+<h4 id="orgheadline12"><span class="section-number-4">1.2.1</span> Adapter Pattern(适配器模式)</h4>
 </div>
 <div id="outline-container-orgheadline13" class="outline-4">
-<h4 id="orgheadline13"><span class="section-number-4">1.2.6</span> Flyweight Pattern(享元模式)</h4>
+<h4 id="orgheadline13"><span class="section-number-4">1.2.2</span> Bridge Pattern(桥接模式)</h4>
 </div>
 <div id="outline-container-orgheadline14" class="outline-4">
-<h4 id="orgheadline14"><span class="section-number-4">1.2.7</span> Proxy Pattern(代理模式)</h4>
+<h4 id="orgheadline14"><span class="section-number-4">1.2.3</span> Composite Pattern (组合模式)</h4>
 </div>
+<div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="orgheadline15"><span class="section-number-4">1.2.4</span> Decorator Pattern(装饰模式)</h4>
 </div>
-<div id="outline-container-orgheadline27" class="outline-3">
-<h3 id="orgheadline27"><span class="section-number-3">1.3</span> Behavioral patterns (行为型模式)</h3>
-<div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-orgheadline16" class="outline-4">
-<h4 id="orgheadline16"><span class="section-number-4">1.3.1</span> Chain of Responsibility Pattern(职责链模式)</h4>
+<div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">1.2.5</span> Facade Pattern(外观模式)</h4>
 </div>
 <div id="outline-container-orgheadline17" class="outline-4">
-<h4 id="orgheadline17"><span class="section-number-4">1.3.2</span> Command Pattern(命令模式)</h4>
+<h4 id="orgheadline17"><span class="section-number-4">1.2.6</span> Flyweight Pattern(享元模式)</h4>
 </div>
 <div id="outline-container-orgheadline18" class="outline-4">
-<h4 id="orgheadline18"><span class="section-number-4">1.3.3</span> Interpreter Pattern(解释器模式)</h4>
+<h4 id="orgheadline18"><span class="section-number-4">1.2.7</span> Proxy Pattern(代理模式)</h4>
 </div>
-<div id="outline-container-orgheadline19" class="outline-4">
-<h4 id="orgheadline19"><span class="section-number-4">1.3.4</span> Iterator Pattern(迭代器模式)</h4>
 </div>
-<div id="outline-container-orgheadline20" class="outline-4">
-<h4 id="orgheadline20"><span class="section-number-4">1.3.5</span> Mediator Pattern(中介者模式)</h4>
+<div id="outline-container-orgheadline31" class="outline-3">
+<h3 id="orgheadline31"><span class="section-number-3">1.3</span> Behavioral patterns (行为型模式)</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-orgheadline20" class="outline-4">
+<h4 id="orgheadline20"><span class="section-number-4">1.3.1</span> Chain of Responsibility Pattern(职责链模式)</h4>
 </div>
 <div id="outline-container-orgheadline21" class="outline-4">
-<h4 id="orgheadline21"><span class="section-number-4">1.3.6</span> Memento Pattern(备忘录模式)</h4>
+<h4 id="orgheadline21"><span class="section-number-4">1.3.2</span> Command Pattern(命令模式)</h4>
 </div>
 <div id="outline-container-orgheadline22" class="outline-4">
-<h4 id="orgheadline22"><span class="section-number-4">1.3.7</span> Observer Pattern(观察者模式)</h4>
+<h4 id="orgheadline22"><span class="section-number-4">1.3.3</span> Interpreter Pattern(解释器模式)</h4>
 </div>
 <div id="outline-container-orgheadline23" class="outline-4">
-<h4 id="orgheadline23"><span class="section-number-4">1.3.8</span> State Pattern(状态模式)</h4>
+<h4 id="orgheadline23"><span class="section-number-4">1.3.4</span> Iterator Pattern(迭代器模式)</h4>
 </div>
 <div id="outline-container-orgheadline24" class="outline-4">
-<h4 id="orgheadline24"><span class="section-number-4">1.3.9</span> Strategy Pattern(策略模式)</h4>
+<h4 id="orgheadline24"><span class="section-number-4">1.3.5</span> Mediator Pattern(中介者模式)</h4>
 </div>
 <div id="outline-container-orgheadline25" class="outline-4">
-<h4 id="orgheadline25"><span class="section-number-4">1.3.10</span> Template Method Pattern(模板方法模式)</h4>
+<h4 id="orgheadline25"><span class="section-number-4">1.3.6</span> Memento Pattern(备忘录模式)</h4>
 </div>
 <div id="outline-container-orgheadline26" class="outline-4">
-<h4 id="orgheadline26"><span class="section-number-4">1.3.11</span> Visitor Pattern(访问者模式)</h4>
+<h4 id="orgheadline26"><span class="section-number-4">1.3.7</span> Observer Pattern(观察者模式)</h4>
+</div>
+<div id="outline-container-orgheadline27" class="outline-4">
+<h4 id="orgheadline27"><span class="section-number-4">1.3.8</span> State Pattern(状态模式)</h4>
+</div>
+<div id="outline-container-orgheadline28" class="outline-4">
+<h4 id="orgheadline28"><span class="section-number-4">1.3.9</span> Strategy Pattern(策略模式)</h4>
+</div>
+<div id="outline-container-orgheadline29" class="outline-4">
+<h4 id="orgheadline29"><span class="section-number-4">1.3.10</span> Template Method Pattern(模板方法模式)</h4>
+</div>
+<div id="outline-container-orgheadline30" class="outline-4">
+<h4 id="orgheadline30"><span class="section-number-4">1.3.11</span> Visitor Pattern(访问者模式)</h4>
 </div>
 </div>
-<div id="outline-container-orgheadline28" class="outline-3">
-<h3 id="orgheadline28"><span class="section-number-3">1.4</span> Concurrency patterns</h3>
+<div id="outline-container-orgheadline32" class="outline-3">
+<h3 id="orgheadline32"><span class="section-number-3">1.4</span> Concurrency patterns</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 <a href="http://blog.csdn.net/lovelion/article/details/17517213">link</a>
@@ -299,7 +321,7 @@ for the JavaScript code in this tag.
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2015-09-22 Tue 20:02</p>
+<p class="date">Created: 2015-09-22 Tue 20:44</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
