@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2015-09-22 Tue 20:02 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="YONG" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Linux</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">1. 操作Linux系统　必学的60个命令</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> 操作Linux系统　必学的60个命令</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Linux提供了大量的命令，利用它可以有效地完成大量的工作，如磁盘操作、文件存取、目录操作、进程管理、文件权限设定等。所以，在Linux系统上工作离不开使用系统提供的命令。要想真正理解Linux系统，就必须从Linux命令学起，通过基础的命令学习可以进一步理解Linux系统。
+</p>
+
+
+<p>
+不同Linux发行版的命令数量不一样，但Linux发行版本最少的命令也有200多个。这里笔者把比较重要和使用频率最多的命令，按照它们在系统中的作用分成下面六个部分一一介绍。
+</p>
+
+
+<p>
+◆ 安装和登录命令：
+</p>
+
+<p>
+login、shutdown、halt、reboot、install、mount、umount、chsh、exit、last；
+</p>
+
+
+<p>
+◆ 文件处理命令：
+</p>
+
+<p>
+file、mkdir、grep、dd、find、mv、ls、diff、cat、ln；
+</p>
+
+
+<p>
+◆ 系统管理相关命令：
+</p>
+
+<p>
+df、top、free、quota、at、lp、adduser、groupadd、kill、crontab；
+</p>
+
+
+<p>
+◆ 网络操作命令：
+</p>
+
+<p>
+ifconfig、ip、ping、netstat、telnet、ftp、route、rlogin、rcp、finger、mail、 nslookup；
+</p>
+
+
+<p>
+◆ 系统安全相关命令：
+</p>
+
+<p>
+passwd、su、umask、chgrp、chmod、chown、chattr、sudo ps、who；
+</p>
+
+
+<p>
+◆ 其它命令：
+</p>
+
+<p>
+tar、unzip、gunzip、unarj、mtools、man、unendcode、uudecode。
+</p>
+
+
+<p>
+本文以Mandrake Linux 9.1(Kenrel 2.4.21)为例，介绍Linux下的安装和登录命令。
+</p>
+
+
+<p>
+login
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+login的作用是登录系统，它的使用权限是所有用户。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+login [name][－p ][－h 主机名称]
+</p>
+
+
+<p>
+3.主要参数
+</p>
+
+
+<p>
+－p:通知login保持现在的环境参数。
+</p>
+
+
+<p>
+－h:用来向远程登录的之间传输用户名。
+</p>
+
+
+<p>
+如果选择用命令行模式登录Linux的话，那么看到的第一个Linux命令就是login：。
+</p>
+
+
+<p>
+一般界面是这样的：
+</p>
+
+
+<p>
+Manddrake Linux release 9.1(Bamboo) for i586
+</p>
+
+<p>
+renrel 2.4.21－0.13mdk on i686 / tty1
+</p>
+
+<p>
+localhost login:root
+</p>
+
+<p>
+password:
+</p>
+
+
+<p>
+上面代码中，第一行是Linux发行版本号，第二行是内核版本号和登录的虚拟控制台，我们在第三行输入登录名，按“Enter”键在Password后输入账户密码，即可登录系统。出于安全考虑，输入账户密码时字符不会在屏幕上回显，光标也不移动。
+</p>
+
+
+<p>
+登录后会看到下面这个界面（以超级用户为例）：
+</p>
+
+
+<p>
+[root@localhost root]#
+</p>
+
+<p>
+last login:Tue ,Nov 18 10:00:55 on vc/1
+</p>
+
+
+<p>
+上面显示的是登录星期、月、日、时间和使用的虚拟控制台。
+</p>
+
+
+<p>
+4.应用技巧
+</p>
+
+
+<p>
+Linux 是一个真正的多用户操作系统，可以同时接受多个用户登录，还允许一个用户进行多次登录。这是因为Linux和许多版本的Unix一样，提供了虚拟控制台的访问方式，允许用户在同一时间从控制台（系统的控制台是与系统直接相连的监视器和键盘）进行多次登录。每个虚拟控制台可以看作是一个独立的工作站，工作台之间可以切换。虚拟控制台的切换可以通过按下Alt键和一个功能键来实现，通常使用F1-F6 。
+</p>
+
+
+<p>
+例如，用户登录后，按一下“Alt+ F2”键，用户就可以看到上面出现的“login:”提示符，说明用户看到了第二个虚拟控制台。然后只需按“Alt+ F1”键，就可以回到第一个虚拟控制台。一个新安装的Linux系统允许用户使用“Alt+F1”到“Alt+F6”键来访问前六个虚拟控制台。虚拟控制台最有用的是，当一个程序出错造成系统死锁时，可以切换到其它虚拟控制台工作，关闭这个程序。
+</p>
+
+
+<p>
+shutdown
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+shutdown命令的作用是关闭计算机，它的使用权限是超级用户。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+shutdown [－h][－i][－k][－m][－t]
+</p>
+
+
+<p>
+3.重要参数
+</p>
+
+
+<p>
+－t：在改变到其它运行级别之前，告诉init程序多久以后关机。
+</p>
+
+
+<p>
+－k：并不真正关机，只是送警告信号给每位登录者。
+</p>
+
+
+<p>
+－h：关机后关闭电源。
+</p>
+
+
+<p>
+－c：cancel current process取消目前正在执行的关机程序。所以这个选项当然没有时间参数，但是可以输入一个用来解释的讯息，而这信息将会送到每位使用者。
+</p>
+
+
+<p>
+－F：在重启计算机时强迫fsck。
+</p>
+
+
+<p>
+－time：设定关机前的时间。
+</p>
+
+
+<p>
+－m: 将系统改为单用户模式。
+</p>
+
+
+<p>
+－i：关机时显示系统信息。
+</p>
+
+
+<p>
+4.命令说明
+</p>
+
+
+<p>
+shutdown 命令可以安全地将系统关机。有些用户会使用直接断掉电源的方式来关闭Linux系统，这是十分危险的。因为Linux与Windows不同，其后台运行着许多进程，所以强制关机可能会导致进程的数据丢失，使系统处于不稳定的状态，甚至在有的系统中会损坏硬件设备（硬盘）。在系统关机前使用 shutdown命令，系统管理员会通知所有登录的用户系统将要关闭，并且login指令会被冻结，即新的用户不能再登录。
+</p>
+
+
+<p>
+halt
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+halt命令的作用是关闭系统，它的使用权限是超级用户。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+halt [－n] [－w] [－d] [－f] [－i] [－p]
+</p>
+
+
+<p>
+3.主要参数说明
+</p>
+
+
+<p>
+－n：防止sync系统调用，它用在用fsck修补根分区之后，以阻止内核用老版本的超级块覆盖修补过的超级块。
+</p>
+
+
+<p>
+－w：并不是真正的重启或关机,只是写wtmp（/var/log/wtmp）纪录。
+</p>
+
+
+<p>
+－f：没有调用shutdown，而强制关机或重启。
+</p>
+
+
+<p>
+－i：关机（或重启）前，关掉所有的网络接口。
+</p>
+
+
+<p>
+－f：强迫关机，不呼叫shutdown这个指令。
+</p>
+
+
+<p>
+－p: 当关机的时候顺便做关闭电源的动作。
+</p>
+
+
+<p>
+－d：关闭系统，但不留下纪录。　
+</p>
+
+
+<p>
+4.命令说明
+</p>
+
+
+<p>
+halt 就是调用shutdown －h。halt执行时，杀死应用进程，执行sync(将存于buffer中的资料强制写入硬盘中)系统调用，文件系统写操作完成后就会停止内核。若系统的运行级别为0或6，则关闭系统；否则以shutdown指令（加上－h参数）来取代。　
+</p>
+
+
+<p>
+reboot
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+reboot命令的作用是重新启动计算机，它的使用权限是系统管理者。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+reboot [－n] [－w] [－d] [－f] [－i]
+</p>
+
+
+<p>
+3.主要参数
+</p>
+
+
+<p>
+－n: 在重开机前不做将记忆体资料写回硬盘的动作。
+</p>
+
+
+<p>
+－w: 并不会真的重开机，只是把记录写到/var/log/wtmp文件里。
+</p>
+
+
+<p>
+－d: 不把记录写到/var/log/wtmp文件里（－n这个参数包含了－d）。
+</p>
+
+
+<p>
+－i: 在重开机之前先把所有与网络相关的装置停止。
+</p>
+
+
+<p>
+install
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+install命令的作用是安装或升级软件或备份数据，它的使用权限是所有用户。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+(1)install [选项]&#x2026; 来源 目的地
+</p>
+
+
+<p>
+(2)install [选项]&#x2026; 来源&#x2026; 目录
+</p>
+
+
+<p>
+(3)install －d [选项]&#x2026; 目录&#x2026;
+</p>
+
+
+<p>
+在前两种格式中，会将&amp;lt;来源&amp;gt;复制至&amp;lt;目的地&amp;gt;或将多个&amp;lt;来源&amp;gt;文件复制至已存在的&amp;lt;目录&amp;gt;，同时设定权限模式及所有者/所属组。在第三种格式中，会创建所有指定的目录及它们的主目录。长选项必须用的参数在使用短选项时也是必须的。
+</p>
+
+
+<p>
+3.主要参数
+</p>
+
+
+<p>
+－－backup[=CONTROL]：为每个已存在的目的地文件进行备份。
+</p>
+
+
+<p>
+－b：类似 －－backup，但不接受任何参数。
+</p>
+
+
+<p>
+－c：(此选项不作处理)。
+</p>
+
+
+<p>
+－d，－－directory：所有参数都作为目录处理，而且会创建指定目录的所有主目录。
+</p>
+
+
+<p>
+－D：创建&amp;lt;目的地&amp;gt;前的所有主目录，然后将&amp;lt;来源&amp;gt;复制至 &amp;lt;目的地&amp;gt;；在第一种使用格式中有用。
+</p>
+
+
+<p>
+－g，－－group=组：自行设定所属组，而不是进程目前的所属组。
+</p>
+
+
+<p>
+－m，－－mode=模式：自行设定权限模式 (像chmod)，而不是rwxr－xr－x。
+</p>
+
+
+<p>
+－o，－－owner=所有者：自行设定所有者 (只适用于超级用户)。
+</p>
+
+
+<p>
+－p，－－preserve－timestamps：以&amp;lt;来源&amp;gt;文件的访问/修改时间作为相应的目的地文件的时间属性。
+</p>
+
+
+<p>
+－s，－－strip：用strip命令删除symbol table，只适用于第一及第二种使用格式。
+</p>
+
+
+<p>
+－S，－－suffix=后缀：自行指定备份文件的&amp;lt;后缀&amp;gt;。
+</p>
+
+
+<p>
+－v，－－verbose：处理每个文件/目录时印出名称。
+</p>
+
+
+<p>
+－－help：显示此帮助信息并离开。
+</p>
+
+
+<p>
+－－version：显示版本信息并离开。
+</p>
+
+
+<p>
+mount
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+mount命令的作用是加载文件系统，它的用权限是超级用户或/etc/fstab中允许的使用者。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+mount －a [－fv] [－t vfstype] [－n] [－rw] [－F] device dir
+</p>
+
+
+<p>
+3.主要参数
+</p>
+
+
+<p>
+－h：显示辅助信息。
+</p>
+
+
+<p>
+－v：显示信息，通常和－f用来除错。
+</p>
+
+
+<p>
+－a：将/etc/fstab中定义的所有文件系统挂上。
+</p>
+
+
+<p>
+－F：这个命令通常和－a一起使用，它会为每一个mount的动作产生一个行程负责执行。在系统需要挂上大量NFS文件系统时可以加快加载的速度。
+</p>
+
+
+<p>
+－f：通常用于除错。它会使mount不执行实际挂上的动作，而是模拟整个挂上的过程，通常会和－v一起使用。
+</p>
+
+
+<p>
+－t vfstype：显示被加载文件系统的类型。
+</p>
+
+
+<p>
+－n：一般而言，mount挂上后会在/etc/mtab中写入一笔资料，在系统中没有可写入文件系统的情况下，可以用这个选项取消这个动作。
+</p>
+
+
+<p>
+4.应用技巧
+</p>
+
+
+<p>
+在Linux 和Unix系统上，所有文件都是作为一个大型树（以/为根）的一部分访问的。要访问CD-ROM上的文件，需要将CD-ROM设备挂装在文件树中的某个挂装点。如果发行版安装了自动挂装包，那么这个步骤可自动进行。在Linux中，如果要使用硬盘、光驱等储存设备，就得先将它加载，当储存设备挂上了之后，就可以把它当成一个目录来访问。挂上一个设备使用mount命令。在使用mount这个指令时，至少要先知道下列三种信息：要加载对象的文件系统类型、要加载对象的设备名称及要将设备加载到哪个目录下。
+</p>
+
+
+
+<p>
+（1）Linux可以识别的文件系统
+</p>
+
+
+<p>
+◆ Windows 95/98常用的FAT 32文件系统：vfat ；
+</p>
+
+
+<p>
+◆ Win NT/2000 的文件系统：ntfs ；
+</p>
+
+
+<p>
+◆ OS/2用的文件系统：hpfs；
+</p>
+
+
+<p>
+◆ Linux用的文件系统：ext2、ext3；
+</p>
+
+
+<p>
+◆ CD-ROM光盘用的文件系统：iso9660。
+</p>
+
+
+<p>
+虽然vfat是指FAT 32系统，但事实上它也兼容FAT 16的文件系统类型。
+</p>
+
+
+<p>
+（2）确定设备的名称
+</p>
+
+
+<p>
+在Linux 中，设备名称通常都存在/dev里。这些设备名称的命名都是有规则的，可以用“推理”的方式把设备名称找出来。例如，/dev/hda1这个 IDE设备，hd是Hard Disk(硬盘)的，sd是SCSI Device，fd是Floppy Device(或是Floppy Disk?)。a代表第一个设备，通常IDE接口可以接上4个IDE设备(比如4块硬盘)。所以要识别IDE硬盘的方法分别就是hda、hdb、hdc、 hdd。hda1中的“1”代表hda的第一个硬盘分区 (partition)，hda2代表hda的第二主分区，第一个逻辑分区从hda5开始，依此类推。此外，可以直接检查 /var/log/messages文件，在该文件中可以找到计算机开机后系统已辨认出来的设备代号。
+</p>
+
+
+<p>
+（3）查找挂接点
+</p>
+
+
+<p>
+在决定将设备挂接之前，先要查看一下计算机是不是有个/mnt的空目录，该目录就是专门用来当作挂载点(Mount Point)的目录。建议在/mnt里建几个/mnt/cdrom、/mnt/floppy、/mnt/mo等目录，当作目录的专用挂载点。举例而言，如要挂载下列5个设备，其执行指令可能如下 (假设都是Linux的ext2系统，如果是Windows XX请将ext2改成vfat)：
+</p>
+
+
+<p>
+软盘 ===&amp;gt;mount －t ext2 /dev/fd0 /mnt/floppy
+</p>
+
+<p>
+cdrom ===&amp;gt;mount －t iso9660 /dev/hdc /mnt/cdrom
+</p>
+
+<p>
+SCSI cdrom ===&amp;gt;mount －t iso9660 /dev/sdb /mnt/scdrom
+</p>
+
+<p>
+SCSI cdr ===&amp;gt;mount －t iso9660 /dev/sdc /mnt/scdr
+</p>
+
+
+<p>
+不过目前大多数较新的Linux发行版本（包括红旗 Linux、中软Linux、Mandrake Linux等）都可以自动挂装文件系统，但Red Hat Linux除外。
+</p>
+
+
+<p>
+umount
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+umount命令的作用是卸载一个文件系统，它的使用权限是超级用户或/etc/fstab中允许的使用者。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+unmount －a [－fFnrsvw] [－t vfstype] [－n] [－rw] [－F] device dir
+</p>
+
+
+<p>
+3.使用说明
+</p>
+
+
+<p>
+umount 命令是mount命令的逆操作，它的参数和使用方法和mount命令是一样的。Linux挂装CD-ROM后，会锁定CD—ROM，这样就不能用CD- ROM面板上的Eject按钮弹出它。但是，当不再需要光盘时，如果已将/cdrom作为符号链接，请使用umount/cdrom来卸装它。仅当无用户正在使用光盘时，该命令才会成功。该命令包括了将带有当前工作目录当作该光盘中的目录的终端窗口。
+</p>
+
+
+
+<p>
+chsh
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+chsh命令的作用是更改使用者shell设定，它的使用权限是所有使用者。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+chsh [ －s ] [ －list] [ －－help ] [ －v ] [ username ]
+</p>
+
+
+<p>
+3.主要参数
+</p>
+
+
+<p>
+－l：显示系统所有Shell类型。
+</p>
+
+
+<p>
+－v：显示Shell版本号。
+</p>
+
+
+<p>
+4.应用技巧
+</p>
+
+
+<p>
+前面介绍了Linux下有多种Shell，一般缺省的是Bash，如果想更换Shell类型可以使用chsh命令。先输入账户密码，然后输入新Shell类型，如果操作正确系统会显示“Shell change”。其界面一般如下：
+</p>
+
+
+<p>
+Changing fihanging shell for **
+</p>
+
+<p>
+Password:
+</p>
+
+<p>
+New shell [/bin/bash]: /bin/tcsh
+</p>
+
+
+<p>
+上面代码中，[ ]内是目前使用的Shell。普通用户只能修改自己的Shell，超级用户可以修改全体用户的Shell。要想查询系统提供哪些Shell，可以使用chsh -l 命令，见图1所示。
+</p>
+
+
+<p>
+图1 系统可以使用的Shell类型
+</p>
+
+
+<p>
+从图1中可以看到，笔者系统中可以使用的Shell有bash（缺省）、csh、sh、tcsh四种。
+</p>
+
+
+
+<p>
+exit
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+exit命令的作用是退出系统，它的使用权限是所有用户。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+exit
+</p>
+
+
+<p>
+3.参数
+</p>
+
+
+<p>
+exit命令没有参数，运行后退出系统进入登录界面。
+</p>
+
+
+
+<p>
+last
+</p>
+
+
+<p>
+1.作用
+</p>
+
+
+<p>
+last命令的作用是显示近期用户或终端的登录情况，它的使用权限是所有用户。通过last命令查看该程序的log，管理员可以获知谁曾经或企图连接系统。
+</p>
+
+
+<p>
+2.格式
+</p>
+
+
+<p>
+1ast[—n][－f file][－t tty] [—h 节点][－I —IP][—1][－y][1D]
+</p>
+
+
+<p>
+3.主要参数
+</p>
+
+
+<p>
+－n：指定输出记录的条数。
+</p>
+
+
+<p>
+－f file：指定用文件file作为查询用的log文件。
+</p>
+
+
+<p>
+－t tty：只显示指定的虚拟控制台上登录情况。
+</p>
+
+
+<p>
+－h 节点：只显示指定的节点上的登录情况。
+</p>
+
+
+<p>
+－i IP：只显示指定的IP上登录的情况。
+</p>
+
+
+<p>
+－1：用IP来显示远端地址。
+</p>
+
+
+<p>
+－y：显示记录的年、月、日。
+</p>
+
+
+<p>
+－ID：知道查询的用户名。
+</p>
+
+
+<p>
+－x:显示系统关闭、用户登录和退出的历史。
+</p>
+
+
+<p>
+动手练习
+</p>
+
+
+<p>
+上面介绍了Linux安装和登录命令，下面介绍几个实例，动手练习一下刚才讲过的命令。
+</p>
+
+
+<p>
+1.一次运行多个命令
+</p>
+
+
+<p>
+在一个命令行中可以执行多个命令，用分号将各个命令隔开即可，例如：
+</p>
+
+
+<p>
+＃last －x；halt
+</p>
+
+
+<p>
+上面代码表示在显示系统关闭、用户登录和退出的历史后关闭计算机。
+</p>
+
+
+<p>
+2.利用mount挂装文件系统访问Windows系统
+</p>
+
+
+<p>
+许多Linux发行版本现在都可以自动加载Vfat分区来访问Windows系统，而Red Hat各个版本都没有自动加载Vfat分区，因此还需要进行手工操作。
+</p>
+
+
+<p>
+mount 可以将Windows分区作为Linux的一个“文件”挂接到Linux的一个空文件夹下，从而将Windows的分区和/mnt这个目录联系起来。因此，只要访问这个文件夹就相当于访问该分区了。首先要在/mnt下建立winc文件夹，在命令提示符下输入下面命令：
+</p>
+
+
+<p>
+＃mount -t vfat /dev/hda1 /mnt/winc
+</p>
+
+
+<p>
+即表示将Windows的C分区挂到Liunx的/mnt/winc目录下。这时，在/mnt/winc目录下就可以看到Windows中C盘的内容了。使用类似的方法可以访问Windows系统的D、E盘。在Linux系统显示Windows的分区一般顺序这样的：hda1为C盘、hda5为D盘、 hda6为E盘……以此类推。上述方法可以查看Windows系统有一个很大的问题，就是Windows中的所有中文文件名或文件夹名全部显示为问号 “？”，而英文却可以正常显示。我们可以通过加入一些参数让它显示中文。还以上面的操作为例，此时输入命令：
+</p>
+
+
+<p>
+＃mount -t vfat -o iocharset=cp936 /dev/hda1 /mnt/winc
+</p>
+
+
+<p>
+现在它就可以正常显示中文了。
+</p>
+
+
+<p>
+3.使用mount加挂闪盘上的文件系统
+</p>
+
+
+<p>
+在Linux下使用闪盘非常简单。Linux对USB设备有很好的支持，当插入闪盘后，闪盘被识别为一个SCSI盘，通常输入以下命令：
+</p>
+
+
+<p>
+＃ mount /dev/sda1 /usb
+</p>
+
+
+<p>
+就能够加挂闪盘上的文件系统。
+</p>
+
+
+<p>
+小知识
+</p>
+
+
+<p>
+Linux命令与Shell
+</p>
+
+
+<p>
+所谓Shell，就是命令解释程序，它提供了程序设计接口，可以使用程序来编程。学习Shell对于Linux初学者理解Linux系统是非常重要的。 Linux系统的Shell作为操作系统的外壳，为用户提供了使用操作系统的接口。Shell是命令语言、命令解释程序及程序设计语言的统称，是用户和 Linux内核之间的接口程序。如果把Linux内核想象成一个球体的中心，Shell就是围绕内核的外层。当从Shell或其它程序向Linux传递命令时，内核会做出相应的反应。Shell在Linux系统的作用和MS DOS下的COMMAND.COM和Windows 95/98 的 explorer.exe相似。Shell虽然不是系统核心的一部分，只是系统核心的一个外延，但它能够调用系统内核的大部分功能。因此，可以说 Shell是Unux/Linux最重要的实用程序。
+</p>
+
+
+<p>
+Linux中的Shell有多种类型，其中最常用的是Bourne Shell(sh)、C Shell(csh)和Korn Shell(ksh)。大多数Linux发行版本缺省的Shell是Bourne Again Shell，它是Bourne Shell的扩展，简称bash，与Bourne Shell完全向后兼容，并且在Bourne Shell的基础上增加了很多特性。bash放在/bin/bash中，可以提供如命令补全、命令编辑和命令历史表等功能。它还包含了很多C Shell和Korn Shell中的优点，有灵活和强大的编程接口，同时又有很友好的用户界面。Linux系统中200多个命令中有40个是bash的内部命令，主要包括 exit、less、lp、kill、 cd、pwd、fc、fg等
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2013-02-16 Sat</p>
+<p class="author">Author: YONG</p>
+<p class="date">Created: 2015-09-22 Tue 20:02</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
