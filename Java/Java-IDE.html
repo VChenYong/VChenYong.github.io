@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2015-10-10 Sat 20:12 -->
+<!-- 2015-10-23 Fri 22:14 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>JAVA IDE</title>
@@ -94,7 +94,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+<link rel="stylesheet" type="text/css" href="../styles/style.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -302,9 +302,277 @@ for the JavaScript code in this tag.
 <td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
+<tbody>
+<tr>
+<td class="org-left">Refactoring</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Alt+Shift+R</td>
+<td class="org-left">Rename selected element and all references</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Alt+Shift+V</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Ctrl+Shift+C</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Alt+Shift+M</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Alt+Shift+L</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Alt+Shift+I</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
 </table>
+
+
+
+<ol class="org-ol">
+<li>Manage Files and Projects</li>
+</ol>
+<pre class="example">
+Ctrl+N   	Create new project using the Wizard
+Ctrl+Alt+N 	Create new project, file, class, etc.
+Alt+f, then . 	Open project, file, etc.
+Ctrl+Shift+R 	Open Resource (file, folder or project)
+Alt+Enter 	Show and access file properties
+Ctrl+S 	        Save current file
+Ctrl+Shift+S 	Save all files
+Ctrl+W 	        Close current file
+Ctrl+Shift+W 	Close all files
+F5 	        Refresh content of selected element with local file system
+</pre>
+
+
+
+<ol class="org-ol">
+<li>Editor Window</li>
+</ol>
+<p>
+Focus/ cursor must be in Editor Window for these to work.
+</p>
+<pre class="example">
+F12 	                        Jump to Editor Window
+Ctrl+Page Down/Ctrl+Page Up 	Switch to next editor / switch to previous editor
+Ctrl+M 	                        Maximize or un-maximize current Editor Window (also works for other Windows)
+Ctrl+E 	                        Show list of open Editors. Use arrow keys and enter to switch
+Ctrl+F6/Ctrl+Shift+F6 	        Show list of open Editors. Similar to ctrl+e but switches immediately upon release of ctrl
+Alt+Arrow Left/Alt+Arrow Right 	Go to previous / go to next Editor Window
+Alt+- 	                        Open Editor Window Option menu
+Ctrl+F10 	                Show view menu (features available on left vertical bar: breakpoints, bookmarks, line numbers, …)
+Ctrl+F10, then n 	        Show or hide line numbers
+Ctrl+Shift+Q 	                Show or hide the diff column on the left (indicates changes since last save)
+</pre>
+
+
+<ol class="org-ol">
+<li>Navigate in Editor</li>
+</ol>
+<pre class="example">
+Home/End 	                        Jump to beginning / jump to end of indention. Press home twice to jump to beginning of line
+Ctrl+Home/End 	                        Jump to beginning / jump to end of source
+Ctrl+Arrow Right/Arrow Left 	        Jump one word to the left / one word to the right
+Ctrl+Shift+Arrow Down/Arrow Up 	        Jump to previous / jump to next method
+Ctrl+L 	                                Jump to Line Number. To hide/show line numbers, press ctrl+F10 and select 'Show Line Numbers'
+Ctrl+Q 	                                Jump to last location edited
+Ctrl+./Ctrl+, 	                        Jump to next / jump to previous compiler syntax warning or error
+Ctrl+Shift+P 	                        With a bracket selected: jump to the matching closing or opening bracket
+Ctrl+[+]/Ctrl+- on numeric keyboard 	Collapse / Expand current method or class
+Ctrl+[/]/Ctrl+* on numeric keyboard 	Collapse / Expand all methods or classes
+Ctrl+Arrow Down/Ctrl+Arrow Up 	        Scroll Editor without changing cursor position
+Alt+Page Up/Alt+Page Down 	        Next Sub-Tab / Previous Sub-Tab
+</pre>
+
+
+
+<ol class="org-ol">
+<li>Select Text</li>
+</ol>
+<pre class="example">
+Shift+Arrow Right/Arrow Left 	        Expand selection by one character to the left / to the right
+Ctrl+Shift+Arrow Right/Arrow Left 	Expand selection to next / previous word
+Shift+Arrow Down/Arrow Up 	        Expand selection by one line down / one line up
+Shift+End/Home 	                        Expand selection to end / to beginning of line
+Ctrl+A 	                                Select all
+Alt+Shift+Arrow Up 	                Expand selection to current element (e.g. current one-line expression or content within brackets)
+Alt+Shift+Arrow Left/Arrow Right 	Expand selection to next / previous element
+Alt+Shift+Arrow Down 	                Reduce previously expanded selection by one step
+</pre>
+
+
+<ol class="org-ol">
+<li>Edit Text</li>
+</ol>
+<pre class="example">
+Ctrl+C/Ctrl+X/Ctrl+V 	   		 Cut, copy and paste
+Ctrl+Z					 Undo last action
+Ctrl+Y					 Redo last (undone) action
+Ctrl+D					 Delete Line
+Alt+Arrow Up/Arrow Down			 Move current line or selection up or down
+Ctrl+Alt+Arrow Up/Ctrl+Alt+Arrow Down/ 	 Duplicate current line or selection up or down
+Ctrl+Delete 	                         Delete next word
+Ctrl+Backspace 	                         Delete previous word
+Shift+Enter 	                         Enter line below current line
+Shift+Ctrl+Enter 	                 Enter line above current line
+Insert 	                                 Switch between insert and overwrite mode
+Shift+Ctrl+Y 	                         Change selection to all lower case
+Shift+Ctrl+X 	                         Change selection to all upper case
+</pre>
+
+
+<ol class="org-ol">
+<li>Search and Replace</li>
+</ol>
+<pre class="example">
+Ctrl+F 	                Open find and replace dialog
+Ctrl+K/Ctrl+Shift+K 	Find previous / find next occurrence of search term (close find window first)
+Ctrl+H 	                Search Workspace (Java Search, Task Search, and File Search)
+Ctrl+J/Ctrl+Shift+J 	Incremental search forward / backwards. Type search term after pressing ctrl+j, there is now search window
+Ctrl+Shift+O 	        Open a resource search dialog to find any class
+</pre>
+
+
+<ol class="org-ol">
+<li>Indentions and Comments</li>
+</ol>
+<pre class="example">
+Tab/Shift+Tab 	Increase / decrease indent of selected text
+Ctrl+I 	        Correct indention of selected text or of current line
+Ctrl+Shift+F 	Autoformat all code in Editor using code formatter
+Ctrl+/ 	        Comment / uncomment line or selection ( adds '//' )
+Ctrl+Shift+/ 	Add Block Comment around selection ( adds '/... */' )
+Ctrl+Shift+\ 	Remove Block Comment
+Alt+Shift+J 	Add Element Comment ( adds '/** ... */')
+</pre>
+
+
+<ol class="org-ol">
+<li>Editing Source Code</li>
+</ol>
+<pre class="example">
+Ctrl+Space 	        Opens Content Assist (e.g. show available methods or field names)
+Ctrl+1 	                Open Quick Fix and Quick Assist
+Alt+/ 	                Propose word completion (after typing at least one letter). Repeatedly press alt+/ until reaching correct name
+Ctrl+Shift+Insert 	Deactivate or activate Smart Insert Mode (automatic indention, automatic brackets, etc.)
+</pre>
+
+
+<ol class="org-ol">
+<li>Code Information</li>
+</ol>
+<pre class="example">
+Ctrl+O                  Show code outline / structure
+F2                      Open class, method, or variable information (tooltip text)
+F3                      Open Declaration: Jump to Declaration of selected class, method, or parameter
+F4                      Open Type Hierarchy window for selected item
+Ctrl+T                  Show / open Quick Type Hierarchy for selected item
+Ctrl+Shift+T            Open Type in Hierarchy
+Ctrl+Alt+H              Open Call Hierarchy
+Ctrl+U 	                Find occurrences of expression in current file
+Ctrl+move over method 	Open Declaration or Implementation
+</pre>
+
+
+<ol class="org-ol">
+<li>Refactoring</li>
+</ol>
+<pre class="example">
+Alt+Shift+R 	Rename selected element and all references
+Alt+Shift+V 	Move selected element to other class or file (With complete method or class selected)
+Ctrl+Shift+C 	Change method signature (with method name selected)
+Alt+Shift+M 	Extract selection to method
+Alt+Shift+L 	Extract local variable: Create and assigns a variable from a selected expression
+Alt+Shift+I 	Inline selected local variables, methods, or constants if possible (replaces variable with its declarations/ assignment and puts it directly into the statements)
+</pre>
+
+
+<ol class="org-ol">
+<li>Run and Debug</li>
+</ol>
+<pre class="example">
+Ctrl+F11 	Save and launch application (run)
+F11             Debug
+F5              Step Into function
+F6              Next step (line by line)
+F7              Step out
+F8              Skip to next Breakpoint
+</pre>
+
+
+<ol class="org-ol">
+<li>The Rest</li>
+</ol>
+<pre class="example">
+Ctrl+F7/Ctrl+Shift+F7 	Switch forward / backward between views (panels). Useful for switching back and forth between Package Explorer and Editor.
+Ctrl+F8/Ctrl+Shift+F8 	Switch forward / backward between perspectives
+Ctrl+P           	Print
+F1 	                Open Eclipse Help
+Shift+F10 	        Show Context Menu right click with mouse
+</pre>
+
+
+<ol class="org-ol">
+<li>Team (SVN Subversive)</li>
+</ol>
+<pre class="example">
+Ctrl+Alt+S 	Synchronize with Repository
+Ctrl+Alt+C 	Commit
+Ctrl+Alt+U 	Update
+Ctrl+Alt+D 	Update to Revision
+Ctrl+Alt+E 	Merge
+Ctrl+Alt+T 	Show Properties
+Ctrl+Alt+I 	Add to svn:ignore
+</pre>
 </div>
 </div>
+
 <div id="outline-container-orgheadline3" class="outline-3">
 <h3 id="orgheadline3"><span class="section-number-3">1.2</span> Configurations</h3>
 <div class="outline-text-3" id="text-1-2">
@@ -313,12 +581,6 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-</div>
-<div id="postamble" class="status">
-<p class="date">Date: 2013-02-16 Sat</p>
-<p class="author">Author: YONG</p>
-<p class="date">Created: 2015-10-10 Sat 20:12</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
