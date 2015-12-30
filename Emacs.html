@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2015-10-23 Fri 22:14 -->
+<!-- 2015-12-30 Wed 14:41 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Notes</title>
@@ -294,13 +294,14 @@ C-x 0
 
 <col  class="org-left" />
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="org-left">key binding</td>
-<td class="org-left">command</td>
-<td class="org-left">note</td>
+<th scope="col" class="org-left">key binding</th>
+<th scope="col" class="org-left">command</th>
+<th scope="col" class="org-left">note</th>
 </tr>
-
+</thead>
+<tbody>
 <tr>
 <td class="org-left">C-X h</td>
 <td class="org-left">select all</td>
@@ -317,6 +318,12 @@ C-x 0
 <td class="org-left">C-g C-_</td>
 <td class="org-left">Redo</td>
 <td class="org-left">reverse direction</td>
+</tr>
+
+<tr>
+<td class="org-left">c-x u</td>
+<td class="org-left">Redo tree</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 
 <tr>
@@ -342,21 +349,232 @@ C-x 0
 <td class="org-left">Decrease  fontsize</td>
 <td class="org-left">&#xa0;</td>
 </tr>
-
-<tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
 </tbody>
 </table>
 </div>
 </div>
 
 
+
 <div id="outline-container-orgheadline10" class="outline-3">
 <h3 id="orgheadline10"><span class="section-number-3">2.4</span> dried mode</h3>
 <div class="outline-text-3" id="text-2-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Key Binding</th>
+<th scope="col" class="org-left">command</th>
+<th scope="col" class="org-left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">C-x d</td>
+<td class="org-left">to start dired</td>
+<td class="org-left">Entering Dired</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x 4 d</td>
+<td class="org-left">To display the Dired buffer in another window</td>
+<td class="org-left">Entering Dired</td>
+</tr>
+
+<tr>
+<td class="org-left">C-x 5 d</td>
+<td class="org-left">displays the Dired buffer in a separate frame</td>
+<td class="org-left">Entering Dired</td>
+</tr>
+
+<tr>
+<td class="org-left">q</td>
+<td class="org-left">quit-window</td>
+<td class="org-left">Entering Dired</td>
+</tr>
+
+<tr>
+<td class="org-left">s</td>
+<td class="org-left">to toggle sorting order(by date or normal)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">i</td>
+<td class="org-left">to insert a directory into the current dired buffer.</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">creates new directories</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">m</td>
+<td class="org-left">mark a file</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">u</td>
+<td class="org-left">unmark</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">U</td>
+<td class="org-left">unmark all files</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">R</td>
+<td class="org-left">rename</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">g</td>
+<td class="org-left">refersh</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">d</td>
+<td class="org-left">Flag this file for deletion (dired-flag-file-deletion).</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">x</td>
+<td class="org-left">Delete files flagged for deletion (dired-do-flagged-delete).</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% u</td>
+<td class="org-left">Rename each of the selected files to an upper-case name (dired-upcase)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% l</td>
+<td class="org-left">Rename each of the selected files to an lower-case name (dired-upcase)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% R from RET to RET</td>
+<td class="org-left">Rename by regular-expression substitution from the name of the old file</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% C from RET to RET</td>
+<td class="org-left">copy by regular-expression substitution from the name of the old file</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% C from RET to RET</td>
+<td class="org-left">make hard links by regular-expression substitution</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% C from RET to RET</td>
+<td class="org-left">make soft links by regular-expression substitution file</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% m regexp RET</td>
+<td class="org-left">Mark  all files by regular expression regexp (dired-mark-files-regexp).</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">* % regexp RET</td>
+<td class="org-left">same as above</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">% g regexp RET</td>
+<td class="org-left">Mark (with ‘*’) all files whose contents contain a match for the</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">regular expression regexp(dired-mark-files-containing-regexp)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">* *</td>
+<td class="org-left">Mark all executable files with ‘*’ (dired-mark-executables).</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">* /</td>
+<td class="org-left">Mark all files which are directories, except for . and .. (dired-mark-directories).</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">* s</td>
+<td class="org-left">Mark all the files in the current subdirectory, aside from . and .. (dired-mark-subdir-files).</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-s a C-s</td>
+<td class="org-left">searches incrementally through all marked files.</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">w</td>
+<td class="org-left">copies marked (or current) items into the kill ring.</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">$</td>
+<td class="org-left">Hide or show the subdirectory</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">M-$</td>
+<td class="org-left">Hide all subdirectories in this Dired buffer, leaving only their header lines</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1198,7 +1416,7 @@ You can customize this behaviour with org-startup-truncated. Type F1-v org-start
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2015-10-23 Fri 22:14</p>
+<p class="date">Created: 2015-12-30 Wed 14:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
