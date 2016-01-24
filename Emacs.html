@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2015-12-30 Wed 14:41 -->
+<!-- 2016-01-23 Sat 21:30 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Notes</title>
@@ -185,6 +185,14 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgheadline28">4. Install</a></li>
 <li><a href="#orgheadline29">5. input method</a></li>
+<li><a href="#orgheadline34">6. Misc</a>
+<ul>
+<li><a href="#orgheadline30">6.1. tabbar</a></li>
+<li><a href="#orgheadline31">6.2. hippie-expand</a></li>
+<li><a href="#orgheadline32">6.3. yas-expand</a></li>
+<li><a href="#orgheadline33">6.4. switch-window</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1412,11 +1420,59 @@ You can customize this behaviour with org-startup-truncated. Type F1-v org-start
 </pre>
 </div>
 </div>
+
+
+
+<div id="outline-container-orgheadline34" class="outline-2">
+<h2 id="orgheadline34"><span class="section-number-2">6</span> Misc</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-orgheadline30" class="outline-3">
+<h3 id="orgheadline30"><span class="section-number-3">6.1</span> tabbar</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+(global-set-key (kbd "C-c n") 'tabbar-forward)
+(global-set-key (kbd "C-c p") 'tabbar-backward)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline31" class="outline-3">
+<h3 id="orgheadline31"><span class="section-number-3">6.2</span> hippie-expand</h3>
+<div class="outline-text-3" id="text-6-2">
+<p>
+(global-set-key (kbd "M-/") 'hippie-expand)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline32" class="outline-3">
+<h3 id="orgheadline32"><span class="section-number-3">6.3</span> yas-expand</h3>
+<div class="outline-text-3" id="text-6-3">
+<p>
+(define-key yas-minor-mode-map (kbd "&lt;tab&gt;") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand )
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33"><span class="section-number-3">6.4</span> switch-window</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+(global-set-key (kbd "C-x o") 'switch-window)
+(global-set-key (kbd "C-x 1") 'delete-other-window)
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2015-12-30 Wed 14:41</p>
+<p class="date">Created: 2016-01-23 Sat 21:30</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
