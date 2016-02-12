@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-02-10 Wed 22:13 -->
+<!-- 2016-02-11 Thu 22:00 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Scala.org</title>
@@ -149,7 +149,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline16">1. Scala Note</a>
+<li><a href="#orgheadline19">1. Scala Note</a>
 <ul>
 <li><a href="#orgheadline9">1.1. Scala Functions</a>
 <ul>
@@ -174,6 +174,12 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline14">1.4.1. Stream construction</a></li>
 </ul>
 </li>
+<li><a href="#orgheadline18">1.5. function</a>
+<ul>
+<li><a href="#orgheadline16">1.5.1. Function Literals</a></li>
+<li><a href="#orgheadline17">1.5.2. Functions as first class values</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -184,8 +190,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgheadline16" class="outline-2">
-<h2 id="orgheadline16"><span class="section-number-2">1</span> Scala Note</h2>
+<div id="outline-container-orgheadline19" class="outline-2">
+<h2 id="orgheadline19"><span class="section-number-2">1</span> Scala Note</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-orgheadline9" class="outline-3">
 <h3 id="orgheadline9"><span class="section-number-3">1.1</span> Scala Functions</h3>
@@ -348,7 +354,6 @@ test
 </div></li>
 
 
-
 <li><a id="orgheadline7"></a>question :<br  /><div class="outline-text-5" id="text-1-1-4-2">
 <ul class="org-ul">
 <li>different between def and Val</li>
@@ -433,12 +438,78 @@ test#+STYLE: &lt;link rel="stylesheet" type="text/css" href="./styles/test.css"/
 </div>
 </div>
 </div>
+<div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18"><span class="section-number-3">1.5</span> function</h3>
+<div class="outline-text-3" id="text-1-5">
+</div><div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">1.5.1</span> Function Literals</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ul class="org-ul">
+<li>Function literals are anonymous &#x2013; they don't have a name by default, but you can give them a name by binding them to a variable.</li>
+<li>A Function is a mapping that takes one or more arguments and produces a single result
+(typically by a function definition that specify how the result can by calculated solely in terms of its arguments).</li>
+
+<li>example of function literal</li>
+</ul>
+<pre class="example">
+(  x :Int,  y :Int  )  =&gt;  x  +  y
+</pre>
+
+<ul class="org-ul">
+<li>question: what is the type of result of the function?</li>
+<li>what is the type of function itself?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline17" class="outline-4">
+<h4 id="orgheadline17"><span class="section-number-4">1.5.2</span> Functions as first class values</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ul class="org-ul">
+<li>a Function is only allowed to depend on the given parameters</li>
+<li>a method may refer to the internal state of the object it’s a member of or – even worse – may alter the internal state of that object. which can be seen as an evil side effect</li>
+
+<li>every function has a type</li>
+<li>a method is only a member of a certain object. The object itself is of course an instance of a certain type, but the method itself has no type</li>
+
+<li>Since function has a type like  any other types, so you can pass function as parameters to a function or as a result of a function.</li>
+<li>method NO</li>
+
+<li>function canbe seen as a discrete value in its own right</li>
+<li>method NO</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-scala">//error: recursive value power needs type
+val power  =  (  base: Int,  exp :Int  )  =&gt;  if(  exp &lt;= 1  ) base  else  base * power(  base,  exp - 1  )
+</pre>
+</div>
+
+
+<div class="org-src-container">
+
+<pre class="src src-scala">//val power  =  (  base: Int,  exp :Int  ):Int  =&gt;  if(  exp &lt;= 1  ) base  else  base * power(  base,  exp - 1  )
+val power :(Int,Int)=&gt;Int = 
+  (base:Int,exp:Int)=&gt;
+  if(exp&lt;=1)  base else base* power(base,exp-1);
+
+power(2,8)
+</pre>
+</div>
+
+
+<p>
+<b>Also some drawbacks we have to speak about, since Scala is an object-functional langage which therefore has to take some compromises. What about true variables in conjunction with Functions? Can we apply some mutable objects as arguments to Functions?</b>
+</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-02-10 Wed 22:13</p>
+<p class="date">Created: 2016-02-11 Thu 22:00</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
