@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-02-11 Thu 22:00 -->
+<!-- 2016-03-15 Tue 04:18 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Notes</title>
@@ -185,14 +185,16 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgheadline29">4. Install</a></li>
 <li><a href="#orgheadline30">5. input method</a></li>
-<li><a href="#orgheadline35">6. Misc</a>
+<li><a href="#orgheadline36">6. Misc</a>
 <ul>
 <li><a href="#orgheadline31">6.1. tabbar</a></li>
 <li><a href="#orgheadline32">6.2. hippie-expand</a></li>
 <li><a href="#orgheadline33">6.3. yas-expand</a></li>
 <li><a href="#orgheadline34">6.4. switch-window</a></li>
+<li><a href="#orgheadline35">6.5. How to select a column of a table in emacs org mode</a></li>
 </ul>
 </li>
+<li><a href="#orgheadline37">7. HideShow minor mode</a></li>
 </ul>
 </div>
 </div>
@@ -982,7 +984,7 @@ With point anywhere on the first line, I simply press M-j multiple times to pull
 
 <li><a id="orgheadline17"></a>cua-mode<br  /><div class="outline-text-5" id="text-3-1-2-3">
 <p>
-[M-a]: 
+[M-a]:
 [M-b]: 用空格(tabs或者spaces)替换所有rect中的字符
 [M-c]: 去掉所有行左侧的空格
 [M-f]: 用单个字符替换所有rect中的字符(提示输入一个字符)
@@ -1186,18 +1188,18 @@ The following template&lt; selectors are currently supported.
 </p></li>
 </ul>
 <pre class="example">
-- s	#+BEGIN_SRC ... #+END_SRC 
+- s	#+BEGIN_SRC ... #+END_SRC
 - e	#+BEGIN_EXAMPLE ... #+END_EXAMPLE
-- q	#+BEGIN_QUOTE ... #+END_QUOTE 
-- v	#+BEGIN_VERSE ... #+END_VERSE 
-- c	#+BEGIN_CENTER ... #+END_CENTER 
-- l	#+BEGIN_LaTeX ... #+END_LaTeX 
-- L	#+LaTeX: 
-- h	#+BEGIN_HTML ... #+END_HTML 
-- H	#+HTML: 
-- a	#+BEGIN_ASCII ... #+END_ASCII 
-- A	#+ASCII: 
-- i	#+INDEX: line 
+- q	#+BEGIN_QUOTE ... #+END_QUOTE
+- v	#+BEGIN_VERSE ... #+END_VERSE
+- c	#+BEGIN_CENTER ... #+END_CENTER
+- l	#+BEGIN_LaTeX ... #+END_LaTeX
+- L	#+LaTeX:
+- h	#+BEGIN_HTML ... #+END_HTML
+- H	#+HTML:
+- a	#+BEGIN_ASCII ... #+END_ASCII
+- A	#+ASCII:
+- i	#+INDEX: line
 - I	#+INCLUDE: line
 </pre>
 
@@ -1361,7 +1363,7 @@ change the default location for   .emacs.d folder
 </p>
 
 <pre class="example">
-set the environment Varibale 
+set the environment Varibale
 
 HOME --&gt; location (C:\YONG\tools\emacs)
 </pre>
@@ -1389,35 +1391,35 @@ French caracters
 2 French：
 
 à
-    C-x 8 `a 
+    C-x 8 `a
 â
-    C-x 8 ^a 
+    C-x 8 ^a
 ä
-    C-x 8 "a 
+    C-x 8 "a
 æ
-    C-x 8 RET LATIN SMALL LETTER A E 
+    C-x 8 RET LATIN SMALL LETTER A E
 é
-    C-x 8 'e 
+    C-x 8 'e
 è
-    C-x 8 `e 
+    C-x 8 `e
 ê
-    C-x 8 ^e 
+    C-x 8 ^e
 ë
-    C-x 8 "e 
+    C-x 8 "e
 î
-    C-x 8 ^i 
+    C-x 8 ^i
 ï
-    C-x 8 "i 
+    C-x 8 "i
 ô
-    C-x 8 ^o 
+    C-x 8 ^o
 œ
-    C-x 8 RET 153 RET 
+    C-x 8 RET 153 RET
 ù
-    C-x 8 `u 
+    C-x 8 `u
 û
-    C-x 8 ^u 
+    C-x 8 ^u
 ü
-    C-x 8 "u 
+    C-x 8 "u
 ç
     C-x 8 ,c
 </pre>
@@ -1436,8 +1438,8 @@ You can customize this behaviour with org-startup-truncated. Type F1-v org-start
 
 
 
-<div id="outline-container-orgheadline35" class="outline-2">
-<h2 id="orgheadline35"><span class="section-number-2">6</span> Misc</h2>
+<div id="outline-container-orgheadline36" class="outline-2">
+<h2 id="orgheadline36"><span class="section-number-2">6</span> Misc</h2>
 <div class="outline-text-2" id="text-6">
 </div><div id="outline-container-orgheadline31" class="outline-3">
 <h3 id="orgheadline31"><span class="section-number-3">6.1</span> tabbar</h3>
@@ -1480,12 +1482,55 @@ You can customize this behaviour with org-startup-truncated. Type F1-v org-start
 </p>
 </div>
 </div>
+
+<div id="outline-container-orgheadline35" class="outline-3">
+<h3 id="orgheadline35"><span class="section-number-3">6.5</span> How to select a column of a table in emacs org mode</h3>
+<div class="outline-text-3" id="text-6-5">
+<pre class="example">
+   1. To create your rectangle, put your cursor at one of the corners of the rectangle you want to create.
+   2. Use C-SPC, or whatever you have set-mark-command set to.
+   3. Place your cursor at the diagonal corner of your rectangle.
+   4. Use C-x r rr to copy the rectangle to the register named r
+   5. Use C-x r ir to insert the rectangle that is being held in the register named r.
+
+Following this process will copy and insert the columns that you want. You may need to repeat this process if the columns are not adjacent.
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline37" class="outline-2">
+<h2 id="orgheadline37"><span class="section-number-2">7</span> HideShow minor mode</h2>
+<div class="outline-text-2" id="text-7">
+<pre class="example">
+C-c @ C-h
+Hide the current block (hs-hide-block).
+
+C-c @ C-s
+Show the current block (hs-show-block).
+
+C-c @ C-c
+Either hide or show the current block (hs-toggle-hiding).
+
+S-Mouse-2
+Toggle hiding for the block you click on (hs-mouse-toggle-hiding).
+
+C-c @ C-M-h
+Hide all top-level blocks (hs-hide-all).
+
+C-c @ C-M-s
+Show all blocks in the buffer (hs-show-all).
+
+C-c @ C-l
+Hide all blocks n levels below this block (hs-hide-level).
+</pre>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-02-11 Thu 22:00</p>
+<p class="date">Created: 2016-03-15 Tue 04:18</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

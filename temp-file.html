@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-02-11 Thu 22:00 -->
+<!-- 2016-03-15 Tue 04:18 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>temp notes</title>
@@ -150,7 +150,14 @@ for the JavaScript code in this tag.
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#orgheadline1">1. org mode babel</a></li>
-<li><a href="#orgheadline2">2. ubuntu with typesafe</a></li>
+<li><a href="#orgheadline4">2. ubuntu with typesafe</a>
+<ul>
+<li><a href="#orgheadline2">2.1. home/yong/.bashrc</a></li>
+<li><a href="#orgheadline3">2.2. create symlink</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline5">3. install java in Ubuntu</a></li>
+<li><a href="#orgheadline6">4. install node js</a></li>
 </ul>
 </div>
 </div>
@@ -177,17 +184,12 @@ sudo ln -s /home/yong/Linux/TypeSafe/scala-2.11.6/bin/scala /usr/bin/scala
 </div>
 
 
-
-
-
-
-<div id="outline-container-orgheadline2" class="outline-2">
-<h2 id="orgheadline2"><span class="section-number-2">2</span> ubuntu with typesafe</h2>
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4"><span class="section-number-2">2</span> ubuntu with typesafe</h2>
 <div class="outline-text-2" id="text-2">
-<p>
-home/yong/.bashrc
-</p>
-
+</div><div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">2.1</span> home/yong/.bashrc</h3>
+<div class="outline-text-3" id="text-2-1">
 <pre class="example">
 export PATH=/home/yong/Linux/TypeSafe/sbt/bin:$PATH
 export SCALA_HOME=/home/yong/Linux/TypeSafe/scala-2.11.6
@@ -197,11 +199,49 @@ export PATH=$PATH:/usr/bin
 </pre>
 </div>
 </div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">2.2</span> create symlink</h3>
+<div class="outline-text-3" id="text-2-2">
+<pre class="example">
+sudo ln -s /home/yong/Linux/TypeSafe/scala/bin/scala /usr/bin/scala
+sudo ln -s /home/yong/Linux/TypeSafe/scala/bin/scalac /usr/bin/scalac
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5"><span class="section-number-2">3</span> install java in Ubuntu</h2>
+<div class="outline-text-2" id="text-3">
+<pre class="example">
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt-get update
+$ sudo apt-get install oracle-java8-installer
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6"><span class="section-number-2">4</span> install node js</h2>
+<div class="outline-text-2" id="text-4">
+<pre class="example">
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+// version node js version
+nodejs --version
+</pre>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: date</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-02-11 Thu 22:00</p>
+<p class="date">Created: 2016-03-15 Tue 04:18</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

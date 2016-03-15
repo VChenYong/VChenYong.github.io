@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-02-11 Thu 22:00 -->
+<!-- 2016-03-15 Tue 04:18 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Scala.org</title>
@@ -149,7 +149,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline19">1. Scala Note</a>
+<li><a href="#orgheadline20">1. Scala Note</a>
 <ul>
 <li><a href="#orgheadline9">1.1. Scala Functions</a>
 <ul>
@@ -174,12 +174,18 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline14">1.4.1. Stream construction</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline18">1.5. function</a>
+<li><a href="#orgheadline19">1.5. function</a>
 <ul>
 <li><a href="#orgheadline16">1.5.1. Function Literals</a></li>
 <li><a href="#orgheadline17">1.5.2. Functions as first class values</a></li>
+<li><a href="#orgheadline18">1.5.3. polymorphic functions</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#orgheadline22">2. misc</a>
+<ul>
+<li><a href="#orgheadline21">2.1. scala REPL</a></li>
 </ul>
 </li>
 </ul>
@@ -190,8 +196,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgheadline19" class="outline-2">
-<h2 id="orgheadline19"><span class="section-number-2">1</span> Scala Note</h2>
+<div id="outline-container-orgheadline20" class="outline-2">
+<h2 id="orgheadline20"><span class="section-number-2">1</span> Scala Note</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-orgheadline9" class="outline-3">
 <h3 id="orgheadline9"><span class="section-number-3">1.1</span> Scala Functions</h3>
@@ -438,11 +444,11 @@ test#+STYLE: &lt;link rel="stylesheet" type="text/css" href="./styles/test.css"/
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline18" class="outline-3">
-<h3 id="orgheadline18"><span class="section-number-3">1.5</span> function</h3>
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19"><span class="section-number-3">1.5</span> function</h3>
 <div class="outline-text-3" id="text-1-5">
 </div><div id="outline-container-orgheadline16" class="outline-4">
-<h4 id="orgheadline16"><span class="section-number-4">1.5.1</span> Function Literals</h4>
+<h4 id="orgheadline16"><span class="section-number-4">1.5.1</span> Function Literals<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h4>
 <div class="outline-text-4" id="text-1-5-1">
 <ul class="org-ul">
 <li>Function literals are anonymous &#x2013; they don't have a name by default, but you can give them a name by binding them to a variable.</li>
@@ -501,15 +507,117 @@ power(2,8)
 <p>
 <b>Also some drawbacks we have to speak about, since Scala is an object-functional langage which therefore has to take some compromises. What about true variables in conjunction with Functions? Can we apply some mutable objects as arguments to Functions?</b>
 </p>
+
+
+<div class="org-src-container">
+
+<pre class="src src-scala">class ScalaCurrentVersion(val url: String) {
+  lazy val source= {
+    println("fetching from url...")
+    scala.io.Source.fromURL(url).getLines().toList
+  }
+  lazy val majorVersion = source.find(_.contains("version.major"))
+  lazy val minorVersion = source.find(_.contains("version.minor"))
+}
+val version = new ScalaCurrentVersion("https://github.com/VChenYong/scala/raw/master/build.number")
+println("get scala version from " + version.url)
+version.majorVersion.foreach(println _)
+version.minorVersion.foreach(println _)
+
+ println("fetching from url...")
+version.minorVersion
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18"><span class="section-number-4">1.5.3</span> polymorphic functions</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<ul class="org-ul">
+<li>(Sub-)Type polymorphism and Parametric polymorphism (you may call it Generics).</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-scala">//underscore used to designate a so called Existential Type: we’re informing the compiler, that there must exist such a concrete type, but //we don’t care which type it is – it might be a List of Strings or a List of Booleans, we simply don’t care.
+val empty = ( xs :List[_] ) =&gt; xs == Nil
+
+
+
+val names : List[String] = List( "Anne", "George", "Carla" )
+val primes : List[Int] = List( 11, 17, 19 )
+
+List(empty( Nil ),           // true
+empty( names ),         // false
+empty( primes ))        // false
+</pre>
+</div>
+
+
+<ul class="org-ul">
+<li>it’s not possible to have an open (unparameterized) type parameter on a function as a first class value</li>
+</ul>
+<pre class="example">
+val first :Tuple2[A,_] =&gt; A  =  ( pair :Tuple2[A,_] ) =&gt; pair._1
+</pre>
+
+<ul class="org-ul">
+<li>we could use ordinary methods which are allowed to take type parameters (since they are not values but only members of certain types), as long as a function pops out at the end of the day</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-scala">def first[A] :Tuple2[A,_] =&gt; A  = ( pair :Tuple2[A,_] ) =&gt; pair._1
+val person= ("yong", 42)
+val name = first( person )
+name
+</pre>
 </div>
 </div>
 </div>
 </div>
 </div>
+
+
+<div id="outline-container-orgheadline22" class="outline-2">
+<h2 id="orgheadline22"><span class="section-number-2">2</span> misc</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><span class="section-number-3">2.1</span> scala REPL</h3>
+<div class="outline-text-3" id="text-2-1">
+<ol class="org-ol">
+<li><p>
+paste mode
+</p>
+<pre class="example">
+:paste
+</pre></li>
+
+<li><p>
+type kind of
+</p>
+<pre class="example">
+:k
+</pre></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Anonymous_function">function literal</a>
+</p></div></div>
+
+
+</div>
+</div></div>
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-02-11 Thu 22:00</p>
+<p class="date">Created: 2016-03-15 Tue 04:18</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
