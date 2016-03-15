@@ -1,2 +1,2 @@
 # VChenYong.github.io
-my site
+my notes
