@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-03-25 Fri 22:22 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>AccuRev.org</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="YONG" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="../styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="../styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="../styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="../styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="../styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="../styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="../styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="../styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="../styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">AccuRev.org</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline22">1. ACCUREV NOTE AND TRICK</a>
+<ul>
+<li><a href="#orgheadline1">1.1. command line update workspace</a></li>
+<li><a href="#orgheadline2">1.2. revert to back</a></li>
+<li><a href="#orgheadline3">1.3. revert one transaction in workspace only</a></li>
+<li><a href="#orgheadline4">1.4. reset password</a></li>
+<li><a href="#orgheadline5">1.5. cross promoting</a></li>
+<li><a href="#orgheadline6">1.6. Move WorkSPaces</a></li>
+<li><a href="#orgheadline20">1.7. useful commands</a>
+<ul>
+<li><a href="#orgheadline7">1.7.1. Login to accurev</a></li>
+<li><a href="#orgheadline8">1.7.2. Login with another server name</a></li>
+<li><a href="#orgheadline9">1.7.3. Create stream</a></li>
+<li><a href="#orgheadline10">1.7.4. Create workspace</a></li>
+<li><a href="#orgheadline11">1.7.5. Update workspace</a></li>
+<li><a href="#orgheadline12">1.7.6. Change workspace</a></li>
+<li><a href="#orgheadline13">1.7.7. Information about current location</a></li>
+<li><a href="#orgheadline14">1.7.8. Show command</a></li>
+<li><a href="#orgheadline15">1.7.9. View information about files in workspace</a></li>
+<li><a href="#orgheadline16">1.7.10. Show overlaps:</a></li>
+<li><a href="#orgheadline17">1.7.11. Show missing files:</a></li>
+<li><a href="#orgheadline18">1.7.12. Forcedly update accurev workspace when local files were missed:</a></li>
+<li><a href="#orgheadline19">1.7.13. Upgrade accurev client to latest version</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline21">1.8. beyond compare</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline22" class="outline-2">
+<h2 id="orgheadline22"><span class="section-number-2">1</span> ACCUREV NOTE AND TRICK</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> command line update workspace</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>call accurev update</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> revert to back</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>if  only revert back one file  among other files in a transaction, then it is better undo the modification and promote it again.</li>
+<li>if we need to revert back all files from one transaction , then we can do revert back form the  the actual stream .
+after all the files are been reverted , the transaction will be disappeared.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.3</span> revert one transaction in workspace only</h3>
+<div class="outline-text-3" id="text-1-3">
+<ol class="org-ol">
+<li>we can re-parent workspace or create a new workspace under the stream where the transaction can be found.</li>
+<li>show all history transaction</li>
+<li>right click on the transaction we want to revert</li>
+<li>select revert</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">1.4</span> reset password</h3>
+<div class="outline-text-3" id="text-1-4">
+<pre class="example">
+# In cmd mode run the following command
+  Accurev login -n
+# Then you’ll be prompted for username//password.
+</pre>
+</div>
+</div>
+<div id="outline-container-orgheadline5" class="outline-3">
+<h3 id="orgheadline5"><span class="section-number-3">1.5</span> cross promoting</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>select your file drag-and drop to the stream level you want (or change Palette)</li>
+<li>If the Promote command is enabled when you select all the elements, you can proceed to propagate all the issues (and their versions) to the destination stream</li>
+<li>detail see the manual pdf</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3">1.6</span> Move WorkSPaces</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+Ok, So I deleted the workspace in the stream (in AccuRev client)&#x2026;
+or so I thought. AccuRev does not actually remove the workspace; AccuRev deactivates the workspace.
+</p>
+
+<p>
+So first I had to reactivate it (using CLI):
+</p>
+
+<pre class="example">
+accurev reactivate wspace foo_workspace
+</pre>
+
+<p>
+accurev reactivate wspace foo<sub>workspace</sub>
+Then I had to change the location of the workspace in accurev
+</p>
+
+<pre class="example">
+C:\EclipseWorkspace&gt;accurev chws -w foo_workspace -l
+</pre>
+
+<p>
+Notes:
+-w is the name of your workspace (must be yours, can't be someone else's; there is -s for that)
+-l is the location you want to change the physical location too
+#+END<sub>EXAMPLE</sub>
+</p>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><span class="section-number-3">1.7</span> useful commands</h3>
+<div class="outline-text-3" id="text-1-7">
+</div><div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.7.1</span> Login to accurev</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<p>
+accurev login [ -n ] '&lt;user-name&gt;' '&lt;password&gt;'
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">1.7.2</span> Login with another server name</h4>
+<div class="outline-text-4" id="text-1-7-2">
+<p>
+accurev login -H '&lt;server<sub>name</sub>&gt;:&lt;port&gt;' '&lt;user<sub>name</sub>&gt;' '&lt;password&gt;'
+The –n option creates a non-expiring session
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">1.7.3</span> Create stream</h4>
+<div class="outline-text-4" id="text-1-7-3">
+<p>
+accurev mkstream -s &lt;stream&gt; -b &lt;backing-stream&gt;
+</p>
+
+<p>
+e.g.:
+</p>
+
+<p>
+accurev mkstream -s dev.user.MyStream -b dev.user.MyBasisStream
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">1.7.4</span> Create workspace</h4>
+<div class="outline-text-4" id="text-1-7-4">
+<p>
+accurev mkws -w &lt;workspace-name&gt; -b &lt;backing-stream&gt; -l &lt;location&gt;
+</p>
+
+<p>
+e.g.:
+</p>
+
+<p>
+accurev mkws -w dev.ws.user.MyWorkspace -b dev.user.MyStream -l /home/user/ar/dev.ws.user.MyWorkspace
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-4">
+<h4 id="orgheadline11"><span class="section-number-4">1.7.5</span> Update workspace</h4>
+<div class="outline-text-4" id="text-1-7-5">
+<p>
+cd /home/user/ar/dev.ws.user.MyWorkspace
+</p>
+
+<p>
+accurev update
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-4">
+<h4 id="orgheadline12"><span class="section-number-4">1.7.6</span> Change workspace</h4>
+<div class="outline-text-4" id="text-1-7-6">
+<p>
+accurev chws -w &lt;workspace&gt; &lt;new-name&gt;
+</p>
+
+<p>
+accurev chws -w &lt;workspace&gt; -l &lt;new-location&gt; -m &lt;new-machine&gt;
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-4">
+<h4 id="orgheadline13"><span class="section-number-4">1.7.7</span> Information about current location</h4>
+<div class="outline-text-4" id="text-1-7-7">
+<p>
+accurev info
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline14" class="outline-4">
+<h4 id="orgheadline14"><span class="section-number-4">1.7.8</span> Show command</h4>
+<div class="outline-text-4" id="text-1-7-8">
+<p>
+show [ -f &lt;format&gt;] [ -p &lt;depot-name&gt;] [ -d ] [ -s &lt;stream&gt; [ -R ] ] [ -t &lt;time-spec&gt;] streams
+</p>
+
+<p>
+show [ -f &lt;format&gt;] [ -a ] wspaces
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline15" class="outline-4">
+<h4 id="orgheadline15"><span class="section-number-4">1.7.9</span> View information about files in workspace</h4>
+</div>
+
+<div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">1.7.10</span> Show overlaps:</h4>
+<div class="outline-text-4" id="text-1-7-10">
+<p>
+accurev stat -o -B
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline17" class="outline-4">
+<h4 id="orgheadline17"><span class="section-number-4">1.7.11</span> Show missing files:</h4>
+<div class="outline-text-4" id="text-1-7-11">
+<p>
+accurev stat -M
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18"><span class="section-number-4">1.7.12</span> Forcedly update accurev workspace when local files were missed:</h4>
+<div class="outline-text-4" id="text-1-7-12">
+<p>
+accurev pop -O -R .
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-4">
+<h4 id="orgheadline19"><span class="section-number-4">1.7.13</span> Upgrade accurev client to latest version</h4>
+<div class="outline-text-4" id="text-1-7-13">
+<p>
+accurev upgrade<sub>client</sub> -s
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><span class="section-number-3">1.8</span> beyond compare</h3>
+<div class="outline-text-3" id="text-1-8">
+<pre class="example">
+Diff:
+   "C:\Program Files (x86)\Beyond Compare 3\bcomp.exe" %1% %2% /lefttitle="%3%" /righttitle="%4%"
+
+Merge:
+   "C:\Program Files (x86)\Beyond Compare 3\bcomp.exe" %1% %2% %a% /mergeoutput=%o% /lefttitle="%4%" /righttitle="%5%" /centertitle="%3%"
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2013-02-20 Wed</p>
+<p class="author">Author: YONG</p>
+<p class="date">Created: 2016-03-25 Fri 22:22</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

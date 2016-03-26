@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-03-25 Fri 22:23 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Java 8 new features</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="YONG" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Java 8 new features</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline12">1. Note taken from online course "Java 8 what's new" given by José Paumard</a>
+<ul>
+<li><a href="#orgheadline1">1.1. String class</a></li>
+<li><a href="#orgheadline2">1.2. java I/O enhancements</a></li>
+<li><a href="#orgheadline3">1.3. New patterns to create Comparator</a></li>
+<li><a href="#orgheadline11">1.4. The Java 8 Date and Time API</a>
+<ul>
+<li><a href="#orgheadline4">1.4.1. Instant and Duration</a></li>
+<li><a href="#orgheadline5">1.4.2. LocalDate, Period</a></li>
+<li><a href="#orgheadline6">1.4.3. TemporalAdjusters</a></li>
+<li><a href="#orgheadline7">1.4.4. LocalTime</a></li>
+<li><a href="#orgheadline8">1.4.5. ZonedTime</a></li>
+<li><a href="#orgheadline9">1.4.6. Date formatters</a></li>
+<li><a href="#orgheadline10">1.4.7. Bridges Between the APIs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline12" class="outline-2">
+<h2 id="orgheadline12"><span class="section-number-2">1</span> Note taken from online course "Java 8 what's new" given by José Paumard</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> String class</h3>
+<div class="outline-text-3" id="text-1-1">
+<ol class="org-ol">
+<li><p>
+A StringJoiner is built with a separator
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">// The JDK 8 way
+StringJoiner sj = new StringJoiner(", ");
+sj.add("one").add("two").add("three");
+// &gt; one, two, three
+</pre>
+</div></li>
+
+<li><p>
+A StringJoiner may be employed to create formatted output from a Stream using Collectors.joining(CharSequence).
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4);
+String commaSeparatedNumbers = numbers.stream()
+    .map(i -&gt; i.toString())
+    .collect(Collectors.joining(", "));
+</pre>
+</div></li>
+</ol>
+
+
+
+
+<ol class="org-ol">
+<li>A StringJoiner can also be built with a separator, a prefix and a postfix
+
+<ul class="org-ul">
+<li><p>
+Exmaple 1
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// The JDK 8 way
+StringJoiner sj = new StringJoiner(", ", "{", "}");
+// we leave the joiner empty
+String s = sj.toString();
+System.out.println(s);
+
+// &gt; {}
+</pre>
+</div></li>
+
+<li><p>
+Example 2
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">// The JDK 8 way
+StringJoiner sj = new StringJoiner(", ", "{", "}");
+sj.add("one").add("two").add("three");
+String s = sj.toString();
+System.out.println(s);
+//&gt; {one, two, three}
+</pre>
+</div></li>
+</ul></li>
+
+<li>The StringJoiner can be used from the String class</li>
+</ol>
+
+
+<ul class="org-ul">
+<li><p>
+Example 1
+</p>
+<pre class="example">
+static String         join(CharSequence delimiter, CharSequence... elements)
+Returns a new String composed of copies of the CharSequence elements joined together with a copy of the specified delimiter.
+</pre>
+
+<div class="org-src-container">
+
+<pre class="src src-java">// From the String class, with a vararg
+String s = String.join(", ", "one", "two", "three");
+System.out.println(s);
+// &gt; one, two, three
+</pre>
+</div></li>
+
+<li><p>
+Example 2
+</p>
+<pre class="example">
+static String       join(CharSequence delimiter, Iterable&lt;? extends CharSequence&gt; elements)
+Returns a new String composed of copies of the CharSequence elements joined together with a copy of the specified
+</pre>
+
+<div class="org-src-container">
+
+<pre class="src src-java">// From the String class, with an Iterable
+  String [] tab = {"one", "two", "three"};
+  String s = String.join(", ", tab);
+  System.out.println(s);
+  // &gt; one, two, three
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> java I/O enhancements</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>Easy ways to create streams on text files
+<ul class="org-ul">
+<li><p>
+Using new File
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"> // java 7 : try with resources
+  try (BufferedReader reader =
+ new BufferedReader(
+                    new FileReader(
+                                   new File("d:/tmp/debug.log")));) {
+Stream&lt;String&gt; stream = reader.lines();
+stream.filter(line ‐&gt; line.contains("ERROR"))
+    .findFirst()
+    .ifPresent(System.out::println);
+} catch (IOException ioe) {
+// handle the exception
+}
+</pre>
+</div></li>
+
+<li><p>
+Using method File.lines(path)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// java 7 : try with resources and use of Paths
+Path path = Paths.get("d:", "tmp", "debug.log");
+try (Stream&lt;String&gt; stream = Files.lines(path)) {
+    stream.filter(line ‐&gt; line.contains("ERROR"))
+        .findFirst()
+        .ifPresent(System.out::println);
+    } catch (IOException ioe) {
+    // handle the exception
+</pre>
+</div>
+<p>
+Note : Stream implements AutoCloseable, and will close the underlying file
+</p></li>
+</ul></li>
+
+<li>Simple ways to visit directories
+
+<ul class="org-ul">
+<li><p>
+Method File.list(path)  (Visits the first level entries)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// Java 7 : try with resources and use of Paths
+Path path = Paths.get("c:", "windows");
+try (Stream&lt;Path&gt; stream = Files.list(path)) {
+    stream.filter(path ‐&gt; path.toFile().isDirectory())
+        .forEach(System.out::println);
+    } catch (IOException ioe) {
+    // handle the exception
+}
+</pre>
+</div></li>
+
+<li><p>
+To visit the whole subtree use the Files.walk(path) method (One can limit the depth of the exploration)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// Java 7 : try with resources and use of Paths
+Path path = Paths.get("c:", "windows");
+try (Stream&lt;Path&gt; stream = Files.walk(path)) {
+    stream.filter(path ‐&gt; path.toFile().isDirectory())
+        .forEach(System.out::println);
+    } catch (IOException ioe) {
+    // handle the exception
+}
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.3</span> New patterns to create Comparator</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>Example 1
+
+<ul class="org-ul">
+<li><p>
+The JDK 7 way:  ( Note :It would also need to check if p1 or p2 is null)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// comparison using the last name
+Comparator&lt;Person&gt; compareLastName =
+    new Comparator&lt;Person&gt;() {
+    @Override
+    public int compare(Person p1, Person p2) {
+        return p1.getLastName().compareTo(p2.getLastName());
+    }
+}
+</pre>
+</div></li>
+
+<li><p>
+The JDK 8 way:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// comparison using the last name
+Comparator&lt;Person&gt; compareLastName = Comparator.comparing(Person::getLastName);
+</pre>
+</div></li>
+</ul></li>
+
+<li>Example 2
+<ul class="org-ul">
+<li><p>
+The JDK 7 way:  (Note :It would also need to check if p1 or p2 is null)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// comparison using the last name then the first name
+Comparator&lt;Person&gt; compareLastNameThenFirstName =
+    new Comparator&lt;Person&gt;() {
+    @Override
+    public int compare(Person p1, Person p2) {
+        int lastNameComparison =
+        p1.getLastName().compareTo(p2.getLastName());
+        return lastNameComparison == 0 ?
+        p2.getFirstName().compareTo(p2.getFirstName());
+        lastNameComparison;
+    }
+};
+</pre>
+</div></li>
+<li><p>
+The JDK 8 way:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// comparison using the last name and then the first name
+Comparator&lt;Person&gt; compareLastNameThenFirstName =
+    Comparator.comparing(Person::getLastName)
+    .thenComparing(Person::getFirstName); //thenComparing() is a default method of the interface Comparator
+</pre>
+</div></li>
+</ul></li>
+
+<li>Other Useful Utilities
+<ul class="org-ul">
+<li><p>
+reverse a given comparator
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// reverses a comparator
+Comparator&lt;Person&gt; comp = ...;
+Comparator&lt;Person&gt; reversedComp = comp.reversed();
+</pre>
+</div></li>
+
+<li><p>
+The natural comparator and the reversed natural comparator
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// compares comparable objects
+Comparator&lt;String&gt; c = Comparator.naturalOrder();
+
+// compares comparable objects in the reverse order
+Comparator&lt;String&gt; c = Comparator.reversedOrder();
+</pre>
+</div></li>
+
+<li><p>
+Null values?
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">// considers null values lesser than non‐null values
+Comparator&lt;String&gt; c = Comparator.nullsFirst(Comparator.naturalOrder());
+
+// considers null values greater than non‐null values
+Comparator&lt;String&gt; c = Comparator.nullsLast(Comparator.naturalOrder());
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">1.4</span> The Java 8 Date and Time API</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><span class="section-number-4">1.4.1</span> Instant and Duration</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li><p>
+Instant is a point on the time line.
+Example
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">Instant start = Instant.now();
+// some long computations
+Instant end = Instant.now();
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Instant 0 is the January the 1st, 1970 at midnight GMT</li>
+<li>Instant.MIN is 1 billion years ago</li>
+<li>Instant.MAX is Dec. 31 of the year 1,000,000,000</li>
+<li>Instant.now() is the current instant</li>
+<li>An Instant is immutable</li>
+<li>Instant precision is the nanosecond!</li>
+</ul></li>
+<li><p>
+Duration
+Exmaple
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">Duration elapsed = Duration.between(start, end);
+long millis = elapsed.toMillis();
+</pre>
+</div>
+<ul class="org-ul">
+<li>A Duration is the amount of time between two Instant</li>
+<li>toNanos(), toMillis(), toSeconds(), toMinutes(), toHours(), toDays()</li>
+<li>minusNanos(), &#x2026;</li>
+<li>plusNanos(), &#x2026;</li>
+<li>multipliedBy(), dividedBy(), negated()</li>
+<li>isZero(), isNegative()</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">1.4.2</span> LocalDate, Period</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li><p>
+LocalDate
+Example
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">LocalDate now = LocalDate.now();
+LocalDate dateOfBirth =  LocalDate.of(1564, Month.APRIL, 23);
+</pre>
+</div></li>
+
+<li><p>
+Period (is the amount of time between two LocalDate)
+Example
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">LocalDate dateOfBirth =  LocalDate.of(1564, Month.APRIL, 23);
+Period p = dateOfBirth.until(now);
+System.out.println("# years = " + p.getYears());
+
+long days = dateOfBirth.until(now, ChronoUnit.DAYS);
+System.out.println("# days = " + days);
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Same concept as Duration, same kind of methods</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">1.4.3</span> TemporalAdjusters</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+Example
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">LocalDate now = LocalDate.now();
+LocalDate nextSunday = now.with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
+</pre>
+</div>
+<ul class="org-ul">
+<li>Useful to add (or substract) an amount of time to an Instant or a LocalDate</li>
+<li>14 static methods to adjust an Instant or a LocalDate
+<ul class="org-ul">
+<li>firstDayOfMonth()</li>
+<li>lastDayOfMonth()</li>
+<li>firstDayOfYear()</li>
+<li>lastDayOfYear()</li>
+<li>firstDayOfNextMonth()</li>
+<li>firstDayOfNextYear()</li>
+<li>firstInMonth(DayOfWeek.MONDAY)</li>
+<li>lastInMonth(DayOfWeek.TUESDAY)</li>
+<li>dayOfWeekInMonth(2, DayOfWeek.THURSDAY)</li>
+<li>next(DayOfWeek.SUNDAY)</li>
+<li>nextOrSame(DayOfWeek.SUNDAY)</li>
+<li>previous(DayOfWeek.SUNDAY)</li>
+<li>previousOrSame(DayOfWeek.SUNDAY)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.4.4</span> LocalTime</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<ul class="org-ul">
+<li><p>
+A LocalTime is a time of day
+Example
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">LocalTime now = LocalTime.now();
+LocalTime time = LocalTime.of(10, 20) ; // 10:20
+
+LocalTime bedTime = LocalTime.of(23, 0);
+LocalTime wakeUpTime = bedTime.plusHours(8); // 7:00
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">1.4.5</span> ZonedTime</h4>
+<div class="outline-text-4" id="text-1-4-5">
+<ul class="org-ul">
+<li>Java uses the IANA database (<a href="https://www.iana.org/time-zones">https://www.iana.org/time-zones</a>)</li>
+<li><p>
+The zones are available from
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">Set&lt;String&gt; allZonesIds = ZoneId.getAvailableZoneIds();
+String ukTZ = ZoneId.of("Europe/London");
+</pre>
+</div></li>
+<li><p>
+How to create a zoned time
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">System.out.println(
+ZonedDateTime.of(
+1564, Month.APRIL.getValue(), 23, // year / month / day
+10, 0, 0, 0, // h / mn / s / nanos
+ZoneId.of("Europe/London"))
+); // prints 1564‐04‐23T10:00‐00:01:15[Europe/London]
+</pre>
+</div></li>
+<li>ZonedDateTime exposes a set of methods to compute other zoned times : plus, minus, with, etc&#x2026;
+<ul class="org-ul">
+<li><p>
+Example
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">ZonedDateTime currentMeeting =
+ZonedDateTime.of(
+                 LocalDate.of(2014, Month.MARCH, 12), // LocalDate
+                 LocalTime.of(9, 30),
+                 // LocalTime
+                 ZoneId.of("Europe/London")
+                 );
+ZonedDateTime nextMeeting = currentMeeting.plus(Period.ofMonth(1));
+</pre>
+</div></li>
+
+<li><p>
+And to change the time zone:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">ZonedDateTime nextMeetingUS = nextMeeting.withZoneSameInstant(ZoneId.of("US/Central"));
+</pre>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">1.4.6</span> Date formatters</h4>
+<div class="outline-text-4" id="text-1-4-6">
+<ul class="org-ul">
+<li>The new date API proposes a new formatter: DateTimeFormatter</li>
+<li>The DateTimeFormatter proposes a set of predefined formatters,available as constants</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-java">ZonedDateTime nextMeetingUS = nextMeeting.withZoneSameInstant(ZoneId.of("US/Central"));
+System.out.println(DateTimeFormatter.ISO_DATE_TIME.format(nextMeetingUS));
+// prints 2014‐04‐12T03:30:00‐05:00[US/Central]
+System.out.println(DateTimeFormatter.RFC_1123_DATE_TIME.format(nextMeetingUS));
+// prints Sat, 12 Apr 2014 03:30:00 ‐0500
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">1.4.7</span> Bridges Between the APIs</h4>
+<div class="outline-text-4" id="text-1-4-7">
+<ul class="org-ul">
+<li><p>
+Instant &amp; Date:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">Date date = Date.from(instant); // legacy ‐&gt; new API
+Instant instant = date.toInstant(); // API ‐&gt; legacy
+</pre>
+</div></li>
+<li><p>
+Instant &amp; TimeStamp:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">TimeStamp time = TimeStamp.from(instant); // legacy ‐&gt; new API
+Instant instant = time.toInstant(); // API ‐&gt; legacy
+</pre>
+</div></li>
+<li><p>
+LocalDate &amp; Date :
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">TimeStamp time = TimeStamp.from(instant); // legacy ‐&gt; new API
+Instant instant = time.toInstant(); // API ‐&gt; legacy
+</pre>
+</div></li>
+<li><p>
+LocalTime &amp; Time
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">Time time = Time.from(localTime);         // legacy ‐&gt; new API
+LocalTime localTime = time.toLocalTime(); // API ‐&gt; legac
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-03-25 Fri&gt;</span></span></p>
+<p class="author">Author: YONG</p>
+<p class="date">Created: 2016-03-25 Fri 22:23</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

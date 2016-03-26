@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-03-15 Tue 04:18 -->
+<!-- 2016-03-25 Fri 22:22 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Java script</title>
@@ -149,16 +149,457 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline1">1. Test</a></li>
+<li><a href="#orgheadline51">1. Notes taken from pluralsight online course Rapid JavaScript Training.</a>
+<ul>
+<li><a href="#orgheadline27">1.1. Type</a>
+<ul>
+<li><a href="#orgheadline7">1.1.1. Six data types that are primitives:</a></li>
+<li><a href="#orgheadline26">1.1.2. Reference Type</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline31">1.2. Scope</a>
+<ul>
+<li><a href="#orgheadline28">1.2.1. Global scope</a></li>
+<li><a href="#orgheadline29">1.2.2. Function Scope</a></li>
+<li><a href="#orgheadline30">1.2.3. block scope</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline37">1.3. BOM and DOM</a>
+<ul>
+<li><a href="#orgheadline32">1.3.1. the window object (global object in NodeJs)</a></li>
+<li><a href="#orgheadline33">1.3.2. system dialogs</a></li>
+<li><a href="#orgheadline34">1.3.3. location Object</a></li>
+<li><a href="#orgheadline35">1.3.4. html document basics</a></li>
+<li><a href="#orgheadline36">1.3.5. query selectors</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline49">1.4. Event handler</a>
+<ul>
+<li><a href="#orgheadline38">1.4.1. Events</a></li>
+<li><a href="#orgheadline40">1.4.2. Event Object</a></li>
+<li><a href="#orgheadline41">1.4.3. handling events</a></li>
+<li><a href="#orgheadline42">1.4.4. event Listeners</a></li>
+<li><a href="#orgheadline43">1.4.5. event bubbling</a></li>
+<li><a href="#orgheadline48">1.4.6. built-in Object and Functions</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline50">1.5. temp</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
 
 
-<div id="outline-container-orgheadline1" class="outline-2">
-<h2 id="orgheadline1"><span class="section-number-2">1</span> Test</h2>
+<div id="outline-container-orgheadline51" class="outline-2">
+<h2 id="orgheadline51"><span class="section-number-2">1</span> Notes taken from pluralsight online course Rapid JavaScript Training.</h2>
 <div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27"><span class="section-number-3">1.1</span> Type</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.1.1</span> Six data types that are primitives:</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div><ol class="org-ol"><li><a id="orgheadline1"></a>Boolean<br  /></li>
+<li><a id="orgheadline2"></a>Null<br  /></li>
+<li><a id="orgheadline3"></a>Undefined<br  /></li>
+<li><a id="orgheadline4"></a>Number<br  /></li>
+<li><a id="orgheadline5"></a>String<br  /></li>
+<li><a id="orgheadline6"></a>Symbol (new in ECMAScript 6)<br  /></li></ol>
+</div>
+<div id="outline-container-orgheadline26" class="outline-4">
+<h4 id="orgheadline26"><span class="section-number-4">1.1.2</span> Reference Type</h4>
+<div class="outline-text-4" id="text-1-1-2">
+</div><ol class="org-ol"><li><a id="orgheadline8"></a>Arrays<br  /><div class="outline-text-5" id="text-1-1-2-1">
+<div class="org-src-container">
+
+<pre class="src src-js">var entry = ['Trains', 'Plains','automobiles'];
+console.log (entry);
+</pre>
+</div>
+</div></li>
+
+<li><a id="orgheadline9"></a>Object<br  /></li>
+<li><a id="orgheadline10"></a>Dates<br  /></li>
+<li><a id="orgheadline24"></a>function<br  /><ol class="org-ol"><li><a id="orgheadline11"></a><span class="todo TODO">TODO</span> function constructor<br  /><div class="outline-text-6" id="text-1-1-2-4-1">
+<ul class="org-ul">
+<li>prototype</li>
+<li>this</li>
+</ul>
+</div></li>
+
+<li><a id="orgheadline12"></a>the "this" keyword<br  /></li>
+<li><a id="orgheadline19"></a>using Call and Apply<br  /><ol class="org-ol"><li><a id="orgheadline13"></a>Normal function call<br  /><div class="outline-text-7" id="text-1-1-2-4-3-1">
+<div class="org-src-container">
+
+<pre class="src src-js">"use strict";
+var updateZipCode = function(){
+console.log(this);
+}
+updateZipCode();
+</pre>
+</div>
+
+<pre class="example">
+undefined
+undefined
+</pre>
+</div></li>
+
+
+
+<li><a id="orgheadline17"></a>Using Call on function<br  /><ol class="org-ol"><li><a id="orgheadline14"></a>Passing a object in to call<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-1">
+<div class="org-src-container">
+
+<pre class="src src-js">"use strict";
+var updateZipCode = function(){
+console.log(this);
+};
+updateZipCode.call({zip: '123456'});
+</pre>
+</div>
+
+<pre class="example">
+{ zip: '123456' }
+undefined
+</pre>
+</div></li>
+
+<li><a id="orgheadline15"></a>Passing a object varibale<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-2">
+<div class="org-src-container">
+
+<pre class="src src-js"> "use strict";
+ var updateZipCode = function(){
+ console.log(this);
+ };
+
+var zipCode = {
+zipJson: '654321'
+};
+updateZipCode.call(zipCode);
+</pre>
+</div>
+</div></li>
+
+
+
+<li><a id="orgheadline16"></a>Using Call on function with paramters<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-3">
+<div class="org-src-container">
+
+<pre class="src src-js">"use strict";
+   var updateZipCode2 = function(newZip, country){
+   console.log("old zipcode:" + this.zipJson);
+   console.log("new zipcode:" + newZip);
+   console.log("country:" + country);
+     };
+
+  var zipCode = {
+  zipJson: '654321'
+  };
+  updateZipCode2.call(zipCode,'1111111','quebec');
+</pre>
+</div>
+
+<pre class="example">
+old zipcode:654321
+new zipcode:1111111
+country:quebec
+undefined
+</pre>
+</div></li></ol></li>
+
+<li><a id="orgheadline18"></a>Using apply on function<br  /><div class="outline-text-7" id="text-1-1-2-4-3-3">
+<p>
+The apply() method calls a function with a given this value and arguments provided as an array (or an array-like object).
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-js">"use strict";
+   var updateZipCode2 = function(newZip, country){
+   console.log("old zipcode:" + this.zipJson);
+   console.log("new zipcode:" + newZip);
+   console.log("country:" + country);
+     };
+
+  var zipCode = {
+  zipJson: '654321'
+  };
+  updateZipCode2.apply(zipCode,['1111111','quebec']);
+</pre>
+</div>
+
+<pre class="example">
+old zipcode:654321
+new zipcode:1111111
+country:quebec
+undefined
+</pre>
+</div></li></ol></li>
+
+
+<li><a id="orgheadline20"></a>Closure<br  /></li>
+<li><a id="orgheadline23"></a>IIFEs<br  /><ol class="org-ol"><li><a id="orgheadline21"></a>IIFE<br  /><div class="outline-text-7" id="text-1-1-2-4-5-1">
+<div class="org-src-container">
+
+<pre class="src src-js"> var app = {};
+ var value = (function(ns) {
+  ns.name = 'angular';
+  })(app);
+console.log(app.name);
+</pre>
+</div>
+
+<pre class="example">
+angular
+undefined
+</pre>
+</div></li>
+
+<li><a id="orgheadline22"></a>we can use unary operator instead of parentheses.( advatnage or disadvantage?)<br  /><div class="outline-text-7" id="text-1-1-2-4-5-2">
+<div class="org-src-container">
+
+<pre class="src src-js">+function(){
+var iife = 'example 1';
+console.log('Executed example 1');
+}();
+
+
+!function example2(){
+var iife = 'example 2';
+console.log('Executed example 2');
+}();
+
+
+-function example2(){
+var iife = 'example 3';
+console.log('Executed example 3');
+}();
+</pre>
+</div>
+
+<pre class="example">
+Executed example 1
+Executed example 2
+Executed example 3
+undefined
+</pre>
+</div></li></ol></li></ol></li>
+
+
+<li><a id="orgheadline25"></a>RegEx<br  /></li></ol>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orgheadline31" class="outline-3">
+<h3 id="orgheadline31"><span class="section-number-3">1.2</span> Scope</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-orgheadline28" class="outline-4">
+<h4 id="orgheadline28"><span class="section-number-4">1.2.1</span> Global scope</h4>
+</div>
+<div id="outline-container-orgheadline29" class="outline-4">
+<h4 id="orgheadline29"><span class="section-number-4">1.2.2</span> Function Scope</h4>
+</div>
+<div id="outline-container-orgheadline30" class="outline-4">
+<h4 id="orgheadline30"><span class="section-number-4">1.2.3</span> block scope</h4>
+</div>
+</div>
+
+<div id="outline-container-orgheadline37" class="outline-3">
+<h3 id="orgheadline37"><span class="section-number-3">1.3</span> BOM and DOM</h3>
+<div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li>BOM -&gt; broswer object model</li>
+<li>DOM -&gt; document object model</li>
+</ul>
+</div>
+
+<div id="outline-container-orgheadline32" class="outline-4">
+<h4 id="orgheadline32"><span class="section-number-4">1.3.1</span> the window object (global object in NodeJs)</h4>
+</div>
+
+<div id="outline-container-orgheadline33" class="outline-4">
+<h4 id="orgheadline33"><span class="section-number-4">1.3.2</span> system dialogs</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>alert()</li>
+<li>confirm()</li>
+<li>prompt()</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline34" class="outline-4">
+<h4 id="orgheadline34"><span class="section-number-4">1.3.3</span> location Object</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p>
+location.href
+location.port
+location.host
+location.assign('http://www.google.com')
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline35" class="outline-4">
+<h4 id="orgheadline35"><span class="section-number-4">1.3.4</span> html document basics</h4>
+</div>
+
+<div id="outline-container-orgheadline36" class="outline-4">
+<h4 id="orgheadline36"><span class="section-number-4">1.3.5</span> query selectors</h4>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline49" class="outline-3">
+<h3 id="orgheadline49"><span class="section-number-3">1.4</span> Event handler</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-orgheadline38" class="outline-4">
+<h4 id="orgheadline38"><span class="section-number-4">1.4.1</span> Events</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>User Interface events
+<ol class="org-ol">
+<li>load</li>
+<li>unload</li>
+<li>abort</li>
+<li>error</li>
+<li>select</li>
+<li>resize</li>
+<li>scroll</li>
+</ol></li>
+<li>Mouse and Mouse wheel events
+<ol class="org-ol">
+<li>click</li>
+<li>dbclick</li>
+<li>mousedown</li>
+<li>mouseenter</li>
+<li>mouseleave</li>
+<li>mousemove</li>
+<li>mouseout</li>
+<li>mouseover</li>
+<li>mouseup</li>
+<li>mousewheel</li>
+</ol></li>
+<li>keyboard and Text Events
+<ol class="org-ol">
+<li>keyDown</li>
+<li>keypress</li>
+<li>keyup</li>
+<li>textInput</li>
+</ol></li>
+<li>focus events
+<ol class="org-ol">
+<li>blur</li>
+<li>focus</li>
+<li>focusin</li>
+<li>focusout</li>
+</ol></li>
+<li>html5 events
+<ol class="org-ol">
+<li>contextMenu</li>
+<li>beforeUnload</li>
+</ol></li>
+<li>touch Events.</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline40" class="outline-4">
+<h4 id="orgheadline40"><span class="section-number-4">1.4.2</span> Event Object</h4>
+<div class="outline-text-4" id="text-1-4-2">
+</div><ol class="org-ol"><li><a id="orgheadline39"></a>Event Object Properties<br  /><div class="outline-text-5" id="text-1-4-2-1">
+<ol class="org-ol">
+<li>bubbles</li>
+<li>cancelable</li>
+<li>currentTarget</li>
+<li>defaultPrevented</li>
+<li>detial</li>
+<li>eventPhase</li>
+<li>preventDefault</li>
+<li>stopImmediatePropagation</li>
+<li>stopPropagation</li>
+<li>target</li>
+<li>trusted</li>
+<li>type</li>
+</ol>
+</div></li></ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-orgheadline41" class="outline-4">
+<h4 id="orgheadline41"><span class="section-number-4">1.4.3</span> handling events</h4>
+</div>
+
+<div id="outline-container-orgheadline42" class="outline-4">
+<h4 id="orgheadline42"><span class="section-number-4">1.4.4</span> event Listeners</h4>
+</div>
+
+<div id="outline-container-orgheadline43" class="outline-4">
+<h4 id="orgheadline43"><span class="section-number-4">1.4.5</span> event bubbling</h4>
+</div>
+
+
+<div id="outline-container-orgheadline48" class="outline-4">
+<h4 id="orgheadline48"><span class="section-number-4">1.4.6</span> built-in Object and Functions</h4>
+<div class="outline-text-4" id="text-1-4-6">
+</div><ol class="org-ol"><li><a id="orgheadline44"></a>Global Functions<br  /><div class="outline-text-5" id="text-1-4-6-1">
+<p>
+parseInt('1234') <i>/ 1234
+parseInt('b1234') /</i> NaN
+parseInt('12z34') <i>/ 12
+parseInt('1234.99) /</i> 1234
+</p>
+
+<p>
+ParseFloat
+</p>
+
+<p>
+encodeURL
+decodeURL
+</p>
+
+<p>
+eval 
+</p>
+</div></li>
+
+<li><a id="orgheadline45"></a>Math<br  /></li>
+
+<li><a id="orgheadline46"></a>String<br  /></li>
+
+<li><a id="orgheadline47"></a>Arguments<br  /><div class="outline-text-5" id="text-1-4-6-4">
+<div class="org-src-container">
+
+<pre class="src src-js">var validateValues = function (){
+console.log(arguments.length);
+}
+validateValues(1, true,'settings');
+</pre>
+</div>
+</div></li></ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline50" class="outline-3">
+<h3 id="orgheadline50"><span class="section-number-3">1.5</span> temp</h3>
+<div class="outline-text-3" id="text-1-5">
 <p>
 <a href="http://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&amp;mid=400892209&amp;idx=1&amp;sn=b5048f8067362caa14b19be26beca2ea&amp;scene=21#wechat_redirect">js and closure</a>
 </p>
@@ -210,7 +651,7 @@ undefined
 <pre class="src src-js">  function myFunction() {
     var a = 4;
     return a * a;
-} 
+}
 
 return myFunction();
 </pre>
@@ -222,10 +663,11 @@ return myFunction();
 </div>
 </div>
 </div>
+</div>
 <div id="postamble" class="status">
 <p class="date">Date: date</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-03-15 Tue 04:18</p>
+<p class="date">Created: 2016-03-25 Fri 22:22</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
