@@ -1,0 +1,1426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-03-26 Sat 21:16 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Java</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="YONG" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">My Java</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline20">1. Note 摘自Java工程师成神之路</a>
+<ul>
+<li><a href="#orgheadline4">1.1. 基础篇</a>
+<ul>
+<li><a href="#orgheadline1">1.1.1. JVM</a></li>
+<li><a href="#orgheadline2">1.1.2. Java基础知识</a></li>
+<li><a href="#orgheadline3">1.1.3. Java并发编程</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline9">1.2. 进阶篇</a>
+<ul>
+<li><a href="#orgheadline5">1.2.1. Java底层知识</a></li>
+<li><a href="#orgheadline6">1.2.2. 设计模式</a></li>
+<li><a href="#orgheadline7">1.2.3. 网络编程知识</a></li>
+<li><a href="#orgheadline8">1.2.4. 框架知识</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline15">1.3. 高级篇</a>
+<ul>
+<li><a href="#orgheadline10">1.3.1. 编译原理知识</a></li>
+<li><a href="#orgheadline11">1.3.2. 操作系统知识</a></li>
+<li><a href="#orgheadline12">1.3.3. 数据存储知识</a></li>
+<li><a href="#orgheadline13">1.3.4. 大数据知识</a></li>
+<li><a href="#orgheadline14">1.3.5. 网络安全知识</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline18">1.4. 扩展篇</a>
+<ul>
+<li><a href="#orgheadline16">1.4.1. 相关知识</a></li>
+<li><a href="#orgheadline17">1.4.2. 扩展学习</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline19">1.5. 推荐书籍</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline20" class="outline-2">
+<h2 id="orgheadline20"><span class="section-number-2">1</span> Note 摘自<a href="http://www.hollischuang.com/archives/489">Java工程师成神之路</a></h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">1.1</span> 基础篇</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgheadline1" class="outline-4">
+<h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> JVM</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li><p>
+Java内存模型，Java内存管理，Java堆和栈，垃圾回收
+</p>
+
+<p>
+<a href="http://www.jcp.org/en/jsr/detail?id=133">http://www.jcp.org/en/jsr/detail?id=133</a>
+</p>
+
+<p>
+<a href="http://ifeve.com/jmm-faq/">http://ifeve.com/jmm-faq/</a>
+</p></li>
+
+<li>了解JVM各种参数及调优</li>
+
+<li><p>
+学习使用Java工具
+</p>
+
+<p>
+jps, jstack, jmap, jconsole, jinfo, jhat, javap, …
+</p>
+
+<p>
+<a href="http://kenai.com/projects/btrace">http://kenai.com/projects/btrace</a>
+</p>
+
+<p>
+<a href="http://www.crashub.org/">http://www.crashub.org/</a>
+</p>
+
+<p>
+<a href="https://github.com/taobao/TProfiler">https://github.com/taobao/TProfiler</a>
+</p>
+
+<p>
+<a href="https://github.com/CSUG/HouseMD">https://github.com/CSUG/HouseMD</a>
+</p>
+
+<p>
+<a href="http://wiki.cyclopsgroup.org/jmxterm">http://wiki.cyclopsgroup.org/jmxterm</a>
+</p>
+
+<p>
+<a href="https://github.com/jlusdy/TBJMap">https://github.com/jlusdy/TBJMap</a>
+</p></li>
+
+<li><p>
+学习Java诊断工具
+</p>
+
+<p>
+<a href="http://www.eclipse.org/mat/">http://www.eclipse.org/mat/</a>
+</p>
+
+<p>
+<a href="http://visualvm.java.net/oqlhelp.html">http://visualvm.java.net/oqlhelp.html</a>
+</p></li>
+
+<li><p>
+自己编写各种outofmemory，stackoverflow程序
+</p>
+
+<p>
+HeapOutOfMemory
+</p>
+
+<p>
+Young OutOfMemory
+</p>
+
+<p>
+MethodArea OutOfMemory
+</p>
+
+<p>
+ConstantPool OutOfMemory
+</p>
+
+<p>
+DirectMemory OutOfMemory
+</p>
+
+<p>
+Stack OutOfMemory Stack OverFlow
+</p></li>
+
+<li><p>
+使用工具尝试解决以下问题，并写下总结
+</p>
+
+<p>
+当一个Java程序响应很慢时如何查找问题 当一个Java程序频繁FullGC时如何解决问题，如何查看垃圾回收日志 当一个Java应用发生OutOfMemory时该如何解决，年轻代、年老代、永久代解决办法不同，导致原因也不同
+</p></li>
+
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://docs.oracle.com/javase/specs/jvms/se7/html/">http://docs.oracle.com/javase/specs/jvms/se7/html/</a>
+</p>
+
+<p>
+<a href="http://www.cs.umd.edu/~pugh/java/memoryModel/">http://www.cs.umd.edu/~pugh/java/memoryModel/</a>
+</p>
+
+<p>
+<a href="http://gee.cs.oswego.edu/dl/jmm/cookbook.html">http://gee.cs.oswego.edu/dl/jmm/cookbook.html</a>
+</p></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline2" class="outline-4">
+<h4 id="orgheadline2"><span class="section-number-4">1.1.2</span> Java基础知识</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li><p>
+阅读源代码
+</p>
+<pre class="example">
+java.lang.String ,java.lang.Integer, java.lang.Long, java.lang.Enum, java.math.BigDecimal, java.lang.ThreadLocal, 
+java.lang.ClassLoader, java.net.URLClassLoader, java.util.ArrayList , java.util.LinkedList, java.util.HashMap ,
+java.util.LinkedHashMap , java.util.TreeMap, java.util.HashSet , java.util.LinkedHashSet , java.util.TreeSet
+</pre></li>
+
+<li>熟悉Java中各种变量类型</li>
+
+<li>熟悉Java String的使用，熟悉String的各种函数</li>
+
+<li>熟悉Java中各种关键字</li>
+
+<li><p>
+学会使用List，Map，Stack，Queue，Set
+</p>
+
+<p>
+上述数据结构的遍历 上述数据结构的使用场景 Java实现对Array/List排序 java.uti.Arrays.sort() java.util.Collections.sort()
+ Java实现对List去重 Java实现对List去重，并且需要保留数据原始的出现顺序 Java实现最近最少使用cache，用LinkedHashMap
+</p></li>
+
+<li><p>
+Java IO&amp;Java NIO，并学会使用
+</p>
+
+<p>
+java.io.* java.nio.* nio和reactor设计模式 文件编码，字符集
+</p></li>
+
+<li><p>
+Java反射与javassist
+</p>
+
+<p>
+反射与工厂模式 java.lang.reflect.*
+</p></li>
+
+<li><p>
+Java序列化
+</p>
+
+<p>
+java.io. Serializable 什么是序列化，为什么序列化 序列化与单例模式 google序列化protobuf
+</p></li>
+
+<li><p>
+虚引用，弱引用，软引用
+</p>
+
+<p>
+java.lang.ref.* 实验这些引用的回收
+</p></li>
+
+<li><p>
+熟悉Java系统属性
+</p>
+
+<p>
+java.util.Properties
+</p></li>
+
+<li><p>
+熟悉Annotation用法
+</p>
+
+<p>
+java.lang.annotation.*
+</p></li>
+
+<li><p>
+JMS
+</p>
+
+<p>
+javax.jms.*
+</p></li>
+
+<li><p>
+JMX
+</p>
+
+<p>
+java.lang.management.* javax.management.*
+</p></li>
+
+<li>泛型和继承，泛型和擦除</li>
+
+<li>自动拆箱装箱与字节码</li>
+
+<li>实现Callback</li>
+
+<li>java.lang.Void类使用</li>
+
+<li><p>
+Java Agent，premain函数
+</p>
+
+<p>
+java.lang.instrument
+</p></li>
+
+<li><p>
+单元测试
+</p>
+
+<p>
+Junit，<a href="http://junit.org/">http://junit.org/</a>
+</p>
+
+<p>
+Jmockit，<a href="https://code.google.com/p/jmockit/">https://code.google.com/p/jmockit/</a>
+</p>
+
+<p>
+djUnit，<a href="http://works.dgic.co.jp/djunit/">http://works.dgic.co.jp/djunit/</a>
+</p></li>
+
+<li><p>
+Java实现通过正则表达式提取一段文本中的电子邮件，并将@替换为#输出
+</p>
+
+<p>
+java.lang.util.regex.*
+</p></li>
+
+<li><p>
+学习使用常用的Java工具库
+</p>
+
+<p>
+commons.lang, commons.*&#x2026; guava-libraries netty
+</p></li>
+
+<li><p>
+什么是API&amp;SPI
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Application_programming_interface">http://en.wikipedia.org/wiki/Application_programming_interface</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Service_provider_interface">http://en.wikipedia.org/wiki/Service_provider_interface</a>
+</p></li>
+
+<li><p>
+参考资料
+</p>
+
+<p>
+JDK src.zip 源代码
+</p>
+
+<p>
+<a href="http://openjdk.java.net/">http://openjdk.java.net/</a>
+</p>
+
+<p>
+<a href="http://commons.apache.org/">http://commons.apache.org/</a>
+</p>
+
+<p>
+<a href="https://code.google.com/p/guava-libraries/">https://code.google.com/p/guava-libraries/</a>
+</p>
+
+<p>
+<a href="http://netty.io/">http://netty.io/</a>
+</p>
+
+<p>
+<a href="http://stackoverflow.com/questions/2954372/difference-between-spi-and-api">http://stackoverflow.com/questions/2954372/difference-between-spi-and-api</a>
+</p>
+
+<p>
+<a href="http://stackoverflow.com/questions/11404230/how-to-implement-the-api-spi-pattern-in-java">http://stackoverflow.com/questions/11404230/how-to-implement-the-api-spi-pattern-in-java</a>
+</p></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline3" class="outline-4">
+<h4 id="orgheadline3"><span class="section-number-4">1.1.3</span> Java并发编程</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li><p>
+阅读源代码，并学会使用
+</p>
+
+<pre class="example">
+java.lang.Thread java.lang.Runnable java.util.concurrent.Callable java.util.concurrent.locks.ReentrantLock
+java.util.concurrent.locks.ReentrantReadWriteLock java.util.concurrent.atomic.Atomic* java.util.concurrent.Semaphore
+java.util.concurrent.CountDownLatch java.util.concurrent.CyclicBarrier java.util.concurrent.ConcurrentHashMap
+java.util.concurrent.Executors
+</pre></li>
+
+<li>学习使用线程池，自己设计线程池需要注意什么</li>
+
+<li><p>
+锁
+</p>
+
+<p>
+什么是锁，锁的种类有哪些，每种锁有什么特点，适用场景是什么 在并发编程中锁的意义是什么
+</p></li>
+
+<li>synchronized的作用是什么，synchronized和lock</li>
+
+<li>sleep和wait</li>
+
+<li>wait和notify</li>
+
+<li>写一个死锁的程序</li>
+
+<li>什么是守护线程，守护线程和非守护线程的区别以及用法</li>
+
+<li><p>
+volatile关键字的理解
+</p>
+
+<p>
+C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指令重排和CPU指令重排
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Memory_ordering">http://en.wikipedia.org/wiki/Memory_ordering</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Volatile_variable">http://en.wikipedia.org/wiki/Volatile_variable</a>
+</p>
+
+<p>
+<a href="http://preshing.com/20130702/the-happens-before-relation/">http://preshing.com/20130702/the-happens-before-relation/</a>
+</p>
+
+<ul class="org-ul">
+<li><p>
+以下代码是不是线程安全？为什么？如果为count加上volatile修饰是否能够做到线程安全？你觉得该怎么做是线程安全的？
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java">    public class Sample {
+    private static int count = 0;
+    public static void increment() {
+    count++;
+  }
+}
+</pre>
+</div></li>
+
+<li>解释一下下面两段代码的差别</li>
+</ul>
+<p>
+// 代码1
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">  public class Sample {
+  private static int count = 0;
+  synchronized public static void increment() {
+    count++;
+  }
+}
+</pre>
+</div>
+
+<p>
+// 代码2
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">   public class Sample {
+  private static AtomicInteger count = new AtomicInteger(0);
+  public static void increment() {
+    count.getAndIncrement();
+  }
+}
+</pre>
+</div></li>
+
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://book.douban.com/subject/10484692/">http://book.douban.com/subject/10484692/</a>
+</p>
+
+<p>
+<a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html">http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html</a>
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline9" class="outline-3">
+<h3 id="orgheadline9"><span class="section-number-3">1.2</span> 进阶篇</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">1.2.1</span> Java底层知识</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li><p>
+学习了解字节码、class文件格式
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Java_class_file">http://en.wikipedia.org/wiki/Java_class_file</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Java_bytecode">http://en.wikipedia.org/wiki/Java_bytecode</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Java_bytecode_instruction_listings">http://en.wikipedia.org/wiki/Java_bytecode_instruction_listings</a>
+</p>
+
+<p>
+<a href="http://www.csg.ci.i.u-tokyo.ac.jp/~chiba/javassist/">http://www.csg.ci.i.u-tokyo.ac.jp/~chiba/javassist/</a>
+</p>
+
+<p>
+<a href="http://asm.ow2.org/">http://asm.ow2.org/</a>
+</p></li>
+
+<li><p>
+写一个程序要求实现javap的功能（手工完成，不借助ASM等工具）
+</p>
+
+<p>
+如Java源代码：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">  public static void main(String[] args) {
+  int i = 0;
+  i += 1;
+  i *= 1;
+  System.out.println(i);
+}
+</pre>
+</div>
+
+<p>
+编译后读取class文件输出以下代码：
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">public static void main(java.lang.String[]);
+  Code:
+   Stack=2, Locals=2, Args_size=1
+   0:   iconst_0
+   1:   istore_1
+   2:   iinc    1, 1
+   5:   iload_1
+   6:   iconst_1
+   7:   imul
+   8:   istore_1
+   9:   getstatic       #2; //Field java/lang/System.out:Ljava/io/PrintStream;
+   12:  iload_1
+   13:  invokevirtual   #3; //Method java/io/PrintStream.println:(I)V
+   16:  return
+  LineNumberTable:
+   line 4: 0
+   line 5: 2
+   line 6: 5
+   line 7: 9
+   line 8: 16
+</pre>
+</div></li>
+
+<li><p>
+CPU缓存，L1，L2，L3和伪共享
+</p>
+
+<p>
+<a href="http://duartes.org/gustavo/blog/post/intel-cpu-caches/">http://duartes.org/gustavo/blog/post/intel-cpu-caches/</a>
+</p>
+
+<p>
+<a href="http://mechanical-sympathy.blogspot.com/2011/07/false-sharing.html">http://mechanical-sympathy.blogspot.com/2011/07/false-sharing.html</a>
+</p></li>
+
+<li>什么是尾递归</li>
+
+<li><p>
+熟悉位运算
+</p>
+
+<p>
+用位运算实现加、减、乘、除、取余
+</p></li>
+
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://book.douban.com/subject/1138768/">http://book.douban.com/subject/1138768/</a>
+</p>
+
+<p>
+<a href="http://book.douban.com/subject/6522893/">http://book.douban.com/subject/6522893/</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Java_class_file">http://en.wikipedia.org/wiki/Java_class_file</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Java_bytecode">http://en.wikipedia.org/wiki/Java_bytecode</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Java_bytecode_instruction_listings">http://en.wikipedia.org/wiki/Java_bytecode_instruction_listings</a>
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">1.2.2</span> 设计模式</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li><p>
+实现AOP
+</p>
+
+<p>
+CGLIB和InvocationHandler的区别 <a href="http://cglib.sourceforge.net/">http://cglib.sourceforge.net/</a>
+</p>
+
+<p>
+动态代理模式 Javassist实现AOP <a href="http://www.csg.ci.i.u-tokyo.ac.jp/~chiba/javassist/">http://www.csg.ci.i.u-tokyo.ac.jp/~chiba/javassist/</a>
+</p>
+
+<p>
+ASM实现AOP <a href="http://asm.ow2.org/">http://asm.ow2.org/</a>
+</p></li>
+
+<li>使用模板方法设计模式和策略设计模式实现IOC</li>
+
+<li>不用synchronized和lock，实现线程安全的单例模式</li>
+
+<li>nio和reactor设计模式</li>
+
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://asm.ow2.org/">http://asm.ow2.org/</a>
+</p>
+
+<p>
+<a href="http://cglib.sourceforge.net/">http://cglib.sourceforge.net/</a>
+</p>
+
+<p>
+<a href="http://www.javassist.org/">http://www.javassist.org/</a>
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.2.3</span> 网络编程知识</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>Java RMI，Socket，HttpClient</li>
+<li>用Java写一个简单的静态文件的HTTP服务器
+实现客户端缓存功能，支持返回304 实现可并发下载一个文件 使用线程池处理客户端请求 使用nio处理客户端请求 支持简单的rewrite规则
+上述功能在实现的时候需要满足“开闭原则”</li>
+<li><p>
+了解nginx和apache服务器的特性并搭建一个对应的服务器
+</p>
+
+<p>
+<a href="http://nginx.org/">http://nginx.org/</a>
+</p>
+
+<p>
+<a href="http://httpd.apache.org/">http://httpd.apache.org/</a>
+</p></li>
+<li>用Java实现FTP、SMTP协议</li>
+<li><p>
+什么是CDN？如果实现？DNS起到什么作用？
+</p>
+
+<p>
+ 搭建一个DNS服务器 搭建一个 Squid 或 Apache Traffic Server
+服务器 <a href="http://www.squid-cache.org/">http://www.squid-cache.org/</a> <a href="http://trafficserver.apache.org/">http://trafficserver.apache.org/</a> <a href="http://en.wikipedia.org/wiki/Domain_Name_System">http://en.wikipedia.org/wiki/Domain_Name_System</a>
+</p></li>
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://www.ietf.org/rfc/rfc2616.txt">http://www.ietf.org/rfc/rfc2616.txt</a>
+</p>
+
+<p>
+<a href="http://tools.ietf.org/rfc/rfc5321.txt">http://tools.ietf.org/rfc/rfc5321.txt</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Open/closed_principle">http://en.wikipedia.org/wiki/Open/closed_principle</a>
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">1.2.4</span> 框架知识</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ul class="org-ul">
+<li>spring，spring mvc，阅读主要源码 ibatis，阅读主要源码 用spring和ibatis搭建java server</li>
+
+<li><p>
+应用服务器知识
+</p>
+
+<p>
+熟悉使用jboss，<a href="https://www.jboss.org/overview/">https://www.jboss.org/overview/</a> 熟悉使用tomcat，<a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a> 熟悉使用jetty，<a href="http://www.eclipse.org/jetty/">http://www.eclipse.org/jetty/</a>
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15"><span class="section-number-3">1.3</span> 高级篇</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">1.3.1</span> 编译原理知识</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li><p>
+用Java实现以下表达式解析并返回结果（语法和Oracle中的select sysdate-1 from dual类似）
+</p>
+
+<p>
+sysdate
+sysdate - 1
+sysdate - 1/24
+sysdate - 1/(12*2)
+</p></li>
+
+<li><p>
+实现对一个List通过DSL筛选
+</p>
+
+<p>
+QList&lt;Map&lt;String, Object&gt;&gt; mapList = new QList&lt;Map&lt;String, Object&gt;&gt;;
+mapList.add({"name": "hatter test"});
+mapList.add({"id": -1,"name": "hatter test"});
+mapList.add({"id": 0, "name": "hatter test"});
+mapList.add({"id": 1, "name": "test test"});
+mapList.add({"id": 2, "name": "hatter test"});
+mapList.add({"id": 3, "name": "test hatter"});
+mapList.query("id is not null and id &gt; 0 and name like '%hatter%'");
+</p>
+
+<p>
+要求返回列表中匹配的对象，即最后两个对象；
+</p></li>
+
+<li><p>
+用Java实现以下程序（语法和变量作用域处理都和JavaScript类似）：
+</p>
+
+<p>
+代码：
+</p>
+
+<p>
+var a = 1;
+var b = 2;
+var c = function() {
+  var a = 3;
+  println(a);
+  println(b);
+};
+c();
+println(a);
+println(b);
+</p>
+
+<p>
+输出：
+</p>
+
+<p>
+3
+2
+1
+2
+</p></li>
+
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Abstract_syntax_tree">http://en.wikipedia.org/wiki/Abstract_syntax_tree</a> <a href="https://javacc.java.net/">https://javacc.java.net/</a> <a href="http://www.antlr.org/">http://www.antlr.org/</a>
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline11" class="outline-4">
+<h4 id="orgheadline11"><span class="section-number-4">1.3.2</span> 操作系统知识</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+Ubuntu Centos 使用linux，熟悉shell脚本
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline12" class="outline-4">
+<h4 id="orgheadline12"><span class="section-number-4">1.3.3</span> 数据存储知识</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<ul class="org-ul">
+<li><p>
+关系型数据库
+</p>
+
+<p>
+MySQL 如何看执行计划 如何搭建MySQL主备 binlog是什么 Derby，H2，PostgreSQL SQLite
+</p></li>
+
+<li><p>
+NoSQL
+</p>
+
+<p>
+Cache Redis Memcached Leveldb Bigtable HBase Cassandra Mongodb 图数据库 neo4j
+</p></li>
+
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://db-engines.com/en/ranking">http://db-engines.com/en/ranking</a>
+</p>
+
+<p>
+<a href="http://redis.io/">http://redis.io/</a>
+</p>
+
+<p>
+<a href="https://code.google.com/p/leveldb/">https://code.google.com/p/leveldb/</a>
+</p>
+
+<p>
+<a href="http://hbase.apache.org/">http://hbase.apache.org/</a>
+</p>
+
+<p>
+<a href="http://cassandra.apache.org/">http://cassandra.apache.org/</a>
+</p>
+
+<p>
+<a href="http://www.mongodb.org/">http://www.mongodb.org/</a>
+</p>
+
+<p>
+<a href="http://www.neo4j.org/">http://www.neo4j.org/</a>
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline13" class="outline-4">
+<h4 id="orgheadline13"><span class="section-number-4">1.3.4</span> 大数据知识</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<ul class="org-ul">
+<li>Zookeeper，在linux上部署zk</li>
+<li>Solr，Lucene，ElasticSearch
+在linux上部署solr，solrcloud，，新增、删除、查询索引</li>
+<li>Storm，流式计算，了解Spark，S4
+在linux上部署storm，用zookeeper做协调，运行storm hello world，local和remote模式运行调试storm topology。</li>
+<li>Hadoop，离线计算
+Hdfs：部署NameNode，SecondaryNameNode，DataNode，上传文件、打开文件、更改文件、删除文件
+MapReduce：部署JobTracker，TaskTracker，编写mr job
+Hive：部署hive，书写hive sql，得到结果
+Presto：类hive，不过比hive快，非常值得学习</li>
+<li>分布式日志收集flume，kafka，logstash</li>
+<li>数据挖掘，mahout</li>
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://zookeeper.apache.org/">http://zookeeper.apache.org/</a>
+</p>
+
+<p>
+<a href="https://lucene.apache.org/solr/">https://lucene.apache.org/solr/</a>
+</p>
+
+<p>
+<a href="https://github.com/nathanmarz/storm/wiki">https://github.com/nathanmarz/storm/wiki</a>
+</p>
+
+<p>
+<a href="http://hadoop.apache.org/">http://hadoop.apache.org/</a>
+</p>
+
+<p>
+<a href="http://prestodb.io/">http://prestodb.io/</a>
+</p>
+
+<p>
+<a href="http://flume.apache.org/">http://flume.apache.org/</a>
+</p>
+
+<p>
+<a href="http://logstash.net/">http://logstash.net/</a>
+</p>
+
+<p>
+<a href="http://kafka.apache.org/">http://kafka.apache.org/</a>
+</p>
+
+<p>
+<a href="http://mahout.apache.org/">http://mahout.apache.org/</a>
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline14" class="outline-4">
+<h4 id="orgheadline14"><span class="section-number-4">1.3.5</span> 网络安全知识</h4>
+<div class="outline-text-4" id="text-1-3-5">
+<ul class="org-ul">
+<li>什么是DES、AES</li>
+<li>什么是RSA、DSA</li>
+<li>什么是MD5，SHA1</li>
+<li>什么是SSL、TLS，为什么HTTPS相对比较安全</li>
+<li>什么是中间人攻击、如果避免中间人攻击</li>
+<li>什么是DOS、DDOS、CC攻击</li>
+<li>什么是CSRF攻击</li>
+<li>什么是CSS攻击</li>
+<li>什么是SQL注入攻击</li>
+<li>什么是Hash碰撞拒绝服务攻击</li>
+<li><p>
+了解并学习下面几种增强安全的技术
+</p>
+
+<p>
+<a href="http://www.openauthentication.org/">http://www.openauthentication.org/</a>
+</p>
+
+<p>
+HOTP <a href="http://www.ietf.org/rfc/rfc4226.txt">http://www.ietf.org/rfc/rfc4226.txt</a>
+</p>
+
+<p>
+TOTP <a href="http://tools.ietf.org/rfc/rfc6238.txt">http://tools.ietf.org/rfc/rfc6238.txt</a>
+</p>
+
+<p>
+OCRA <a href="http://tools.ietf.org/rfc/rfc6287.txt">http://tools.ietf.org/rfc/rfc6287.txt</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Salt_(cryptography)">http://en.wikipedia.org/wiki/Salt_(cryptography)</a>
+</p></li>
+
+<li>用openssl签一个证书部署到apache或nginx</li>
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">http://en.wikipedia.org/wiki/Cryptographic_hash_function</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Block_cipher">http://en.wikipedia.org/wiki/Block_cipher</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Public-key_cryptography">http://en.wikipedia.org/wiki/Public-key_cryptography</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">http://en.wikipedia.org/wiki/Transport_Layer_Security</a>
+</p>
+
+<p>
+<a href="http://www.openssl.org/">http://www.openssl.org/</a>
+</p>
+
+<p>
+<a href="https://code.google.com/p/google-authenticator/">https://code.google.com/p/google-authenticator/</a>
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18"><span class="section-number-3">1.4</span> 扩展篇</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">1.4.1</span> 相关知识</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>云计算，分布式，高可用，可扩展</li>
+<li><p>
+虚拟化
+</p>
+
+<p>
+<a href="https://linuxcontainers.org/">https://linuxcontainers.org/</a>
+</p>
+
+<p>
+<a href="http://www.linux-kvm.org/page/Main_Page">http://www.linux-kvm.org/page/Main_Page</a>
+</p>
+
+<p>
+<a href="http://www.xenproject.org/">http://www.xenproject.org/</a>
+</p>
+
+<p>
+<a href="https://www.docker.io/">https://www.docker.io/</a>
+</p></li>
+<li><p>
+监控
+</p>
+
+<p>
+<a href="http://www.nagios.org/">http://www.nagios.org/</a>
+</p>
+
+<p>
+<a href="http://ganglia.info/">http://ganglia.info/</a>
+</p></li>
+<li><p>
+负载均衡
+</p>
+
+<p>
+<a href="http://www.linuxvirtualserver.org/">http://www.linuxvirtualserver.org/</a>
+</p></li>
+<li><p>
+学习使用git
+</p>
+
+<p>
+<a href="https://github.com/">https://github.com/</a>
+</p>
+
+<p>
+<a href="https://git.oschina.net/">https://git.oschina.net/</a>
+</p></li>
+<li><p>
+学习使用maven
+</p>
+
+<p>
+<a href="http://maven.apache.org/">http://maven.apache.org/</a>
+</p></li>
+<li><p>
+学习使用gradle
+</p>
+
+<p>
+<a href="http://www.gradle.org/">http://www.gradle.org/</a>
+</p></li>
+<li><p>
+学习一个小语种语言
+</p>
+
+<p>
+Groovy Scala LISP, Common LISP, Schema, Clojure R Julia Lua Ruby
+</p></li>
+<li><p>
+尝试了解编码的本质
+</p>
+
+<p>
+了解以下概念 ASCII, ISO-8859-1 GB2312, GBK, GB18030 Unicode, UTF-8 不使用 String.getBytes() 等其他工具类/函数完成下面功能
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java">public static void main(String[] args) throws IOException {
+String str = "Hello, 我们是中国人。";
+byte[] utf8Bytes = toUTF8Bytes(str);
+FileOutputStream fos = new FileOutputStream("f.txt");
+fos.write(utf8Bytes);
+fos.close();
+}
+public static byte[] toUTF8Bytes(String str) {
+return null; // TODO
+}
+</pre>
+</div>
+<p>
+想一下上面的程序能不能写一个转GBK的？ 写个程序自动判断一个文件是哪种编码
+</p></li>
+<li><p>
+尝试了解时间的本质
+</p>
+
+<p>
+时区 &amp; 冬令时、夏令时 <a href="http://en.wikipedia.org/wiki/Time_zone">http://en.wikipedia.org/wiki/Time_zone</a> <a href="ftp://ftp.iana.org/tz/data/asia">ftp://ftp.iana.org/tz/data/asia</a>
+<a href="http://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9C%8B%E6%99%82%E5%8D%80">http://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9C%8B%E6%99%82%E5%8D%80</a>
+</p>
+
+<p>
+闰年 <a href="http://en.wikipedia.org/wiki/Leap_year">http://en.wikipedia.org/wiki/Leap_year</a>
+</p>
+
+<p>
+闰秒 <a href="ftp://ftp.iana.org/tz/data/leapseconds">ftp://ftp.iana.org/tz/data/leapseconds</a>
+</p>
+
+<p>
+System.currentTimeMillis() 返回的时间是什么
+</p></li>
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://git-scm.com/">http://git-scm.com/</a>
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/UTF-8">http://en.wikipedia.org/wiki/UTF-8</a>
+</p>
+
+<p>
+<a href="http://www.iana.org/time-zones">http://www.iana.org/time-zones</a>
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline17" class="outline-4">
+<h4 id="orgheadline17"><span class="section-number-4">1.4.2</span> 扩展学习</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>JavaScript知识
+<ul class="org-ul">
+<li><p>
+什么是prototype
+</p>
+
+<p>
+修改代码，使程序输出“1 3 5”： <a href="http://jsfiddle.net/Ts7Fk/">http://jsfiddle.net/Ts7Fk/</a>
+</p></li>
+
+<li><p>
+什么是闭包
+</p>
+
+<p>
+看一下这段代码，并解释一下为什么按Button1时没有alert出“This is button: 1”，如何修改： <a href="http://jsfiddle.net/FDPj3/1/">http://jsfiddle.net/FDPj3/1/</a>
+</p></li>
+</ul></li>
+
+<li><p>
+了解并学习一个JS框架
+</p>
+
+<p>
+jQuery ExtJS ArgularJS
+</p></li>
+
+<li><p>
+写一个Greasemonkey插件
+</p>
+
+<p>
+<a href="http://en.wikipedia.org/wiki/Greasemonkey">http://en.wikipedia.org/wiki/Greasemonkey</a>
+</p></li>
+
+<li><p>
+学习node.js
+</p>
+
+<p>
+<a href="http://nodejs.org/">http://nodejs.org/</a>
+</p></li>
+
+<li><p>
+学习html5
+</p>
+
+<p>
+ArgularJS，<a href="https://docs.angularjs.org/api">https://docs.angularjs.org/api</a>
+</p></li>
+
+<li><p>
+参考资料
+</p>
+
+<p>
+<a href="http://www.ecmascript.org/">http://www.ecmascript.org/</a>
+</p>
+
+<p>
+<a href="http://jsfiddle.net/">http://jsfiddle.net/</a>
+</p>
+
+<p>
+<a href="http://jsbin.com/">http://jsbin.com/</a>
+</p>
+
+<p>
+<a href="http://runjs.cn/">http://runjs.cn/</a>
+</p>
+
+<p>
+<a href="http://userscripts.org/">http://userscripts.org/</a>
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19"><span class="section-number-3">1.5</span> 推荐书籍</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+《深入Java虚拟机》
+</p>
+
+<p>
+《深入理解Java虚拟机》
+</p>
+
+<p>
+《Effective Java》
+</p>
+
+<p>
+《七周七语言》
+</p>
+
+<p>
+《七周七数据》
+</p>
+
+<p>
+《Hadoop技术内幕》
+</p>
+
+<p>
+《Hbase In Action》
+</p>
+
+<p>
+《Mahout In Action》
+</p>
+
+<p>
+《这就是搜索引擎》
+</p>
+
+<p>
+《Solr In Action》
+</p>
+
+<p>
+《深入分析Java Web技术内幕》
+</p>
+
+<p>
+《大型网站技术架构》
+</p>
+
+<p>
+《高性能MySQL》
+</p>
+
+<p>
+《算法导论》
+</p>
+
+<p>
+《计算机程序设计艺术》
+</p>
+
+<p>
+《代码大全》
+</p>
+
+<p>
+《JavaScript权威指南》
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: date</p>
+<p class="author">Author: YONG</p>
+<p class="date">Created: 2016-03-26 Sat 21:16</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
