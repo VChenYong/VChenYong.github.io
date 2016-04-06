@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="En" xml:lang="En">
 <head>
-<!-- 2016-04-03 Sun 10:20 -->
+<!-- 2016-04-05 Tue 20:14 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>GIT.org</title>
@@ -149,21 +149,22 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline11">1. Note</a>
+<li><a href="#orgheadline12">1. Note</a>
 <ul>
 <li><a href="#orgheadline1">1.1. Git configuration</a></li>
 <li><a href="#orgheadline2">1.2. create bare repositories</a></li>
-<li><a href="#orgheadline9">1.3. Chinese</a>
+<li><a href="#orgheadline3">1.3. Sparse checkout</a></li>
+<li><a href="#orgheadline10">1.4. Chinese</a>
 <ul>
-<li><a href="#orgheadline3">1.3.1. 创建新仓库</a></li>
-<li><a href="#orgheadline4">1.3.2. 检出仓库</a></li>
-<li><a href="#orgheadline5">1.3.3. 添加和提交</a></li>
-<li><a href="#orgheadline6">1.3.4. 推送改动</a></li>
-<li><a href="#orgheadline7">1.3.5. 分支</a></li>
-<li><a href="#orgheadline8">1.3.6. 更新与合并</a></li>
+<li><a href="#orgheadline4">1.4.1. 创建新仓库</a></li>
+<li><a href="#orgheadline5">1.4.2. 检出仓库</a></li>
+<li><a href="#orgheadline6">1.4.3. 添加和提交</a></li>
+<li><a href="#orgheadline7">1.4.4. 推送改动</a></li>
+<li><a href="#orgheadline8">1.4.5. 分支</a></li>
+<li><a href="#orgheadline9">1.4.6. 更新与合并</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline10">1.4. temp</a></li>
+<li><a href="#orgheadline11">1.5. temp</a></li>
 </ul>
 </li>
 </ul>
@@ -171,8 +172,8 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgheadline11" class="outline-2">
-<h2 id="orgheadline11"><span class="section-number-2">1</span> Note</h2>
+<div id="outline-container-orgheadline12" class="outline-2">
+<h2 id="orgheadline12"><span class="section-number-2">1</span> Note</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-orgheadline1" class="outline-3">
 <h3 id="orgheadline1"><span class="section-number-3">1.1</span> Git configuration</h3>
@@ -214,13 +215,41 @@ git --bare init
 </div>
 </div>
 
-
-<div id="outline-container-orgheadline9" class="outline-3">
-<h3 id="orgheadline9"><span class="section-number-3">1.3</span> Chinese</h3>
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.3</span> Sparse checkout</h3>
 <div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-orgheadline3" class="outline-4">
-<h4 id="orgheadline3"><span class="section-number-4">1.3.1</span> 创建新仓库</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<p>
+Sparse checkout was added in git 1.7.0 (Feb. 2012). The steps to do a sparse clone are as follows:
+</p>
+<ul class="org-ul">
+<li><p>
+set the sparseCheckout flag to true
+</p>
+<pre class="example">
+git config core.sparseCheckout true
+</pre></li>
+<li><p>
+Set wanted/unwanted files or folder 
+</p>
+<pre class="example">
+echo "some/dir/" &gt;&gt; .git/info/sparse-checkout
+echo "another/sub/tree" &gt;&gt; .git/info/sparse-checkout
+</pre></li>
+</ul>
+
+<p>
+<a href="http://schacon.github.io/git/git-read-tree.html#_sparse_checkout">official documentation for sparse checkout.</a>
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">1.4</span> Chinese</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-orgheadline4" class="outline-4">
+<h4 id="orgheadline4"><span class="section-number-4">1.4.1</span> 创建新仓库</h4>
+<div class="outline-text-4" id="text-1-4-1">
 <p>
 创建新文件夹，打开，然后执行
 </p>
@@ -230,9 +259,9 @@ git init
 </div>
 </div>
 
-<div id="outline-container-orgheadline4" class="outline-4">
-<h4 id="orgheadline4"><span class="section-number-4">1.3.2</span> 检出仓库</h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">1.4.2</span> 检出仓库</h4>
+<div class="outline-text-4" id="text-1-4-2">
 <p>
 执行如下命令以创建一个本地仓库的克隆版本
 </p>
@@ -249,9 +278,9 @@ git clone username@host:/path/to/repository
 </div>
 </div>
 
-<div id="outline-container-orgheadline5" class="outline-4">
-<h4 id="orgheadline5"><span class="section-number-4">1.3.3</span> 添加和提交</h4>
-<div class="outline-text-4" id="text-1-3-3">
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">1.4.3</span> 添加和提交</h4>
+<div class="outline-text-4" id="text-1-4-3">
 <pre class="example">
 git add &lt;filename&gt;
 git add *
@@ -262,9 +291,9 @@ git commit -m "代码提交信息"
 </div>
 
 
-<div id="outline-container-orgheadline6" class="outline-4">
-<h4 id="orgheadline6"><span class="section-number-4">1.3.4</span> 推送改动</h4>
-<div class="outline-text-4" id="text-1-3-4">
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.4.4</span> 推送改动</h4>
+<div class="outline-text-4" id="text-1-4-4">
 <p>
 你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：
 </p>
@@ -281,9 +310,9 @@ git remote add origin &lt;server&gt;
 </div>
 </div>
 
-<div id="outline-container-orgheadline7" class="outline-4">
-<h4 id="orgheadline7"><span class="section-number-4">1.3.5</span> 分支</h4>
-<div class="outline-text-4" id="text-1-3-5">
+<div id="outline-container-orgheadline8" class="outline-4">
+<h4 id="orgheadline8"><span class="section-number-4">1.4.5</span> 分支</h4>
+<div class="outline-text-4" id="text-1-4-5">
 <p>
 分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上
 </p>
@@ -320,9 +349,9 @@ git push origin &lt;branch&gt;
 </div>
 
 
-<div id="outline-container-orgheadline8" class="outline-4">
-<h4 id="orgheadline8"><span class="section-number-4">1.3.6</span> 更新与合并</h4>
-<div class="outline-text-4" id="text-1-3-6">
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">1.4.6</span> 更新与合并</h4>
+<div class="outline-text-4" id="text-1-4-6">
 <p>
 更新你的本地仓库至最新改动，执行：
 </p>
@@ -363,9 +392,10 @@ git diff &lt;source_branch&gt; &lt;target_branch&gt;
 
 
 
-<div id="outline-container-orgheadline10" class="outline-3">
-<h3 id="orgheadline10"><span class="section-number-3">1.4</span> temp</h3>
-<div class="outline-text-3" id="text-1-4">
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">1.5</span> temp</h3>
+<div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>Working with local branches
 
@@ -468,7 +498,7 @@ git push origin:v1.0_fixes
 <div id="postamble" class="status">
 <p class="date">Date: 2013-01-12 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-04-03 Sun 10:20</p>
+<p class="date">Created: 2016-04-05 Tue 20:14</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
