@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="En" xml:lang="En">
 <head>
-<!-- 2016-07-06 Wed 21:22 -->
+<!-- 2016-08-31 Wed 12:38 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>GIT.org</title>
@@ -235,8 +235,16 @@ Set wanted/unwanted files or folder
 echo "some/dir/" &gt;&gt; .git/info/sparse-checkout
 echo "another/sub/tree" &gt;&gt; .git/info/sparse-checkout
 </pre></li>
+<li><p>
+Example
+</p>
+<pre class="example">
+git clone &lt;path&gt;
+git config core.sparsecheckout true
+echo &lt;dir&gt; &gt; .git/info/sparse-checkout
+git read-tree -m -u HEAD
+</pre></li>
 </ul>
-
 <p>
 <a href="http://schacon.github.io/git/git-read-tree.html#_sparse_checkout">official documentation for sparse checkout.</a>
 </p>
@@ -289,6 +297,7 @@ git commit -m "代码提交信息"
 </pre>
 </div>
 </div>
+
 
 
 <div id="outline-container-orgheadline7" class="outline-4">
@@ -498,7 +507,7 @@ git push origin:v1.0_fixes
 <div id="postamble" class="status">
 <p class="date">Date: 2013-01-12 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-07-06 Wed 21:22</p>
+<p class="date">Created: 2016-08-31 Wed 12:38</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

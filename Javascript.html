@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-07-06 Wed 21:22 -->
+<!-- 2016-08-31 Wed 12:38 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Java script</title>
@@ -239,6 +239,11 @@ console.log(this);
 updateZipCode();
 </pre>
 </div>
+
+<pre class="example">
+undefined
+undefined
+</pre>
 </div></li>
 
 
@@ -253,6 +258,11 @@ console.log(this);
 updateZipCode.call({zip: '123456'});
 </pre>
 </div>
+
+<pre class="example">
+{ zip: '123456' }
+undefined
+</pre>
 </div></li>
 
 <li><a id="orgheadline15"></a>Passing a object varibale<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-2">
@@ -289,6 +299,13 @@ updateZipCode.call(zipCode);
   updateZipCode2.call(zipCode,'1111111','quebec');
 </pre>
 </div>
+
+<pre class="example">
+old zipcode:654321
+new zipcode:1111111
+country:quebec
+undefined
+</pre>
 </div></li></ol></li>
 
 <li><a id="orgheadline18"></a>Using apply on function<br  /><div class="outline-text-7" id="text-1-1-2-4-3-3">
@@ -311,6 +328,13 @@ The apply() method calls a function with a given this value and arguments provid
   updateZipCode2.apply(zipCode,['1111111','quebec']);
 </pre>
 </div>
+
+<pre class="example">
+old zipcode:654321
+new zipcode:1111111
+country:quebec
+undefined
+</pre>
 </div></li></ol></li>
 
 
@@ -325,6 +349,11 @@ The apply() method calls a function with a given this value and arguments provid
 console.log(app.name);
 </pre>
 </div>
+
+<pre class="example">
+angular
+undefined
+</pre>
 </div></li>
 
 <li><a id="orgheadline22"></a>we can use unary operator instead of parentheses.( advatnage or disadvantage?)<br  /><div class="outline-text-7" id="text-1-1-2-4-5-2">
@@ -348,6 +377,13 @@ console.log('Executed example 3');
 }();
 </pre>
 </div>
+
+<pre class="example">
+Executed example 1
+Executed example 2
+Executed example 3
+undefined
+</pre>
 </div></li></ol></li></ol></li>
 
 
@@ -592,6 +628,23 @@ var c = fun(0).fun(1);  c.fun(2);  c.fun(3);//undefined,?,?,?
 </pre>
 </div>
 
+<pre class="example">
+undefined
+0
+0
+0
+undefined
+0
+1
+2
+undefined
+0
+1
+1
+undefined
+</pre>
+
+
 <div class="org-src-container">
 
 <pre class="src src-js">  function myFunction() {
@@ -602,6 +655,10 @@ var c = fun(0).fun(1);  c.fun(2);  c.fun(3);//undefined,?,?,?
 return myFunction();
 </pre>
 </div>
+
+<pre class="example">
+16
+</pre>
 </div>
 </div>
 </div>
@@ -609,7 +666,7 @@ return myFunction();
 <div id="postamble" class="status">
 <p class="date">Date: date</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-07-06 Wed 21:22</p>
+<p class="date">Created: 2016-08-31 Wed 12:38</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
