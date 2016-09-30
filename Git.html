@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="En" xml:lang="En">
 <head>
-<!-- 2016-08-31 Wed 12:38 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>GIT.org</title>
+<!-- 2016-09-30 Fri 15:50 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -65,14 +58,15 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -149,22 +143,28 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline12">1. Note</a>
+<li><a href="#sec-1">1. Note</a>
 <ul>
-<li><a href="#orgheadline1">1.1. Git configuration</a></li>
-<li><a href="#orgheadline2">1.2. create bare repositories</a></li>
-<li><a href="#orgheadline3">1.3. Sparse checkout</a></li>
-<li><a href="#orgheadline10">1.4. Chinese</a>
+<li><a href="#sec-1-1">1.1. Git configuration</a></li>
+<li><a href="#sec-1-2">1.2. create bare repositories</a></li>
+<li><a href="#sec-1-3">1.3. Sparse checkout</a></li>
+<li><a href="#sec-1-4">1.4. Chinese</a>
 <ul>
-<li><a href="#orgheadline4">1.4.1. 创建新仓库</a></li>
-<li><a href="#orgheadline5">1.4.2. 检出仓库</a></li>
-<li><a href="#orgheadline6">1.4.3. 添加和提交</a></li>
-<li><a href="#orgheadline7">1.4.4. 推送改动</a></li>
-<li><a href="#orgheadline8">1.4.5. 分支</a></li>
-<li><a href="#orgheadline9">1.4.6. 更新与合并</a></li>
+<li><a href="#sec-1-4-1">1.4.1. 创建新仓库</a></li>
+<li><a href="#sec-1-4-2">1.4.2. 检出仓库</a></li>
+<li><a href="#sec-1-4-3">1.4.3. 添加和提交</a></li>
+<li><a href="#sec-1-4-4">1.4.4. 推送改动</a></li>
+<li><a href="#sec-1-4-5">1.4.5. 分支</a></li>
+<li><a href="#sec-1-4-6">1.4.6. 更新与合并</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline11">1.5. temp</a></li>
+<li><a href="#sec-1-5">1.5. temp</a></li>
+<li><a href="#sec-1-6">1.6. Tips</a>
+<ul>
+<li><a href="#sec-1-6-1">1.6.1. list all the files in a commit?</a></li>
+<li><a href="#sec-1-6-2">1.6.2. show the latest commits</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,11 +172,11 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgheadline12" class="outline-2">
-<h2 id="orgheadline12"><span class="section-number-2">1</span> Note</h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Note</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orgheadline1" class="outline-3">
-<h3 id="orgheadline1"><span class="section-number-3">1.1</span> Git configuration</h3>
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Git configuration</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
 // steup user and email
@@ -192,7 +192,7 @@ git config --global core.editor emacs
 // remove a configuration
 git config --global --unset core.editor
 
-// list all git configuration 
+// list all git configuration
 git config -- global --list
 </pre>
 
@@ -201,8 +201,8 @@ git config -- global --list
 </div>
 </div>
 
-<div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2"><span class="section-number-3">1.2</span> create bare repositories</h3>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> create bare repositories</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 it's conventional to give bare repositories the extension .git
@@ -215,35 +215,32 @@ git --bare init
 </div>
 </div>
 
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3"><span class="section-number-3">1.3</span> Sparse checkout</h3>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Sparse checkout</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Sparse checkout was added in git 1.7.0 (Feb. 2012). The steps to do a sparse clone are as follows:
 </p>
 <ul class="org-ul">
-<li><p>
-set the sparseCheckout flag to true
-</p>
+<li>set the sparseCheckout flag to true
 <pre class="example">
 git config core.sparseCheckout true
-</pre></li>
-<li><p>
-Set wanted/unwanted files or folder 
-</p>
+</pre>
+</li>
+<li>Set wanted/unwanted files or folder
 <pre class="example">
 echo "some/dir/" &gt;&gt; .git/info/sparse-checkout
 echo "another/sub/tree" &gt;&gt; .git/info/sparse-checkout
-</pre></li>
-<li><p>
-Example
-</p>
+</pre>
+</li>
+<li>Example
 <pre class="example">
 git clone &lt;path&gt;
 git config core.sparsecheckout true
 echo &lt;dir&gt; &gt; .git/info/sparse-checkout
 git read-tree -m -u HEAD
-</pre></li>
+</pre>
+</li>
 </ul>
 <p>
 <a href="http://schacon.github.io/git/git-read-tree.html#_sparse_checkout">official documentation for sparse checkout.</a>
@@ -252,11 +249,11 @@ git read-tree -m -u HEAD
 </div>
 
 
-<div id="outline-container-orgheadline10" class="outline-3">
-<h3 id="orgheadline10"><span class="section-number-3">1.4</span> Chinese</h3>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Chinese</h3>
 <div class="outline-text-3" id="text-1-4">
-</div><div id="outline-container-orgheadline4" class="outline-4">
-<h4 id="orgheadline4"><span class="section-number-4">1.4.1</span> 创建新仓库</h4>
+</div><div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> 创建新仓库</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <p>
 创建新文件夹，打开，然后执行
@@ -267,8 +264,8 @@ git init
 </div>
 </div>
 
-<div id="outline-container-orgheadline5" class="outline-4">
-<h4 id="orgheadline5"><span class="section-number-4">1.4.2</span> 检出仓库</h4>
+<div id="outline-container-sec-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> 检出仓库</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <p>
 执行如下命令以创建一个本地仓库的克隆版本
@@ -286,8 +283,8 @@ git clone username@host:/path/to/repository
 </div>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-4">
-<h4 id="orgheadline6"><span class="section-number-4">1.4.3</span> 添加和提交</h4>
+<div id="outline-container-sec-1-4-3" class="outline-4">
+<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> 添加和提交</h4>
 <div class="outline-text-4" id="text-1-4-3">
 <pre class="example">
 git add &lt;filename&gt;
@@ -300,8 +297,8 @@ git commit -m "代码提交信息"
 
 
 
-<div id="outline-container-orgheadline7" class="outline-4">
-<h4 id="orgheadline7"><span class="section-number-4">1.4.4</span> 推送改动</h4>
+<div id="outline-container-sec-1-4-4" class="outline-4">
+<h4 id="sec-1-4-4"><span class="section-number-4">1.4.4</span> 推送改动</h4>
 <div class="outline-text-4" id="text-1-4-4">
 <p>
 你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：
@@ -319,8 +316,8 @@ git remote add origin &lt;server&gt;
 </div>
 </div>
 
-<div id="outline-container-orgheadline8" class="outline-4">
-<h4 id="orgheadline8"><span class="section-number-4">1.4.5</span> 分支</h4>
+<div id="outline-container-sec-1-4-5" class="outline-4">
+<h4 id="sec-1-4-5"><span class="section-number-4">1.4.5</span> 分支</h4>
 <div class="outline-text-4" id="text-1-4-5">
 <p>
 分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上
@@ -328,7 +325,7 @@ git remote add origin &lt;server&gt;
 
 
 <p>
-创建一个叫做“feature<sub>x</sub>”的分支，并切换过去：
+创建一个叫做“feature<sub>x”的分支，并切换过去：</sub>
 </p>
 <pre class="example">
 git checkout -b feature_x
@@ -358,8 +355,8 @@ git push origin &lt;branch&gt;
 </div>
 
 
-<div id="outline-container-orgheadline9" class="outline-4">
-<h4 id="orgheadline9"><span class="section-number-4">1.4.6</span> 更新与合并</h4>
+<div id="outline-container-sec-1-4-6" class="outline-4">
+<h4 id="sec-1-4-6"><span class="section-number-4">1.4.6</span> 更新与合并</h4>
 <div class="outline-text-4" id="text-1-4-6">
 <p>
 更新你的本地仓库至最新改动，执行：
@@ -402,25 +399,22 @@ git diff &lt;source_branch&gt; &lt;target_branch&gt;
 
 
 
-<div id="outline-container-orgheadline11" class="outline-3">
-<h3 id="orgheadline11"><span class="section-number-3">1.5</span> temp</h3>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> temp</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>Working with local branches
 
 <ol class="org-ol">
-<li><p>
-create git alias
-</p>
+<li>create git alias
 <pre class="example">
 git log --graph --oneline
 git log --graph -- oneline --all -- decorate
 git config --global alias.lga "log --graph -- oneline --all -- decorate"
-</pre></li>
+</pre>
+</li>
 
-<li><p>
-create branch
-</p>
+<li>create branch
 <pre class="example">
 git branch feature1
 git checkout feature1
@@ -443,12 +437,12 @@ git -D bug#1234
 // Recovering deleted commits
 git reflog  // find the delete branch commit
 git branch restoredBug 4d557ce  // note bt default git only keep delete information for around 30 days , so...
-</pre></li>
-</ol></li>
+</pre>
+</li>
+</ol>
+</li>
 
-<li><p>
-stashing changes
-</p>
+<li>stashing changes
 <pre class="example">
  git stash
  // view stashed information
@@ -462,9 +456,11 @@ stashing changes
 
  // create a new branch with stashed info
  git stash branch new_Branch_Name
-</pre></li>
+</pre>
+</li>
 
-<li>merging branches</li>
+<li>merging branches
+</li>
 </ul>
 <p>
 git  diff &#x2013;cached // compare the repo to the staging area.
@@ -472,23 +468,23 @@ git diff mergetool
 </p>
 
 <ul class="org-ul">
-<li>rebasing commits</li>
+<li>rebasing commits
+</li>
 </ul>
 <pre class="example">
 replay the commit on top of master.
 </pre>
 
 <ul class="org-ul">
-<li>cherry-picking commits</li>
+<li>cherry-picking commits
+</li>
 </ul>
 <pre class="example">
 git cherry-pick 6fa4324
 </pre>
 
 <ul class="org-ul">
-<li><p>
-working with remote branches
-</p>
+<li>working with remote branches
 <pre class="example">
 // puch  to origin master
 git push origin master
@@ -498,8 +494,36 @@ git push origin v1.0_fixes
 
 // delete remote branch
 git push origin:v1.0_fixes
-</pre></li>
+</pre>
+</li>
 </ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Tips</h3>
+<div class="outline-text-3" id="text-1-6">
+</div><div id="outline-container-sec-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> list all the files in a commit?</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<pre class="example">
+git diff-tree --no-commit-id --name-only -r bd61ad98
+git show --pretty="" --name-only bd61ad98
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-6-2" class="outline-4">
+<h4 id="sec-1-6-2"><span class="section-number-4">1.6.2</span> show the latest commits</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<pre class="example">
+git log -10
+git log HEAD~10..HEAD
+git log  --pretty=oneline | tail -n 10
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -507,7 +531,8 @@ git push origin:v1.0_fixes
 <div id="postamble" class="status">
 <p class="date">Date: 2013-01-12 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-08-31 Wed 12:38</p>
+<p class="date">Created: 2016-09-30 Fri 15:50</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
