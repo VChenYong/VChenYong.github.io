@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="En" xml:lang="En">
 <head>
 <title>GIT.org</title>
-<!-- 2016-09-30 Fri 15:50 -->
+<!-- 2016-11-30 Wed 11:04 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
@@ -163,6 +163,16 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-1-6-1">1.6.1. list all the files in a commit?</a></li>
 <li><a href="#sec-1-6-2">1.6.2. show the latest commits</a></li>
+<li><a href="#sec-1-6-3">1.6.3. only display commit that I made</a></li>
+<li><a href="#sec-1-6-4">1.6.4. git log paramters</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-7">1.7. GitFlow breakdown</a>
+<ul>
+<li><a href="#sec-1-7-1">1.7.1. create a branch on the branch that you are working</a></li>
+<li><a href="#sec-1-7-2">1.7.2. working on the new branch</a></li>
+<li><a href="#sec-1-7-3">1.7.3. Finally push the change up to your repo</a></li>
+<li><a href="#sec-1-7-4">1.7.4. temp 101</a></li>
 </ul>
 </li>
 </ul>
@@ -525,13 +535,149 @@ git log  --pretty=oneline | tail -n 10
 </pre>
 </div>
 </div>
+
+<div id="outline-container-sec-1-6-3" class="outline-4">
+<h4 id="sec-1-6-3"><span class="section-number-4">1.6.3</span> only display commit that I made</h4>
+<div class="outline-text-4" id="text-1-6-3">
+<pre class="example">
+git log --author="myname"  --oneline
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-6-4" class="outline-4">
+<h4 id="sec-1-6-4"><span class="section-number-4">1.6.4</span> git log paramters</h4>
+<div class="outline-text-4" id="text-1-6-4">
+<pre class="example">
+--author="jack" only display commits made by jack
+--name-only : only display the name of those modified files
+--oneline : display in oneline
+--graph :   display graph
+--reverse : reverse display commits
+--after : display commits after given time
+--before : display commit before given time
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> GitFlow breakdown</h3>
+<div class="outline-text-3" id="text-1-7">
+</div><div id="outline-container-sec-1-7-1" class="outline-4">
+<h4 id="sec-1-7-1"><span class="section-number-4">1.7.1</span> create a branch on the branch that you are working</h4>
+<div class="outline-text-4" id="text-1-7-1">
+<pre class="example">
+- git checkout release/1.0
+- git pull
+- git checkout -b feature/my-task
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1-7-2" class="outline-4">
+<h4 id="sec-1-7-2"><span class="section-number-4">1.7.2</span> working on the new branch</h4>
+<div class="outline-text-4" id="text-1-7-2">
+</div><ol class="org-ol"><li><a id="sec-1-7-2-1" name="sec-1-7-2-1"></a>After a day's work you can add your changes<br  /><div class="outline-text-5" id="text-1-7-2-1">
+<pre class="example">
+- git add &lt; file to add&gt;
+- git commit -m "your commit message"
+</pre>
+</div>
+</li>
+
+<li><a id="sec-1-7-2-2" name="sec-1-7-2-2"></a>If the task is done you can push your change to the remote repo<br  /><div class="outline-text-5" id="text-1-7-2-2">
+<pre class="example">
+-git push origin feature/my-task
+</pre>
+</div>
+</li>
+
+<li><a id="sec-1-7-2-3" name="sec-1-7-2-3"></a>if you continue to work the same task  the next day, your branch is probably  not up to date<br  /><div class="outline-text-5" id="text-1-7-2-3">
+<p>
+you can:
+</p>
+<pre class="example">
+- git checkout release/1.0
+- git pull
+- git checkout feature/my-task
+
+ #Here we merge the latest code from release/1.0 to the working branch  and  compress pervious commit on this branch to one commit.#
+- git rebase -i release/1.0
+
+#continue to work on this branch#
+- git add &lt; file to add&gt;
+- git commit -m "your commit message"
+</pre>
+</div>
+</li>
+
+<li><a id="sec-1-7-2-4" name="sec-1-7-2-4"></a>delete branch once everything is done<br  /><div class="outline-text-5" id="text-1-7-2-4">
+<pre class="example">
+git branch -d branch_name
+git push origin :&lt;branch_name&gt;
+</pre>
+</div>
+</li></ol>
+</div>
+
+
+<div id="outline-container-sec-1-7-3" class="outline-4">
+<h4 id="sec-1-7-3"><span class="section-number-4">1.7.3</span> Finally push the change up to your repo</h4>
+<div class="outline-text-4" id="text-1-7-3">
+<pre class="example">
+- git push origin feature/my-task
+</pre>
+</div>
+</div>
+
+
+
+<div id="outline-container-sec-1-7-4" class="outline-4">
+<h4 id="sec-1-7-4"><span class="section-number-4">1.7.4</span> temp 101</h4>
+<div class="outline-text-4" id="text-1-7-4">
+<ul class="org-ul">
+<li>revert
+</li>
+</ul>
+<pre class="example">
+before:
+A -&gt; B -&gt; C -&gt; D -&gt; HEAD
+
+need to:
+
+A &lt;-- B  &lt;-- C &lt;-- D
+
+$ git revert --no-commit D
+$ git revert --no-commit C
+$ git revert --no-commit B
+$ git commit -m 'the commit message'
+</pre>
+
+
+<ul class="org-ul">
+<li>show commit for one author
+</li>
+</ul>
+<pre class="example">
+git log -6 --author="yong.chen@kronos.com"
+</pre>
+
+
+<pre class="example">
+git show --pretty="" --name-only bd61ad98
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2013-01-12 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-09-30 Fri 15:50</p>
+<p class="date">Created: 2016-11-30 Wed 11:04</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

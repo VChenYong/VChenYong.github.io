@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-08-31 Wed 12:38 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>AccuRev.org</title>
+<!-- 2016-11-30 Wed 11:04 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -65,14 +58,15 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -159,32 +153,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline22">1. ACCUREV NOTE AND TRICK</a>
+<li><a href="#sec-1">1. ACCUREV NOTE AND TRICK</a>
 <ul>
-<li><a href="#orgheadline1">1.1. command line update workspace</a></li>
-<li><a href="#orgheadline2">1.2. revert to back</a></li>
-<li><a href="#orgheadline3">1.3. revert one transaction in workspace only</a></li>
-<li><a href="#orgheadline4">1.4. reset password</a></li>
-<li><a href="#orgheadline5">1.5. cross promoting</a></li>
-<li><a href="#orgheadline6">1.6. Move WorkSPaces</a></li>
-<li><a href="#orgheadline20">1.7. useful commands</a>
+<li><a href="#sec-1-1">1.1. command line update workspace</a></li>
+<li><a href="#sec-1-2">1.2. revert to back</a></li>
+<li><a href="#sec-1-3">1.3. revert one transaction in workspace only</a></li>
+<li><a href="#sec-1-4">1.4. reset password</a></li>
+<li><a href="#sec-1-5">1.5. cross promoting</a></li>
+<li><a href="#sec-1-6">1.6. Move WorkSPaces</a></li>
+<li><a href="#sec-1-7">1.7. useful commands</a>
 <ul>
-<li><a href="#orgheadline7">1.7.1. Login to accurev</a></li>
-<li><a href="#orgheadline8">1.7.2. Login with another server name</a></li>
-<li><a href="#orgheadline9">1.7.3. Create stream</a></li>
-<li><a href="#orgheadline10">1.7.4. Create workspace</a></li>
-<li><a href="#orgheadline11">1.7.5. Update workspace</a></li>
-<li><a href="#orgheadline12">1.7.6. Change workspace</a></li>
-<li><a href="#orgheadline13">1.7.7. Information about current location</a></li>
-<li><a href="#orgheadline14">1.7.8. Show command</a></li>
-<li><a href="#orgheadline15">1.7.9. View information about files in workspace</a></li>
-<li><a href="#orgheadline16">1.7.10. Show overlaps:</a></li>
-<li><a href="#orgheadline17">1.7.11. Show missing files:</a></li>
-<li><a href="#orgheadline18">1.7.12. Forcedly update accurev workspace when local files were missed:</a></li>
-<li><a href="#orgheadline19">1.7.13. Upgrade accurev client to latest version</a></li>
+<li><a href="#sec-1-7-1">1.7.1. Login to accurev</a></li>
+<li><a href="#sec-1-7-2">1.7.2. Login with another server name</a></li>
+<li><a href="#sec-1-7-3">1.7.3. Create stream</a></li>
+<li><a href="#sec-1-7-4">1.7.4. Create workspace</a></li>
+<li><a href="#sec-1-7-5">1.7.5. Update workspace</a></li>
+<li><a href="#sec-1-7-6">1.7.6. Change workspace</a></li>
+<li><a href="#sec-1-7-7">1.7.7. Information about current location</a></li>
+<li><a href="#sec-1-7-8">1.7.8. Show command</a></li>
+<li><a href="#sec-1-7-9">1.7.9. View information about files in workspace</a></li>
+<li><a href="#sec-1-7-10">1.7.10. Show overlaps:</a></li>
+<li><a href="#sec-1-7-11">1.7.11. Show missing files:</a></li>
+<li><a href="#sec-1-7-12">1.7.12. Forcedly update accurev workspace when local files were missed:</a></li>
+<li><a href="#sec-1-7-13">1.7.13. Upgrade accurev client to latest version</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline21">1.8. beyond compare</a></li>
+<li><a href="#sec-1-8">1.8. beyond compare</a></li>
 </ul>
 </li>
 </ul>
@@ -192,42 +186,49 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgheadline22" class="outline-2">
-<h2 id="orgheadline22"><span class="section-number-2">1</span> ACCUREV NOTE AND TRICK</h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> ACCUREV NOTE AND TRICK</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orgheadline1" class="outline-3">
-<h3 id="orgheadline1"><span class="section-number-3">1.1</span> command line update workspace</h3>
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> command line update workspace</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
-<li>call accurev update</li>
+<li>call accurev update
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2"><span class="section-number-3">1.2</span> revert to back</h3>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> revert to back</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
-<li>if  only revert back one file  among other files in a transaction, then it is better undo the modification and promote it again.</li>
+<li>if  only revert back one file  among other files in a transaction, then it is better undo the modification and promote it again.
+</li>
 <li>if we need to revert back all files from one transaction , then we can do revert back form the  the actual stream .
-after all the files are been reverted , the transaction will be disappeared.</li>
+after all the files are been reverted , the transaction will be disappeared.
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3"><span class="section-number-3">1.3</span> revert one transaction in workspace only</h3>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> revert one transaction in workspace only</h3>
 <div class="outline-text-3" id="text-1-3">
 <ol class="org-ol">
-<li>we can re-parent workspace or create a new workspace under the stream where the transaction can be found.</li>
-<li>show all history transaction</li>
-<li>right click on the transaction we want to revert</li>
-<li>select revert</li>
+<li>we can re-parent workspace or create a new workspace under the stream where the transaction can be found.
+</li>
+<li>show all history transaction
+</li>
+<li>right click on the transaction we want to revert
+</li>
+<li>select revert
+</li>
 </ol>
 </div>
 </div>
 
 
-<div id="outline-container-orgheadline4" class="outline-3">
-<h3 id="orgheadline4"><span class="section-number-3">1.4</span> reset password</h3>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> reset password</h3>
 <div class="outline-text-3" id="text-1-4">
 <pre class="example">
 # In cmd mode run the following command
@@ -236,19 +237,22 @@ after all the files are been reverted , the transaction will be disappeared.</li
 </pre>
 </div>
 </div>
-<div id="outline-container-orgheadline5" class="outline-3">
-<h3 id="orgheadline5"><span class="section-number-3">1.5</span> cross promoting</h3>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> cross promoting</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
-<li>select your file drag-and drop to the stream level you want (or change Palette)</li>
-<li>If the Promote command is enabled when you select all the elements, you can proceed to propagate all the issues (and their versions) to the destination stream</li>
-<li>detail see the manual pdf</li>
+<li>select your file drag-and drop to the stream level you want (or change Palette)
+</li>
+<li>If the Promote command is enabled when you select all the elements, you can proceed to propagate all the issues (and their versions) to the destination stream
+</li>
+<li>detail see the manual pdf
+</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-3">
-<h3 id="orgheadline6"><span class="section-number-3">1.6</span> Move WorkSPaces</h3>
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Move WorkSPaces</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 Ok, So I deleted the workspace in the stream (in AccuRev client)&#x2026;
@@ -285,11 +289,11 @@ Notes:
 
 
 
-<div id="outline-container-orgheadline20" class="outline-3">
-<h3 id="orgheadline20"><span class="section-number-3">1.7</span> useful commands</h3>
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> useful commands</h3>
 <div class="outline-text-3" id="text-1-7">
-</div><div id="outline-container-orgheadline7" class="outline-4">
-<h4 id="orgheadline7"><span class="section-number-4">1.7.1</span> Login to accurev</h4>
+</div><div id="outline-container-sec-1-7-1" class="outline-4">
+<h4 id="sec-1-7-1"><span class="section-number-4">1.7.1</span> Login to accurev</h4>
 <div class="outline-text-4" id="text-1-7-1">
 <p>
 accurev login [ -n ] '&lt;user-name&gt;' '&lt;password&gt;'
@@ -297,8 +301,8 @@ accurev login [ -n ] '&lt;user-name&gt;' '&lt;password&gt;'
 </div>
 </div>
 
-<div id="outline-container-orgheadline8" class="outline-4">
-<h4 id="orgheadline8"><span class="section-number-4">1.7.2</span> Login with another server name</h4>
+<div id="outline-container-sec-1-7-2" class="outline-4">
+<h4 id="sec-1-7-2"><span class="section-number-4">1.7.2</span> Login with another server name</h4>
 <div class="outline-text-4" id="text-1-7-2">
 <p>
 accurev login -H '&lt;server<sub>name</sub>&gt;:&lt;port&gt;' '&lt;user<sub>name</sub>&gt;' '&lt;password&gt;'
@@ -307,8 +311,8 @@ The –n option creates a non-expiring session
 </div>
 </div>
 
-<div id="outline-container-orgheadline9" class="outline-4">
-<h4 id="orgheadline9"><span class="section-number-4">1.7.3</span> Create stream</h4>
+<div id="outline-container-sec-1-7-3" class="outline-4">
+<h4 id="sec-1-7-3"><span class="section-number-4">1.7.3</span> Create stream</h4>
 <div class="outline-text-4" id="text-1-7-3">
 <p>
 accurev mkstream -s &lt;stream&gt; -b &lt;backing-stream&gt;
@@ -324,8 +328,8 @@ accurev mkstream -s dev.user.MyStream -b dev.user.MyBasisStream
 </div>
 </div>
 
-<div id="outline-container-orgheadline10" class="outline-4">
-<h4 id="orgheadline10"><span class="section-number-4">1.7.4</span> Create workspace</h4>
+<div id="outline-container-sec-1-7-4" class="outline-4">
+<h4 id="sec-1-7-4"><span class="section-number-4">1.7.4</span> Create workspace</h4>
 <div class="outline-text-4" id="text-1-7-4">
 <p>
 accurev mkws -w &lt;workspace-name&gt; -b &lt;backing-stream&gt; -l &lt;location&gt;
@@ -341,8 +345,8 @@ accurev mkws -w dev.ws.user.MyWorkspace -b dev.user.MyStream -l /home/user/ar/de
 </div>
 </div>
 
-<div id="outline-container-orgheadline11" class="outline-4">
-<h4 id="orgheadline11"><span class="section-number-4">1.7.5</span> Update workspace</h4>
+<div id="outline-container-sec-1-7-5" class="outline-4">
+<h4 id="sec-1-7-5"><span class="section-number-4">1.7.5</span> Update workspace</h4>
 <div class="outline-text-4" id="text-1-7-5">
 <p>
 cd /home/user/ar/dev.ws.user.MyWorkspace
@@ -354,8 +358,8 @@ accurev update
 </div>
 </div>
 
-<div id="outline-container-orgheadline12" class="outline-4">
-<h4 id="orgheadline12"><span class="section-number-4">1.7.6</span> Change workspace</h4>
+<div id="outline-container-sec-1-7-6" class="outline-4">
+<h4 id="sec-1-7-6"><span class="section-number-4">1.7.6</span> Change workspace</h4>
 <div class="outline-text-4" id="text-1-7-6">
 <p>
 accurev chws -w &lt;workspace&gt; &lt;new-name&gt;
@@ -367,8 +371,8 @@ accurev chws -w &lt;workspace&gt; -l &lt;new-location&gt; -m &lt;new-machine&gt;
 </div>
 </div>
 
-<div id="outline-container-orgheadline13" class="outline-4">
-<h4 id="orgheadline13"><span class="section-number-4">1.7.7</span> Information about current location</h4>
+<div id="outline-container-sec-1-7-7" class="outline-4">
+<h4 id="sec-1-7-7"><span class="section-number-4">1.7.7</span> Information about current location</h4>
 <div class="outline-text-4" id="text-1-7-7">
 <p>
 accurev info
@@ -376,8 +380,8 @@ accurev info
 </div>
 </div>
 
-<div id="outline-container-orgheadline14" class="outline-4">
-<h4 id="orgheadline14"><span class="section-number-4">1.7.8</span> Show command</h4>
+<div id="outline-container-sec-1-7-8" class="outline-4">
+<h4 id="sec-1-7-8"><span class="section-number-4">1.7.8</span> Show command</h4>
 <div class="outline-text-4" id="text-1-7-8">
 <p>
 show [ -f &lt;format&gt;] [ -p &lt;depot-name&gt;] [ -d ] [ -s &lt;stream&gt; [ -R ] ] [ -t &lt;time-spec&gt;] streams
@@ -389,12 +393,12 @@ show [ -f &lt;format&gt;] [ -a ] wspaces
 </div>
 </div>
 
-<div id="outline-container-orgheadline15" class="outline-4">
-<h4 id="orgheadline15"><span class="section-number-4">1.7.9</span> View information about files in workspace</h4>
+<div id="outline-container-sec-1-7-9" class="outline-4">
+<h4 id="sec-1-7-9"><span class="section-number-4">1.7.9</span> View information about files in workspace</h4>
 </div>
 
-<div id="outline-container-orgheadline16" class="outline-4">
-<h4 id="orgheadline16"><span class="section-number-4">1.7.10</span> Show overlaps:</h4>
+<div id="outline-container-sec-1-7-10" class="outline-4">
+<h4 id="sec-1-7-10"><span class="section-number-4">1.7.10</span> Show overlaps:</h4>
 <div class="outline-text-4" id="text-1-7-10">
 <p>
 accurev stat -o -B
@@ -402,8 +406,8 @@ accurev stat -o -B
 </div>
 </div>
 
-<div id="outline-container-orgheadline17" class="outline-4">
-<h4 id="orgheadline17"><span class="section-number-4">1.7.11</span> Show missing files:</h4>
+<div id="outline-container-sec-1-7-11" class="outline-4">
+<h4 id="sec-1-7-11"><span class="section-number-4">1.7.11</span> Show missing files:</h4>
 <div class="outline-text-4" id="text-1-7-11">
 <p>
 accurev stat -M
@@ -411,8 +415,8 @@ accurev stat -M
 </div>
 </div>
 
-<div id="outline-container-orgheadline18" class="outline-4">
-<h4 id="orgheadline18"><span class="section-number-4">1.7.12</span> Forcedly update accurev workspace when local files were missed:</h4>
+<div id="outline-container-sec-1-7-12" class="outline-4">
+<h4 id="sec-1-7-12"><span class="section-number-4">1.7.12</span> Forcedly update accurev workspace when local files were missed:</h4>
 <div class="outline-text-4" id="text-1-7-12">
 <p>
 accurev pop -O -R .
@@ -420,8 +424,8 @@ accurev pop -O -R .
 </div>
 </div>
 
-<div id="outline-container-orgheadline19" class="outline-4">
-<h4 id="orgheadline19"><span class="section-number-4">1.7.13</span> Upgrade accurev client to latest version</h4>
+<div id="outline-container-sec-1-7-13" class="outline-4">
+<h4 id="sec-1-7-13"><span class="section-number-4">1.7.13</span> Upgrade accurev client to latest version</h4>
 <div class="outline-text-4" id="text-1-7-13">
 <p>
 accurev upgrade<sub>client</sub> -s
@@ -430,8 +434,8 @@ accurev upgrade<sub>client</sub> -s
 </div>
 </div>
 
-<div id="outline-container-orgheadline21" class="outline-3">
-<h3 id="orgheadline21"><span class="section-number-3">1.8</span> beyond compare</h3>
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> beyond compare</h3>
 <div class="outline-text-3" id="text-1-8">
 <pre class="example">
 Diff:
@@ -451,7 +455,8 @@ Done
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-20 Wed</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2016-08-31 Wed 12:38</p>
+<p class="date">Created: 2016-11-30 Wed 11:04</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
