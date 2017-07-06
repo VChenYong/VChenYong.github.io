@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+<!-- 2017-07-06 Thu 12:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Java script</title>
-<!-- 2017-01-18 Wed 09:39 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="YONG" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="YONG" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,110 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +176,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="../styles/style.css" />
@@ -143,41 +234,41 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Notes taken from pluralsight online course Rapid JavaScript Training.</a>
+<li><a href="#orgd3619e4">1. Notes taken from pluralsight online course Rapid JavaScript Training.</a>
 <ul>
-<li><a href="#sec-1-1">1.1. Type</a>
+<li><a href="#orgf4f17d1">1.1. Type</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1. Six data types that are primitives:</a></li>
-<li><a href="#sec-1-1-2">1.1.2. Reference Type</a></li>
+<li><a href="#orga9a771f">1.1.1. Six data types that are primitives:</a></li>
+<li><a href="#org8ebe971">1.1.2. Reference Type</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2. Scope</a>
+<li><a href="#org6a9321a">1.2. Scope</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1. Global scope</a></li>
-<li><a href="#sec-1-2-2">1.2.2. Function Scope</a></li>
-<li><a href="#sec-1-2-3">1.2.3. block scope</a></li>
+<li><a href="#org1d3b7ee">1.2.1. Global scope</a></li>
+<li><a href="#org4759c69">1.2.2. Function Scope</a></li>
+<li><a href="#org795635d">1.2.3. block scope</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-3">1.3. BOM and DOM</a>
+<li><a href="#org16b04a2">1.3. BOM and DOM</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1. the window object (global object in NodeJs)</a></li>
-<li><a href="#sec-1-3-2">1.3.2. system dialogs</a></li>
-<li><a href="#sec-1-3-3">1.3.3. location Object</a></li>
-<li><a href="#sec-1-3-4">1.3.4. html document basics</a></li>
-<li><a href="#sec-1-3-5">1.3.5. query selectors</a></li>
+<li><a href="#org91e0afe">1.3.1. the window object (global object in NodeJs)</a></li>
+<li><a href="#orgcc7cddf">1.3.2. system dialogs</a></li>
+<li><a href="#orgf982f35">1.3.3. location Object</a></li>
+<li><a href="#org93ac1c9">1.3.4. html document basics</a></li>
+<li><a href="#org02d7393">1.3.5. query selectors</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-4">1.4. Event handler</a>
+<li><a href="#org04ec596">1.4. Event handler</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1. Events</a></li>
-<li><a href="#sec-1-4-2">1.4.2. Event Object</a></li>
-<li><a href="#sec-1-4-3">1.4.3. handling events</a></li>
-<li><a href="#sec-1-4-4">1.4.4. event Listeners</a></li>
-<li><a href="#sec-1-4-5">1.4.5. event bubbling</a></li>
-<li><a href="#sec-1-4-6">1.4.6. built-in Object and Functions</a></li>
+<li><a href="#org2b49e45">1.4.1. Events</a></li>
+<li><a href="#orgc870415">1.4.2. Event Object</a></li>
+<li><a href="#org947a80a">1.4.3. handling events</a></li>
+<li><a href="#org315d8d1">1.4.4. event Listeners</a></li>
+<li><a href="#orgb39ee2a">1.4.5. event bubbling</a></li>
+<li><a href="#org870634f">1.4.6. built-in Object and Functions</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5. temp</a></li>
+<li><a href="#org5b7f862">1.5. temp</a></li>
 </ul>
 </li>
 </ul>
@@ -185,51 +276,45 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Notes taken from pluralsight online course Rapid JavaScript Training.</h2>
+<div id="outline-container-orgd3619e4" class="outline-2">
+<h2 id="orgd3619e4"><span class="section-number-2">1</span> Notes taken from pluralsight online course Rapid JavaScript Training.</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Type</h3>
+</div><div id="outline-container-orgf4f17d1" class="outline-3">
+<h3 id="orgf4f17d1"><span class="section-number-3">1.1</span> Type</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-sec-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Six data types that are primitives:</h4>
+</div><div id="outline-container-orga9a771f" class="outline-4">
+<h4 id="orga9a771f"><span class="section-number-4">1.1.1</span> Six data types that are primitives:</h4>
 <div class="outline-text-4" id="text-1-1-1">
-</div><ol class="org-ol"><li><a id="sec-1-1-1-1" name="sec-1-1-1-1"></a>Boolean<br  /></li>
-<li><a id="sec-1-1-1-2" name="sec-1-1-1-2"></a>Null<br  /></li>
-<li><a id="sec-1-1-1-3" name="sec-1-1-1-3"></a>Undefined<br  /></li>
-<li><a id="sec-1-1-1-4" name="sec-1-1-1-4"></a>Number<br  /></li>
-<li><a id="sec-1-1-1-5" name="sec-1-1-1-5"></a>String<br  /></li>
-<li><a id="sec-1-1-1-6" name="sec-1-1-1-6"></a>Symbol (new in ECMAScript 6)<br  /></li></ol>
+</div><ol class="org-ol"><li><a id="org13755d3"></a>Boolean<br /></li>
+<li><a id="org45f6280"></a>Null<br /></li>
+<li><a id="orgacab7df"></a>Undefined<br /></li>
+<li><a id="orgc498c2b"></a>Number<br /></li>
+<li><a id="org84dfcca"></a>String<br /></li>
+<li><a id="orgc8d60ce"></a>Symbol (new in ECMAScript 6)<br /></li></ol>
 </div>
-<div id="outline-container-sec-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Reference Type</h4>
+<div id="outline-container-org8ebe971" class="outline-4">
+<h4 id="org8ebe971"><span class="section-number-4">1.1.2</span> Reference Type</h4>
 <div class="outline-text-4" id="text-1-1-2">
-</div><ol class="org-ol"><li><a id="sec-1-1-2-1" name="sec-1-1-2-1"></a>Arrays<br  /><div class="outline-text-5" id="text-1-1-2-1">
+</div><ol class="org-ol"><li><a id="org85ea163"></a>Arrays<br /><div class="outline-text-5" id="text-1-1-2-1">
 <div class="org-src-container">
-
 <pre class="src src-js">var entry = ['Trains', 'Plains','automobiles'];
 console.log (entry);
 </pre>
 </div>
-</div>
-</li>
+</div></li>
 
-<li><a id="sec-1-1-2-2" name="sec-1-1-2-2"></a>Object<br  /></li>
-<li><a id="sec-1-1-2-3" name="sec-1-1-2-3"></a>Dates<br  /></li>
-<li><a id="sec-1-1-2-4" name="sec-1-1-2-4"></a>function<br  /><ol class="org-ol"><li><a id="sec-1-1-2-4-1" name="sec-1-1-2-4-1"></a><span class="todo TODO">TODO</span> function constructor<br  /><div class="outline-text-6" id="text-1-1-2-4-1">
+<li><a id="org500074a"></a>Object<br /></li>
+<li><a id="orgc61184d"></a>Dates<br /></li>
+<li><a id="org6e14aad"></a>function<br /><ol class="org-ol"><li><a id="orga849b6b"></a><span class="todo TODO">TODO</span> function constructor<br /><div class="outline-text-6" id="text-1-1-2-4-1">
 <ul class="org-ul">
-<li>prototype
-</li>
-<li>this
-</li>
+<li>prototype</li>
+<li>this</li>
 </ul>
-</div>
-</li>
+</div></li>
 
-<li><a id="sec-1-1-2-4-2" name="sec-1-1-2-4-2"></a>the "this" keyword<br  /></li>
-<li><a id="sec-1-1-2-4-3" name="sec-1-1-2-4-3"></a>using Call and Apply<br  /><ol class="org-ol"><li><a id="sec-1-1-2-4-3-1" name="sec-1-1-2-4-3-1"></a>Normal function call<br  /><div class="outline-text-7" id="text-1-1-2-4-3-1">
+<li><a id="orgd09d6b6"></a>the "this" keyword<br /></li>
+<li><a id="org68943e2"></a>using Call and Apply<br /><ol class="org-ol"><li><a id="orgd3ab819"></a>Normal function call<br /><div class="outline-text-7" id="text-1-1-2-4-3-1">
 <div class="org-src-container">
-
 <pre class="src src-js">"use strict";
 var updateZipCode = function(){
 console.log(this);
@@ -237,14 +322,12 @@ console.log(this);
 updateZipCode();
 </pre>
 </div>
-</div>
-</li>
+</div></li>
 
 
 
-<li><a id="sec-1-1-2-4-3-2" name="sec-1-1-2-4-3-2"></a>Using Call on function<br  /><ol class="org-ol"><li><a id="sec-1-1-2-4-3-2-1" name="sec-1-1-2-4-3-2-1"></a>Passing a object in to call<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-1">
+<li><a id="org0a22510"></a>Using Call on function<br /><ol class="org-ol"><li><a id="org1893422"></a>Passing a object in to call<br /><div class="outline-text-8" id="text-1-1-2-4-3-2-1">
 <div class="org-src-container">
-
 <pre class="src src-js">"use strict";
 var updateZipCode = function(){
 console.log(this);
@@ -258,12 +341,10 @@ updateZipCode.call({zip: '123456'});
 { zipJson: '654321' }
 undefined
 </pre>
-</div>
-</li>
+</div></li>
 
-<li><a id="sec-1-1-2-4-3-2-2" name="sec-1-1-2-4-3-2-2"></a>Passing a object varibale<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-2">
+<li><a id="org01e7895"></a>Passing a object varibale<br /><div class="outline-text-8" id="text-1-1-2-4-3-2-2">
 <div class="org-src-container">
-
 <pre class="src src-js"> "use strict";
  var updateZipCode = function(){
  console.log(this);
@@ -275,14 +356,12 @@ zipJson: '654321'
 updateZipCode.call(zipCode);
 </pre>
 </div>
-</div>
-</li>
+</div></li>
 
 
 
-<li><a id="sec-1-1-2-4-3-2-3" name="sec-1-1-2-4-3-2-3"></a>Using Call on function with paramters<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-3">
+<li><a id="orge16914b"></a>Using Call on function with paramters<br /><div class="outline-text-8" id="text-1-1-2-4-3-2-3">
 <div class="org-src-container">
-
 <pre class="src src-js">"use strict";
    var updateZipCode2 = function(newZip, country){
    console.log("old zipcode:" + this.zipJson);
@@ -303,17 +382,14 @@ new zipcode:1111111
 country:quebec
 undefined
 </pre>
-</div>
-</li></ol>
-</li>
+</div></li></ol></li>
 
-<li><a id="sec-1-1-2-4-3-3" name="sec-1-1-2-4-3-3"></a>Using apply on function<br  /><div class="outline-text-7" id="text-1-1-2-4-3-3">
+<li><a id="orga5dbb76"></a>Using apply on function<br /><div class="outline-text-7" id="text-1-1-2-4-3-3">
 <p>
 The apply() method calls a function with a given this value and arguments provided as an array (or an array-like object).
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-js">"use strict";
    var updateZipCode2 = function(newZip, country){
    console.log("old zipcode:" + this.zipJson);
@@ -334,15 +410,12 @@ new zipcode:1111111
 country:quebec
 undefined
 </pre>
-</div>
-</li></ol>
-</li>
+</div></li></ol></li>
 
 
-<li><a id="sec-1-1-2-4-4" name="sec-1-1-2-4-4"></a>Closure<br  /></li>
-<li><a id="sec-1-1-2-4-5" name="sec-1-1-2-4-5"></a>IIFEs<br  /><ol class="org-ol"><li><a id="sec-1-1-2-4-5-1" name="sec-1-1-2-4-5-1"></a>IIFE<br  /><div class="outline-text-7" id="text-1-1-2-4-5-1">
+<li><a id="org0fafded"></a>Closure<br /></li>
+<li><a id="org2559420"></a>IIFEs<br /><ol class="org-ol"><li><a id="org0897b17"></a>IIFE<br /><div class="outline-text-7" id="text-1-1-2-4-5-1">
 <div class="org-src-container">
-
 <pre class="src src-js"> var app = {};
  var value = (function(ns) {
   ns.name = 'angular';
@@ -355,12 +428,10 @@ console.log(app.name);
 angular
 undefined
 </pre>
-</div>
-</li>
+</div></li>
 
-<li><a id="sec-1-1-2-4-5-2" name="sec-1-1-2-4-5-2"></a>we can use unary operator instead of parentheses.( advatnage or disadvantage?)<br  /><div class="outline-text-7" id="text-1-1-2-4-5-2">
+<li><a id="orgf80589b"></a>we can use unary operator instead of parentheses.( advatnage or disadvantage?)<br /><div class="outline-text-7" id="text-1-1-2-4-5-2">
 <div class="org-src-container">
-
 <pre class="src src-js">+function(){
 var iife = 'example 1';
 console.log('Executed example 1');
@@ -386,13 +457,10 @@ Executed example 2
 Executed example 3
 undefined
 </pre>
-</div>
-</li></ol>
-</li></ol>
-</li>
+</div></li></ol></li></ol></li>
 
 
-<li><a id="sec-1-1-2-5" name="sec-1-1-2-5"></a>RegEx<br  /></li></ol>
+<li><a id="orge6ea322"></a>RegEx<br /></li></ol>
 </div>
 </div>
 
@@ -400,51 +468,46 @@ undefined
 
 
 
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Scope</h3>
+<div id="outline-container-org6a9321a" class="outline-3">
+<h3 id="org6a9321a"><span class="section-number-3">1.2</span> Scope</h3>
 <div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-sec-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Global scope</h4>
+</div><div id="outline-container-org1d3b7ee" class="outline-4">
+<h4 id="org1d3b7ee"><span class="section-number-4">1.2.1</span> Global scope</h4>
 </div>
-<div id="outline-container-sec-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Function Scope</h4>
+<div id="outline-container-org4759c69" class="outline-4">
+<h4 id="org4759c69"><span class="section-number-4">1.2.2</span> Function Scope</h4>
 </div>
-<div id="outline-container-sec-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> block scope</h4>
+<div id="outline-container-org795635d" class="outline-4">
+<h4 id="org795635d"><span class="section-number-4">1.2.3</span> block scope</h4>
 </div>
 </div>
 
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> BOM and DOM</h3>
+<div id="outline-container-org16b04a2" class="outline-3">
+<h3 id="org16b04a2"><span class="section-number-3">1.3</span> BOM and DOM</h3>
 <div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
-<li>BOM -&gt; broswer object model
-</li>
-<li>DOM -&gt; document object model
-</li>
+<li>BOM -&gt; broswer object model</li>
+<li>DOM -&gt; document object model</li>
 </ul>
 </div>
 
-<div id="outline-container-sec-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> the window object (global object in NodeJs)</h4>
+<div id="outline-container-org91e0afe" class="outline-4">
+<h4 id="org91e0afe"><span class="section-number-4">1.3.1</span> the window object (global object in NodeJs)</h4>
 </div>
 
-<div id="outline-container-sec-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> system dialogs</h4>
+<div id="outline-container-orgcc7cddf" class="outline-4">
+<h4 id="orgcc7cddf"><span class="section-number-4">1.3.2</span> system dialogs</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <ul class="org-ul">
-<li>alert()
-</li>
-<li>confirm()
-</li>
-<li>prompt()
-</li>
+<li>alert()</li>
+<li>confirm()</li>
+<li>prompt()</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> location Object</h4>
+<div id="outline-container-orgf982f35" class="outline-4">
+<h4 id="orgf982f35"><span class="section-number-4">1.3.3</span> location Object</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <p>
 location.href
@@ -455,165 +518,119 @@ location.assign('http://www.google.com')
 </div>
 </div>
 
-<div id="outline-container-sec-1-3-4" class="outline-4">
-<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> html document basics</h4>
+<div id="outline-container-org93ac1c9" class="outline-4">
+<h4 id="org93ac1c9"><span class="section-number-4">1.3.4</span> html document basics</h4>
 </div>
 
-<div id="outline-container-sec-1-3-5" class="outline-4">
-<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> query selectors</h4>
+<div id="outline-container-org02d7393" class="outline-4">
+<h4 id="org02d7393"><span class="section-number-4">1.3.5</span> query selectors</h4>
 </div>
 </div>
 
 
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Event handler</h3>
+<div id="outline-container-org04ec596" class="outline-3">
+<h3 id="org04ec596"><span class="section-number-3">1.4</span> Event handler</h3>
 <div class="outline-text-3" id="text-1-4">
-</div><div id="outline-container-sec-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Events</h4>
+</div><div id="outline-container-org2b49e45" class="outline-4">
+<h4 id="org2b49e45"><span class="section-number-4">1.4.1</span> Events</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>User Interface events
 <ol class="org-ol">
-<li>load
-</li>
-<li>unload
-</li>
-<li>abort
-</li>
-<li>error
-</li>
-<li>select
-</li>
-<li>resize
-</li>
-<li>scroll
-</li>
-</ol>
-</li>
+<li>load</li>
+<li>unload</li>
+<li>abort</li>
+<li>error</li>
+<li>select</li>
+<li>resize</li>
+<li>scroll</li>
+</ol></li>
 <li>Mouse and Mouse wheel events
 <ol class="org-ol">
-<li>click
-</li>
-<li>dbclick
-</li>
-<li>mousedown
-</li>
-<li>mouseenter
-</li>
-<li>mouseleave
-</li>
-<li>mousemove
-</li>
-<li>mouseout
-</li>
-<li>mouseover
-</li>
-<li>mouseup
-</li>
-<li>mousewheel
-</li>
-</ol>
-</li>
+<li>click</li>
+<li>dbclick</li>
+<li>mousedown</li>
+<li>mouseenter</li>
+<li>mouseleave</li>
+<li>mousemove</li>
+<li>mouseout</li>
+<li>mouseover</li>
+<li>mouseup</li>
+<li>mousewheel</li>
+</ol></li>
 <li>keyboard and Text Events
 <ol class="org-ol">
-<li>keyDown
-</li>
-<li>keypress
-</li>
-<li>keyup
-</li>
-<li>textInput
-</li>
-</ol>
-</li>
+<li>keyDown</li>
+<li>keypress</li>
+<li>keyup</li>
+<li>textInput</li>
+</ol></li>
 <li>focus events
 <ol class="org-ol">
-<li>blur
-</li>
-<li>focus
-</li>
-<li>focusin
-</li>
-<li>focusout
-</li>
-</ol>
-</li>
+<li>blur</li>
+<li>focus</li>
+<li>focusin</li>
+<li>focusout</li>
+</ol></li>
 <li>html5 events
 <ol class="org-ol">
-<li>contextMenu
-</li>
-<li>beforeUnload
-</li>
-</ol>
-</li>
-<li>touch Events.
-</li>
+<li>contextMenu</li>
+<li>beforeUnload</li>
+</ol></li>
+<li>touch Events.</li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-sec-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Event Object</h4>
+<div id="outline-container-orgc870415" class="outline-4">
+<h4 id="orgc870415"><span class="section-number-4">1.4.2</span> Event Object</h4>
 <div class="outline-text-4" id="text-1-4-2">
-</div><ol class="org-ol"><li><a id="sec-1-4-2-1" name="sec-1-4-2-1"></a>Event Object Properties<br  /><div class="outline-text-5" id="text-1-4-2-1">
+</div><ol class="org-ol"><li><a id="org5079734"></a>Event Object Properties<br /><div class="outline-text-5" id="text-1-4-2-1">
 <ol class="org-ol">
-<li>bubbles
-</li>
-<li>cancelable
-</li>
-<li>currentTarget
-</li>
-<li>defaultPrevented
-</li>
-<li>detial
-</li>
-<li>eventPhase
-</li>
-<li>preventDefault
-</li>
-<li>stopImmediatePropagation
-</li>
-<li>stopPropagation
-</li>
-<li>target
-</li>
-<li>trusted
-</li>
-<li>type
-</li>
+<li>bubbles</li>
+<li>cancelable</li>
+<li>currentTarget</li>
+<li>defaultPrevented</li>
+<li>detial</li>
+<li>eventPhase</li>
+<li>preventDefault</li>
+<li>stopImmediatePropagation</li>
+<li>stopPropagation</li>
+<li>target</li>
+<li>trusted</li>
+<li>type</li>
 </ol>
-</div>
-</li></ol>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-<div id="outline-container-sec-1-4-3" class="outline-4">
-<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> handling events</h4>
-</div>
-
-<div id="outline-container-sec-1-4-4" class="outline-4">
-<h4 id="sec-1-4-4"><span class="section-number-4">1.4.4</span> event Listeners</h4>
-</div>
-
-<div id="outline-container-sec-1-4-5" class="outline-4">
-<h4 id="sec-1-4-5"><span class="section-number-4">1.4.5</span> event bubbling</h4>
+</div></li></ol>
 </div>
 
 
-<div id="outline-container-sec-1-4-6" class="outline-4">
-<h4 id="sec-1-4-6"><span class="section-number-4">1.4.6</span> built-in Object and Functions</h4>
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org947a80a" class="outline-4">
+<h4 id="org947a80a"><span class="section-number-4">1.4.3</span> handling events</h4>
+</div>
+
+<div id="outline-container-org315d8d1" class="outline-4">
+<h4 id="org315d8d1"><span class="section-number-4">1.4.4</span> event Listeners</h4>
+</div>
+
+<div id="outline-container-orgb39ee2a" class="outline-4">
+<h4 id="orgb39ee2a"><span class="section-number-4">1.4.5</span> event bubbling</h4>
+</div>
+
+
+<div id="outline-container-org870634f" class="outline-4">
+<h4 id="org870634f"><span class="section-number-4">1.4.6</span> built-in Object and Functions</h4>
 <div class="outline-text-4" id="text-1-4-6">
-</div><ol class="org-ol"><li><a id="sec-1-4-6-1" name="sec-1-4-6-1"></a>Global Functions<br  /><div class="outline-text-5" id="text-1-4-6-1">
+</div><ol class="org-ol"><li><a id="org97f6132"></a>Global Functions<br /><div class="outline-text-5" id="text-1-4-6-1">
 <p>
 parseInt('1234') <i>/ 1234
 parseInt('b1234') /</i> NaN
@@ -633,36 +650,32 @@ decodeURL
 <p>
 eval
 </p>
-</div>
-</li>
+</div></li>
 
-<li><a id="sec-1-4-6-2" name="sec-1-4-6-2"></a>Math<br  /></li>
+<li><a id="org618b3b5"></a>Math<br /></li>
 
-<li><a id="sec-1-4-6-3" name="sec-1-4-6-3"></a>String<br  /></li>
+<li><a id="orgb1387d6"></a>String<br /></li>
 
-<li><a id="sec-1-4-6-4" name="sec-1-4-6-4"></a>Arguments<br  /><div class="outline-text-5" id="text-1-4-6-4">
+<li><a id="org8c03b18"></a>Arguments<br /><div class="outline-text-5" id="text-1-4-6-4">
 <div class="org-src-container">
-
 <pre class="src src-js">var validateValues = function (){
 console.log(arguments.length);
 }
 validateValues(1, true,'settings');
 </pre>
 </div>
-</div>
-</li></ol>
+</div></li></ol>
 </div>
 </div>
 
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> temp</h3>
+<div id="outline-container-org5b7f862" class="outline-3">
+<h3 id="org5b7f862"><span class="section-number-3">1.5</span> temp</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
-<a href="http://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=400892209&idx=1&sn=b5048f8067362caa14b19be26beca2ea&scene=21#wechat_redirect">js and closure</a>
+<a href="http://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&amp;mid=400892209&amp;idx=1&amp;sn=b5048f8067362caa14b19be26beca2ea&amp;scene=21#wechat_redirect">js and closure</a>
 </p>
 
 <div class="org-src-container">
-
 <pre class="src src-js">function fun(n,o) {
 
   console.log(o)
@@ -688,7 +701,6 @@ var c = fun(0).fun(1);  c.fun(2);  c.fun(3);//undefined,?,?,?
 
 
 <div class="org-src-container">
-
 <pre class="src src-js">  function myFunction() {
     var a = 4;
     return a * a;
@@ -708,8 +720,7 @@ return myFunction();
 <div id="postamble" class="status">
 <p class="date">Date: date</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2017-01-18 Wed 09:39</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2017-07-06 Thu 12:52</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

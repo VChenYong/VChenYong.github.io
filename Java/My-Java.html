@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+<!-- 2017-07-06 Thu 12:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>My Java</title>
-<!-- 2017-01-18 Wed 09:39 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="YONG" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="YONG" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,110 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +176,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="../styles/style.css" />
@@ -143,56 +234,58 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Note 摘自Java工程师成神之路</a>
+<li><a href="#org50f7fa0">1. Note 摘自Java工程师成神之路</a>
 <ul>
-<li><a href="#sec-1-1">1.1. 基础篇</a>
+<li><a href="#org845db73">1.1. 基础篇</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1. JVM</a></li>
-<li><a href="#sec-1-1-2">1.1.2. Java基础知识</a></li>
-<li><a href="#sec-1-1-3">1.1.3. Java并发编程</a></li>
+<li><a href="#org197d7b0">1.1.1. JVM</a></li>
+<li><a href="#org2fe7d5a">1.1.2. Java基础知识</a></li>
+<li><a href="#org0984b9a">1.1.3. Java并发编程</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2. 进阶篇</a>
+<li><a href="#orgf3bf4b7">1.2. 进阶篇</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1. Java底层知识</a></li>
-<li><a href="#sec-1-2-2">1.2.2. 设计模式</a></li>
-<li><a href="#sec-1-2-3">1.2.3. 网络编程知识</a></li>
-<li><a href="#sec-1-2-4">1.2.4. 框架知识</a></li>
+<li><a href="#org8067070">1.2.1. Java底层知识</a></li>
+<li><a href="#org56cd190">1.2.2. 设计模式</a></li>
+<li><a href="#orgd6dc6c8">1.2.3. 网络编程知识</a></li>
+<li><a href="#org3638e6f">1.2.4. 框架知识</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-3">1.3. 高级篇</a>
+<li><a href="#org4f42ea2">1.3. 高级篇</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1. 编译原理知识</a></li>
-<li><a href="#sec-1-3-2">1.3.2. 操作系统知识</a></li>
-<li><a href="#sec-1-3-3">1.3.3. 数据存储知识</a></li>
-<li><a href="#sec-1-3-4">1.3.4. 大数据知识</a></li>
-<li><a href="#sec-1-3-5">1.3.5. 网络安全知识</a></li>
+<li><a href="#orgefcdcf5">1.3.1. 编译原理知识</a></li>
+<li><a href="#org478f2fe">1.3.2. 操作系统知识</a></li>
+<li><a href="#org0f5996f">1.3.3. 数据存储知识</a></li>
+<li><a href="#org002910c">1.3.4. 大数据知识</a></li>
+<li><a href="#org0d72287">1.3.5. 网络安全知识</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-4">1.4. 扩展篇</a>
+<li><a href="#orgd80b237">1.4. 扩展篇</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1. 相关知识</a></li>
-<li><a href="#sec-1-4-2">1.4.2. 扩展学习</a></li>
+<li><a href="#orge0dbf91">1.4.1. 相关知识</a></li>
+<li><a href="#org446bf7d">1.4.2. 扩展学习</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5. 推荐书籍</a></li>
+<li><a href="#org5a15caf">1.5. 推荐书籍</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Note 摘自<a href="http://www.hollischuang.com/archives/489">Java工程师成神之路</a></h2>
+<div id="outline-container-org50f7fa0" class="outline-2">
+<h2 id="org50f7fa0"><span class="section-number-2">1</span> Note 摘自<a href="http://www.hollischuang.com/archives/489">Java工程师成神之路</a></h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 基础篇</h3>
+</div><div id="outline-container-org845db73" class="outline-3">
+<h3 id="org845db73"><span class="section-number-3">1.1</span> 基础篇</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-sec-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> JVM</h4>
+</div><div id="outline-container-org197d7b0" class="outline-4">
+<h4 id="org197d7b0"><span class="section-number-4">1.1.1</span> JVM</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
-<li>Java内存模型，Java内存管理，Java堆和栈，垃圾回收
+<li><p>
+Java内存模型，Java内存管理，Java堆和栈，垃圾回收
+</p>
 
 <p>
 <a href="http://www.jcp.org/en/jsr/detail?id=133">http://www.jcp.org/en/jsr/detail?id=133</a>
@@ -200,13 +293,13 @@ for the JavaScript code in this tag.
 
 <p>
 <a href="http://ifeve.com/jmm-faq/">http://ifeve.com/jmm-faq/</a>
+</p></li>
+
+<li>了解JVM各种参数及调优</li>
+
+<li><p>
+学习使用Java工具
 </p>
-</li>
-
-<li>了解JVM各种参数及调优
-</li>
-
-<li>学习使用Java工具
 
 <p>
 jps, jstack, jmap, jconsole, jinfo, jhat, javap, …
@@ -234,10 +327,11 @@ jps, jstack, jmap, jconsole, jinfo, jhat, javap, …
 
 <p>
 <a href="https://github.com/jlusdy/TBJMap">https://github.com/jlusdy/TBJMap</a>
-</p>
-</li>
+</p></li>
 
-<li>学习Java诊断工具
+<li><p>
+学习Java诊断工具
+</p>
 
 <p>
 <a href="http://www.eclipse.org/mat/">http://www.eclipse.org/mat/</a>
@@ -245,10 +339,11 @@ jps, jstack, jmap, jconsole, jinfo, jhat, javap, …
 
 <p>
 <a href="http://visualvm.java.net/oqlhelp.html">http://visualvm.java.net/oqlhelp.html</a>
-</p>
-</li>
+</p></li>
 
-<li>自己编写各种outofmemory，stackoverflow程序
+<li><p>
+自己编写各种outofmemory，stackoverflow程序
+</p>
 
 <p>
 HeapOutOfMemory
@@ -272,17 +367,19 @@ DirectMemory OutOfMemory
 
 <p>
 Stack OutOfMemory Stack OverFlow
-</p>
-</li>
+</p></li>
 
-<li>使用工具尝试解决以下问题，并写下总结
+<li><p>
+使用工具尝试解决以下问题，并写下总结
+</p>
 
 <p>
 当一个Java程序响应很慢时如何查找问题 当一个Java程序频繁FullGC时如何解决问题，如何查看垃圾回收日志 当一个Java应用发生OutOfMemory时该如何解决，年轻代、年老代、永久代解决办法不同，导致原因也不同
-</p>
-</li>
+</p></li>
 
-<li>参考资料
+<li><p>
+参考资料
+</p>
 
 <p>
 <a href="http://docs.oracle.com/javase/specs/jvms/se7/html/">http://docs.oracle.com/javase/specs/jvms/se7/html/</a>
@@ -294,63 +391,67 @@ Stack OutOfMemory Stack OverFlow
 
 <p>
 <a href="http://gee.cs.oswego.edu/dl/jmm/cookbook.html">http://gee.cs.oswego.edu/dl/jmm/cookbook.html</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-sec-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Java基础知识</h4>
+<div id="outline-container-org2fe7d5a" class="outline-4">
+<h4 id="org2fe7d5a"><span class="section-number-4">1.1.2</span> Java基础知识</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
-<li>阅读源代码
+<li><p>
+阅读源代码
+</p>
 <pre class="example">
 java.lang.String ,java.lang.Integer, java.lang.Long, java.lang.Enum, java.math.BigDecimal, java.lang.ThreadLocal,
 java.lang.ClassLoader, java.net.URLClassLoader, java.util.ArrayList , java.util.LinkedList, java.util.HashMap ,
 java.util.LinkedHashMap , java.util.TreeMap, java.util.HashSet , java.util.LinkedHashSet , java.util.TreeSet
-</pre>
-</li>
+</pre></li>
 
-<li>熟悉Java中各种变量类型
-</li>
+<li>熟悉Java中各种变量类型</li>
 
-<li>熟悉Java String的使用，熟悉String的各种函数
-</li>
+<li>熟悉Java String的使用，熟悉String的各种函数</li>
 
-<li>熟悉Java中各种关键字
-</li>
+<li>熟悉Java中各种关键字</li>
 
-<li>学会使用List，Map，Stack，Queue，Set
+<li><p>
+学会使用List，Map，Stack，Queue，Set
+</p>
 
 <p>
 上述数据结构的遍历 上述数据结构的使用场景 Java实现对Array/List排序 java.uti.Arrays.sort() java.util.Collections.sort()
  Java实现对List去重 Java实现对List去重，并且需要保留数据原始的出现顺序 Java实现最近最少使用cache，用LinkedHashMap
-</p>
-</li>
+</p></li>
 
-<li>Java IO&amp;Java NIO，并学会使用
+<li><p>
+Java IO&amp;Java NIO，并学会使用
+</p>
 
 <p>
 java.io.* java.nio.* nio和reactor设计模式 文件编码，字符集
-</p>
-</li>
+</p></li>
 
-<li>Java反射与javassist
+<li><p>
+Java反射与javassist
+</p>
 
 <p>
 反射与工厂模式 java.lang.reflect.*
-</p>
-</li>
+</p></li>
 
-<li>Java序列化
+<li><p>
+Java序列化
+</p>
 
 <p>
 java.io.Serializable 什么是序列化，为什么序列化 序列化与单例模式 google序列化protobuf
 </p>
 <ul class="org-ul">
-<li>Serializable 101
+<li><p>
+Serializable 101
+</p>
 <pre class="example">
 Java Object Serialization, introduced as part of the ground-breaking feature set that made up JDK 1.1,
 serves as a mechanism to transform a graph of Java objects into an array of bytes for storage or transmission,
@@ -361,66 +462,68 @@ across a network, whatever), and then "thaw" the graph back out again into usabl
 All this happens more or less magically, thanks to the ObjectInputStream/ObjectOutputStream classes,
 full-fidelity metadata, and the willingness of programmers to "opt in" to this process by tagging their
 classes with the Serializable marker interface.
-</pre>
-</li>
-</ul>
-</li>
+</pre></li>
+</ul></li>
 
-<li>虚引用，弱引用，软引用
+<li><p>
+虚引用，弱引用，软引用
+</p>
 
 <p>
 java.lang.ref.* 实验这些引用的回收
-</p>
-</li>
+</p></li>
 
-<li>熟悉Java系统属性
+<li><p>
+熟悉Java系统属性
+</p>
 
 <p>
 java.util.Properties
-</p>
-</li>
+</p></li>
 
-<li>熟悉Annotation用法
+<li><p>
+熟悉Annotation用法
+</p>
 
 <p>
 java.lang.annotation.*
-</p>
-</li>
+</p></li>
 
-<li>JMS
+<li><p>
+JMS
+</p>
 
 <p>
 javax.jms.*
-</p>
-</li>
+</p></li>
 
-<li>JMX
+<li><p>
+JMX
+</p>
 
 <p>
 java.lang.management.* javax.management.*
+</p></li>
+
+<li>泛型和继承，泛型和擦除</li>
+
+<li>自动拆箱装箱与字节码</li>
+
+<li>实现Callback</li>
+
+<li>java.lang.Void类使用</li>
+
+<li><p>
+Java Agent，premain函数
 </p>
-</li>
-
-<li>泛型和继承，泛型和擦除
-</li>
-
-<li>自动拆箱装箱与字节码
-</li>
-
-<li>实现Callback
-</li>
-
-<li>java.lang.Void类使用
-</li>
-
-<li>Java Agent，premain函数
 
 <p>
 java.lang.instrument
-</p>
-</li>
+</p></li>
 
-<li>单元测试
+<li><p>
+单元测试
+</p>
 
 <p>
 Junit，<a href="http://junit.org/">http://junit.org/</a>
@@ -432,24 +535,27 @@ Jmockit，<a href="https://code.google.com/p/jmockit/">https://code.google.com/p
 
 <p>
 djUnit，<a href="http://works.dgic.co.jp/djunit/">http://works.dgic.co.jp/djunit/</a>
-</p>
-</li>
+</p></li>
 
-<li>Java实现通过正则表达式提取一段文本中的电子邮件，并将@替换为#输出
+<li><p>
+Java实现通过正则表达式提取一段文本中的电子邮件，并将@替换为#输出
+</p>
 
 <p>
 java.lang.util.regex.*
-</p>
-</li>
+</p></li>
 
-<li>学习使用常用的Java工具库
+<li><p>
+学习使用常用的Java工具库
+</p>
 
 <p>
 commons.lang, commons.*&#x2026; guava-libraries netty
-</p>
-</li>
+</p></li>
 
-<li>什么是API&amp;SPI
+<li><p>
+什么是API&amp;SPI
+</p>
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Application_programming_interface">http://en.wikipedia.org/wiki/Application_programming_interface</a>
@@ -457,10 +563,11 @@ commons.lang, commons.*&#x2026; guava-libraries netty
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Service_provider_interface">http://en.wikipedia.org/wiki/Service_provider_interface</a>
-</p>
-</li>
+</p></li>
 
-<li>参考资料
+<li><p>
+参考资料
+</p>
 
 <p>
 JDK src.zip 源代码
@@ -488,53 +595,50 @@ JDK src.zip 源代码
 
 <p>
 <a href="http://stackoverflow.com/questions/11404230/how-to-implement-the-api-spi-pattern-in-java">http://stackoverflow.com/questions/11404230/how-to-implement-the-api-spi-pattern-in-java</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-sec-1-1-3" class="outline-4">
-<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Java并发编程</h4>
+<div id="outline-container-org0984b9a" class="outline-4">
+<h4 id="org0984b9a"><span class="section-number-4">1.1.3</span> Java并发编程</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
-<li>阅读源代码，并学会使用
+<li><p>
+阅读源代码，并学会使用
+</p>
 
 <pre class="example">
 java.lang.Thread java.lang.Runnable java.util.concurrent.Callable java.util.concurrent.locks.ReentrantLock
 java.util.concurrent.locks.ReentrantReadWriteLock java.util.concurrent.atomic.Atomic* java.util.concurrent.Semaphore
 java.util.concurrent.CountDownLatch java.util.concurrent.CyclicBarrier java.util.concurrent.ConcurrentHashMap
 java.util.concurrent.Executors
-</pre>
-</li>
+</pre></li>
 
-<li>学习使用线程池，自己设计线程池需要注意什么
-</li>
+<li>学习使用线程池，自己设计线程池需要注意什么</li>
 
-<li>锁
+<li><p>
+锁
+</p>
 
 <p>
 什么是锁，锁的种类有哪些，每种锁有什么特点，适用场景是什么 在并发编程中锁的意义是什么
+</p></li>
+
+<li>synchronized的作用是什么，synchronized和lock</li>
+
+<li>sleep和wait</li>
+
+<li>wait和notify</li>
+
+<li>写一个死锁的程序</li>
+
+<li>什么是守护线程，守护线程和非守护线程的区别以及用法</li>
+
+<li><p>
+volatile关键字的理解
 </p>
-</li>
-
-<li>synchronized的作用是什么，synchronized和lock
-</li>
-
-<li>sleep和wait
-</li>
-
-<li>wait和notify
-</li>
-
-<li>写一个死锁的程序
-</li>
-
-<li>什么是守护线程，守护线程和非守护线程的区别以及用法
-</li>
-
-<li>volatile关键字的理解
 
 <p>
 C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指令重排和CPU指令重排
@@ -553,10 +657,11 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 </p>
 
 <ul class="org-ul">
-<li>以下代码是不是线程安全？为什么？如果为count加上volatile修饰是否能够做到线程安全？你觉得该怎么做是线程安全的？
+<li><p>
+以下代码是不是线程安全？为什么？如果为count加上volatile修饰是否能够做到线程安全？你觉得该怎么做是线程安全的？
+</p>
 
 <div class="org-src-container">
-
 <pre class="src src-java">    public class Sample {
     private static int count = 0;
     public static void increment() {
@@ -564,17 +669,14 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
   }
 }
 </pre>
-</div>
-</li>
+</div></li>
 
-<li>解释一下下面两段代码的差别
-</li>
+<li>解释一下下面两段代码的差别</li>
 </ul>
 <p>
 // 代码1
 </p>
 <div class="org-src-container">
-
 <pre class="src src-java">  public class Sample {
   private static int count = 0;
   synchronized public static void increment() {
@@ -588,7 +690,6 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 // 代码2
 </p>
 <div class="org-src-container">
-
 <pre class="src src-java">   public class Sample {
   private static AtomicInteger count = new AtomicInteger(0);
   public static void increment() {
@@ -596,10 +697,11 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
   }
 }
 </pre>
-</div>
-</li>
+</div></li>
 
-<li>参考资料
+<li><p>
+参考资料
+</p>
 
 <p>
 <a href="http://book.douban.com/subject/10484692/">http://book.douban.com/subject/10484692/</a>
@@ -607,22 +709,23 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 
 <p>
 <a href="http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html">http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 进阶篇</h3>
+<div id="outline-container-orgf3bf4b7" class="outline-3">
+<h3 id="orgf3bf4b7"><span class="section-number-3">1.2</span> 进阶篇</h3>
 <div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-sec-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Java底层知识</h4>
+</div><div id="outline-container-org8067070" class="outline-4">
+<h4 id="org8067070"><span class="section-number-4">1.2.1</span> Java底层知识</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
-<li>学习了解字节码、class文件格式
+<li><p>
+学习了解字节码、class文件格式
+</p>
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Java_class_file">http://en.wikipedia.org/wiki/Java_class_file</a>
@@ -642,16 +745,16 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 
 <p>
 <a href="http://asm.ow2.org/">http://asm.ow2.org/</a>
-</p>
-</li>
+</p></li>
 
-<li>写一个程序要求实现javap的功能（手工完成，不借助ASM等工具）
+<li><p>
+写一个程序要求实现javap的功能（手工完成，不借助ASM等工具）
+</p>
 
 <p>
 如Java源代码：
 </p>
 <div class="org-src-container">
-
 <pre class="src src-java">  public static void main(String[] args) {
   int i = 0;
   i += 1;
@@ -665,7 +768,6 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 编译后读取class文件输出以下代码：
 </p>
 <div class="org-src-container">
-
 <pre class="src src-java">public static void main(java.lang.String[]);
   Code:
    Stack=2, Locals=2, Args_size=1
@@ -687,10 +789,11 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
    line 7: 9
    line 8: 16
 </pre>
-</div>
-</li>
+</div></li>
 
-<li>CPU缓存，L1，L2，L3和伪共享
+<li><p>
+CPU缓存，L1，L2，L3和伪共享
+</p>
 
 <p>
 <a href="http://duartes.org/gustavo/blog/post/intel-cpu-caches/">http://duartes.org/gustavo/blog/post/intel-cpu-caches/</a>
@@ -698,20 +801,21 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 
 <p>
 <a href="http://mechanical-sympathy.blogspot.com/2011/07/false-sharing.html">http://mechanical-sympathy.blogspot.com/2011/07/false-sharing.html</a>
+</p></li>
+
+<li>什么是尾递归</li>
+
+<li><p>
+熟悉位运算
 </p>
-</li>
-
-<li>什么是尾递归
-</li>
-
-<li>熟悉位运算
 
 <p>
 用位运算实现加、减、乘、除、取余
-</p>
-</li>
+</p></li>
 
-<li>参考资料
+<li><p>
+参考资料
+</p>
 
 <p>
 <a href="http://book.douban.com/subject/1138768/">http://book.douban.com/subject/1138768/</a>
@@ -731,16 +835,17 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Java_bytecode_instruction_listings">http://en.wikipedia.org/wiki/Java_bytecode_instruction_listings</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> 设计模式</h4>
+<div id="outline-container-org56cd190" class="outline-4">
+<h4 id="org56cd190"><span class="section-number-4">1.2.2</span> 设计模式</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <ul class="org-ul">
-<li>实现AOP
+<li><p>
+实现AOP
+</p>
 
 <p>
 CGLIB和InvocationHandler的区别 <a href="http://cglib.sourceforge.net/">http://cglib.sourceforge.net/</a>
@@ -752,19 +857,17 @@ CGLIB和InvocationHandler的区别 <a href="http://cglib.sourceforge.net/">http:
 
 <p>
 ASM实现AOP <a href="http://asm.ow2.org/">http://asm.ow2.org/</a>
+</p></li>
+
+<li>使用模板方法设计模式和策略设计模式实现IOC</li>
+
+<li>不用synchronized和lock，实现线程安全的单例模式</li>
+
+<li>nio和reactor设计模式</li>
+
+<li><p>
+参考资料
 </p>
-</li>
-
-<li>使用模板方法设计模式和策略设计模式实现IOC
-</li>
-
-<li>不用synchronized和lock，实现线程安全的单例模式
-</li>
-
-<li>nio和reactor设计模式
-</li>
-
-<li>参考资料
 
 <p>
 <a href="http://asm.ow2.org/">http://asm.ow2.org/</a>
@@ -776,22 +879,21 @@ ASM实现AOP <a href="http://asm.ow2.org/">http://asm.ow2.org/</a>
 
 <p>
 <a href="http://www.javassist.org/">http://www.javassist.org/</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> 网络编程知识</h4>
+<div id="outline-container-orgd6dc6c8" class="outline-4">
+<h4 id="orgd6dc6c8"><span class="section-number-4">1.2.3</span> 网络编程知识</h4>
 <div class="outline-text-4" id="text-1-2-3">
 <ul class="org-ul">
-<li>Java RMI，Socket，HttpClient
-</li>
+<li>Java RMI，Socket，HttpClient</li>
 <li>用Java写一个简单的静态文件的HTTP服务器
 实现客户端缓存功能，支持返回304 实现可并发下载一个文件 使用线程池处理客户端请求 使用nio处理客户端请求 支持简单的rewrite规则
-上述功能在实现的时候需要满足“开闭原则”
-</li>
-<li>了解nginx和apache服务器的特性并搭建一个对应的服务器
+上述功能在实现的时候需要满足“开闭原则”</li>
+<li><p>
+了解nginx和apache服务器的特性并搭建一个对应的服务器
+</p>
 
 <p>
 <a href="http://nginx.org/">http://nginx.org/</a>
@@ -799,18 +901,19 @@ ASM实现AOP <a href="http://asm.ow2.org/">http://asm.ow2.org/</a>
 
 <p>
 <a href="http://httpd.apache.org/">http://httpd.apache.org/</a>
+</p></li>
+<li>用Java实现FTP、SMTP协议</li>
+<li><p>
+什么是CDN？如果实现？DNS起到什么作用？
 </p>
-</li>
-<li>用Java实现FTP、SMTP协议
-</li>
-<li>什么是CDN？如果实现？DNS起到什么作用？
 
 <p>
  搭建一个DNS服务器 搭建一个 Squid 或 Apache Traffic Server
 服务器 <a href="http://www.squid-cache.org/">http://www.squid-cache.org/</a> <a href="http://trafficserver.apache.org/">http://trafficserver.apache.org/</a> <a href="http://en.wikipedia.org/wiki/Domain_Name_System">http://en.wikipedia.org/wiki/Domain_Name_System</a>
+</p></li>
+<li><p>
+参考资料
 </p>
-</li>
-<li>参考资料
 
 <p>
 <a href="http://www.ietf.org/rfc/rfc2616.txt">http://www.ietf.org/rfc/rfc2616.txt</a>
@@ -822,47 +925,49 @@ ASM实现AOP <a href="http://asm.ow2.org/">http://asm.ow2.org/</a>
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Open/closed_principle">http://en.wikipedia.org/wiki/Open/closed_principle</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> 框架知识</h4>
+<div id="outline-container-org3638e6f" class="outline-4">
+<h4 id="org3638e6f"><span class="section-number-4">1.2.4</span> 框架知识</h4>
 <div class="outline-text-4" id="text-1-2-4">
 <ul class="org-ul">
-<li>spring，spring mvc，阅读主要源码 ibatis，阅读主要源码 用spring和ibatis搭建java server
-</li>
+<li>spring，spring mvc，阅读主要源码 ibatis，阅读主要源码 用spring和ibatis搭建java server</li>
 
-<li>应用服务器知识
+<li><p>
+应用服务器知识
+</p>
 
 <p>
 熟悉使用jboss，<a href="https://www.jboss.org/overview/">https://www.jboss.org/overview/</a> 熟悉使用tomcat，<a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a> 熟悉使用jetty，<a href="http://www.eclipse.org/jetty/">http://www.eclipse.org/jetty/</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 高级篇</h3>
+<div id="outline-container-org4f42ea2" class="outline-3">
+<h3 id="org4f42ea2"><span class="section-number-3">1.3</span> 高级篇</h3>
 <div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-sec-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> 编译原理知识</h4>
+</div><div id="outline-container-orgefcdcf5" class="outline-4">
+<h4 id="orgefcdcf5"><span class="section-number-4">1.3.1</span> 编译原理知识</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <ul class="org-ul">
-<li>用Java实现以下表达式解析并返回结果（语法和Oracle中的select sysdate-1 from dual类似）
+<li><p>
+用Java实现以下表达式解析并返回结果（语法和Oracle中的select sysdate-1 from dual类似）
+</p>
 
 <p>
 sysdate
 sysdate - 1
 sysdate - 1/24
 sysdate - 1/(12*2)
-</p>
-</li>
+</p></li>
 
-<li>实现对一个List通过DSL筛选
+<li><p>
+实现对一个List通过DSL筛选
+</p>
 
 <p>
 QList&lt;Map&lt;String, Object&gt;&gt; mapList = new QList&lt;Map&lt;String, Object&gt;&gt;;
@@ -877,10 +982,11 @@ mapList.query("id is not null and id &gt; 0 and name like '%hatter%'");
 
 <p>
 要求返回列表中匹配的对象，即最后两个对象；
-</p>
-</li>
+</p></li>
 
-<li>用Java实现以下程序（语法和变量作用域处理都和JavaScript类似）：
+<li><p>
+用Java实现以下程序（语法和变量作用域处理都和JavaScript类似）：
+</p>
 
 <p>
 代码：
@@ -908,45 +1014,49 @@ println(b);
 2
 1
 2
-</p>
-</li>
+</p></li>
 
-<li>参考资料
+<li><p>
+参考资料
+</p>
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Abstract_syntax_tree">http://en.wikipedia.org/wiki/Abstract_syntax_tree</a> <a href="https://javacc.java.net/">https://javacc.java.net/</a> <a href="http://www.antlr.org/">http://www.antlr.org/</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> 操作系统知识</h4>
+<div id="outline-container-org478f2fe" class="outline-4">
+<h4 id="org478f2fe"><span class="section-number-4">1.3.2</span> 操作系统知识</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 Ubuntu Centos 使用linux，熟悉shell脚本
 </p>
 </div>
 </div>
-<div id="outline-container-sec-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> 数据存储知识</h4>
+<div id="outline-container-org0f5996f" class="outline-4">
+<h4 id="org0f5996f"><span class="section-number-4">1.3.3</span> 数据存储知识</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <ul class="org-ul">
-<li>关系型数据库
+<li><p>
+关系型数据库
+</p>
 
 <p>
 MySQL 如何看执行计划 如何搭建MySQL主备 binlog是什么 Derby，H2，PostgreSQL SQLite
-</p>
-</li>
+</p></li>
 
-<li>NoSQL
+<li><p>
+NoSQL
+</p>
 
 <p>
 Cache Redis Memcached Leveldb Bigtable HBase Cassandra Mongodb 图数据库 neo4j
-</p>
-</li>
+</p></li>
 
-<li>参考资料
+<li><p>
+参考资料
+</p>
 
 <p>
 <a href="http://db-engines.com/en/ranking">http://db-engines.com/en/ranking</a>
@@ -974,34 +1084,29 @@ Cache Redis Memcached Leveldb Bigtable HBase Cassandra Mongodb 图数据库 neo4
 
 <p>
 <a href="http://www.neo4j.org/">http://www.neo4j.org/</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-3-4" class="outline-4">
-<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> 大数据知识</h4>
+<div id="outline-container-org002910c" class="outline-4">
+<h4 id="org002910c"><span class="section-number-4">1.3.4</span> 大数据知识</h4>
 <div class="outline-text-4" id="text-1-3-4">
 <ul class="org-ul">
-<li>Zookeeper，在linux上部署zk
-</li>
+<li>Zookeeper，在linux上部署zk</li>
 <li>Solr，Lucene，ElasticSearch
-在linux上部署solr，solrcloud，，新增、删除、查询索引
-</li>
+在linux上部署solr，solrcloud，，新增、删除、查询索引</li>
 <li>Storm，流式计算，了解Spark，S4
-在linux上部署storm，用zookeeper做协调，运行storm hello world，local和remote模式运行调试storm topology。
-</li>
+在linux上部署storm，用zookeeper做协调，运行storm hello world，local和remote模式运行调试storm topology。</li>
 <li>Hadoop，离线计算
 Hdfs：部署NameNode，SecondaryNameNode，DataNode，上传文件、打开文件、更改文件、删除文件
 MapReduce：部署JobTracker，TaskTracker，编写mr job
 Hive：部署hive，书写hive sql，得到结果
-Presto：类hive，不过比hive快，非常值得学习
-</li>
-<li>分布式日志收集flume，kafka，logstash
-</li>
-<li>数据挖掘，mahout
-</li>
-<li>参考资料
+Presto：类hive，不过比hive快，非常值得学习</li>
+<li>分布式日志收集flume，kafka，logstash</li>
+<li>数据挖掘，mahout</li>
+<li><p>
+参考资料
+</p>
 
 <p>
 <a href="http://zookeeper.apache.org/">http://zookeeper.apache.org/</a>
@@ -1037,36 +1142,27 @@ Presto：类hive，不过比hive快，非常值得学习
 
 <p>
 <a href="http://mahout.apache.org/">http://mahout.apache.org/</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-3-5" class="outline-4">
-<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> 网络安全知识</h4>
+<div id="outline-container-org0d72287" class="outline-4">
+<h4 id="org0d72287"><span class="section-number-4">1.3.5</span> 网络安全知识</h4>
 <div class="outline-text-4" id="text-1-3-5">
 <ul class="org-ul">
-<li>什么是DES、AES
-</li>
-<li>什么是RSA、DSA
-</li>
-<li>什么是MD5，SHA1
-</li>
-<li>什么是SSL、TLS，为什么HTTPS相对比较安全
-</li>
-<li>什么是中间人攻击、如果避免中间人攻击
-</li>
-<li>什么是DOS、DDOS、CC攻击
-</li>
-<li>什么是CSRF攻击
-</li>
-<li>什么是CSS攻击
-</li>
-<li>什么是SQL注入攻击
-</li>
-<li>什么是Hash碰撞拒绝服务攻击
-</li>
-<li>了解并学习下面几种增强安全的技术
+<li>什么是DES、AES</li>
+<li>什么是RSA、DSA</li>
+<li>什么是MD5，SHA1</li>
+<li>什么是SSL、TLS，为什么HTTPS相对比较安全</li>
+<li>什么是中间人攻击、如果避免中间人攻击</li>
+<li>什么是DOS、DDOS、CC攻击</li>
+<li>什么是CSRF攻击</li>
+<li>什么是CSS攻击</li>
+<li>什么是SQL注入攻击</li>
+<li>什么是Hash碰撞拒绝服务攻击</li>
+<li><p>
+了解并学习下面几种增强安全的技术
+</p>
 
 <p>
 <a href="http://www.openauthentication.org/">http://www.openauthentication.org/</a>
@@ -1086,12 +1182,12 @@ OCRA <a href="http://tools.ietf.org/rfc/rfc6287.txt">http://tools.ietf.org/rfc/r
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Salt_(cryptography)">http://en.wikipedia.org/wiki/Salt_(cryptography)</a>
-</p>
-</li>
+</p></li>
 
-<li>用openssl签一个证书部署到apache或nginx
-</li>
-<li>参考资料
+<li>用openssl签一个证书部署到apache或nginx</li>
+<li><p>
+参考资料
+</p>
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Cryptographic_hash_function">http://en.wikipedia.org/wiki/Cryptographic_hash_function</a>
@@ -1115,22 +1211,22 @@ OCRA <a href="http://tools.ietf.org/rfc/rfc6287.txt">http://tools.ietf.org/rfc/r
 
 <p>
 <a href="https://code.google.com/p/google-authenticator/">https://code.google.com/p/google-authenticator/</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 扩展篇</h3>
+<div id="outline-container-orgd80b237" class="outline-3">
+<h3 id="orgd80b237"><span class="section-number-3">1.4</span> 扩展篇</h3>
 <div class="outline-text-3" id="text-1-4">
-</div><div id="outline-container-sec-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> 相关知识</h4>
+</div><div id="outline-container-orge0dbf91" class="outline-4">
+<h4 id="orge0dbf91"><span class="section-number-4">1.4.1</span> 相关知识</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
-<li>云计算，分布式，高可用，可扩展
-</li>
-<li>虚拟化
+<li>云计算，分布式，高可用，可扩展</li>
+<li><p>
+虚拟化
+</p>
 
 <p>
 <a href="https://linuxcontainers.org/">https://linuxcontainers.org/</a>
@@ -1146,9 +1242,10 @@ OCRA <a href="http://tools.ietf.org/rfc/rfc6287.txt">http://tools.ietf.org/rfc/r
 
 <p>
 <a href="https://www.docker.io/">https://www.docker.io/</a>
+</p></li>
+<li><p>
+监控
 </p>
-</li>
-<li>监控
 
 <p>
 <a href="http://www.nagios.org/">http://www.nagios.org/</a>
@@ -1156,15 +1253,17 @@ OCRA <a href="http://tools.ietf.org/rfc/rfc6287.txt">http://tools.ietf.org/rfc/r
 
 <p>
 <a href="http://ganglia.info/">http://ganglia.info/</a>
+</p></li>
+<li><p>
+负载均衡
 </p>
-</li>
-<li>负载均衡
 
 <p>
 <a href="http://www.linuxvirtualserver.org/">http://www.linuxvirtualserver.org/</a>
+</p></li>
+<li><p>
+学习使用git
 </p>
-</li>
-<li>学习使用git
 
 <p>
 <a href="https://github.com/">https://github.com/</a>
@@ -1172,33 +1271,36 @@ OCRA <a href="http://tools.ietf.org/rfc/rfc6287.txt">http://tools.ietf.org/rfc/r
 
 <p>
 <a href="https://git.oschina.net/">https://git.oschina.net/</a>
+</p></li>
+<li><p>
+学习使用maven
 </p>
-</li>
-<li>学习使用maven
 
 <p>
 <a href="http://maven.apache.org/">http://maven.apache.org/</a>
+</p></li>
+<li><p>
+学习使用gradle
 </p>
-</li>
-<li>学习使用gradle
 
 <p>
 <a href="http://www.gradle.org/">http://www.gradle.org/</a>
+</p></li>
+<li><p>
+学习一个小语种语言
 </p>
-</li>
-<li>学习一个小语种语言
 
 <p>
 Groovy Scala LISP, Common LISP, Schema, Clojure R Julia Lua Ruby
+</p></li>
+<li><p>
+尝试了解编码的本质
 </p>
-</li>
-<li>尝试了解编码的本质
 
 <p>
 了解以下概念 ASCII, ISO-8859-1 GB2312, GBK, GB18030 Unicode, UTF-8 不使用 String.getBytes() 等其他工具类/函数完成下面功能
 </p>
 <div class="org-src-container">
-
 <pre class="src src-java">public static void main(String[] args) throws IOException {
 String str = "Hello, 我们是中国人。";
 byte[] utf8Bytes = toUTF8Bytes(str);
@@ -1213,13 +1315,14 @@ return null; // TODO
 </div>
 <p>
 想一下上面的程序能不能写一个转GBK的？ 写个程序自动判断一个文件是哪种编码
+</p></li>
+<li><p>
+尝试了解时间的本质
 </p>
-</li>
-<li>尝试了解时间的本质
 
 <p>
 时区 &amp; 冬令时、夏令时 <a href="http://en.wikipedia.org/wiki/Time_zone">http://en.wikipedia.org/wiki/Time_zone</a> <a href="ftp://ftp.iana.org/tz/data/asia">ftp://ftp.iana.org/tz/data/asia</a>
-<a href="http://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9C%8B%E6%99%82%E5%8D%80">http://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9C%8B%E6%99%82%E5%8D%80</a>
+<a href="http://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9C%8B%E6%99%82%E5%8D%80">http://zh.wikipedia.org/wiki/中國時區</a>
 </p>
 
 <p>
@@ -1232,9 +1335,10 @@ return null; // TODO
 
 <p>
 System.currentTimeMillis() 返回的时间是什么
+</p></li>
+<li><p>
+参考资料
 </p>
-</li>
-<li>参考资料
 
 <p>
 <a href="http://git-scm.com/">http://git-scm.com/</a>
@@ -1246,62 +1350,68 @@ System.currentTimeMillis() 返回的时间是什么
 
 <p>
 <a href="http://www.iana.org/time-zones">http://www.iana.org/time-zones</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> 扩展学习</h4>
+<div id="outline-container-org446bf7d" class="outline-4">
+<h4 id="org446bf7d"><span class="section-number-4">1.4.2</span> 扩展学习</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
 <li>JavaScript知识
 <ul class="org-ul">
-<li>什么是prototype
+<li><p>
+什么是prototype
+</p>
 
 <p>
 修改代码，使程序输出“1 3 5”： <a href="http://jsfiddle.net/Ts7Fk/">http://jsfiddle.net/Ts7Fk/</a>
-</p>
-</li>
+</p></li>
 
-<li>什么是闭包
+<li><p>
+什么是闭包
+</p>
 
 <p>
 看一下这段代码，并解释一下为什么按Button1时没有alert出“This is button: 1”，如何修改： <a href="http://jsfiddle.net/FDPj3/1/">http://jsfiddle.net/FDPj3/1/</a>
-</p>
-</li>
-</ul>
-</li>
+</p></li>
+</ul></li>
 
-<li>了解并学习一个JS框架
+<li><p>
+了解并学习一个JS框架
+</p>
 
 <p>
 jQuery ExtJS ArgularJS
-</p>
-</li>
+</p></li>
 
-<li>写一个Greasemonkey插件
+<li><p>
+写一个Greasemonkey插件
+</p>
 
 <p>
 <a href="http://en.wikipedia.org/wiki/Greasemonkey">http://en.wikipedia.org/wiki/Greasemonkey</a>
-</p>
-</li>
+</p></li>
 
-<li>学习node.js
+<li><p>
+学习node.js
+</p>
 
 <p>
 <a href="http://nodejs.org/">http://nodejs.org/</a>
-</p>
-</li>
+</p></li>
 
-<li>学习html5
+<li><p>
+学习html5
+</p>
 
 <p>
 ArgularJS，<a href="https://docs.angularjs.org/api">https://docs.angularjs.org/api</a>
-</p>
-</li>
+</p></li>
 
-<li>参考资料
+<li><p>
+参考资料
+</p>
 
 <p>
 <a href="http://www.ecmascript.org/">http://www.ecmascript.org/</a>
@@ -1321,14 +1431,13 @@ ArgularJS，<a href="https://docs.angularjs.org/api">https://docs.angularjs.org/
 
 <p>
 <a href="http://userscripts.org/">http://userscripts.org/</a>
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> 推荐书籍</h3>
+<div id="outline-container-org5a15caf" class="outline-3">
+<h3 id="org5a15caf"><span class="section-number-3">1.5</span> 推荐书籍</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 《深入Java虚拟机》
@@ -1404,8 +1513,7 @@ ArgularJS，<a href="https://docs.angularjs.org/api">https://docs.angularjs.org/
 <div id="postamble" class="status">
 <p class="date">Date: date</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2017-01-18 Wed 09:39</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2017-07-06 Thu 12:52</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

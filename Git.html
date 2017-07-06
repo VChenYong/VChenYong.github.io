@@ -3,23 +3,30 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="En" xml:lang="En">
 <head>
+<!-- 2017-07-06 Thu 12:52 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>GIT.org</title>
-<!-- 2017-01-18 Wed 09:39 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="YONG" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="YONG" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -46,27 +53,110 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  pre.src-sh:before    { content: 'sh'; }
-  pre.src-bash:before  { content: 'sh'; }
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-R:before     { content: 'R'; }
-  pre.src-perl:before  { content: 'Perl'; }
-  pre.src-java:before  { content: 'Java'; }
-  pre.src-sql:before   { content: 'SQL'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara:nth-child(2) { display: inline; }
-  .footpara { display: block; }
+  .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -86,6 +176,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
@@ -143,36 +234,37 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Note</a>
+<li><a href="#org18567ba">1. Note</a>
 <ul>
-<li><a href="#sec-1-1">1.1. Git configuration</a></li>
-<li><a href="#sec-1-2">1.2. create bare repositories</a></li>
-<li><a href="#sec-1-3">1.3. Sparse checkout</a></li>
-<li><a href="#sec-1-4">1.4. Chinese</a>
+<li><a href="#org7f149b9">1.1. Git configuration</a></li>
+<li><a href="#org0b55273">1.2. create bare repositories</a></li>
+<li><a href="#orgdf08185">1.3. Sparse checkout</a></li>
+<li><a href="#org8438a2c">1.4. Chinese</a>
 <ul>
-<li><a href="#sec-1-4-1">1.4.1. 创建新仓库</a></li>
-<li><a href="#sec-1-4-2">1.4.2. 检出仓库</a></li>
-<li><a href="#sec-1-4-3">1.4.3. 添加和提交</a></li>
-<li><a href="#sec-1-4-4">1.4.4. 推送改动</a></li>
-<li><a href="#sec-1-4-5">1.4.5. 分支</a></li>
-<li><a href="#sec-1-4-6">1.4.6. 更新与合并</a></li>
+<li><a href="#orgad7cb12">1.4.1. 创建新仓库</a></li>
+<li><a href="#org5944b48">1.4.2. 检出仓库</a></li>
+<li><a href="#org8027c4c">1.4.3. 添加和提交</a></li>
+<li><a href="#org46221d1">1.4.4. 推送改动</a></li>
+<li><a href="#org567334d">1.4.5. 分支</a></li>
+<li><a href="#orgcfae0ab">1.4.6. 更新与合并</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-5">1.5. temp</a></li>
-<li><a href="#sec-1-6">1.6. Tips</a>
+<li><a href="#org873e397">1.5. temp</a></li>
+<li><a href="#org529618f">1.6. Tips</a>
 <ul>
-<li><a href="#sec-1-6-1">1.6.1. list all the files in a commit?</a></li>
-<li><a href="#sec-1-6-2">1.6.2. show the latest commits</a></li>
-<li><a href="#sec-1-6-3">1.6.3. only display commit that I made</a></li>
-<li><a href="#sec-1-6-4">1.6.4. git log paramters</a></li>
+<li><a href="#org6ecd13e">1.6.1. list all the files in a commit?</a></li>
+<li><a href="#org3f329a8">1.6.2. show the latest commits</a></li>
+<li><a href="#org1404dc7">1.6.3. only display commit that I made</a></li>
+<li><a href="#orgdc52d40">1.6.4. git log paramters</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-7">1.7. GitFlow breakdown</a>
+<li><a href="#orgef23e52">1.7. GitFlow breakdown</a>
 <ul>
-<li><a href="#sec-1-7-1">1.7.1. create a branch on the branch that you are working</a></li>
-<li><a href="#sec-1-7-2">1.7.2. working on the new branch</a></li>
-<li><a href="#sec-1-7-3">1.7.3. Finally push the change up to your repo</a></li>
-<li><a href="#sec-1-7-4">1.7.4. temp 101</a></li>
+<li><a href="#orgf5db7b3">1.7.1. create a branch on the branch that you are working</a></li>
+<li><a href="#org8f7206b">1.7.2. working on the new branch</a></li>
+<li><a href="#org822dfa0">1.7.3. Finally push the change up to your repo</a></li>
+<li><a href="#orgd687a61">1.7.4. temp 101</a></li>
+<li><a href="#orgc050358">1.7.5. Git-Credential-Manager-for-Windows</a></li>
 </ul>
 </li>
 </ul>
@@ -182,11 +274,11 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Note</h2>
+<div id="outline-container-org18567ba" class="outline-2">
+<h2 id="org18567ba"><span class="section-number-2">1</span> Note</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Git configuration</h3>
+</div><div id="outline-container-org7f149b9" class="outline-3">
+<h3 id="org7f149b9"><span class="section-number-3">1.1</span> Git configuration</h3>
 <div class="outline-text-3" id="text-1-1">
 <pre class="example">
 // steup user and email
@@ -211,8 +303,8 @@ git config -- global --list
 </div>
 </div>
 
-<div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> create bare repositories</h3>
+<div id="outline-container-org0b55273" class="outline-3">
+<h3 id="org0b55273"><span class="section-number-3">1.2</span> create bare repositories</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 it's conventional to give bare repositories the extension .git
@@ -225,32 +317,35 @@ git --bare init
 </div>
 </div>
 
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Sparse checkout</h3>
+<div id="outline-container-orgdf08185" class="outline-3">
+<h3 id="orgdf08185"><span class="section-number-3">1.3</span> Sparse checkout</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Sparse checkout was added in git 1.7.0 (Feb. 2012). The steps to do a sparse clone are as follows:
 </p>
 <ul class="org-ul">
-<li>set the sparseCheckout flag to true
+<li><p>
+set the sparseCheckout flag to true
+</p>
 <pre class="example">
 git config core.sparseCheckout true
-</pre>
-</li>
-<li>Set wanted/unwanted files or folder
+</pre></li>
+<li><p>
+Set wanted/unwanted files or folder
+</p>
 <pre class="example">
 echo "some/dir/" &gt;&gt; .git/info/sparse-checkout
 echo "another/sub/tree" &gt;&gt; .git/info/sparse-checkout
-</pre>
-</li>
-<li>Example
+</pre></li>
+<li><p>
+Example
+</p>
 <pre class="example">
 git clone &lt;path&gt;
 git config core.sparsecheckout true
 echo &lt;dir&gt; &gt; .git/info/sparse-checkout
 git read-tree -m -u HEAD
-</pre>
-</li>
+</pre></li>
 </ul>
 <p>
 <a href="http://schacon.github.io/git/git-read-tree.html#_sparse_checkout">official documentation for sparse checkout.</a>
@@ -259,11 +354,11 @@ git read-tree -m -u HEAD
 </div>
 
 
-<div id="outline-container-sec-1-4" class="outline-3">
-<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Chinese</h3>
+<div id="outline-container-org8438a2c" class="outline-3">
+<h3 id="org8438a2c"><span class="section-number-3">1.4</span> Chinese</h3>
 <div class="outline-text-3" id="text-1-4">
-</div><div id="outline-container-sec-1-4-1" class="outline-4">
-<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> 创建新仓库</h4>
+</div><div id="outline-container-orgad7cb12" class="outline-4">
+<h4 id="orgad7cb12"><span class="section-number-4">1.4.1</span> 创建新仓库</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <p>
 创建新文件夹，打开，然后执行
@@ -274,8 +369,8 @@ git init
 </div>
 </div>
 
-<div id="outline-container-sec-1-4-2" class="outline-4">
-<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> 检出仓库</h4>
+<div id="outline-container-org5944b48" class="outline-4">
+<h4 id="org5944b48"><span class="section-number-4">1.4.2</span> 检出仓库</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <p>
 执行如下命令以创建一个本地仓库的克隆版本
@@ -293,8 +388,8 @@ git clone username@host:/path/to/repository
 </div>
 </div>
 
-<div id="outline-container-sec-1-4-3" class="outline-4">
-<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> 添加和提交</h4>
+<div id="outline-container-org8027c4c" class="outline-4">
+<h4 id="org8027c4c"><span class="section-number-4">1.4.3</span> 添加和提交</h4>
 <div class="outline-text-4" id="text-1-4-3">
 <pre class="example">
 git add &lt;filename&gt;
@@ -307,8 +402,8 @@ git commit -m "代码提交信息"
 
 
 
-<div id="outline-container-sec-1-4-4" class="outline-4">
-<h4 id="sec-1-4-4"><span class="section-number-4">1.4.4</span> 推送改动</h4>
+<div id="outline-container-org46221d1" class="outline-4">
+<h4 id="org46221d1"><span class="section-number-4">1.4.4</span> 推送改动</h4>
 <div class="outline-text-4" id="text-1-4-4">
 <p>
 你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：
@@ -326,8 +421,8 @@ git remote add origin &lt;server&gt;
 </div>
 </div>
 
-<div id="outline-container-sec-1-4-5" class="outline-4">
-<h4 id="sec-1-4-5"><span class="section-number-4">1.4.5</span> 分支</h4>
+<div id="outline-container-org567334d" class="outline-4">
+<h4 id="org567334d"><span class="section-number-4">1.4.5</span> 分支</h4>
 <div class="outline-text-4" id="text-1-4-5">
 <p>
 分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上
@@ -335,7 +430,7 @@ git remote add origin &lt;server&gt;
 
 
 <p>
-创建一个叫做“feature<sub>x”的分支，并切换过去：</sub>
+创建一个叫做“feature<sub>x</sub>”的分支，并切换过去：
 </p>
 <pre class="example">
 git checkout -b feature_x
@@ -365,8 +460,8 @@ git push origin &lt;branch&gt;
 </div>
 
 
-<div id="outline-container-sec-1-4-6" class="outline-4">
-<h4 id="sec-1-4-6"><span class="section-number-4">1.4.6</span> 更新与合并</h4>
+<div id="outline-container-orgcfae0ab" class="outline-4">
+<h4 id="orgcfae0ab"><span class="section-number-4">1.4.6</span> 更新与合并</h4>
 <div class="outline-text-4" id="text-1-4-6">
 <p>
 更新你的本地仓库至最新改动，执行：
@@ -409,22 +504,25 @@ git diff &lt;source_branch&gt; &lt;target_branch&gt;
 
 
 
-<div id="outline-container-sec-1-5" class="outline-3">
-<h3 id="sec-1-5"><span class="section-number-3">1.5</span> temp</h3>
+<div id="outline-container-org873e397" class="outline-3">
+<h3 id="org873e397"><span class="section-number-3">1.5</span> temp</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>Working with local branches
 
 <ol class="org-ol">
-<li>create git alias
+<li><p>
+create git alias
+</p>
 <pre class="example">
 git log --graph --oneline
 git log --graph -- oneline --all -- decorate
 git config --global alias.lga "log --graph -- oneline --all -- decorate"
-</pre>
-</li>
+</pre></li>
 
-<li>create branch
+<li><p>
+create branch
+</p>
 <pre class="example">
 git branch feature1
 git checkout feature1
@@ -447,12 +545,12 @@ git -D bug#1234
 // Recovering deleted commits
 git reflog  // find the delete branch commit
 git branch restoredBug 4d557ce  // note bt default git only keep delete information for around 30 days , so...
-</pre>
-</li>
-</ol>
-</li>
+</pre></li>
+</ol></li>
 
-<li>stashing changes
+<li><p>
+stashing changes
+</p>
 <pre class="example">
  git stash
  // view stashed information
@@ -466,11 +564,9 @@ git branch restoredBug 4d557ce  // note bt default git only keep delete informat
 
  // create a new branch with stashed info
  git stash branch new_Branch_Name
-</pre>
-</li>
+</pre></li>
 
-<li>merging branches
-</li>
+<li>merging branches</li>
 </ul>
 <p>
 git  diff &#x2013;cached // compare the repo to the staging area.
@@ -478,23 +574,23 @@ git diff mergetool
 </p>
 
 <ul class="org-ul">
-<li>rebasing commits
-</li>
+<li>rebasing commits</li>
 </ul>
 <pre class="example">
 replay the commit on top of master.
 </pre>
 
 <ul class="org-ul">
-<li>cherry-picking commits
-</li>
+<li>cherry-picking commits</li>
 </ul>
 <pre class="example">
 git cherry-pick 6fa4324
 </pre>
 
 <ul class="org-ul">
-<li>working with remote branches
+<li><p>
+working with remote branches
+</p>
 <pre class="example">
 // puch  to origin master
 git push origin master
@@ -504,18 +600,17 @@ git push origin v1.0_fixes
 
 // delete remote branch
 git push origin:v1.0_fixes
-</pre>
-</li>
+</pre></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-sec-1-6" class="outline-3">
-<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Tips</h3>
+<div id="outline-container-org529618f" class="outline-3">
+<h3 id="org529618f"><span class="section-number-3">1.6</span> Tips</h3>
 <div class="outline-text-3" id="text-1-6">
-</div><div id="outline-container-sec-1-6-1" class="outline-4">
-<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> list all the files in a commit?</h4>
+</div><div id="outline-container-org6ecd13e" class="outline-4">
+<h4 id="org6ecd13e"><span class="section-number-4">1.6.1</span> list all the files in a commit?</h4>
 <div class="outline-text-4" id="text-1-6-1">
 <pre class="example">
 git diff-tree --no-commit-id --name-only -r bd61ad98
@@ -525,8 +620,8 @@ git show --pretty="" --name-only bd61ad98
 </div>
 
 
-<div id="outline-container-sec-1-6-2" class="outline-4">
-<h4 id="sec-1-6-2"><span class="section-number-4">1.6.2</span> show the latest commits</h4>
+<div id="outline-container-org3f329a8" class="outline-4">
+<h4 id="org3f329a8"><span class="section-number-4">1.6.2</span> show the latest commits</h4>
 <div class="outline-text-4" id="text-1-6-2">
 <pre class="example">
 git log -10
@@ -536,8 +631,8 @@ git log  --pretty=oneline | tail -n 10
 </div>
 </div>
 
-<div id="outline-container-sec-1-6-3" class="outline-4">
-<h4 id="sec-1-6-3"><span class="section-number-4">1.6.3</span> only display commit that I made</h4>
+<div id="outline-container-org1404dc7" class="outline-4">
+<h4 id="org1404dc7"><span class="section-number-4">1.6.3</span> only display commit that I made</h4>
 <div class="outline-text-4" id="text-1-6-3">
 <pre class="example">
 git log --author="myname"  --oneline
@@ -546,8 +641,8 @@ git log --author="myname"  --oneline
 </div>
 
 
-<div id="outline-container-sec-1-6-4" class="outline-4">
-<h4 id="sec-1-6-4"><span class="section-number-4">1.6.4</span> git log paramters</h4>
+<div id="outline-container-orgdc52d40" class="outline-4">
+<h4 id="orgdc52d40"><span class="section-number-4">1.6.4</span> git log paramters</h4>
 <div class="outline-text-4" id="text-1-6-4">
 <pre class="example">
 --author="jack" only display commits made by jack
@@ -562,11 +657,11 @@ git log --author="myname"  --oneline
 </div>
 </div>
 
-<div id="outline-container-sec-1-7" class="outline-3">
-<h3 id="sec-1-7"><span class="section-number-3">1.7</span> GitFlow breakdown</h3>
+<div id="outline-container-orgef23e52" class="outline-3">
+<h3 id="orgef23e52"><span class="section-number-3">1.7</span> GitFlow breakdown</h3>
 <div class="outline-text-3" id="text-1-7">
-</div><div id="outline-container-sec-1-7-1" class="outline-4">
-<h4 id="sec-1-7-1"><span class="section-number-4">1.7.1</span> create a branch on the branch that you are working</h4>
+</div><div id="outline-container-orgf5db7b3" class="outline-4">
+<h4 id="orgf5db7b3"><span class="section-number-4">1.7.1</span> create a branch on the branch that you are working</h4>
 <div class="outline-text-4" id="text-1-7-1">
 <pre class="example">
 - git checkout release/1.0
@@ -577,25 +672,23 @@ git log --author="myname"  --oneline
 </div>
 
 
-<div id="outline-container-sec-1-7-2" class="outline-4">
-<h4 id="sec-1-7-2"><span class="section-number-4">1.7.2</span> working on the new branch</h4>
+<div id="outline-container-org8f7206b" class="outline-4">
+<h4 id="org8f7206b"><span class="section-number-4">1.7.2</span> working on the new branch</h4>
 <div class="outline-text-4" id="text-1-7-2">
-</div><ol class="org-ol"><li><a id="sec-1-7-2-1" name="sec-1-7-2-1"></a>After a day's work you can add your changes<br  /><div class="outline-text-5" id="text-1-7-2-1">
+</div><ol class="org-ol"><li><a id="orgbc91274"></a>After a day's work you can add your changes<br /><div class="outline-text-5" id="text-1-7-2-1">
 <pre class="example">
 - git add &lt; file to add&gt;
 - git commit -m "your commit message"
 </pre>
-</div>
-</li>
+</div></li>
 
-<li><a id="sec-1-7-2-2" name="sec-1-7-2-2"></a>If the task is done you can push your change to the remote repo<br  /><div class="outline-text-5" id="text-1-7-2-2">
+<li><a id="orgdcc0f8a"></a>If the task is done you can push your change to the remote repo<br /><div class="outline-text-5" id="text-1-7-2-2">
 <pre class="example">
 -git push origin feature/my-task
 </pre>
-</div>
-</li>
+</div></li>
 
-<li><a id="sec-1-7-2-3" name="sec-1-7-2-3"></a>if you continue to work the same task  the next day, your branch is probably  not up to date<br  /><div class="outline-text-5" id="text-1-7-2-3">
+<li><a id="org40ce44d"></a>if you continue to work the same task  the next day, your branch is probably  not up to date<br /><div class="outline-text-5" id="text-1-7-2-3">
 <p>
 you can:
 </p>
@@ -611,21 +704,19 @@ you can:
 - git add &lt; file to add&gt;
 - git commit -m "your commit message"
 </pre>
-</div>
-</li>
+</div></li>
 
-<li><a id="sec-1-7-2-4" name="sec-1-7-2-4"></a>delete branch once everything is done<br  /><div class="outline-text-5" id="text-1-7-2-4">
+<li><a id="org4c51527"></a>delete branch once everything is done<br /><div class="outline-text-5" id="text-1-7-2-4">
 <pre class="example">
 git branch -d branch_name
 git push origin :&lt;branch_name&gt;
 </pre>
-</div>
-</li></ol>
+</div></li></ol>
 </div>
 
 
-<div id="outline-container-sec-1-7-3" class="outline-4">
-<h4 id="sec-1-7-3"><span class="section-number-4">1.7.3</span> Finally push the change up to your repo</h4>
+<div id="outline-container-org822dfa0" class="outline-4">
+<h4 id="org822dfa0"><span class="section-number-4">1.7.3</span> Finally push the change up to your repo</h4>
 <div class="outline-text-4" id="text-1-7-3">
 <pre class="example">
 - git push origin feature/my-task
@@ -635,12 +726,11 @@ git push origin :&lt;branch_name&gt;
 
 
 
-<div id="outline-container-sec-1-7-4" class="outline-4">
-<h4 id="sec-1-7-4"><span class="section-number-4">1.7.4</span> temp 101</h4>
+<div id="outline-container-orgd687a61" class="outline-4">
+<h4 id="orgd687a61"><span class="section-number-4">1.7.4</span> temp 101</h4>
 <div class="outline-text-4" id="text-1-7-4">
 <ul class="org-ul">
-<li>revert
-</li>
+<li>revert</li>
 </ul>
 <pre class="example">
 before:
@@ -658,8 +748,7 @@ $ git commit -m 'the commit message'
 
 
 <ul class="org-ul">
-<li>show commit for one author
-</li>
+<li>show commit for one author</li>
 </ul>
 <pre class="example">
 git log -6 --author="name@name.com"
@@ -671,13 +760,99 @@ git show --pretty="" --name-only bd61ad98
 </pre>
 
 <ul class="org-ul">
-<li>List Remote Git Branches By Author sorted by committerdate:
-</li>
+<li>List Remote Git Branches By Author sorted by committerdate:</li>
 </ul>
 <pre class="example">
 git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n
 </pre>
+
+<ul class="org-ul">
+<li><p>
+Reset local repository branch to be just like remote repository HEAD
+</p>
+<pre class="example">
+git fetch origin
+git reset --hard origin/master
+</pre></li>
+<li><p>
+How to remove local (untracked) files from the current Git working tree
+</p>
+<pre class="example">
+  Step 1 is to show what will be deleted by using the -n option:
+
+git clean -n
+
+Clean Step - beware: this will delete files:
+
+git clean -f
+
+    To remove directories, run git clean -f -d or git clean -fd
+    To remove ignored files, run git clean -f -X or git clean -fX
+    To remove ignored and non-ignored files, run git clean -f -x or git clean -fx
+
+Note the case difference on the X for the two latter commands.
+
+If clean.requireForce is set to "true" (the default) in your configuration, one needs to specify -f otherwise nothing will actually happen.
+
+Again see the git-clean docs for more information.
+Options
+
+-f
+
+--force
+
+If the Git configuration variable clean.requireForce is not set to false, git clean will refuse to run unless given -f, -n or -i.
+
+-x
+
+Don’t use the standard ignore rules read from .gitignore (per directory) and $GIT_DIR/info/exclude, but do still use the ignore rules given with -e options. This allows removing all untracked files, including build products. This can be used (possibly in conjunction with git reset) to create a pristine working directory to test a clean build.
+
+-X
+
+Remove only files ignored by Git. This may be useful to rebuild everything from scratch, but keep manually created files.
+
+-n
+
+--dry-run
+
+Don’t actually remove anything, just show what would be done.
+
+-d
+
+Remove untracked directories in addition to untracked files. If an untracked directory is managed by a different Git repository, it is not removed by default. Use -f option twice if you really want to remove such a directory.
+</pre></li>
+</ul>
+
+<p>
+or
+</p>
+
+<p>
+<a href="https://www.kernel.org/pub/software/scm/git/docs/git-clean.html">https://www.kernel.org/pub/software/scm/git/docs/git-clean.html</a>
+</p>
 </div>
+</div>
+
+
+
+<div id="outline-container-orgc050358" class="outline-4">
+<h4 id="orgc050358"><span class="section-number-4">1.7.5</span> Git-Credential-Manager-for-Windows</h4>
+<div class="outline-text-4" id="text-1-7-5">
+</div><ol class="org-ol"><li><a id="org54c3b84"></a>install<br /><div class="outline-text-5" id="text-1-7-5-1">
+<p>
+link to get install file
+</p>
+
+<p>
+<a href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows/wiki">Wiki</a>
+</p>
+</div></li>
+
+<li><a id="org98dc18f"></a>config Git<br /><div class="outline-text-5" id="text-1-7-5-2">
+<pre class="example">
+git config  credential.helper manager
+</pre>
+</div></li></ol>
 </div>
 </div>
 </div>
@@ -685,8 +860,7 @@ git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | 
 <div id="postamble" class="status">
 <p class="date">Date: 2013-01-12 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2017-01-18 Wed 09:39</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2017-07-06 Thu 12:52</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
