@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-07-06 Thu 12:53 -->
+<!-- 2019-03-22 Fri 22:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs.d</title>
@@ -179,7 +179,12 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="../styles/style.css" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -234,30 +239,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd1dac01">1. Configuration</a>
+<li><a href="#org4bf2d23">1. Configuration</a>
 <ul>
-<li><a href="#orgb181d33">1.1. set the emacs.d path</a></li>
-<li><a href="#orgb9aebe4">1.2. Tabbar</a></li>
-<li><a href="#org20292fa">1.3. Switch Window</a>
+<li><a href="#orgbe21500">1.1. set the emacs.d path</a></li>
+<li><a href="#orgd872ab0">1.2. Tabbar</a></li>
+<li><a href="#org6aa3eb8">1.3. Switch Window</a>
 <ul>
-<li><a href="#org43aac3f">1.3.1. resize window</a></li>
+<li><a href="#orgfd8a408">1.3.1. resize window</a></li>
 </ul>
 </li>
-<li><a href="#org50b24e7">1.4. Undo-Tree</a></li>
-<li><a href="#org25481db">1.5. Goto-Last-Change</a></li>
-<li><a href="#org1e8f973">1.6. setup graphviz</a></li>
-<li><a href="#org3e5ddec">1.7. setup Chinese-pyim</a></li>
+<li><a href="#org529c549">1.4. Undo-Tree</a></li>
+<li><a href="#org4a3e859">1.5. Goto-Last-Change</a></li>
+<li><a href="#orgf6c510f">1.6. setup graphviz</a></li>
+<li><a href="#orgba5dcba">1.7. setup Chinese-pyim</a></li>
+<li><a href="#orgac5825b">1.8. Ob-java</a></li>
+<li><a href="#orgc60b56b">1.9. projectile</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd1dac01" class="outline-2">
-<h2 id="orgd1dac01"><span class="section-number-2">1</span> Configuration</h2>
+<div id="outline-container-org4bf2d23" class="outline-2">
+<h2 id="org4bf2d23"><span class="section-number-2">1</span> Configuration</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orgb181d33" class="outline-3">
-<h3 id="orgb181d33"><span class="section-number-3">1.1</span> set the emacs.d path</h3>
+</div><div id="outline-container-orgbe21500" class="outline-3">
+<h3 id="orgbe21500"><span class="section-number-3">1.1</span> set the emacs.d path</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><p>
@@ -276,8 +283,8 @@ windows
 </div>
 </div>
 
-<div id="outline-container-orgb9aebe4" class="outline-3">
-<h3 id="orgb9aebe4"><span class="section-number-3">1.2</span> Tabbar</h3>
+<div id="outline-container-orgd872ab0" class="outline-3">
+<h3 id="orgd872ab0"><span class="section-number-3">1.2</span> Tabbar</h3>
 <div class="outline-text-3" id="text-1-2">
 <pre class="example">
 (global-set-key (kbd "C-c n") 'tabbar-forward)
@@ -286,11 +293,11 @@ windows
 </div>
 </div>
 
-<div id="outline-container-org20292fa" class="outline-3">
-<h3 id="org20292fa"><span class="section-number-3">1.3</span> Switch Window</h3>
+<div id="outline-container-org6aa3eb8" class="outline-3">
+<h3 id="org6aa3eb8"><span class="section-number-3">1.3</span> Switch Window</h3>
 <div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-org43aac3f" class="outline-4">
-<h4 id="org43aac3f"><span class="section-number-4">1.3.1</span> resize window</h4>
+</div><div id="outline-container-orgfd8a408" class="outline-4">
+<h4 id="orgfd8a408"><span class="section-number-4">1.3.1</span> resize window</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <pre class="example">
 (global-set-key (kbd "&lt;C-up&gt;") 'shrink-window)
@@ -302,12 +309,12 @@ windows
 </div>
 </div>
 
-<div id="outline-container-org50b24e7" class="outline-3">
-<h3 id="org50b24e7"><span class="section-number-3">1.4</span> Undo-Tree</h3>
+<div id="outline-container-org529c549" class="outline-3">
+<h3 id="org529c549"><span class="section-number-3">1.4</span> Undo-Tree</h3>
 </div>
 
-<div id="outline-container-org25481db" class="outline-3">
-<h3 id="org25481db"><span class="section-number-3">1.5</span> Goto-Last-Change</h3>
+<div id="outline-container-org4a3e859" class="outline-3">
+<h3 id="org4a3e859"><span class="section-number-3">1.5</span> Goto-Last-Change</h3>
 <div class="outline-text-3" id="text-1-5">
 <pre class="example">
 (global-set-key "\C-x\C-\\" 'goto-last-change)
@@ -315,8 +322,8 @@ windows
 </div>
 </div>
 
-<div id="outline-container-org1e8f973" class="outline-3">
-<h3 id="org1e8f973"><span class="section-number-3">1.6</span> setup graphviz</h3>
+<div id="outline-container-orgf6c510f" class="outline-3">
+<h3 id="orgf6c510f"><span class="section-number-3">1.6</span> setup graphviz</h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
 <li>On Windows</li>
@@ -337,12 +344,21 @@ sudo apt-get install graphviz
 </pre>
 </div>
 </div>
-<div id="outline-container-org3e5ddec" class="outline-3">
-<h3 id="org3e5ddec"><span class="section-number-3">1.7</span> setup Chinese-pyim</h3>
+<div id="outline-container-orgba5dcba" class="outline-3">
+<h3 id="orgba5dcba"><span class="section-number-3">1.7</span> setup Chinese-pyim</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 <a href="https://github.com/tumashu/chinese-pyim#org3a2f7d4">https://github.com/tumashu/chinese-pyim#org3a2f7d4</a>
 </p>
+</div>
+</div>
+
+<div id="outline-container-orgac5825b" class="outline-3">
+<h3 id="orgac5825b"><span class="section-number-3">1.8</span> Ob-java</h3>
+<div class="outline-text-3" id="text-1-8">
+<pre class="example">
+https://github.com/jwiegley/emacs-release/blob/master/lisp/org/ob-java.el
+</pre>
 
 <ul class="org-ul">
 <li>M-x package-install RET chinese-pyim RET</li>
@@ -359,12 +375,24 @@ sudo apt-get install graphviz
 </ul>
 </div>
 </div>
+
+<div id="outline-container-orgc60b56b" class="outline-3">
+<h3 id="orgc60b56b"><span class="section-number-3">1.9</span> projectile</h3>
+<div class="outline-text-3" id="text-1-9">
+<p>
+list all command in projectile
+</p>
+<pre class="example">
+C-c p C-h
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2017-07-06 Thu 12:53</p>
+<p class="date">Created: 2019-03-22 Fri 22:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

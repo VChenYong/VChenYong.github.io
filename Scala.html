@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-07-06 Thu 12:52 -->
+<!-- 2019-03-22 Fri 22:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Scala.org</title>
@@ -179,7 +179,12 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="./styles/style.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -234,43 +239,43 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org26732c0">1. Scala Note</a>
+<li><a href="#orgba3daf6">1. Scala Note</a>
 <ul>
-<li><a href="#org34c3819">1.1. Scala Functions</a>
+<li><a href="#org49a39fc">1.1. Scala Functions</a>
 <ul>
-<li><a href="#orgbda018b">1.1.1. definition</a></li>
-<li><a href="#org0b7fcfb">1.1.2. ways to define scala functions</a></li>
-<li><a href="#org264c36b">1.1.3. Function as Object</a></li>
-<li><a href="#org8fcc2d9">1.1.4. tips</a></li>
+<li><a href="#orgc9a86cf">1.1.1. definition</a></li>
+<li><a href="#orgbd0a080">1.1.2. ways to define scala functions</a></li>
+<li><a href="#org84482ee">1.1.3. Function as Object</a></li>
+<li><a href="#org7b2f11b">1.1.4. tips</a></li>
 </ul>
 </li>
-<li><a href="#orgdffc7ea">1.2. Scala closures</a>
+<li><a href="#orgcd2f0f3">1.2. Scala closures</a>
 <ul>
-<li><a href="#orge7e9868">1.2.1. Closure</a></li>
+<li><a href="#orgb22ff4a">1.2.1. Closure</a></li>
 </ul>
 </li>
-<li><a href="#orgf618df9">1.3. <span class="todo TODO">TODO</span> scala (co-|contra-)variance</a>
+<li><a href="#org7048e5a">1.3. <span class="todo TODO">TODO</span> scala (co-|contra-)variance</a>
 <ul>
-<li><a href="#org1fd981f">1.3.1. </a></li>
+<li><a href="#orgcd7cbaa">1.3.1. </a></li>
 </ul>
 </li>
-<li><a href="#org5a5831d">1.4. Scala Stream</a>
+<li><a href="#org8192f66">1.4. Scala Stream</a>
 <ul>
-<li><a href="#orge37b1ec">1.4.1. Stream construction</a></li>
+<li><a href="#orgaef261b">1.4.1. Stream construction</a></li>
 </ul>
 </li>
-<li><a href="#orgc4f8dc3">1.5. function</a>
+<li><a href="#org264d361">1.5. function</a>
 <ul>
-<li><a href="#orgf01c6a6">1.5.1. Function Literals</a></li>
-<li><a href="#orgc1ac16c">1.5.2. Functions as first class values</a></li>
-<li><a href="#orgcfe6136">1.5.3. polymorphic functions</a></li>
+<li><a href="#org127454e">1.5.1. Function Literals</a></li>
+<li><a href="#orgf5db8a0">1.5.2. Functions as first class values</a></li>
+<li><a href="#org1f78bce">1.5.3. polymorphic functions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgfda7d88">2. misc</a>
+<li><a href="#orga05ede9">2. misc</a>
 <ul>
-<li><a href="#orgafc1e22">2.1. scala REPL</a></li>
+<li><a href="#orgb3f3d77">2.1. scala REPL</a></li>
 </ul>
 </li>
 </ul>
@@ -280,15 +285,14 @@ for the JavaScript code in this tag.
 
 
 
-
-<div id="outline-container-org26732c0" class="outline-2">
-<h2 id="org26732c0"><span class="section-number-2">1</span> Scala Note</h2>
+<div id="outline-container-orgba3daf6" class="outline-2">
+<h2 id="orgba3daf6"><span class="section-number-2">1</span> Scala Note</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org34c3819" class="outline-3">
-<h3 id="org34c3819"><span class="section-number-3">1.1</span> Scala Functions</h3>
+</div><div id="outline-container-org49a39fc" class="outline-3">
+<h3 id="org49a39fc"><span class="section-number-3">1.1</span> Scala Functions</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgbda018b" class="outline-4">
-<h4 id="orgbda018b"><span class="section-number-4">1.1.1</span> definition</h4>
+</div><div id="outline-container-orgc9a86cf" class="outline-4">
+<h4 id="orgc9a86cf"><span class="section-number-4">1.1.1</span> definition</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li>A function is a mapping that takes one or more arguments and produces a single result.</li>
@@ -296,14 +300,14 @@ for the JavaScript code in this tag.
 exmaple
 </p>
 <div class="org-src-container">
-<pre class="src src-scala">(x:Int, y:Int) =&gt; x+y
+<pre class="src src-scala">(x<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>, y<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>) <span style="color: #4f97d7; font-weight: bold;">=&gt;</span> x+y
 
-// another examplePythagorean triple
-(a:Int,b:Int,c:Int) = {
- val aSquare =a*a
- val bSquare =b*b
- val cSquare =c*c
- aSquare+bSquare = cSquare
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">another examplePythagorean triple</span>
+(a<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,b<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,c<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>) <span style="color: #4f97d7; font-weight: bold;">=</span> {
+ <span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">aSquare</span> <span style="color: #4f97d7; font-weight: bold;">=</span>a*a
+ <span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">bSquare</span> <span style="color: #4f97d7; font-weight: bold;">=</span>b*b
+ <span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">cSquare</span> <span style="color: #4f97d7; font-weight: bold;">=</span>c*c
+ aSquare+bSquare <span style="color: #4f97d7; font-weight: bold;">=</span> cSquare
 }
 </pre>
 </div></li>
@@ -313,48 +317,48 @@ A function is defined by using an equation that gives a name for the function, a
 and a body that specifies how the result can ve  calculated in term of arguements.
 </p>
 <div class="org-src-container">
-<pre class="src src-scala">val power :(Int,Int)=&gt;Int =
-  (base:Int,exp:Int)=&gt;
-  if(exp&lt;=1)  base else base* power(base,exp-1)
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">power</span> <span style="color: #4f97d7; font-weight: bold;">:</span>(<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span><span style="color: #a45bad;">Int</span> <span style="color: #4f97d7; font-weight: bold;">=</span>
+  (base<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,exp<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span>(exp&lt;=<span style="color: #a45bad;">1</span>)  base <span style="color: #4f97d7; font-weight: bold;">else</span> base* power(base,exp-1)
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0b7fcfb" class="outline-4">
-<h4 id="org0b7fcfb"><span class="section-number-4">1.1.2</span> ways to define scala functions</h4>
+<div id="outline-container-orgbd0a080" class="outline-4">
+<h4 id="orgbd0a080"><span class="section-number-4">1.1.2</span> ways to define scala functions</h4>
 <div class="outline-text-4" id="text-1-1-2">
-</div><ol class="org-ol"><li><a id="org7f10c43"></a>ways to define functions<br /><div class="outline-text-5" id="text-1-1-2-1">
+</div><ol class="org-ol"><li><a id="orgb8adf90"></a>ways to define functions<br /><div class="outline-text-5" id="text-1-1-2-1">
 <ol class="org-ol">
 <li><p>
 val + function Name : ( List of argument Types) =&gt; return Type = (list of arguments)=&gt; function body
 </p>
 <div class="org-src-container">
-<pre class="src src-scala">val add: (Int,Int)=&gt;Int = (x,y)=&gt;x+y
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">add</span><span style="color: #4f97d7; font-weight: bold;">:</span> (<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span><span style="color: #a45bad;">Int</span> <span style="color: #4f97d7; font-weight: bold;">=</span> (x,y)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>x+y
 </pre>
 </div></li>
 <li><p>
 val +function name :(list of Arguments and its types)=&gt; function body
 </p>
 <div class="org-src-container">
-<pre class="src src-scala">val add = (x:Int,y:Int)=&gt;x+y
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">add</span> <span style="color: #4f97d7; font-weight: bold;">=</span> (x<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,y<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>x+y
 </pre>
 </div></li>
 <li><p>
 Use function trait
 </p>
 <div class="org-src-container">
-<pre class="src src-scala">val add:Function3[Int,Int,Int] = (a:Int,b:Int)=&gt; a+b
-//add: (Int, Int) =&gt; Int = &lt;function2&gt;
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">add</span><span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Function3</span>[<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>] <span style="color: #4f97d7; font-weight: bold;">=</span> (a<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,b<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span> a+b
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">add: (Int, Int) =&gt; Int = &lt;function2&gt;</span>
 </pre>
 </div></li>
 <li><p>
 Implementing the appropriate function trait and define it's required Apply method.
 </p>
 <div class="org-src-container">
-<pre class="src src-scala">val add: (Int,Int)=&gt;Int = new Function2 [Int,Int,Int]{
-    def apply(a:Int,b:Int):Int={a+b}
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">add</span><span style="color: #4f97d7; font-weight: bold;">:</span> (<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span><span style="color: #a45bad;">Int</span> <span style="color: #4f97d7; font-weight: bold;">=</span> <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">Function2</span> [<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>]{
+    <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">apply</span>(a<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,b<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span><span style="color: #4f97d7; font-weight: bold;">=</span>{a+b}
 }
 </pre>
 </div></li>
@@ -362,36 +366,36 @@ Implementing the appropriate function trait and define it's required Apply metho
 Create a new class which extends a certain function
 </p>
 <div class="org-src-container">
-<pre class="src src-scala"> class add (a:Int,b:Int) extends Function2[Int,Int,Int]{
-   def apply(a:Int,b:Int):Int={a+b}
+<pre class="src src-scala"> <span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">add</span> (a<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,b<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>) <span style="color: #4f97d7; font-weight: bold;">extends</span> <span style="color: #ce537a; font-weight: bold;">Function2</span>[<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>]{
+   <span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">apply</span>(a<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,b<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span><span style="color: #4f97d7; font-weight: bold;">=</span>{a+b}
 }
 </pre>
 </div></li>
 </ol>
 </div></li>
-<li><a id="orge9da605"></a>ways to define functions<br /><div class="outline-text-5" id="text-1-1-2-2">
+<li><a id="orgf08c772"></a>ways to define functions<br /><div class="outline-text-5" id="text-1-1-2-2">
 <ul class="org-ul">
 <li><p>
 def + function Name : ( List of argument Types) =&gt; return Type = (list of arguments)=&gt; function body
 </p>
 <div class="org-src-container">
-<pre class="src src-scala">def add: (Int,Int)=&gt;Int = (x,y)=&gt;x+y
-//add: (Int, Int) =&gt; Int
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">add</span><span style="color: #4f97d7; font-weight: bold;">:</span> (<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span><span style="color: #a45bad;">Int</span> <span style="color: #4f97d7; font-weight: bold;">=</span> (x,y)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>x+y
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">add: (Int, Int) =&gt; Int</span>
 </pre>
 </div></li>
 <li><p>
 def +function name :(list of Arguments and its types)=&gt; function body
 </p>
 <div class="org-src-container">
-<pre class="src src-scala">def add = (x:Int,y:Int)=&gt;x+y
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">add</span> <span style="color: #4f97d7; font-weight: bold;">=</span> (x<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,y<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>x+y
 </pre>
 </div></li>
 </ul>
 </div></li></ol>
 </div>
 
-<div id="outline-container-org264c36b" class="outline-4">
-<h4 id="org264c36b"><span class="section-number-4">1.1.3</span> Function as Object</h4>
+<div id="outline-container-org84482ee" class="outline-4">
+<h4 id="org84482ee"><span class="section-number-4">1.1.3</span> Function as Object</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ol class="org-ol">
 <li><p>
@@ -407,27 +411,27 @@ FunctionN type  (function1 to function22)
 </div>
 </div>
 
-<div id="outline-container-org8fcc2d9" class="outline-4">
-<h4 id="org8fcc2d9"><span class="section-number-4">1.1.4</span> tips</h4>
+<div id="outline-container-org7b2f11b" class="outline-4">
+<h4 id="org7b2f11b"><span class="section-number-4">1.1.4</span> tips</h4>
 <div class="outline-text-4" id="text-1-1-4">
-</div><ol class="org-ol"><li><a id="org54479aa"></a>foldLeft vs foldRight<br /><div class="outline-text-5" id="text-1-1-4-1">
+</div><ol class="org-ol"><li><a id="org8e3456e"></a>foldLeft vs foldRight<br /><div class="outline-text-5" id="text-1-1-4-1">
 <div class="org-src-container">
-<pre class="src src-scala">// foldLeft
-//    1. seed at left
-//    2. loop from the beginning of the list
-val test= List(1,2,3,4).foldLeft("seed")((seed,item)=&gt;seed+item)
-// seed1234
-List(1,2,3,4).foldLeft("seed")((seed,item)=&gt;item+seed)
-//4321seed
+<pre class="src src-scala"><span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">foldLeft</span>
+<span style="color: #2aa1ae; background-color: #292e34;">//    </span><span style="color: #2aa1ae; background-color: #292e34;">1. seed at left</span>
+<span style="color: #2aa1ae; background-color: #292e34;">//    </span><span style="color: #2aa1ae; background-color: #292e34;">2. loop from the beginning of the list</span>
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">test</span><span style="color: #4f97d7; font-weight: bold;">=</span> <span style="color: #a45bad;">List</span>(<span style="color: #a45bad;">1</span>,<span style="color: #a45bad;">2</span>,<span style="color: #a45bad;">3</span>,<span style="color: #a45bad;">4</span>).foldLeft(<span style="color: #2d9574;">"seed"</span>)((seed,item)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>seed+item)
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">seed1234</span>
+<span style="color: #a45bad;">List</span>(<span style="color: #a45bad;">1</span>,<span style="color: #a45bad;">2</span>,<span style="color: #a45bad;">3</span>,<span style="color: #a45bad;">4</span>).foldLeft(<span style="color: #2d9574;">"seed"</span>)((seed,item)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>item+seed)
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">4321seed</span>
 
 
-// foldRight
-//    1. seed at right
-//    2. loop from the end  of the list
-List(1,2,3,4).foldRight("seed")((item,seed)=&gt;seed+item)
-//seed4321
-List(1,2,3,4).foldRight("seed")((item,seed)=&gt;item+seed)
-//1234seed
+<span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">foldRight</span>
+<span style="color: #2aa1ae; background-color: #292e34;">//    </span><span style="color: #2aa1ae; background-color: #292e34;">1. seed at right</span>
+<span style="color: #2aa1ae; background-color: #292e34;">//    </span><span style="color: #2aa1ae; background-color: #292e34;">2. loop from the end  of the list</span>
+<span style="color: #a45bad;">List</span>(<span style="color: #a45bad;">1</span>,<span style="color: #a45bad;">2</span>,<span style="color: #a45bad;">3</span>,<span style="color: #a45bad;">4</span>).foldRight(<span style="color: #2d9574;">"seed"</span>)((item,seed)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>seed+item)
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">seed4321</span>
+<span style="color: #a45bad;">List</span>(<span style="color: #a45bad;">1</span>,<span style="color: #a45bad;">2</span>,<span style="color: #a45bad;">3</span>,<span style="color: #a45bad;">4</span>).foldRight(<span style="color: #2d9574;">"seed"</span>)((item,seed)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>item+seed)
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">1234seed</span>
 
 test
 </pre>
@@ -435,18 +439,18 @@ test
 </div></li>
 
 
-<li><a id="orgf8a3b2f"></a>question :<br /><div class="outline-text-5" id="text-1-1-4-2">
+<li><a id="orgd0abf49"></a>question :<br /><div class="outline-text-5" id="text-1-1-4-2">
 <ul class="org-ul">
 <li>different between def and Val</li>
 </ul>
 </div></li></ol>
 </div>
 </div>
-<div id="outline-container-orgdffc7ea" class="outline-3">
-<h3 id="orgdffc7ea"><span class="section-number-3">1.2</span> Scala closures</h3>
+<div id="outline-container-orgcd2f0f3" class="outline-3">
+<h3 id="orgcd2f0f3"><span class="section-number-3">1.2</span> Scala closures</h3>
 <div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-orge7e9868" class="outline-4">
-<h4 id="orge7e9868"><span class="section-number-4">1.2.1</span> Closure</h4>
+</div><div id="outline-container-orgb22ff4a" class="outline-4">
+<h4 id="orgb22ff4a"><span class="section-number-4">1.2.1</span> Closure</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ol class="org-ol">
 <li>A function contains at least one free varaible is called an open term.
@@ -459,11 +463,11 @@ Closure is Scala is dynamic blinding. which means free varibale bind to relative
 example:
 </p>
 <div class="org-src-container">
-<pre class="src src-scala">var minAge = 18
-val isAdult = (age:Int)=&gt;age&gt;=minAge
-val isQuebecAdult = isAdult(20) // =&gt;true
-minAge = 21
-val isCanadianAdult =isAdult(20) // =&gt;false
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">var</span> <span style="color: #dc752f; background-color: #292b2e;">minAge</span> <span style="color: #4f97d7; font-weight: bold;">=</span> <span style="color: #a45bad;">18</span>
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">isAdult</span> <span style="color: #4f97d7; font-weight: bold;">=</span> (age<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>age&gt;=minAge
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">isQuebecAdult</span> <span style="color: #4f97d7; font-weight: bold;">=</span> isAdult(<span style="color: #a45bad;">20</span>) <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">=&gt;true</span>
+minAge <span style="color: #4f97d7; font-weight: bold;">=</span> <span style="color: #a45bad;">21</span>
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">isCanadianAdult</span> <span style="color: #4f97d7; font-weight: bold;">=</span>isAdult(<span style="color: #a45bad;">20</span>) <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">=&gt;false</span>
 </pre>
 </div></li>
 </ol>
@@ -473,39 +477,39 @@ val isCanadianAdult =isAdult(20) // =&gt;false
 
 
 
-<div id="outline-container-orgf618df9" class="outline-3">
-<h3 id="orgf618df9"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> scala (co-|contra-)variance</h3>
+<div id="outline-container-org7048e5a" class="outline-3">
+<h3 id="org7048e5a"><span class="section-number-3">1.3</span> <span class="todo TODO">TODO</span> scala (co-|contra-)variance</h3>
 <div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-org1fd981f" class="outline-4">
-<h4 id="org1fd981f"><span class="section-number-4">1.3.1</span> <a href="http://qiujj.com/static/Scala-Handbook.htm">http://qiujj.com/static/Scala-Handbook.htm</a></h4>
+</div><div id="outline-container-orgcd7cbaa" class="outline-4">
+<h4 id="orgcd7cbaa"><span class="section-number-4">1.3.1</span> <a href="http://qiujj.com/static/Scala-Handbook.htm">http://qiujj.com/static/Scala-Handbook.htm</a></h4>
 </div>
 </div>
 
-<div id="outline-container-org5a5831d" class="outline-3">
-<h3 id="org5a5831d"><span class="section-number-3">1.4</span> Scala Stream</h3>
+<div id="outline-container-org8192f66" class="outline-3">
+<h3 id="org8192f66"><span class="section-number-3">1.4</span> Scala Stream</h3>
 <div class="outline-text-3" id="text-1-4">
-</div><div id="outline-container-orge37b1ec" class="outline-4">
-<h4 id="orge37b1ec"><span class="section-number-4">1.4.1</span> Stream construction</h4>
+</div><div id="outline-container-orgaef261b" class="outline-4">
+<h4 id="orgaef261b"><span class="section-number-4">1.4.1</span> Stream construction</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <div class="org-src-container">
-<pre class="src src-scala">import Stream._
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #a45bad;">Stream</span>.<span style="color: #4f97d7; font-weight: bold;">_</span>
 empty
 
-1 #:: 2 #:: empty foreach (println _)
+<span style="color: #a45bad;">1</span> #:: <span style="color: #a45bad;">2</span> #:: empty foreach (println <span style="color: #4f97d7; font-weight: bold;">_</span>)
 
-//or
+<span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">or</span>
 
-cons(1, cons(2, empty)) foreach println
+cons(<span style="color: #a45bad;">1</span>, cons(<span style="color: #a45bad;">2</span>, empty)) foreach println
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-scala">// fibonacci in stream
-lazy val fs: Stream[Int] =
-  0 #:: 1 #:: fs.zip(fs.tail).map(p =&gt; p._1 + p._2)
+<pre class="src src-scala"><span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">fibonacci in stream</span>
+<span style="color: #4f97d7;">lazy</span> <span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">fs</span><span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">Stream</span>[<span style="color: #a45bad;">Int</span>] <span style="color: #4f97d7; font-weight: bold;">=</span>
+  <span style="color: #a45bad;">0</span> #:: <span style="color: #a45bad;">1</span> #:: fs.zip(fs.tail).map(p <span style="color: #4f97d7; font-weight: bold;">=&gt;</span> p._1 + p._2)
 
- val fibs: Stream[BigInt] =
-   BigInt(0) #:: BigInt(1) #:: fibs.zip(fibs.tail).map { n =&gt; n._1 + n._2 }
+ <span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">fibs</span><span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">Stream</span>[<span style="color: #a45bad;">BigInt</span>] <span style="color: #4f97d7; font-weight: bold;">=</span>
+   <span style="color: #a45bad;">BigInt</span>(<span style="color: #a45bad;">0</span>) #:: <span style="color: #a45bad;">BigInt</span>(<span style="color: #a45bad;">1</span>) #:: fibs.zip(fibs.tail).map { n <span style="color: #4f97d7; font-weight: bold;">=&gt;</span> n._1 + n._2 }
 </pre>
 </div>
 
@@ -516,11 +520,11 @@ test#+STYLE: &lt;link rel="stylesheet" type="text/css" href="./styles/test.css"/
 </div>
 </div>
 </div>
-<div id="outline-container-orgc4f8dc3" class="outline-3">
-<h3 id="orgc4f8dc3"><span class="section-number-3">1.5</span> function</h3>
+<div id="outline-container-org264d361" class="outline-3">
+<h3 id="org264d361"><span class="section-number-3">1.5</span> function</h3>
 <div class="outline-text-3" id="text-1-5">
-</div><div id="outline-container-orgf01c6a6" class="outline-4">
-<h4 id="orgf01c6a6"><span class="section-number-4">1.5.1</span> Function Literals<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h4>
+</div><div id="outline-container-org127454e" class="outline-4">
+<h4 id="org127454e"><span class="section-number-4">1.5.1</span> Function Literals<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h4>
 <div class="outline-text-4" id="text-1-5-1">
 <ul class="org-ul">
 <li>Function literals are anonymous &#x2013; they don't have a name by default, but you can give them a name by binding them to a variable.</li>
@@ -539,8 +543,8 @@ test#+STYLE: &lt;link rel="stylesheet" type="text/css" href="./styles/test.css"/
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc1ac16c" class="outline-4">
-<h4 id="orgc1ac16c"><span class="section-number-4">1.5.2</span> Functions as first class values</h4>
+<div id="outline-container-orgf5db8a0" class="outline-4">
+<h4 id="orgf5db8a0"><span class="section-number-4">1.5.2</span> Functions as first class values</h4>
 <div class="outline-text-4" id="text-1-5-2">
 <ul class="org-ul">
 <li>a Function is only allowed to depend on the given parameters</li>
@@ -557,19 +561,19 @@ test#+STYLE: &lt;link rel="stylesheet" type="text/css" href="./styles/test.css"/
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-scala">//error: recursive value power needs type
-val power  =  (  base: Int,  exp :Int  )  =&gt;  if(  exp &lt;= 1  ) base  else  base * power(  base,  exp - 1  )
+<pre class="src src-scala"><span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">error: recursive value power needs type</span>
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">power</span>  <span style="color: #4f97d7; font-weight: bold;">=</span>  (  base<span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">Int</span>,  exp <span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>  )  <span style="color: #4f97d7; font-weight: bold;">=&gt;</span>  <span style="color: #4f97d7; font-weight: bold;">if</span>(  exp &lt;= <span style="color: #a45bad;">1</span>  ) base  <span style="color: #4f97d7; font-weight: bold;">else</span>  base * power(  base,  exp - <span style="color: #a45bad;">1</span>  )
 </pre>
 </div>
 
 
 <div class="org-src-container">
-<pre class="src src-scala">//val power  =  (  base: Int,  exp :Int  ):Int  =&gt;  if(  exp &lt;= 1  ) base  else  base * power(  base,  exp - 1  )
-val power :(Int,Int)=&gt;Int =
-  (base:Int,exp:Int)=&gt;
-  if(exp&lt;=1)  base else base* power(base,exp-1);
+<pre class="src src-scala"><span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">val power  =  (  base: Int,  exp :Int  ):Int  =&gt;  if(  exp &lt;= 1  ) base  else  base * power(  base,  exp - 1  )</span>
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">power</span> <span style="color: #4f97d7; font-weight: bold;">:</span>(<span style="color: #a45bad;">Int</span>,<span style="color: #a45bad;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span><span style="color: #a45bad;">Int</span> <span style="color: #4f97d7; font-weight: bold;">=</span>
+  (base<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>,exp<span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Int</span>)<span style="color: #4f97d7; font-weight: bold;">=&gt;</span>
+  <span style="color: #4f97d7; font-weight: bold;">if</span>(exp&lt;=<span style="color: #a45bad;">1</span>)  base <span style="color: #4f97d7; font-weight: bold;">else</span> base* power(base,exp-1);
 
-power(2,8)
+power(<span style="color: #a45bad;">2</span>,<span style="color: #a45bad;">8</span>)
 </pre>
 </div>
 
@@ -580,45 +584,45 @@ power(2,8)
 
 
 <div class="org-src-container">
-<pre class="src src-scala">class ScalaCurrentVersion(val url: String) {
-  lazy val source= {
-    println("fetching from url...")
-    scala.io.Source.fromURL(url).getLines().toList
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">class</span> <span style="color: #ce537a; font-weight: bold;">ScalaCurrentVersion</span>(<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">url</span><span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">String</span>) {
+  <span style="color: #4f97d7;">lazy</span> <span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">source</span><span style="color: #4f97d7; font-weight: bold;">=</span> {
+    println(<span style="color: #2d9574;">"fetching from url..."</span>)
+    scala.io.<span style="color: #a45bad;">Source</span>.fromURL(url).getLines().toList
   }
-  lazy val majorVersion = source.find(_.contains("version.major"))
-  lazy val minorVersion = source.find(_.contains("version.minor"))
+  <span style="color: #4f97d7;">lazy</span> <span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">majorVersion</span> <span style="color: #4f97d7; font-weight: bold;">=</span> source.find(<span style="color: #4f97d7; font-weight: bold;">_</span>.contains(<span style="color: #2d9574;">"version.major"</span>))
+  <span style="color: #4f97d7;">lazy</span> <span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">minorVersion</span> <span style="color: #4f97d7; font-weight: bold;">=</span> source.find(<span style="color: #4f97d7; font-weight: bold;">_</span>.contains(<span style="color: #2d9574;">"version.minor"</span>))
 }
-val version = new ScalaCurrentVersion("https://github.com/VChenYong/scala/raw/master/build.number")
-println("get scala version from " + version.url)
-version.majorVersion.foreach(println _)
-version.minorVersion.foreach(println _)
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">version</span> <span style="color: #4f97d7; font-weight: bold;">=</span> <span style="color: #4f97d7; font-weight: bold;">new</span> <span style="color: #ce537a; font-weight: bold;">ScalaCurrentVersion</span>(<span style="color: #2d9574;">"https://github.com/VChenYong/scala/raw/master/build.number"</span>)
+println(<span style="color: #2d9574;">"get scala version from "</span> + version.url)
+version.majorVersion.foreach(println <span style="color: #4f97d7; font-weight: bold;">_</span>)
+version.minorVersion.foreach(println <span style="color: #4f97d7; font-weight: bold;">_</span>)
 
- println("fetching from url...")
+ println(<span style="color: #2d9574;">"fetching from url..."</span>)
 version.minorVersion
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgcfe6136" class="outline-4">
-<h4 id="orgcfe6136"><span class="section-number-4">1.5.3</span> polymorphic functions</h4>
+<div id="outline-container-org1f78bce" class="outline-4">
+<h4 id="org1f78bce"><span class="section-number-4">1.5.3</span> polymorphic functions</h4>
 <div class="outline-text-4" id="text-1-5-3">
 <ul class="org-ul">
 <li>(Sub-)Type polymorphism and Parametric polymorphism (you may call it Generics).</li>
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-scala">//underscore used to designate a so called Existential Type: we’re informing the compiler, that there must exist such a concrete type, but //we don’t care which type it is – it might be a List of Strings or a List of Booleans, we simply don’t care.
-val empty = ( xs :List[_] ) =&gt; xs == Nil
+<pre class="src src-scala"><span style="color: #2aa1ae; background-color: #292e34;">//</span><span style="color: #2aa1ae; background-color: #292e34;">underscore used to designate a so called Existential Type: we&#8217;re informing the compiler, that there must exist such a concrete type, but //we don&#8217;t care which type it is &#8211; it might be a List of Strings or a List of Booleans, we simply don&#8217;t care.</span>
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">empty</span> <span style="color: #4f97d7; font-weight: bold;">=</span> ( xs <span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">List</span>[<span style="color: #4f97d7; font-weight: bold;">_</span>] ) <span style="color: #4f97d7; font-weight: bold;">=&gt;</span> xs == <span style="color: #a45bad;">Nil</span>
 
 
 
-val names : List[String] = List( "Anne", "George", "Carla" )
-val primes : List[Int] = List( 11, 17, 19 )
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">names</span> <span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">List</span>[<span style="color: #a45bad;">String</span>] <span style="color: #4f97d7; font-weight: bold;">=</span> <span style="color: #a45bad;">List</span>( <span style="color: #2d9574;">"Anne"</span>, <span style="color: #2d9574;">"George"</span>, <span style="color: #2d9574;">"Carla"</span> )
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">primes</span> <span style="color: #4f97d7; font-weight: bold;">:</span> <span style="color: #ce537a; font-weight: bold;">List</span>[<span style="color: #a45bad;">Int</span>] <span style="color: #4f97d7; font-weight: bold;">=</span> <span style="color: #a45bad;">List</span>( <span style="color: #a45bad;">11</span>, <span style="color: #a45bad;">17</span>, <span style="color: #a45bad;">19</span> )
 
-List(empty( Nil ),           // true
-empty( names ),         // false
-empty( primes ))        // false
+<span style="color: #a45bad;">List</span>(empty( <span style="color: #a45bad;">Nil</span> ),           <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">true</span>
+empty( names ),         <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">false</span>
+empty( primes ))        <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">false</span>
 </pre>
 </div>
 
@@ -634,9 +638,9 @@ val first :Tuple2[A,_] =&gt; A  =  ( pair :Tuple2[A,_] ) =&gt; pair._1
 <li>we could use ordinary methods which are allowed to take type parameters (since they are not values but only members of certain types), as long as a function pops out at the end of the day</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-scala">def first[A] :Tuple2[A,_] =&gt; A  = ( pair :Tuple2[A,_] ) =&gt; pair._1
-val person= ("yong", 42)
-val name = first( person )
+<pre class="src src-scala"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">first</span>[<span style="color: #a45bad;">A</span>] <span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Tuple2</span>[<span style="color: #a45bad;">A</span>,<span style="color: #4f97d7; font-weight: bold;">_</span>] <span style="color: #4f97d7; font-weight: bold;">=&gt;</span> <span style="color: #a45bad;">A</span>  <span style="color: #4f97d7; font-weight: bold;">=</span> ( pair <span style="color: #4f97d7; font-weight: bold;">:</span><span style="color: #ce537a; font-weight: bold;">Tuple2</span>[<span style="color: #a45bad;">A</span>,<span style="color: #4f97d7; font-weight: bold;">_</span>] ) <span style="color: #4f97d7; font-weight: bold;">=&gt;</span> pair._1
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">person</span><span style="color: #4f97d7; font-weight: bold;">=</span> (<span style="color: #2d9574;">"yong"</span>, <span style="color: #a45bad;">42</span>)
+<span style="color: #4f97d7; font-weight: bold;">val</span> <span style="color: #7590db;">name</span> <span style="color: #4f97d7; font-weight: bold;">=</span> first( person )
 name
 </pre>
 </div>
@@ -646,11 +650,11 @@ name
 </div>
 
 
-<div id="outline-container-orgfda7d88" class="outline-2">
-<h2 id="orgfda7d88"><span class="section-number-2">2</span> misc</h2>
+<div id="outline-container-orga05ede9" class="outline-2">
+<h2 id="orga05ede9"><span class="section-number-2">2</span> misc</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orgafc1e22" class="outline-3">
-<h3 id="orgafc1e22"><span class="section-number-3">2.1</span> scala REPL</h3>
+</div><div id="outline-container-orgb3f3d77" class="outline-3">
+<h3 id="orgb3f3d77"><span class="section-number-3">2.1</span> scala REPL</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
 <li><p>
@@ -684,7 +688,7 @@ type kind of
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2017-07-06 Thu 12:52</p>
+<p class="date">Created: 2019-03-22 Fri 22:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

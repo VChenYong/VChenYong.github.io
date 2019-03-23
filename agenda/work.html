@@ -6,7 +6,7 @@
 <!-- 2019-03-22 Fri 22:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>JAVA Lambdas</title>
+<title>work.org</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="YONG" />
 <style type="text/css">
@@ -229,28 +229,45 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">JAVA Lambdas</h1>
+<h1 class="title">work.org</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org11f8255">1. Lambda</a>
+<li><a href="#orgba9f28d">1. Task</a>
 <ul>
-<li><a href="#org88ba1d1">1.1. Function</a></li>
-<li><a href="#org7e87b85">1.2. Predicate</a></li>
-<li><a href="#org61b9a29">1.3. Consumer</a></li>
-<li><a href="#orgcd26fbe">1.4. supplier</a></li>
-<li><a href="#org18ee7e8">1.5. UnaryOperator</a></li>
-<li><a href="#org6d769c8">1.6. Default method</a>
-<ul>
-<li><a href="#org32404f2">1.6.1. Default method was introduced to solved the Binary Interface Compatibility.</a></li>
-<li><a href="#org38f854d">1.6.2. The Three Rules</a></li>
+<li><a href="#org852ff67">1.1. description&#xa0;&#xa0;&#xa0;<span class="tag"><span class="testing">testing</span></span></a></li>
 </ul>
 </li>
-<li><a href="#org2e32fa4">1.7. Stream(流)</a>
+<li><a href="#org1445f5d">2. 2013&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ARCHIVE">ARCHIVE</span></span></a></li>
+<li><a href="#orgc2261f2">3. 2017</a></li>
+<li><a href="#orga76bba6">4. 2018</a>
 <ul>
-<li><a href="#org2916c04">1.7.1. Intermediate example:</a></li>
-<li><a href="#org20159f9">1.7.2. Terminal exmaple:</a></li>
+<li><a href="#org4352890">4.1. 2018-03 March</a>
+<ul>
+<li><a href="#orgd73c285">4.1.1. <span class="done DONE">DONE</span> WFC-65084 Cannot select last day from Date picker for shift start Date field in Request OPen shift dialog.</a></li>
+<li><a href="#org5c8b465">4.1.2. <span class="done DONE">DONE</span> WFC-64507 [Perf] Investigate and Improve</a></li>
+</ul>
+</li>
+<li><a href="#org4481929">4.2. 2018-04 April</a>
+<ul>
+<li><a href="#orgb4d4311">4.2.1. <span class="done DONE">DONE</span> WFC-64507 [Perf] Investigate and Improve</a></li>
+<li><a href="#org0803db4">4.2.2. <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-04-10 Tue&gt; </span></span> sonar critical issue fixing.</a></li>
+<li><a href="#orgb8724f0">4.2.3. 2018-04-30 Monday</a></li>
+</ul>
+</li>
+<li><a href="#org7e9701a">4.3. 2018-05 May</a>
+<ul>
+<li><a href="#org6e741db">4.3.1. 2018-05-07 Monday</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org267e52d">5. 2019</a>
+<ul>
+<li><a href="#org4446668">5.1. 2019-01 January</a>
+<ul>
+<li><a href="#org231dc67">5.1.1. 2019-01-11 Friday</a></li>
 </ul>
 </li>
 </ul>
@@ -259,289 +276,149 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-
-
-<div id="outline-container-org11f8255" class="outline-2">
-<h2 id="org11f8255"><span class="section-number-2">1</span> Lambda</h2>
+<div id="outline-container-orgba9f28d" class="outline-2">
+<h2 id="orgba9f28d"><span class="section-number-2">1</span> Task</h2>
 <div class="outline-text-2" id="text-1">
-<p>
-<b>Lambdas</b> are used to create function objects. With them, we can specify methods inside other methods—and even pass methods as arguments to other methods.
-</p>
-
-<p>
-<b>A lambda</b> has a shape, one determined by its parameters and return values (if any) and their types. Classes like Function, Supplier, Consumer, accept lambdas with specific shapes.
-</p>
-</div>
-
-<div id="outline-container-org88ba1d1" class="outline-3">
-<h3 id="org88ba1d1"><span class="section-number-3">1.1</span> Function</h3>
+</div><div id="outline-container-org852ff67" class="outline-3">
+<h3 id="org852ff67"><span class="section-number-3">1.1</span> description&#xa0;&#xa0;&#xa0;<span class="tag"><span class="testing">testing</span></span></h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-a function that accepts one argument and produces a result.
-</p>
-
-<pre class="example">
-@FunctionalInterface
-public interface Function&lt;T,R&gt; {
-  R apply(T t);
-}
-Function&lt;Integer, Integer&gt; function = v -&gt; v * 100;
-</pre>
-</div>
-</div>
-
-<div id="outline-container-org7e87b85" class="outline-3">
-<h3 id="org7e87b85"><span class="section-number-3">1.2</span> Predicate</h3>
-<div class="outline-text-3" id="text-1-2">
-<p>
-Represents a predicate (boolean-valued function) of one argument.
-</p>
-<pre class="example">
-@FunctionalInterface
-public interface Predicate&lt;T&gt;{
-boolean test(T t);
-}
-
-Predicate&lt;String&gt; p = String::isEmpty;
-</pre>
-</div>
-</div>
-
-<div id="outline-container-org61b9a29" class="outline-3">
-<h3 id="org61b9a29"><span class="section-number-3">1.3</span> Consumer</h3>
-<div class="outline-text-3" id="text-1-3">
-<p>
-The consumer accepts a single argument by calling its accept (args) method and does not return any value making it a void method.
-</p>
-<pre class="example">
-@FunctionalInterface
-public interface Consumer {
-  void accept(T t);
-}
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orgcd26fbe" class="outline-3">
-<h3 id="orgcd26fbe"><span class="section-number-3">1.4</span> supplier</h3>
-<div class="outline-text-3" id="text-1-4">
-<p>
-The supplier does the opposite of the consumer, so it takes no arguments but it returns some value by calling its get() method.
-Note: This may return different values when it is being called more than once.
-</p>
-<pre class="example">
-@FunctionalInterface
-public interface Supplier {
-  T get();
-}
-</pre>
-</div>
-</div>
-
-<div id="outline-container-org18ee7e8" class="outline-3">
-<h3 id="org18ee7e8"><span class="section-number-3">1.5</span> UnaryOperator</h3>
-<div class="outline-text-3" id="text-1-5">
-<p>
-This functional object receives a value of a certain type (like Integer) and returns a same-typed value. So it operates on, and returns, a value.
-</p>
-<pre class="example">
-@FunctionalInterface
-public interface UnaryOperator&lt;T&gt; extends Function&lt;T,T&gt;{
-T apply(T t)
-}
-
-UnaryOperator&lt;Integer&gt; operator = v -&gt; v * 100;
-</pre>
-</div>
-</div>
-
-<div id="outline-container-org6d769c8" class="outline-3">
-<h3 id="org6d769c8"><span class="section-number-3">1.6</span> Default method</h3>
-<div class="outline-text-3" id="text-1-6">
-</div><div id="outline-container-org32404f2" class="outline-4">
-<h4 id="org32404f2"><span class="section-number-4">1.6.1</span> Default method was introduced to solved the Binary Interface Compatibility.</h4>
-<div class="outline-text-4" id="text-1-6-1">
-<p>
-Stream method  is added to collection (biggest API changes in Java 8 is to the collections
-library) , in order to keep
-</p>
-</div>
-</div>
-
-
-<div id="outline-container-org38f854d" class="outline-4">
-<h4 id="org38f854d"><span class="section-number-4">1.6.2</span> The Three Rules</h4>
-<div class="outline-text-4" id="text-1-6-2">
-<p>
-If you’re ever unsure of what will happen with default methods or with multiple in‐
-heritance of behavior, there are three simple rules for handling conflicts:
-</p>
-
-<p>
-1.Any class wins over any interface. So if there’s a method with a body, or an abstract
-declaration, in the superclass chain, we can ignore the interfaces completely.
-Multiple Inheritance
-</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<tbody>
-<tr>
-</tr>
-</tbody>
-</table>
-<ol class="org-ol">
-<li>Subtype wins over supertype. If we have a situation in which two interfaces are</li>
-</ol>
-<p>
-competing to provide a default method and one interface extends the other, the
-subclass wins.
-</p>
-<ol class="org-ol">
-<li>No rule 3. If the previous two rules don’t give us the answer, the subclass must either</li>
-</ol>
-<p>
-implement the method or declare it abstract .
+   Added: <span class="timestamp-wrapper"><span class="timestamp">[2019-01-10 Thu 11:34]</span></span>
+teststtstst
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org2e32fa4" class="outline-3">
-<h3 id="org2e32fa4"><span class="section-number-3">1.7</span> Stream(流)</h3>
-<div class="outline-text-3" id="text-1-7">
-<p>
-流的操作
-当把一个数据结构包装成 Stream 后，就要开始对里面的元素进行各类操作了。常见的操作可以归类如下。
-</p>
-
+<div id="outline-container-org1445f5d" class="outline-2">
+<h2 id="org1445f5d"><span class="section-number-2">2</span> 2013&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ARCHIVE">ARCHIVE</span></span></h2>
+</div>
+<div id="outline-container-orgc2261f2" class="outline-2">
+<h2 id="orgc2261f2"><span class="section-number-2">3</span> 2017</h2>
+</div>
+<div id="outline-container-orga76bba6" class="outline-2">
+<h2 id="orga76bba6"><span class="section-number-2">4</span> 2018</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-org4352890" class="outline-3">
+<h3 id="org4352890"><span class="section-number-3">4.1</span> 2018-03 March</h3>
+<div class="outline-text-3" id="text-4-1">
+</div><div id="outline-container-orgd73c285" class="outline-4">
+<h4 id="orgd73c285"><span class="section-number-4">4.1.1</span> <span class="done DONE">DONE</span> WFC-65084 Cannot select last day from Date picker for shift start Date field in Request OPen shift dialog.</h4>
+<div class="outline-text-4" id="text-4-1-1">
 <ul class="org-ul">
-<li>Intermediate：
-map (mapToInt, flatMap 等)、 filter、 distinct、 sorted、 peek、 limit、 skip、 parallel、 sequential、 unordered</li>
-<li>Terminal：
-forEach、 forEachOrdered、 toArray、 reduce、 collect、 min、 max、 count、 anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 iterator</li>
-<li>Short-circuiting：
-anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 limit</li>
+<li>State "DONE"       from "HOLD"       <span class="timestamp-wrapper"><span class="timestamp">[2018-04-03 Tue 09:10]</span></span></li>
+<li>State "HOLD"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2018-03-28 Wed 11:16] </span></span> <br />
+Wait build to be ready to assign to QA</li>
 </ul>
 </div>
-
-
-<div id="outline-container-org2916c04" class="outline-4">
-<h4 id="org2916c04"><span class="section-number-4">1.7.1</span> Intermediate example:</h4>
-<div class="outline-text-4" id="text-1-7-1">
-</div><ol class="org-ol"><li><a id="org02a8995"></a>FlatMap<br /><div class="outline-text-5" id="text-1-7-1-1">
-<pre class="example">
-List&lt;List&lt;Integer&gt;&gt; test = Arrays.asList(
-               Arrays.asList(1),
-               Arrays.asList(2, 3),
-               Arrays.asList(4, 5, 6)
-       );
-
-       test.stream().
-               flatMap((childList) -&gt; childList.stream()).forEach(System.out::println);
-</pre>
-
-<p>
-OutPut:
-</p>
-
-<pre class="example">
-1
-2
-3
-4
-5
-6
-</pre>
+</div>
+<div id="outline-container-org5c8b465" class="outline-4">
+<h4 id="org5c8b465"><span class="section-number-4">4.1.2</span> <span class="done DONE">DONE</span> WFC-64507 [Perf] Investigate and Improve</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2018-04-03 Tue 09:11]</span></span></li>
+</ul>
+</div>
+<ol class="org-ol"><li><a id="orgff1233d"></a>complete the measurement for performance<br /><div class="outline-text-6" id="text-4-1-2-0-1">
 </div></li></ol>
 </div>
-
-
-
-
-
-<div id="outline-container-org20159f9" class="outline-4">
-<h4 id="org20159f9"><span class="section-number-4">1.7.2</span> Terminal exmaple:</h4>
-<div class="outline-text-4" id="text-1-7-2">
-</div><ol class="org-ol"><li><a id="orgd4ae7b7"></a>Mutable reduction(可变汇聚)<br /><div class="outline-text-5" id="text-1-7-2-1">
-<p>
-可变汇聚对应的只有一个方法：collect，正如其名字显示的，它可以把Stream中的要有元素收集到一个结果容器中（比如Collection）
-</p>
-
-
-<p>
-最通用的collect方法的定义（还有其他override方法）：
-</p>
-<pre class="example">
-&lt;R&gt; R collect(Supplier&lt;R&gt; supplier,
-	          BiConsumer&lt;R, ? super T&gt; accumulator,
-	          BiConsumer&lt;R, R&gt; combiner)
-</pre>
-
-<p>
-三个参数的含义:
-</p>
-<ul class="org-ul">
-<li>Supplier supplier是一个工厂函数，用来生成一个新的容器；</li>
-<li>BiConsumer accumulator也是一个函数，用来把Stream中的元素添加到结果容器中；</li>
-<li>BiConsumer combiner还是一个函数，用来把中间状态的多个结果容器合并成为一个（并发的时候会用到）</li>
-</ul>
-
-<pre class="example">
-List&lt;Integer&gt; nums = Arrays.asList(1, 1, null, 2, 3, 4, null, 5, 6, 7, 8, 9, 10);
-
-Map&lt;Integer,String&gt; numtoMapWithoutNUll = nums.stream().filter(num -&gt; num != null).
-
-collect(() -&gt; new HashMap&lt;Integer, String&gt;(),
-
-        (myMap, item) -&gt; myMap.put(item, item.toString()),
-
-        (myMap1, myMap2) -&gt; myMap1.putAll(myMap2));
-</pre>
-
-
-
-<ul class="org-ul">
-<li>第一个函数生成一个新的HashMap实例；</li>
-<li>第二个函数接受两个参数，第一个是前面生成的HashMap对象，二个是stream中包含的元素，函数体就是把stream中的元素加入HashMap对象中。第二个函数被反复调用直到原stream的元素被消费完毕；</li>
-<li>第三个函数也是接受两个参数，这两个都是ArrayList类型的，函数体就是把第二个ArrayList全部加入到第一个中；</li>
-</ul>
-
-
-<pre class="example">
-List&lt;String&gt; G7 = Arrays.asList("USA", "Japan", "France", "Germany", "Italy", "U.K.", "Canada");
-String G7Countries = G7.stream().map(x -&gt; x.toUpperCase()).collect(Collectors.joining(", "));
-System.out.println(G7Countries);
-</pre>
-<p>
-Output:
-</p>
-<pre class="example">
-USA, JAPAN, FRANCE, GERMANY, ITALY, U.K., CANADA
-</pre>
-
-
-<p>
-<a href="http://www.zhouhaocheng.cn/2015/306.html">link1</a>
-<a href="http://blog.csdn.net/exceptional_derek/article/details/43929539">link2</a>
-</p>
-
-
-<div class="org-src-container">
-<pre class="src src-go"><span style="color: #4f97d7; font-weight: bold;">package</span> main
-
-<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #2d9574;">"fmt"</span>
-
-<span style="color: #4f97d7; font-weight: bold;">func</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>() {
-        fmt.<span style="color: #bc6ec5; font-weight: bold;">Println</span>(<span style="color: #2d9574;">"Hello, &#19990;&#30028;"</span>)
-}
-</pre>
 </div>
+<div id="outline-container-org4481929" class="outline-3">
+<h3 id="org4481929"><span class="section-number-3">4.2</span> 2018-04 April</h3>
+<div class="outline-text-3" id="text-4-2">
+</div><div id="outline-container-orgb4d4311" class="outline-4">
+<h4 id="orgb4d4311"><span class="section-number-4">4.2.1</span> <span class="done DONE">DONE</span> WFC-64507 [Perf] Investigate and Improve</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2018-04-10 Tue 11:44]</span></span></li>
+</ul>
+</div>
+<ol class="org-ol"><li><a id="org718ec08"></a>investigate the back-end call time by using dynatrace<br /><div class="outline-text-6" id="text-4-2-1-0-1">
+</div></li></ol>
+</div>
+<div id="outline-container-org0803db4" class="outline-4">
+<h4 id="org0803db4"><span class="section-number-4">4.2.2</span> <span class="timestamp-wrapper"><span class="timestamp">&lt;2018-04-10 Tue&gt; </span></span> sonar critical issue fixing.</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<p>
+need to log the exception instead of silently swallow exceptions
+<b>*</b>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb8724f0" class="outline-4">
+<h4 id="orgb8724f0"><span class="section-number-4">4.2.3</span> 2018-04-30 Monday</h4>
+<div class="outline-text-4" id="text-4-2-3">
+</div><ol class="org-ol"><li><a id="org87ca301"></a>4/30/2018&#xa0;&#xa0;&#xa0;<span class="tag"><span class="task">task</span></span><br /><ol class="org-ol"><li><a id="orgb0e4b55"></a>WFC-67652 [Edit TOR dialog] 'Submit' button is enabled by default<br /><div class="outline-text-6" id="text-4-2-3-1-1">
+<p>
+send back to reporter as the implementation is merged after this defect is raised.
+</p>
+</div></li>
+
+<li><a id="org107f408"></a>WFC-67954 Default comment does not display in Status History after adding without note through status changing dialog<br /><div class="outline-text-6" id="text-4-2-3-1-2">
+<p>
+  working on this.
+Added: <span class="timestamp-wrapper"><span class="timestamp">[2018-04-30 Mon 14:45]</span></span>
+</p>
+</div></li></ol></li></ol>
+</div>
+</div>
+<div id="outline-container-org7e9701a" class="outline-3">
+<h3 id="org7e9701a"><span class="section-number-3">4.3</span> 2018-05 May</h3>
+<div class="outline-text-3" id="text-4-3">
+</div><div id="outline-container-org6e741db" class="outline-4">
+<h4 id="org6e741db"><span class="section-number-4">4.3.1</span> 2018-05-07 Monday</h4>
+<div class="outline-text-4" id="text-4-3-1">
+</div><ol class="org-ol"><li><a id="org5eaf02b"></a>2018-05-07&#xa0;&#xa0;&#xa0;<span class="tag"><span class="worked">worked</span></span><br /><ol class="org-ol"><li><a id="org5de4ae7"></a>WFC-67184   [RMW] "Retract" action displays in the contextual menu for Global Open Shift request in Retracted status after switching from Time-Off<br /><div class="outline-text-6" id="text-4-3-1-1-1">
+<p>
+no longer reproducible
+</p>
+</div></li>
+<li><a id="org34c4d85"></a>WFC-65470 [OS][Create] Shift Start Date field in request open shift dialog does not display correctly when select last 30 days or week to date<br /><div class="outline-text-6" id="text-4-3-1-1-2">
+<p>
+no longer reproducible
+</p>
+</div></li>
+<li><a id="org2cda73b"></a>WFC-66615 [OS] [Validation<sub>fields</sub> partial shifts] System can NOT convert correct input data for (12 hours display format)<br /><div class="outline-text-6" id="text-4-3-1-1-3">
+<p>
+    no longer reproducible
+Added: <span class="timestamp-wrapper"><span class="timestamp">[2018-05-07 Mon 11:18]</span></span>
+</p>
+</div></li></ol></li></ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org267e52d" class="outline-2">
+<h2 id="org267e52d"><span class="section-number-2">5</span> 2019</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-org4446668" class="outline-3">
+<h3 id="org4446668"><span class="section-number-3">5.1</span> 2019-01 January</h3>
+<div class="outline-text-3" id="text-5-1">
+</div><div id="outline-container-org231dc67" class="outline-4">
+<h4 id="org231dc67"><span class="section-number-4">5.1.1</span> 2019-01-11 Friday</h4>
+<div class="outline-text-4" id="text-5-1-1">
+</div><ol class="org-ol"><li><a id="orgf3830f3"></a>ttt&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ttt">ttt</span></span><br /><div class="outline-text-5" id="text-5-1-1-1">
+<p>
+   Added: <span class="timestamp-wrapper"><span class="timestamp">[2019-01-11 Fri 08:46]</span></span>
+tetette
+</p>
+</div></li>
+<li><a id="org37289b2"></a>hello&#xa0;&#xa0;&#xa0;<span class="tag"><span class="hello">hello</span></span><br /><div class="outline-text-5" id="text-5-1-1-2">
+<p>
+   Added: <span class="timestamp-wrapper"><span class="timestamp">[2019-01-11 Fri 10:13]</span></span>
+test
+</p>
+</div></li>
+<li><a id="orgbd8445f"></a>tets&#xa0;&#xa0;&#xa0;<span class="tag"><span class="yyyy">yyyy</span></span><br /><div class="outline-text-5" id="text-5-1-1-3">
+<p>
+   Added: <span class="timestamp-wrapper"><span class="timestamp">[2019-01-11 Fri 10:15]</span></span>
+yyyyey
+</p>
 </div></li></ol>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
+<p class="date">Date: 2013-08-20 Tue</p>
 <p class="author">Author: YONG</p>
 <p class="date">Created: 2019-03-22 Fri 22:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>

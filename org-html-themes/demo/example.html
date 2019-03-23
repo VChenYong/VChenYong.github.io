@@ -6,9 +6,9 @@
 <!-- 2019-03-22 Fri 22:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Design Pattern</title>
+<title>Example of Tasks</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="YONG" />
+<meta name="author" content="Fabrice Niessen" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -229,187 +229,281 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Design Pattern</h1>
+<h1 class="title">Example of Tasks</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9a4ca38">1. Design pattern</a>
+<li><a href="#org1007dd3">Work&#xa0;&#xa0;&#xa0;<span class="tag"><span class="work">work</span></span></a>
 <ul>
-<li><a href="#orge27189f">1.1. Creational patterns (创建型模式)</a>
-<ul>
-<li><a href="#org52e48a7">1.1.1. Simple Factory Pattern(简单工厂模式)</a></li>
-<li><a href="#orgb171a64">1.1.2. Factory Method Pattern(工厂方法模式)</a></li>
-<li><a href="#org7bb82e8">1.1.3. Abstract  Factory Pattern(抽象工厂模式)</a></li>
-<li><a href="#org919b198">1.1.4. Singleton Pattern(单例模式)</a></li>
-<li><a href="#org9556b0d">1.1.5. Prototype Pattern(原型模式)</a></li>
-<li><a href="#orgb956749">1.1.6. Builder Pattern(建造者模式)</a></li>
+<li><a href="#org4a009cc">Marketing</a></li>
+<li><a href="#org9d251cf">Operations</a></li>
+<li><a href="#org9e7e51b">Travel</a></li>
 </ul>
 </li>
-<li><a href="#org93321c6">1.2. Structural patterns (结构型模式)</a>
+<li><a href="#org0247863">Personal&#xa0;&#xa0;&#xa0;<span class="tag"><span class="home">home</span></span></a>
 <ul>
-<li><a href="#orgaa7d075">1.2.1. Adapter Pattern(适配器模式)</a></li>
-<li><a href="#org7f0fa9b">1.2.2. Bridge Pattern(桥接模式)</a></li>
-<li><a href="#orgc4e41bb">1.2.3. Composite Pattern (组合模式)</a></li>
-<li><a href="#orgc23c84a">1.2.4. Decorator Pattern(装饰模式)</a></li>
-<li><a href="#org9fbd7bd">1.2.5. Facade Pattern(外观模式)</a></li>
-<li><a href="#org86d69f4">1.2.6. Flyweight Pattern(享元模式)</a></li>
-<li><a href="#orgc502c5e">1.2.7. Proxy Pattern(代理模式)</a></li>
-</ul>
-</li>
-<li><a href="#org572c619">1.3. Behavioral patterns (行为型模式)</a>
-<ul>
-<li><a href="#orga7cbdd5">1.3.1. Chain of Responsibility Pattern(职责链模式)</a></li>
-<li><a href="#org528c111">1.3.2. Command Pattern(命令模式)</a></li>
-<li><a href="#orgc4fb9b0">1.3.3. Interpreter Pattern(解释器模式)</a></li>
-<li><a href="#orgba2d6b4">1.3.4. Iterator Pattern(迭代器模式)</a></li>
-<li><a href="#orgda8c17c">1.3.5. Mediator Pattern(中介者模式)</a></li>
-<li><a href="#orgd32741a">1.3.6. Memento Pattern(备忘录模式)</a></li>
-<li><a href="#org620dd38">1.3.7. Observer Pattern(观察者模式)</a></li>
-<li><a href="#org7d9c2c0">1.3.8. State Pattern(状态模式)</a></li>
-<li><a href="#orgcb1fffe">1.3.9. Strategy Pattern(策略模式)</a></li>
-<li><a href="#org1632931">1.3.10. Template Method Pattern(模板方法模式)</a></li>
-<li><a href="#org58afa0d">1.3.11. Visitor Pattern(访问者模式)</a></li>
-</ul>
-</li>
-<li><a href="#orgedb6300">1.4. Concurrency patterns</a></li>
-<li><a href="#orge90f1cf">1.5. </a></li>
+<li><a href="#org746496f">Reading</a></li>
+<li><a href="#orgf914e22">Health</a></li>
+<li><a href="#org8806bcf">Finance</a></li>
+<li><a href="#org16a783a">Chores</a></li>
+<li><a href="#org86f10f2">Recreation</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org9a4ca38" class="outline-2">
-<h2 id="org9a4ca38"><span class="section-number-2">1</span> Design pattern</h2>
-<div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orge27189f" class="outline-3">
-<h3 id="orge27189f"><span class="section-number-3">1.1</span> Creational patterns (创建型模式)</h3>
-<div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-org52e48a7" class="outline-4">
-<h4 id="org52e48a7"><span class="section-number-4">1.1.1</span> Simple Factory Pattern(简单工厂模式)</h4>
-</div>
-<div id="outline-container-orgb171a64" class="outline-4">
-<h4 id="orgb171a64"><span class="section-number-4">1.1.2</span> Factory Method Pattern(工厂方法模式)</h4>
-<div class="outline-text-4" id="text-1-1-2">
-</div><ol class="org-ol"><li><a id="org28319d7"></a>Define an interface for creating an object, but let subclasses decide which class to instantiate. Lets a class defer instaniation to subclasses.<br /></li>
-<li><a id="org483e860"></a>UML<br /><div class="outline-text-5" id="text-1-1-2-2">
-
-<div class="figure">
-<p><img src="../Img/FactoryMethod.png" alt="FactoryMethod.png" />
-</p>
-</div>
-</div></li></ol>
-</div>
-
-
-
-<div id="outline-container-org7bb82e8" class="outline-4">
-<h4 id="org7bb82e8"><span class="section-number-4">1.1.3</span> Abstract  Factory Pattern(抽象工厂模式)</h4>
-<div class="outline-text-4" id="text-1-1-3">
-</div><ol class="org-ol"><li><a id="org1cfc82a"></a>Provide an interface for creating families of related or dependsent objects without specifying their concrete class.<br /></li>
-<li><a id="org0b5daa8"></a>UML<br /><div class="outline-text-5" id="text-1-1-3-2">
-
-<div class="figure">
-<p><img src="../Img/AbstractFactory.png" alt="AbstractFactory.png" />
-</p>
-</div>
-</div></li></ol>
-</div>
-
-<div id="outline-container-org919b198" class="outline-4">
-<h4 id="org919b198"><span class="section-number-4">1.1.4</span> Singleton Pattern(单例模式)</h4>
-</div>
-<div id="outline-container-org9556b0d" class="outline-4">
-<h4 id="org9556b0d"><span class="section-number-4">1.1.5</span> Prototype Pattern(原型模式)</h4>
-</div>
-<div id="outline-container-orgb956749" class="outline-4">
-<h4 id="orgb956749"><span class="section-number-4">1.1.6</span> Builder Pattern(建造者模式)</h4>
-</div>
-</div>
-<div id="outline-container-org93321c6" class="outline-3">
-<h3 id="org93321c6"><span class="section-number-3">1.2</span> Structural patterns (结构型模式)</h3>
-<div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-orgaa7d075" class="outline-4">
-<h4 id="orgaa7d075"><span class="section-number-4">1.2.1</span> Adapter Pattern(适配器模式)</h4>
-</div>
-<div id="outline-container-org7f0fa9b" class="outline-4">
-<h4 id="org7f0fa9b"><span class="section-number-4">1.2.2</span> Bridge Pattern(桥接模式)</h4>
-</div>
-<div id="outline-container-orgc4e41bb" class="outline-4">
-<h4 id="orgc4e41bb"><span class="section-number-4">1.2.3</span> Composite Pattern (组合模式)</h4>
-</div>
-<div id="outline-container-orgc23c84a" class="outline-4">
-<h4 id="orgc23c84a"><span class="section-number-4">1.2.4</span> Decorator Pattern(装饰模式)</h4>
-</div>
-<div id="outline-container-org9fbd7bd" class="outline-4">
-<h4 id="org9fbd7bd"><span class="section-number-4">1.2.5</span> Facade Pattern(外观模式)</h4>
-</div>
-<div id="outline-container-org86d69f4" class="outline-4">
-<h4 id="org86d69f4"><span class="section-number-4">1.2.6</span> Flyweight Pattern(享元模式)</h4>
-</div>
-<div id="outline-container-orgc502c5e" class="outline-4">
-<h4 id="orgc502c5e"><span class="section-number-4">1.2.7</span> Proxy Pattern(代理模式)</h4>
-</div>
-</div>
-<div id="outline-container-org572c619" class="outline-3">
-<h3 id="org572c619"><span class="section-number-3">1.3</span> Behavioral patterns (行为型模式)</h3>
-<div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-orga7cbdd5" class="outline-4">
-<h4 id="orga7cbdd5"><span class="section-number-4">1.3.1</span> Chain of Responsibility Pattern(职责链模式)</h4>
-</div>
-<div id="outline-container-org528c111" class="outline-4">
-<h4 id="org528c111"><span class="section-number-4">1.3.2</span> Command Pattern(命令模式)</h4>
-</div>
-<div id="outline-container-orgc4fb9b0" class="outline-4">
-<h4 id="orgc4fb9b0"><span class="section-number-4">1.3.3</span> Interpreter Pattern(解释器模式)</h4>
-</div>
-<div id="outline-container-orgba2d6b4" class="outline-4">
-<h4 id="orgba2d6b4"><span class="section-number-4">1.3.4</span> Iterator Pattern(迭代器模式)</h4>
-</div>
-<div id="outline-container-orgda8c17c" class="outline-4">
-<h4 id="orgda8c17c"><span class="section-number-4">1.3.5</span> Mediator Pattern(中介者模式)</h4>
-</div>
-<div id="outline-container-orgd32741a" class="outline-4">
-<h4 id="orgd32741a"><span class="section-number-4">1.3.6</span> Memento Pattern(备忘录模式)</h4>
-</div>
-<div id="outline-container-org620dd38" class="outline-4">
-<h4 id="org620dd38"><span class="section-number-4">1.3.7</span> Observer Pattern(观察者模式)</h4>
-</div>
-<div id="outline-container-org7d9c2c0" class="outline-4">
-<h4 id="org7d9c2c0"><span class="section-number-4">1.3.8</span> State Pattern(状态模式)</h4>
-</div>
-<div id="outline-container-orgcb1fffe" class="outline-4">
-<h4 id="orgcb1fffe"><span class="section-number-4">1.3.9</span> Strategy Pattern(策略模式)</h4>
-</div>
-<div id="outline-container-org1632931" class="outline-4">
-<h4 id="org1632931"><span class="section-number-4">1.3.10</span> Template Method Pattern(模板方法模式)</h4>
-</div>
-<div id="outline-container-org58afa0d" class="outline-4">
-<h4 id="org58afa0d"><span class="section-number-4">1.3.11</span> Visitor Pattern(访问者模式)</h4>
-</div>
-</div>
-<div id="outline-container-orgedb6300" class="outline-3">
-<h3 id="orgedb6300"><span class="section-number-3">1.4</span> Concurrency patterns</h3>
-<div class="outline-text-3" id="text-1-4">
+<div class="html">
 <p>
-<a href="http://blog.csdn.net/lovelion/article/details/17517213">link</a>
+&lt;div class="right"&gt;
+  &lt;a href="<a href="https://github.com/fniessen/org-html-themes/blob/master/demo/example.org">https://github.com/fniessen/org-html-themes/blob/master/demo/example.org</a>" class="fa fa-github"&gt; Edit on GitHub&lt;/a&gt;
+&lt;/div&gt;
 </p>
 
+</div>
+
+<hr />
+
+<div id="outline-container-org1007dd3" class="outline-2">
+<h2 id="org1007dd3">Work&#xa0;&#xa0;&#xa0;<span class="tag"><span class="work">work</span></span></h2>
+<div class="outline-text-2" id="text-org1007dd3">
 <p>
-<a href="http://www.oodesign.com/abstract-factory-pattern.html">oo design</a>
-<a href="https://marketplace.eclipse.org/content/eclipse-moonrise-ui-theme">link</a>
+Only work tasks in this list.
+</p>
+</div>
+
+<div id="outline-container-org4a009cc" class="outline-3">
+<h3 id="org4a009cc">Marketing</h3>
+<div class="outline-text-3" id="text-org4a009cc">
+<p>
+Project "Corporate Marketing".
+</p>
+</div>
+
+<div id="outline-container-org51ea74f" class="outline-4">
+<h4 id="org51ea74f">Background and research</h4>
+<div class="outline-text-4" id="text-org51ea74f">
+</div><div id="outline-container-org7a503e9" class="outline-5">
+<h5 id="org7a503e9"><span class="todo TODO">TODO</span> Who are the competitors?</h5>
+</div>
+
+<div id="outline-container-orgb4fc254" class="outline-5">
+<h5 id="orgb4fc254"><span class="todo TODO">TODO</span> What are our product's advantages?</h5>
+</div>
+
+<div id="outline-container-org7c37556" class="outline-5">
+<h5 id="org7c37556"><span class="todo TODO">TODO</span> Target market</h5>
+</div>
+
+<div id="outline-container-org812bf61" class="outline-5">
+<h5 id="org812bf61"><span class="todo TODO">TODO</span> Elevator pitch</h5>
+</div>
+</div>
+
+<div id="outline-container-org7910738" class="outline-4">
+<h4 id="org7910738">PR firm</h4>
+<div class="outline-text-4" id="text-org7910738">
+</div><div id="outline-container-org21f52eb" class="outline-5">
+<h5 id="org21f52eb"><span class="todo TODO">TODO</span> Call Laura about PR firm&#xa0;&#xa0;&#xa0;<span class="tag"><span class="phone">phone</span></span></h5>
+<div class="outline-text-5" id="text-org21f52eb">
+</div>
+</div>
+
+<div id="outline-container-org74d8642" class="outline-5">
+<h5 id="org74d8642"><span class="todo TODO">TODO</span> Interview PR firm candidates</h5>
+<div class="outline-text-5" id="text-org74d8642">
+</div>
+</div>
+</div>
+
+<div id="outline-container-org96a428c" class="outline-4">
+<h4 id="org96a428c">Advertising campaign</h4>
+<div class="outline-text-4" id="text-org96a428c">
+</div><div id="outline-container-org3eb2579" class="outline-5">
+<h5 id="org3eb2579"><span class="todo TODO">TODO</span> Call Joe</h5>
+<div class="outline-text-5" id="text-org3eb2579">
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga6ad5ea" class="outline-4">
+<h4 id="orga6ad5ea">Plan conference</h4>
+<div class="outline-text-4" id="text-orga6ad5ea">
+<p>
+Calendar events/invitations.
+</p>
+</div>
+
+<div id="outline-container-org24a5cf7" class="outline-5">
+<h5 id="org24a5cf7"><span class="todo TODO">TODO</span> Recruit volunteers</h5>
+<div class="outline-text-5" id="text-org24a5cf7">
+</div>
+</div>
+
+<div id="outline-container-org1c9c498" class="outline-5">
+<h5 id="org1c9c498"><span class="todo TODO">TODO</span> Make sure responses are coming back</h5>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9d251cf" class="outline-3">
+<h3 id="org9d251cf">Operations</h3>
+<div class="outline-text-3" id="text-org9d251cf">
+</div><div id="outline-container-org0a59f2f" class="outline-4">
+<h4 id="org0a59f2f"><span class="todo TODO">TODO</span> Update database to latest version</h4>
+<div class="outline-text-4" id="text-org0a59f2f">
+</div>
+</div>
+
+<div id="outline-container-org66c6112" class="outline-4">
+<h4 id="org66c6112"><span class="todo TODO">TODO</span> Update Website</h4>
+<div class="outline-text-4" id="text-org66c6112">
+<p>
+Update blog.
 </p>
 </div>
 </div>
-<div id="outline-container-orge90f1cf" class="outline-3">
-<h3 id="orge90f1cf"><span class="section-number-3">1.5</span> </h3>
+</div>
+
+<div id="outline-container-org9e7e51b" class="outline-3">
+<h3 id="org9e7e51b">Travel</h3>
+<div class="outline-text-3" id="text-org9e7e51b">
+</div><div id="outline-container-orgf7fa280" class="outline-4">
+<h4 id="orgf7fa280">Boston</h4>
+<div class="outline-text-4" id="text-orgf7fa280">
+</div><div id="outline-container-org6c755f0" class="outline-5">
+<h5 id="org6c755f0"><span class="todo TODO">TODO</span> Find a flight</h5>
+</div>
+
+<div id="outline-container-orgfebcda3" class="outline-5">
+<h5 id="orgfebcda3"><span class="todo TODO">TODO</span> Book hotel room</h5>
+</div>
+
+<div id="outline-container-org6d4fe63" class="outline-5">
+<h5 id="org6d4fe63"><span class="todo TODO">TODO</span> Schedule meetings</h5>
+</div>
+
+<div id="outline-container-org64ec553" class="outline-5">
+<h5 id="org64ec553"><span class="todo TODO">TODO</span> Submit expense report</h5>
+<div class="outline-text-5" id="text-org64ec553">
+<hr />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0247863" class="outline-2">
+<h2 id="org0247863">Personal&#xa0;&#xa0;&#xa0;<span class="tag"><span class="home">home</span></span></h2>
+<div class="outline-text-2" id="text-org0247863">
+</div>
+
+<div id="outline-container-org746496f" class="outline-3">
+<h3 id="org746496f">Reading</h3>
+<div class="outline-text-3" id="text-org746496f">
+</div><div id="outline-container-org23cf1cd" class="outline-4">
+<h4 id="org23cf1cd"><span class="done DONE">DONE</span> Read "Getting Things Done"</h4>
+<div class="outline-text-4" id="text-org23cf1cd">
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf914e22" class="outline-3">
+<h3 id="orgf914e22">Health</h3>
+<div class="outline-text-3" id="text-orgf914e22">
+</div><div id="outline-container-org69a387c" class="outline-4">
+<h4 id="org69a387c"><span class="todo TODO">TODO</span> Make dentist appointment</h4>
+<div class="outline-text-4" id="text-org69a387c">
+</div>
+</div>
+
+<div id="outline-container-orgd90b9c6" class="outline-4">
+<h4 id="orgd90b9c6"><span class="todo TODO">TODO</span> Go to the gym</h4>
+<div class="outline-text-4" id="text-orgd90b9c6">
+<p>
+It should be as natural to some as showering or eating.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6c9569f" class="outline-4">
+<h4 id="org6c9569f"><span class="todo TODO">TODO</span> Do jogging</h4>
+<div class="outline-text-4" id="text-org6c9569f">
+<p>
+Marathon = 42.195 kilometres.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8806bcf" class="outline-3">
+<h3 id="org8806bcf">Finance</h3>
+<div class="outline-text-3" id="text-org8806bcf">
+</div><div id="outline-container-orgf604aa5" class="outline-4">
+<h4 id="orgf604aa5"><span class="todo TODO">TODO</span> Pay electricity bill&#xa0;&#xa0;&#xa0;<span class="tag"><span class="FLAGGED">FLAGGED</span></span></h4>
+</div>
+
+<div id="outline-container-org0e025ed" class="outline-4">
+<h4 id="org0e025ed"><span class="todo TODO">TODO</span> Renew newspaper subscription</h4>
+</div>
+
+<div id="outline-container-org5ba8536" class="outline-4">
+<h4 id="org5ba8536"><span class="todo TODO">TODO</span> Cancel insurance</h4>
+</div>
+</div>
+
+<div id="outline-container-org16a783a" class="outline-3">
+<h3 id="org16a783a">Chores</h3>
+<div class="outline-text-3" id="text-org16a783a">
+</div><div id="outline-container-orgaafb75e" class="outline-4">
+<h4 id="orgaafb75e"><span class="todo TODO">TODO</span> Buy milk</h4>
+</div>
+
+<div id="outline-container-org87f9d15" class="outline-4">
+<h4 id="org87f9d15"><span class="todo TODO">TODO</span> Buy dog food</h4>
+</div>
+
+<div id="outline-container-org15ae744" class="outline-4">
+<h4 id="org15ae744">WAIT Mail package to Susan</h4>
+</div>
+
+<div id="outline-container-org06f691c" class="outline-4">
+<h4 id="org06f691c"><span class="todo TODO">TODO</span> Buy groceries</h4>
+</div>
+
+<div id="outline-container-orgaf2c47b" class="outline-4">
+<h4 id="orgaf2c47b"><span class="todo TODO">TODO</span> Mow the lawn</h4>
+</div>
+
+<div id="outline-container-orgce211c6" class="outline-4">
+<h4 id="orgce211c6"><span class="todo TODO">TODO</span> Get a haircut</h4>
+</div>
+
+<div id="outline-container-org6005cb7" class="outline-4">
+<h4 id="org6005cb7"><span class="todo TODO">TODO</span> Buy anniversary present</h4>
+</div>
+
+<div id="outline-container-org4dcad6d" class="outline-4">
+<h4 id="org4dcad6d"><span class="todo TODO">TODO</span> Take out trash</h4>
+</div>
+
+<div id="outline-container-orgf081efe" class="outline-4">
+<h4 id="orgf081efe"><span class="todo TODO">TODO</span> Get the car fixed</h4>
+</div>
+</div>
+
+<div id="outline-container-org86f10f2" class="outline-3">
+<h3 id="org86f10f2">Recreation</h3>
+<div class="outline-text-3" id="text-org86f10f2">
+</div><div id="outline-container-orgb4b16c7" class="outline-4">
+<h4 id="orgb4b16c7"><span class="todo TODO">TODO</span> Go to concert</h4>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: 2013-02-16 Sat</p>
-<p class="author">Author: YONG</p>
+<p class="date">Date: 2015-04-28</p>
+<p class="author">Author: Fabrice Niessen</p>
 <p class="date">Created: 2019-03-22 Fri 22:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
