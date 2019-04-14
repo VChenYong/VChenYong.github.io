@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-03-22 Fri 22:40 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JAVA IDE</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="YONG" />
+<!-- 2019-04-14 Sun 19:06 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="YONG" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -53,110 +46,27 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -176,7 +86,6 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="../styles/style.css" />
@@ -234,21 +143,21 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge449a12">1. Eclipse</a>
+<li><a href="#sec-1">1. Eclipse</a>
 <ul>
-<li><a href="#orge965894">1.1. ShortCut</a></li>
-<li><a href="#org3e569cf">1.2. Configurations</a>
+<li><a href="#sec-1-1">1.1. ShortCut</a></li>
+<li><a href="#sec-1-2">1.2. Configurations</a>
 <ul>
-<li><a href="#org9a759f8">1.2.1. Eclipse Moonrise UI Theme</a></li>
+<li><a href="#sec-1-2-1">1.2.1. Eclipse Moonrise UI Theme</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org26f1ed7">2. IntelliJ</a>
+<li><a href="#sec-2">2. IntelliJ</a>
 <ul>
-<li><a href="#org9b229c6">2.1. ShortCut</a>
+<li><a href="#sec-2-1">2.1. ShortCut</a>
 <ul>
-<li><a href="#org74a813c">2.1.1. Search/Replace</a></li>
+<li><a href="#sec-2-1-1">2.1.1. Search/Replace</a></li>
 </ul>
 </li>
 </ul>
@@ -258,210 +167,210 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orge449a12" class="outline-2">
-<h2 id="orge449a12"><span class="section-number-2">1</span> Eclipse</h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Eclipse</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orge965894" class="outline-3">
-<h3 id="orge965894"><span class="section-number-3">1.1</span> ShortCut</h3>
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> ShortCut</h3>
 <div class="outline-text-3" id="text-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 
-<col  class="org-left" />
+<col  class="left" />
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">keys</th>
-<th scope="col" class="org-left">function</th>
-<th scope="col" class="org-left">notes</th>
+<th scope="col" class="left">keys</th>
+<th scope="col" class="left">function</th>
+<th scope="col" class="left">notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="org-left">Ctrl + J</td>
-<td class="org-left">Increment find forward</td>
-<td class="org-left">None</td>
+<td class="left">Ctrl + J</td>
+<td class="left">Increment find forward</td>
+<td class="left">None</td>
 </tr>
 
 <tr>
-<td class="org-left">Ctrl + Shift + J</td>
-<td class="org-left">Increment find backward</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Ctrl + Shift + J</td>
+<td class="left">Increment find backward</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Ctrl + K</td>
-<td class="org-left">find forward</td>
-<td class="org-left">better than Ctrl = F</td>
+<td class="left">Ctrl + K</td>
+<td class="left">find forward</td>
+<td class="left">better than Ctrl = F</td>
 </tr>
 
 <tr>
-<td class="org-left">Ctrl+Shift + J</td>
-<td class="org-left">find backward</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Ctrl+Shift + J</td>
+<td class="left">find backward</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Alt + Up</td>
-<td class="org-left">Move line up</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Alt + Up</td>
+<td class="left">Move line up</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Alt + Down</td>
-<td class="org-left">MOve line down</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Alt + Down</td>
+<td class="left">MOve line down</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Ctrl-Alt + up</td>
-<td class="org-left">Copy selected line(s) above current line</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Ctrl-Alt + up</td>
+<td class="left">Copy selected line(s) above current line</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Ctrl-Alt + Dwon</td>
-<td class="org-left">Copy selected line(s) below current line</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Ctrl-Alt + Dwon</td>
+<td class="left">Copy selected line(s) below current line</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Ctrl-O</td>
-<td class="org-left">Quick Outline</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Ctrl-O</td>
+<td class="left">Quick Outline</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">ctrl+shift+f</td>
-<td class="org-left">Format</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">ctrl+shift+f</td>
+<td class="left">Format</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">ctrl+shift+o</td>
-<td class="org-left">Organise import</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">ctrl+shift+o</td>
+<td class="left">Organise import</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">ctrl+shift+t</td>
-<td class="org-left">load class file by classname</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">ctrl+shift+t</td>
+<td class="left">load class file by classname</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">ctrl+shift+r</td>
-<td class="org-left">load any file by filename</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">ctrl+shift+r</td>
+<td class="left">load any file by filename</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">alt+shift+m</td>
-<td class="org-left">Extract text-selection as a method</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">alt+shift+m</td>
+<td class="left">Extract text-selection as a method</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">alt+shift+l</td>
-<td class="org-left">Extract text-selection as local variable</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">alt+shift+l</td>
+<td class="left">Extract text-selection as local variable</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">alt+shift+i</td>
-<td class="org-left">inline selected method</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">alt+shift+i</td>
+<td class="left">inline selected method</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">ctrl+shift+x</td>
-<td class="org-left">uppercase</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">ctrl+shift+x</td>
+<td class="left">uppercase</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">ctrl+shift+y</td>
-<td class="org-left">lowercase</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">ctrl+shift+y</td>
+<td class="left">lowercase</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Alt + Shift + S and then press R</td>
-<td class="org-left">getter and setter</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Alt + Shift + S and then press R</td>
+<td class="left">getter and setter</td>
+<td class="left">&#xa0;</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="org-left">Refactoring</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Refactoring</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 </tbody>
 <tbody>
 <tr>
-<td class="org-left">Alt+Shift+R</td>
-<td class="org-left">Rename selected element and all references</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Alt+Shift+R</td>
+<td class="left">Rename selected element and all references</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Alt+Shift+V</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Alt+Shift+V</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Ctrl+Shift+C</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Ctrl+Shift+C</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Alt+Shift+M</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Alt+Shift+M</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Alt+Shift+L</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Alt+Shift+L</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">Alt+Shift+I</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">Alt+Shift+I</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 
 <tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
@@ -469,7 +378,8 @@ for the JavaScript code in this tag.
 
 
 <ol class="org-ol">
-<li>Manage Files and Projects</li>
+<li>Manage Files and Projects
+</li>
 </ol>
 <pre class="example">
 Ctrl+N   	Create new project using the Wizard
@@ -487,7 +397,8 @@ F5 	        Refresh content of selected element with local file system
 
 
 <ol class="org-ol">
-<li>Editor Window</li>
+<li>Editor Window
+</li>
 </ol>
 <p>
 Focus/ cursor must be in Editor Window for these to work.
@@ -507,7 +418,8 @@ Ctrl+Shift+Q 	                Show or hide the diff column on the left (indicate
 
 
 <ol class="org-ol">
-<li>Navigate in Editor</li>
+<li>Navigate in Editor
+</li>
 </ol>
 <pre class="example">
 Home/End 	                        Jump to beginning / jump to end of indention. Press home twice to jump to beginning of line
@@ -527,7 +439,8 @@ Alt+Page Up/Alt+Page Down 	        Next Sub-Tab / Previous Sub-Tab
 
 
 <ol class="org-ol">
-<li>Select Text</li>
+<li>Select Text
+</li>
 </ol>
 <pre class="example">
 Shift+Arrow Right/Arrow Left 	        Expand selection by one character to the left / to the right
@@ -542,7 +455,8 @@ Alt+Shift+Arrow Down 	                Reduce previously expanded selection by on
 
 
 <ol class="org-ol">
-<li>Edit Text</li>
+<li>Edit Text
+</li>
 </ol>
 <pre class="example">
 Ctrl+C/Ctrl+X/Ctrl+V 	   		 Cut, copy and paste
@@ -562,7 +476,8 @@ Shift+Ctrl+X 	                         Change selection to all upper case
 
 
 <ol class="org-ol">
-<li>Search and Replace</li>
+<li>Search and Replace
+</li>
 </ol>
 <pre class="example">
 Ctrl+F 	                Open find and replace dialog
@@ -574,7 +489,8 @@ Ctrl+Shift+O 	        Open a resource search dialog to find any class
 
 
 <ol class="org-ol">
-<li>Indentions and Comments</li>
+<li>Indentions and Comments
+</li>
 </ol>
 <pre class="example">
 Tab/Shift+Tab 	Increase / decrease indent of selected text
@@ -588,7 +504,8 @@ Alt+Shift+J 	Add Element Comment ( adds '/** ... */')
 
 
 <ol class="org-ol">
-<li>Editing Source Code</li>
+<li>Editing Source Code
+</li>
 </ol>
 <pre class="example">
 Ctrl+Space 	        Opens Content Assist (e.g. show available methods or field names)
@@ -599,7 +516,8 @@ Ctrl+Shift+Insert 	Deactivate or activate Smart Insert Mode (automatic indention
 
 
 <ol class="org-ol">
-<li>Code Information</li>
+<li>Code Information
+</li>
 </ol>
 <pre class="example">
 Ctrl+O                  Show code outline / structure
@@ -615,7 +533,8 @@ Ctrl+move over method 	Open Declaration or Implementation
 
 
 <ol class="org-ol">
-<li>Refactoring</li>
+<li>Refactoring
+</li>
 </ol>
 <pre class="example">
 Alt+Shift+R 	Rename selected element and all references
@@ -628,7 +547,8 @@ Alt+Shift+I 	Inline selected local variables, methods, or constants if possible 
 
 
 <ol class="org-ol">
-<li>Run and Debug</li>
+<li>Run and Debug
+</li>
 </ol>
 <pre class="example">
 Ctrl+F11 	Save and launch application (run)
@@ -641,7 +561,8 @@ F8              Skip to next Breakpoint
 
 
 <ol class="org-ol">
-<li>The Rest</li>
+<li>The Rest
+</li>
 </ol>
 <pre class="example">
 Ctrl+F7/Ctrl+Shift+F7 	Switch forward / backward between views (panels). Useful for switching back and forth between Package Explorer and Editor.
@@ -653,7 +574,8 @@ Shift+F10 	        Show Context Menu right click with mouse
 
 
 <ol class="org-ol">
-<li>Team (SVN Subversive)</li>
+<li>Team (SVN Subversive)
+</li>
 </ol>
 <pre class="example">
 Ctrl+Alt+S 	Synchronize with Repository
@@ -667,22 +589,22 @@ Ctrl+Alt+I 	Add to svn:ignore
 </div>
 </div>
 
-<div id="outline-container-org3e569cf" class="outline-3">
-<h3 id="org3e569cf"><span class="section-number-3">1.2</span> Configurations</h3>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Configurations</h3>
 <div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-org9a759f8" class="outline-4">
-<h4 id="org9a759f8"><span class="section-number-4">1.2.1</span> Eclipse Moonrise UI Theme</h4>
+</div><div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Eclipse Moonrise UI Theme</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org26f1ed7" class="outline-2">
-<h2 id="org26f1ed7"><span class="section-number-2">2</span> IntelliJ</h2>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> IntelliJ</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-org9b229c6" class="outline-3">
-<h3 id="org9b229c6"><span class="section-number-3">2.1</span> ShortCut</h3>
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> ShortCut</h3>
 <div class="outline-text-3" id="text-2-1">
-</div><div id="outline-container-org74a813c" class="outline-4">
-<h4 id="org74a813c"><span class="section-number-4">2.1.1</span> Search/Replace</h4>
+</div><div id="outline-container-sec-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1"><span class="section-number-4">2.1.1</span> Search/Replace</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <pre class="example">
 Ctrl+Shift+F      Search everywhere

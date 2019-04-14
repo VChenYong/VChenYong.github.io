@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-03-22 Fri 22:40 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Design Pattern</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="YONG" />
+<!-- 2019-04-14 Sun 19:06 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="YONG" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -53,110 +46,27 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -176,7 +86,6 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
@@ -234,163 +143,191 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9a4ca38">1. Design pattern</a>
+<li><a href="#sec-1">1. Design pattern</a>
 <ul>
-<li><a href="#orge27189f">1.1. Creational patterns (创建型模式)</a>
+<li><a href="#sec-1-1">1.1. Creational patterns (创建型模式)</a>
 <ul>
-<li><a href="#org52e48a7">1.1.1. Simple Factory Pattern(简单工厂模式)</a></li>
-<li><a href="#orgb171a64">1.1.2. Factory Method Pattern(工厂方法模式)</a></li>
-<li><a href="#org7bb82e8">1.1.3. Abstract  Factory Pattern(抽象工厂模式)</a></li>
-<li><a href="#org919b198">1.1.4. Singleton Pattern(单例模式)</a></li>
-<li><a href="#org9556b0d">1.1.5. Prototype Pattern(原型模式)</a></li>
-<li><a href="#orgb956749">1.1.6. Builder Pattern(建造者模式)</a></li>
+<li><a href="#sec-1-1-1">1.1.1. Simple Factory Pattern(简单工厂模式)</a></li>
+<li><a href="#sec-1-1-2">1.1.2. Factory Method Pattern(工厂方法模式)</a></li>
+<li><a href="#sec-1-1-3">1.1.3. Abstract  Factory Pattern(抽象工厂模式)</a></li>
+<li><a href="#sec-1-1-4">1.1.4. Singleton Pattern(单例模式)</a></li>
+<li><a href="#sec-1-1-5">1.1.5. Prototype Pattern(原型模式)</a></li>
+<li><a href="#sec-1-1-6">1.1.6. Builder Pattern(建造者模式)</a></li>
 </ul>
 </li>
-<li><a href="#org93321c6">1.2. Structural patterns (结构型模式)</a>
+<li><a href="#sec-1-2">1.2. Structural patterns (结构型模式)</a>
 <ul>
-<li><a href="#orgaa7d075">1.2.1. Adapter Pattern(适配器模式)</a></li>
-<li><a href="#org7f0fa9b">1.2.2. Bridge Pattern(桥接模式)</a></li>
-<li><a href="#orgc4e41bb">1.2.3. Composite Pattern (组合模式)</a></li>
-<li><a href="#orgc23c84a">1.2.4. Decorator Pattern(装饰模式)</a></li>
-<li><a href="#org9fbd7bd">1.2.5. Facade Pattern(外观模式)</a></li>
-<li><a href="#org86d69f4">1.2.6. Flyweight Pattern(享元模式)</a></li>
-<li><a href="#orgc502c5e">1.2.7. Proxy Pattern(代理模式)</a></li>
+<li><a href="#sec-1-2-1">1.2.1. Adapter Pattern(适配器模式)</a></li>
+<li><a href="#sec-1-2-2">1.2.2. Bridge Pattern(桥接模式)</a></li>
+<li><a href="#sec-1-2-3">1.2.3. Composite Pattern (组合模式)</a></li>
+<li><a href="#sec-1-2-4">1.2.4. Decorator Pattern(装饰模式)</a></li>
+<li><a href="#sec-1-2-5">1.2.5. Facade Pattern(外观模式)</a></li>
+<li><a href="#sec-1-2-6">1.2.6. Flyweight Pattern(享元模式)</a></li>
+<li><a href="#sec-1-2-7">1.2.7. Proxy Pattern(代理模式)</a></li>
 </ul>
 </li>
-<li><a href="#org572c619">1.3. Behavioral patterns (行为型模式)</a>
+<li><a href="#sec-1-3">1.3. Behavioral patterns (行为型模式)</a>
 <ul>
-<li><a href="#orga7cbdd5">1.3.1. Chain of Responsibility Pattern(职责链模式)</a></li>
-<li><a href="#org528c111">1.3.2. Command Pattern(命令模式)</a></li>
-<li><a href="#orgc4fb9b0">1.3.3. Interpreter Pattern(解释器模式)</a></li>
-<li><a href="#orgba2d6b4">1.3.4. Iterator Pattern(迭代器模式)</a></li>
-<li><a href="#orgda8c17c">1.3.5. Mediator Pattern(中介者模式)</a></li>
-<li><a href="#orgd32741a">1.3.6. Memento Pattern(备忘录模式)</a></li>
-<li><a href="#org620dd38">1.3.7. Observer Pattern(观察者模式)</a></li>
-<li><a href="#org7d9c2c0">1.3.8. State Pattern(状态模式)</a></li>
-<li><a href="#orgcb1fffe">1.3.9. Strategy Pattern(策略模式)</a></li>
-<li><a href="#org1632931">1.3.10. Template Method Pattern(模板方法模式)</a></li>
-<li><a href="#org58afa0d">1.3.11. Visitor Pattern(访问者模式)</a></li>
+<li><a href="#sec-1-3-1">1.3.1. Chain of Responsibility Pattern(职责链模式)</a></li>
+<li><a href="#sec-1-3-2">1.3.2. Command Pattern(命令模式)</a></li>
+<li><a href="#sec-1-3-3">1.3.3. Interpreter Pattern(解释器模式)</a></li>
+<li><a href="#sec-1-3-4">1.3.4. Iterator Pattern(迭代器模式)</a></li>
+<li><a href="#sec-1-3-5">1.3.5. Mediator Pattern(中介者模式)</a></li>
+<li><a href="#sec-1-3-6">1.3.6. Memento Pattern(备忘录模式)</a></li>
+<li><a href="#sec-1-3-7">1.3.7. Observer Pattern(观察者模式)</a></li>
+<li><a href="#sec-1-3-8">1.3.8. State Pattern(状态模式)</a></li>
+<li><a href="#sec-1-3-9">1.3.9. Strategy Pattern(策略模式)</a></li>
+<li><a href="#sec-1-3-10">1.3.10. Template Method Pattern(模板方法模式)</a></li>
+<li><a href="#sec-1-3-11">1.3.11. Visitor Pattern(访问者模式)</a></li>
 </ul>
 </li>
-<li><a href="#orgedb6300">1.4. Concurrency patterns</a></li>
-<li><a href="#orge90f1cf">1.5. </a></li>
+<li><a href="#sec-1-4">1.4. Concurrency patterns</a></li>
+<li><a href="#sec-1-5">1.5. </a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9a4ca38" class="outline-2">
-<h2 id="org9a4ca38"><span class="section-number-2">1</span> Design pattern</h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Design pattern</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orge27189f" class="outline-3">
-<h3 id="orge27189f"><span class="section-number-3">1.1</span> Creational patterns (创建型模式)</h3>
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Creational patterns (创建型模式)</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-org52e48a7" class="outline-4">
-<h4 id="org52e48a7"><span class="section-number-4">1.1.1</span> Simple Factory Pattern(简单工厂模式)</h4>
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Simple Factory Pattern(简单工厂模式)</h4>
 </div>
-<div id="outline-container-orgb171a64" class="outline-4">
-<h4 id="orgb171a64"><span class="section-number-4">1.1.2</span> Factory Method Pattern(工厂方法模式)</h4>
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Factory Method Pattern(工厂方法模式)</h4>
 <div class="outline-text-4" id="text-1-1-2">
-</div><ol class="org-ol"><li><a id="org28319d7"></a>Define an interface for creating an object, but let subclasses decide which class to instantiate. Lets a class defer instaniation to subclasses.<br /></li>
-<li><a id="org483e860"></a>UML<br /><div class="outline-text-5" id="text-1-1-2-2">
+</div><ol class="org-ol"><li><a id="sec-1-1-2-1" name="sec-1-1-2-1"></a>Define an interface for creating an object, but let subclasses decide which class to instantiate. Lets a class defer instaniation to subclasses.<br  /></li>
+<li><a id="sec-1-1-2-2" name="sec-1-1-2-2"></a>UML<br  /><div class="outline-text-5" id="text-1-1-2-2">
+<div class="org-src-container">
 
-<div class="figure">
-<p><img src="../Img/FactoryMethod.png" alt="FactoryMethod.png" />
-</p>
+<pre class="src src-plantuml">interface Product
+
+class ConcreteProduct
+
+abstract class Creator
+class ConcreteCreator
+
+Product &lt;|-- ConcreteProduct
+
+Creator&lt;|--ConcreteCreator
+
+ConcreteProduct&lt;..ConcreteCreator
+</pre>
 </div>
-</div></li></ol>
+</div>
+</li></ol>
 </div>
 
 
 
-<div id="outline-container-org7bb82e8" class="outline-4">
-<h4 id="org7bb82e8"><span class="section-number-4">1.1.3</span> Abstract  Factory Pattern(抽象工厂模式)</h4>
+<div id="outline-container-sec-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> Abstract  Factory Pattern(抽象工厂模式)</h4>
 <div class="outline-text-4" id="text-1-1-3">
-</div><ol class="org-ol"><li><a id="org1cfc82a"></a>Provide an interface for creating families of related or dependsent objects without specifying their concrete class.<br /></li>
-<li><a id="org0b5daa8"></a>UML<br /><div class="outline-text-5" id="text-1-1-3-2">
+</div><ol class="org-ol"><li><a id="sec-1-1-3-1" name="sec-1-1-3-1"></a>Provide an interface for creating families of related or dependsent objects without specifying their concrete class.<br  /></li>
+<li><a id="sec-1-1-3-2" name="sec-1-1-3-2"></a>UML<br  /><div class="outline-text-5" id="text-1-1-3-2">
+<div class="org-src-container">
 
-<div class="figure">
-<p><img src="../Img/AbstractFactory.png" alt="AbstractFactory.png" />
-</p>
+<pre class="src src-plantuml">interface AbstractFactory{
+createProductA()
+createProductB()
+}
+interface AbstractProduct
+
+class ConcreteFactory{
+createProductA()
+createProductB()
+}
+
+
+class ConcreteProduct
+
+AbstractFactory &lt;|-- ConcreteFactory
+AbstractProduct&lt;|--ConcreteProduct
+</pre>
 </div>
-</div></li></ol>
+</div>
+</li></ol>
 </div>
 
-<div id="outline-container-org919b198" class="outline-4">
-<h4 id="org919b198"><span class="section-number-4">1.1.4</span> Singleton Pattern(单例模式)</h4>
+<div id="outline-container-sec-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> Singleton Pattern(单例模式)</h4>
 </div>
-<div id="outline-container-org9556b0d" class="outline-4">
-<h4 id="org9556b0d"><span class="section-number-4">1.1.5</span> Prototype Pattern(原型模式)</h4>
+<div id="outline-container-sec-1-1-5" class="outline-4">
+<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> Prototype Pattern(原型模式)</h4>
 </div>
-<div id="outline-container-orgb956749" class="outline-4">
-<h4 id="orgb956749"><span class="section-number-4">1.1.6</span> Builder Pattern(建造者模式)</h4>
+<div id="outline-container-sec-1-1-6" class="outline-4">
+<h4 id="sec-1-1-6"><span class="section-number-4">1.1.6</span> Builder Pattern(建造者模式)</h4>
 </div>
 </div>
-<div id="outline-container-org93321c6" class="outline-3">
-<h3 id="org93321c6"><span class="section-number-3">1.2</span> Structural patterns (结构型模式)</h3>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Structural patterns (结构型模式)</h3>
 <div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-orgaa7d075" class="outline-4">
-<h4 id="orgaa7d075"><span class="section-number-4">1.2.1</span> Adapter Pattern(适配器模式)</h4>
+</div><div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Adapter Pattern(适配器模式)</h4>
 </div>
-<div id="outline-container-org7f0fa9b" class="outline-4">
-<h4 id="org7f0fa9b"><span class="section-number-4">1.2.2</span> Bridge Pattern(桥接模式)</h4>
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Bridge Pattern(桥接模式)</h4>
 </div>
-<div id="outline-container-orgc4e41bb" class="outline-4">
-<h4 id="orgc4e41bb"><span class="section-number-4">1.2.3</span> Composite Pattern (组合模式)</h4>
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Composite Pattern (组合模式)</h4>
 </div>
-<div id="outline-container-orgc23c84a" class="outline-4">
-<h4 id="orgc23c84a"><span class="section-number-4">1.2.4</span> Decorator Pattern(装饰模式)</h4>
+<div id="outline-container-sec-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> Decorator Pattern(装饰模式)</h4>
 </div>
-<div id="outline-container-org9fbd7bd" class="outline-4">
-<h4 id="org9fbd7bd"><span class="section-number-4">1.2.5</span> Facade Pattern(外观模式)</h4>
+<div id="outline-container-sec-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Facade Pattern(外观模式)</h4>
 </div>
-<div id="outline-container-org86d69f4" class="outline-4">
-<h4 id="org86d69f4"><span class="section-number-4">1.2.6</span> Flyweight Pattern(享元模式)</h4>
+<div id="outline-container-sec-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6"><span class="section-number-4">1.2.6</span> Flyweight Pattern(享元模式)</h4>
 </div>
-<div id="outline-container-orgc502c5e" class="outline-4">
-<h4 id="orgc502c5e"><span class="section-number-4">1.2.7</span> Proxy Pattern(代理模式)</h4>
+<div id="outline-container-sec-1-2-7" class="outline-4">
+<h4 id="sec-1-2-7"><span class="section-number-4">1.2.7</span> Proxy Pattern(代理模式)</h4>
 </div>
 </div>
-<div id="outline-container-org572c619" class="outline-3">
-<h3 id="org572c619"><span class="section-number-3">1.3</span> Behavioral patterns (行为型模式)</h3>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Behavioral patterns (行为型模式)</h3>
 <div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-orga7cbdd5" class="outline-4">
-<h4 id="orga7cbdd5"><span class="section-number-4">1.3.1</span> Chain of Responsibility Pattern(职责链模式)</h4>
+</div><div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Chain of Responsibility Pattern(职责链模式)</h4>
 </div>
-<div id="outline-container-org528c111" class="outline-4">
-<h4 id="org528c111"><span class="section-number-4">1.3.2</span> Command Pattern(命令模式)</h4>
+<div id="outline-container-sec-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Command Pattern(命令模式)</h4>
 </div>
-<div id="outline-container-orgc4fb9b0" class="outline-4">
-<h4 id="orgc4fb9b0"><span class="section-number-4">1.3.3</span> Interpreter Pattern(解释器模式)</h4>
+<div id="outline-container-sec-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Interpreter Pattern(解释器模式)</h4>
 </div>
-<div id="outline-container-orgba2d6b4" class="outline-4">
-<h4 id="orgba2d6b4"><span class="section-number-4">1.3.4</span> Iterator Pattern(迭代器模式)</h4>
+<div id="outline-container-sec-1-3-4" class="outline-4">
+<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> Iterator Pattern(迭代器模式)</h4>
 </div>
-<div id="outline-container-orgda8c17c" class="outline-4">
-<h4 id="orgda8c17c"><span class="section-number-4">1.3.5</span> Mediator Pattern(中介者模式)</h4>
+<div id="outline-container-sec-1-3-5" class="outline-4">
+<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> Mediator Pattern(中介者模式)</h4>
 </div>
-<div id="outline-container-orgd32741a" class="outline-4">
-<h4 id="orgd32741a"><span class="section-number-4">1.3.6</span> Memento Pattern(备忘录模式)</h4>
+<div id="outline-container-sec-1-3-6" class="outline-4">
+<h4 id="sec-1-3-6"><span class="section-number-4">1.3.6</span> Memento Pattern(备忘录模式)</h4>
 </div>
-<div id="outline-container-org620dd38" class="outline-4">
-<h4 id="org620dd38"><span class="section-number-4">1.3.7</span> Observer Pattern(观察者模式)</h4>
+<div id="outline-container-sec-1-3-7" class="outline-4">
+<h4 id="sec-1-3-7"><span class="section-number-4">1.3.7</span> Observer Pattern(观察者模式)</h4>
 </div>
-<div id="outline-container-org7d9c2c0" class="outline-4">
-<h4 id="org7d9c2c0"><span class="section-number-4">1.3.8</span> State Pattern(状态模式)</h4>
+<div id="outline-container-sec-1-3-8" class="outline-4">
+<h4 id="sec-1-3-8"><span class="section-number-4">1.3.8</span> State Pattern(状态模式)</h4>
 </div>
-<div id="outline-container-orgcb1fffe" class="outline-4">
-<h4 id="orgcb1fffe"><span class="section-number-4">1.3.9</span> Strategy Pattern(策略模式)</h4>
+<div id="outline-container-sec-1-3-9" class="outline-4">
+<h4 id="sec-1-3-9"><span class="section-number-4">1.3.9</span> Strategy Pattern(策略模式)</h4>
 </div>
-<div id="outline-container-org1632931" class="outline-4">
-<h4 id="org1632931"><span class="section-number-4">1.3.10</span> Template Method Pattern(模板方法模式)</h4>
+<div id="outline-container-sec-1-3-10" class="outline-4">
+<h4 id="sec-1-3-10"><span class="section-number-4">1.3.10</span> Template Method Pattern(模板方法模式)</h4>
 </div>
-<div id="outline-container-org58afa0d" class="outline-4">
-<h4 id="org58afa0d"><span class="section-number-4">1.3.11</span> Visitor Pattern(访问者模式)</h4>
+<div id="outline-container-sec-1-3-11" class="outline-4">
+<h4 id="sec-1-3-11"><span class="section-number-4">1.3.11</span> Visitor Pattern(访问者模式)</h4>
 </div>
 </div>
-<div id="outline-container-orgedb6300" class="outline-3">
-<h3 id="orgedb6300"><span class="section-number-3">1.4</span> Concurrency patterns</h3>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Concurrency patterns</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 <a href="http://blog.csdn.net/lovelion/article/details/17517213">link</a>
@@ -402,15 +339,16 @@ for the JavaScript code in this tag.
 </p>
 </div>
 </div>
-<div id="outline-container-orge90f1cf" class="outline-3">
-<h3 id="orge90f1cf"><span class="section-number-3">1.5</span> </h3>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> </h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-03-22 Fri 22:40</p>
+<p class="date">Created: 2019-04-14 Sun 19:06</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

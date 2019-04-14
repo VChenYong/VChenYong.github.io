@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-03-22 Fri 22:40 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>JAVA Lambdas</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="YONG" />
+<!-- 2019-04-14 Sun 19:06 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="YONG" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -53,110 +46,27 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -176,7 +86,6 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
@@ -234,23 +143,23 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org11f8255">1. Lambda</a>
+<li><a href="#sec-1">1. Lambda</a>
 <ul>
-<li><a href="#org88ba1d1">1.1. Function</a></li>
-<li><a href="#org7e87b85">1.2. Predicate</a></li>
-<li><a href="#org61b9a29">1.3. Consumer</a></li>
-<li><a href="#orgcd26fbe">1.4. supplier</a></li>
-<li><a href="#org18ee7e8">1.5. UnaryOperator</a></li>
-<li><a href="#org6d769c8">1.6. Default method</a>
+<li><a href="#sec-1-1">1.1. Function</a></li>
+<li><a href="#sec-1-2">1.2. Predicate</a></li>
+<li><a href="#sec-1-3">1.3. Consumer</a></li>
+<li><a href="#sec-1-4">1.4. supplier</a></li>
+<li><a href="#sec-1-5">1.5. UnaryOperator</a></li>
+<li><a href="#sec-1-6">1.6. Default method</a>
 <ul>
-<li><a href="#org32404f2">1.6.1. Default method was introduced to solved the Binary Interface Compatibility.</a></li>
-<li><a href="#org38f854d">1.6.2. The Three Rules</a></li>
+<li><a href="#sec-1-6-1">1.6.1. Default method was introduced to solved the Binary Interface Compatibility.</a></li>
+<li><a href="#sec-1-6-2">1.6.2. The Three Rules</a></li>
 </ul>
 </li>
-<li><a href="#org2e32fa4">1.7. Stream(流)</a>
+<li><a href="#sec-1-7">1.7. Stream(流)</a>
 <ul>
-<li><a href="#org2916c04">1.7.1. Intermediate example:</a></li>
-<li><a href="#org20159f9">1.7.2. Terminal exmaple:</a></li>
+<li><a href="#sec-1-7-1">1.7.1. Intermediate example:</a></li>
+<li><a href="#sec-1-7-2">1.7.2. Terminal exmaple:</a></li>
 </ul>
 </li>
 </ul>
@@ -261,8 +170,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org11f8255" class="outline-2">
-<h2 id="org11f8255"><span class="section-number-2">1</span> Lambda</h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Lambda</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <b>Lambdas</b> are used to create function objects. With them, we can specify methods inside other methods—and even pass methods as arguments to other methods.
@@ -273,8 +182,8 @@ for the JavaScript code in this tag.
 </p>
 </div>
 
-<div id="outline-container-org88ba1d1" class="outline-3">
-<h3 id="org88ba1d1"><span class="section-number-3">1.1</span> Function</h3>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Function</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 a function that accepts one argument and produces a result.
@@ -290,8 +199,8 @@ Function&lt;Integer, Integer&gt; function = v -&gt; v * 100;
 </div>
 </div>
 
-<div id="outline-container-org7e87b85" class="outline-3">
-<h3 id="org7e87b85"><span class="section-number-3">1.2</span> Predicate</h3>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Predicate</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Represents a predicate (boolean-valued function) of one argument.
@@ -307,8 +216,8 @@ Predicate&lt;String&gt; p = String::isEmpty;
 </div>
 </div>
 
-<div id="outline-container-org61b9a29" class="outline-3">
-<h3 id="org61b9a29"><span class="section-number-3">1.3</span> Consumer</h3>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Consumer</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 The consumer accepts a single argument by calling its accept (args) method and does not return any value making it a void method.
@@ -322,8 +231,8 @@ public interface Consumer {
 </div>
 </div>
 
-<div id="outline-container-orgcd26fbe" class="outline-3">
-<h3 id="orgcd26fbe"><span class="section-number-3">1.4</span> supplier</h3>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> supplier</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 The supplier does the opposite of the consumer, so it takes no arguments but it returns some value by calling its get() method.
@@ -338,8 +247,8 @@ public interface Supplier {
 </div>
 </div>
 
-<div id="outline-container-org18ee7e8" class="outline-3">
-<h3 id="org18ee7e8"><span class="section-number-3">1.5</span> UnaryOperator</h3>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> UnaryOperator</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 This functional object receives a value of a certain type (like Integer) and returns a same-typed value. So it operates on, and returns, a value.
@@ -355,11 +264,11 @@ UnaryOperator&lt;Integer&gt; operator = v -&gt; v * 100;
 </div>
 </div>
 
-<div id="outline-container-org6d769c8" class="outline-3">
-<h3 id="org6d769c8"><span class="section-number-3">1.6</span> Default method</h3>
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> Default method</h3>
 <div class="outline-text-3" id="text-1-6">
-</div><div id="outline-container-org32404f2" class="outline-4">
-<h4 id="org32404f2"><span class="section-number-4">1.6.1</span> Default method was introduced to solved the Binary Interface Compatibility.</h4>
+</div><div id="outline-container-sec-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1"><span class="section-number-4">1.6.1</span> Default method was introduced to solved the Binary Interface Compatibility.</h4>
 <div class="outline-text-4" id="text-1-6-1">
 <p>
 Stream method  is added to collection (biggest API changes in Java 8 is to the collections
@@ -369,8 +278,8 @@ library) , in order to keep
 </div>
 
 
-<div id="outline-container-org38f854d" class="outline-4">
-<h4 id="org38f854d"><span class="section-number-4">1.6.2</span> The Three Rules</h4>
+<div id="outline-container-sec-1-6-2" class="outline-4">
+<h4 id="sec-1-6-2"><span class="section-number-4">1.6.2</span> The Three Rules</h4>
 <div class="outline-text-4" id="text-1-6-2">
 <p>
 If you’re ever unsure of what will happen with default methods or with multiple in‐
@@ -391,14 +300,16 @@ Multiple Inheritance
 </tbody>
 </table>
 <ol class="org-ol">
-<li>Subtype wins over supertype. If we have a situation in which two interfaces are</li>
+<li>Subtype wins over supertype. If we have a situation in which two interfaces are
+</li>
 </ol>
 <p>
 competing to provide a default method and one interface extends the other, the
 subclass wins.
 </p>
 <ol class="org-ol">
-<li>No rule 3. If the previous two rules don’t give us the answer, the subclass must either</li>
+<li>No rule 3. If the previous two rules don’t give us the answer, the subclass must either
+</li>
 </ol>
 <p>
 implement the method or declare it abstract .
@@ -406,8 +317,8 @@ implement the method or declare it abstract .
 </div>
 </div>
 </div>
-<div id="outline-container-org2e32fa4" class="outline-3">
-<h3 id="org2e32fa4"><span class="section-number-3">1.7</span> Stream(流)</h3>
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> Stream(流)</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 流的操作
@@ -416,19 +327,22 @@ implement the method or declare it abstract .
 
 <ul class="org-ul">
 <li>Intermediate：
-map (mapToInt, flatMap 等)、 filter、 distinct、 sorted、 peek、 limit、 skip、 parallel、 sequential、 unordered</li>
+map (mapToInt, flatMap 等)、 filter、 distinct、 sorted、 peek、 limit、 skip、 parallel、 sequential、 unordered
+</li>
 <li>Terminal：
-forEach、 forEachOrdered、 toArray、 reduce、 collect、 min、 max、 count、 anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 iterator</li>
+forEach、 forEachOrdered、 toArray、 reduce、 collect、 min、 max、 count、 anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 iterator
+</li>
 <li>Short-circuiting：
-anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 limit</li>
+anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 limit
+</li>
 </ul>
 </div>
 
 
-<div id="outline-container-org2916c04" class="outline-4">
-<h4 id="org2916c04"><span class="section-number-4">1.7.1</span> Intermediate example:</h4>
+<div id="outline-container-sec-1-7-1" class="outline-4">
+<h4 id="sec-1-7-1"><span class="section-number-4">1.7.1</span> Intermediate example:</h4>
 <div class="outline-text-4" id="text-1-7-1">
-</div><ol class="org-ol"><li><a id="org02a8995"></a>FlatMap<br /><div class="outline-text-5" id="text-1-7-1-1">
+</div><ol class="org-ol"><li><a id="sec-1-7-1-1" name="sec-1-7-1-1"></a>FlatMap<br  /><div class="outline-text-5" id="text-1-7-1-1">
 <pre class="example">
 List&lt;List&lt;Integer&gt;&gt; test = Arrays.asList(
                Arrays.asList(1),
@@ -452,17 +366,18 @@ OutPut:
 5
 6
 </pre>
-</div></li></ol>
+</div>
+</li></ol>
 </div>
 
 
 
 
 
-<div id="outline-container-org20159f9" class="outline-4">
-<h4 id="org20159f9"><span class="section-number-4">1.7.2</span> Terminal exmaple:</h4>
+<div id="outline-container-sec-1-7-2" class="outline-4">
+<h4 id="sec-1-7-2"><span class="section-number-4">1.7.2</span> Terminal exmaple:</h4>
 <div class="outline-text-4" id="text-1-7-2">
-</div><ol class="org-ol"><li><a id="orgd4ae7b7"></a>Mutable reduction(可变汇聚)<br /><div class="outline-text-5" id="text-1-7-2-1">
+</div><ol class="org-ol"><li><a id="sec-1-7-2-1" name="sec-1-7-2-1"></a>Mutable reduction(可变汇聚)<br  /><div class="outline-text-5" id="text-1-7-2-1">
 <p>
 可变汇聚对应的只有一个方法：collect，正如其名字显示的，它可以把Stream中的要有元素收集到一个结果容器中（比如Collection）
 </p>
@@ -481,9 +396,12 @@ OutPut:
 三个参数的含义:
 </p>
 <ul class="org-ul">
-<li>Supplier supplier是一个工厂函数，用来生成一个新的容器；</li>
-<li>BiConsumer accumulator也是一个函数，用来把Stream中的元素添加到结果容器中；</li>
-<li>BiConsumer combiner还是一个函数，用来把中间状态的多个结果容器合并成为一个（并发的时候会用到）</li>
+<li>Supplier supplier是一个工厂函数，用来生成一个新的容器；
+</li>
+<li>BiConsumer accumulator也是一个函数，用来把Stream中的元素添加到结果容器中；
+</li>
+<li>BiConsumer combiner还是一个函数，用来把中间状态的多个结果容器合并成为一个（并发的时候会用到）
+</li>
 </ul>
 
 <pre class="example">
@@ -501,9 +419,12 @@ collect(() -&gt; new HashMap&lt;Integer, String&gt;(),
 
 
 <ul class="org-ul">
-<li>第一个函数生成一个新的HashMap实例；</li>
-<li>第二个函数接受两个参数，第一个是前面生成的HashMap对象，二个是stream中包含的元素，函数体就是把stream中的元素加入HashMap对象中。第二个函数被反复调用直到原stream的元素被消费完毕；</li>
-<li>第三个函数也是接受两个参数，这两个都是ArrayList类型的，函数体就是把第二个ArrayList全部加入到第一个中；</li>
+<li>第一个函数生成一个新的HashMap实例；
+</li>
+<li>第二个函数接受两个参数，第一个是前面生成的HashMap对象，二个是stream中包含的元素，函数体就是把stream中的元素加入HashMap对象中。第二个函数被反复调用直到原stream的元素被消费完毕；
+</li>
+<li>第三个函数也是接受两个参数，这两个都是ArrayList类型的，函数体就是把第二个ArrayList全部加入到第一个中；
+</li>
 </ul>
 
 
@@ -527,23 +448,26 @@ USA, JAPAN, FRANCE, GERMANY, ITALY, U.K., CANADA
 
 
 <div class="org-src-container">
-<pre class="src src-go"><span style="color: #4f97d7; font-weight: bold;">package</span> main
 
-<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #2d9574;">"fmt"</span>
+<pre class="src src-go">package main
 
-<span style="color: #4f97d7; font-weight: bold;">func</span> <span style="color: #bc6ec5; font-weight: bold;">main</span>() {
-        fmt.<span style="color: #bc6ec5; font-weight: bold;">Println</span>(<span style="color: #2d9574;">"Hello, &#19990;&#30028;"</span>)
+import "fmt"
+
+func main() {
+        fmt.Println("Hello, 世界")
 }
 </pre>
 </div>
-</div></li></ol>
+</div>
+</li></ol>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-03-22 Fri 22:40</p>
+<p class="date">Created: 2019-04-14 Sun 19:06</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-03-22 Fri 22:40 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>具备这九种能必成大事</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="YONG" />
+<!-- 2019-04-14 Sun 19:06 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="YONG" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -53,110 +46,27 @@
     border: 1px solid black;
   }
   pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
   pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
 
   table { border-collapse:collapse; }
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -176,7 +86,6 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
 <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
@@ -234,60 +143,60 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgaf2e1e8">1. 具备这九种能必成大事</a>
+<li><a href="#sec-1">1. 具备这九种能必成大事</a>
 <ul>
-<li><a href="#org94bab35">1.1. 一：沉稳</a></li>
-<li><a href="#org55bb108">1.2. 二：细心</a></li>
-<li><a href="#org015505c">1.3. 三：胆识</a></li>
-<li><a href="#org130188a">1.4. 四：大度</a></li>
-<li><a href="#orgaa52262">1.5. 五：诚信</a></li>
-<li><a href="#orgbe68b94">1.6. 六：担当</a></li>
+<li><a href="#sec-1-1">1.1. 一：沉稳</a></li>
+<li><a href="#sec-1-2">1.2. 二：细心</a></li>
+<li><a href="#sec-1-3">1.3. 三：胆识</a></li>
+<li><a href="#sec-1-4">1.4. 四：大度</a></li>
+<li><a href="#sec-1-5">1.5. 五：诚信</a></li>
+<li><a href="#sec-1-6">1.6. 六：担当</a></li>
 </ul>
 </li>
-<li><a href="#orgd8676e6">2. 成大事的九种手段：</a>
+<li><a href="#sec-2">2. 成大事的九种手段：</a>
 <ul>
-<li><a href="#orgd5dffec">2.1. 1、敢于决断－－克服犹豫不定的习性　</a></li>
-<li><a href="#org3ab7a4c">2.2. 2、挑战弱点－－彻底改变自己的缺陷</a></li>
-<li><a href="#orgcc92dfa">2.3. 3、突破困境－－从失败中撮成功的资本</a></li>
-<li><a href="#orge66bdeb">2.4. 4、抓住机遇－－善于选择、善于创造　</a></li>
-<li><a href="#orgbda9453">2.5. 5、发挥强项－－做自己最擅长的事情</a></li>
-<li><a href="#org61cf08c">2.6. 6、调整心态－－切忌让情绪伤害自己　</a></li>
-<li><a href="#org3ce79b4">2.7. 7、立即行动－－只说不做，徒劳无益</a></li>
-<li><a href="#orge052048">2.8. 8、善于交往－－巧妙利用人力资源　</a></li>
-<li><a href="#org62be718">2.9. 9、重新规划－－站到更高的起点上　</a></li>
+<li><a href="#sec-2-1">2.1. 1、敢于决断－－克服犹豫不定的习性　</a></li>
+<li><a href="#sec-2-2">2.2. 2、挑战弱点－－彻底改变自己的缺陷</a></li>
+<li><a href="#sec-2-3">2.3. 3、突破困境－－从失败中撮成功的资本</a></li>
+<li><a href="#sec-2-4">2.4. 4、抓住机遇－－善于选择、善于创造　</a></li>
+<li><a href="#sec-2-5">2.5. 5、发挥强项－－做自己最擅长的事情</a></li>
+<li><a href="#sec-2-6">2.6. 6、调整心态－－切忌让情绪伤害自己　</a></li>
+<li><a href="#sec-2-7">2.7. 7、立即行动－－只说不做，徒劳无益</a></li>
+<li><a href="#sec-2-8">2.8. 8、善于交往－－巧妙利用人力资源　</a></li>
+<li><a href="#sec-2-9">2.9. 9、重新规划－－站到更高的起点上　</a></li>
 </ul>
 </li>
-<li><a href="#org12ff03c">3. 成大事必备九种能力</a>
+<li><a href="#sec-3">3. 成大事必备九种能力</a>
 <ul>
-<li><a href="#org9d19a5a">3.1. 1、摆正心态，敢于面对现实</a></li>
-<li><a href="#org5997039">3.2. 2、让你拥有过硬的自制能力</a></li>
-<li><a href="#org6ff87da">3.3. 3、把情感装入理性之盒</a></li>
-<li><a href="#orgbed245a">3.4. 4、独处可以激发思考的力量</a></li>
-<li><a href="#org396dc6f">3.5. 5、压力是最好的推动力</a></li>
-<li><a href="#orga79475d">3.6. 6、以变应变，才有出路</a></li>
-<li><a href="#org864af50">3.7. 7、自信心是人生的坚强支柱</a></li>
-<li><a href="#orge60e169">3.8. 8、把精力投入到自己的强项上</a></li>
-<li><a href="#org7b9a9de">3.9. 9、要专心地做好一件事</a></li>
+<li><a href="#sec-3-1">3.1. 1、摆正心态，敢于面对现实</a></li>
+<li><a href="#sec-3-2">3.2. 2、让你拥有过硬的自制能力</a></li>
+<li><a href="#sec-3-3">3.3. 3、把情感装入理性之盒</a></li>
+<li><a href="#sec-3-4">3.4. 4、独处可以激发思考的力量</a></li>
+<li><a href="#sec-3-5">3.5. 5、压力是最好的推动力</a></li>
+<li><a href="#sec-3-6">3.6. 6、以变应变，才有出路</a></li>
+<li><a href="#sec-3-7">3.7. 7、自信心是人生的坚强支柱</a></li>
+<li><a href="#sec-3-8">3.8. 8、把精力投入到自己的强项上</a></li>
+<li><a href="#sec-3-9">3.9. 9、要专心地做好一件事</a></li>
 </ul>
 </li>
-<li><a href="#org2af36ec">4. 成大事必备的9种心态</a>
+<li><a href="#sec-4">4. 成大事必备的9种心态</a>
 <ul>
-<li><a href="#orgfea5670">4.1. 心态之一：积极向上</a></li>
-<li><a href="#org3f74651">4.2. 　　心态之二：勤勉谦恭</a></li>
-<li><a href="#org0e4b094">4.3. 　　心态之三：诚实守信</a></li>
-<li><a href="#orgd0f9f31">4.4. 　　心态之四：敢于挑战</a></li>
-<li><a href="#org159f79c">4.5. 　　 心态之五：善于合作</a></li>
+<li><a href="#sec-4-1">4.1. 心态之一：积极向上</a></li>
+<li><a href="#sec-4-2">4.2. 　　心态之二：勤勉谦恭</a></li>
+<li><a href="#sec-4-3">4.3. 　　心态之三：诚实守信</a></li>
+<li><a href="#sec-4-4">4.4. 　　心态之四：敢于挑战</a></li>
+<li><a href="#sec-4-5">4.5. 　　 心态之五：善于合作</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgaf2e1e8" class="outline-2">
-<h2 id="orgaf2e1e8"><span class="section-number-2">1</span> 具备这九种能必成大事</h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 具备这九种能必成大事</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org94bab35" class="outline-3">
-<h3 id="org94bab35"><span class="section-number-3">1.1</span> 一：沉稳</h3>
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 一：沉稳</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 （1）不要随便显露你的情绪。
@@ -328,8 +237,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org55bb108" class="outline-3">
-<h3 id="org55bb108"><span class="section-number-3">1.2</span> 二：细心</h3>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 二：细心</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 （1）对身边发生的事情，常思考它们的因果关系。
@@ -373,8 +282,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org015505c" class="outline-3">
-<h3 id="org015505c"><span class="section-number-3">1.3</span> 三：胆识</h3>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 三：胆识</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 （1）不要常用缺乏自信的词句
@@ -415,8 +324,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org130188a" class="outline-3">
-<h3 id="org130188a"><span class="section-number-3">1.4</span> 四：大度</h3>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 四：大度</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 （1）不要刻意把有可能是伙伴的人变成对手。
@@ -460,8 +369,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgaa52262" class="outline-3">
-<h3 id="orgaa52262"><span class="section-number-3">1.5</span> 五：诚信</h3>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> 五：诚信</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 （1）做不到的事情不要说，说了就努力做到。
@@ -505,8 +414,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgbe68b94" class="outline-3">
-<h3 id="orgbe68b94"><span class="section-number-3">1.6</span> 六：担当</h3>
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> 六：担当</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 （1）检讨任何过失的时候，先从自身或自己人开始反省。
@@ -546,11 +455,11 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-orgd8676e6" class="outline-2">
-<h2 id="orgd8676e6"><span class="section-number-2">2</span> 成大事的九种手段：</h2>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 成大事的九种手段：</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orgd5dffec" class="outline-3">
-<h3 id="orgd5dffec"><span class="section-number-3">2.1</span> 1、敢于决断－－克服犹豫不定的习性　</h3>
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 1、敢于决断－－克服犹豫不定的习性　</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 很多人之所以一事无成，最大的毛病就是缺乏敢于决断的手段，总是左顾右盼、思前想后，从而错失成功的最佳时机。成大事者在看到事情的成功可能性到来时，敢于做出重大决断，因此取得先机。
@@ -560,8 +469,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org3ab7a4c" class="outline-3">
-<h3 id="org3ab7a4c"><span class="section-number-3">2.2</span> 2、挑战弱点－－彻底改变自己的缺陷</h3>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 2、挑战弱点－－彻底改变自己的缺陷</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 人人都有弱点，不能成大事者总是固守自己的弱点，一生都不会发生重大转变；能成大事者总是善于从自己的弱点上开刀，去把自己变成一个能力超强的人。一个连自己的缺陷都不能纠正的人，只能是失败者！
@@ -571,8 +480,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgcc92dfa" class="outline-3">
-<h3 id="orgcc92dfa"><span class="section-number-3">2.3</span> 3、突破困境－－从失败中撮成功的资本</h3>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> 3、突破困境－－从失败中撮成功的资本</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 人生总要面临各种困境的挑战，甚至可以说困境就是“鬼门关”。一般人会在困境面前浑身发抖，而成大事者则能把困境变为成功的有力跳板。
@@ -582,8 +491,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orge66bdeb" class="outline-3">
-<h3 id="orge66bdeb"><span class="section-number-3">2.4</span> 4、抓住机遇－－善于选择、善于创造　</h3>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> 4、抓住机遇－－善于选择、善于创造　</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 机遇就是人生最大的财富。有些人浪费机遇轻而易举，所以一个个有巨大潜力的机遇都悄然溜跑，成大事都是绝对不允许溜走，并且能纵身扑向机遇。
@@ -593,8 +502,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgbda9453" class="outline-3">
-<h3 id="orgbda9453"><span class="section-number-3">2.5</span> 5、发挥强项－－做自己最擅长的事情</h3>
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> 5、发挥强项－－做自己最擅长的事情</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 一个能力极弱的人肯定难以打开人生局面，他必定是人生舞台上重量级选手的牺牲品；成大事者关于在自己要做的事情上，充分施展才智，一步一步地拓宽成功之路。
@@ -604,8 +513,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org61cf08c" class="outline-3">
-<h3 id="org61cf08c"><span class="section-number-3">2.6</span> 6、调整心态－－切忌让情绪伤害自己　</h3>
+<div id="outline-container-sec-2-6" class="outline-3">
+<h3 id="sec-2-6"><span class="section-number-3">2.6</span> 6、调整心态－－切忌让情绪伤害自己　</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 心态消极的人，无论如何都挑不起生活和重担，因为他们无法直面一个个人生挫折，成大事者则关于高速心态，即使在毫无希望时，也能看到一线成功的亮光。
@@ -615,8 +524,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org3ce79b4" class="outline-3">
-<h3 id="org3ce79b4"><span class="section-number-3">2.7</span> 7、立即行动－－只说不做，徒劳无益</h3>
+<div id="outline-container-sec-2-7" class="outline-3">
+<h3 id="sec-2-7"><span class="section-number-3">2.7</span> 7、立即行动－－只说不做，徒劳无益</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 一次行动胜过百遍心想。有些人是“语言的巨人，行动的矮子”，所以看不到更为实际现实的事情在他身上发生；成大事者是每天都靠行动来落实自己的人生计划的。
@@ -626,8 +535,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orge052048" class="outline-3">
-<h3 id="orge052048"><span class="section-number-3">2.8</span> 8、善于交往－－巧妙利用人力资源　</h3>
+<div id="outline-container-sec-2-8" class="outline-3">
+<h3 id="sec-2-8"><span class="section-number-3">2.8</span> 8、善于交往－－巧妙利用人力资源　</h3>
 <div class="outline-text-3" id="text-2-8">
 <p>
 一个人不懂得交往，必然会推动人际关系的力量。成大事者的特点之一是：善于靠借力、借热去营造成功的局势，从而能把一件件难以办成的事办成，实现自己人生的规划。
@@ -637,8 +546,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org62be718" class="outline-3">
-<h3 id="org62be718"><span class="section-number-3">2.9</span> 9、重新规划－－站到更高的起点上　</h3>
+<div id="outline-container-sec-2-9" class="outline-3">
+<h3 id="sec-2-9"><span class="section-number-3">2.9</span> 9、重新规划－－站到更高的起点上　</h3>
 <div class="outline-text-3" id="text-2-9">
 <p>
 人生是一个过程，成功也是一个过程。你如果满足于小成功，就会推动大成功。成大事者懂得从小到大的艰辛过程，所以在实现了一个个小成功之后，能继续拆开下一个人生的“密封袋”。
@@ -658,8 +567,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org12ff03c" class="outline-2">
-<h2 id="org12ff03c"><span class="section-number-2">3</span> 成大事必备九种能力</h2>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 成大事必备九种能力</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 挑战生存的能力：善于在现实中寻找答案
@@ -668,8 +577,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org9d19a5a" class="outline-3">
-<h3 id="org9d19a5a"><span class="section-number-3">3.1</span> 1、摆正心态，敢于面对现实</h3>
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> 1、摆正心态，敢于面对现实</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 对于那些不停地抱怨现实恶劣的人来说，不能称心如意的现实，就如同生活的牢笼，既束缚手脚，又束缚身心，因此常屈从于现实的压力，成为懦弱者；而那些真正成大事的人，则敢于挑战现实，在现实中磨炼自己的生存能力，这就叫强者！
@@ -703,8 +612,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org5997039" class="outline-3">
-<h3 id="org5997039"><span class="section-number-3">3.2</span> 2、让你拥有过硬的自制能力</h3>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> 2、让你拥有过硬的自制能力</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 自制，就是要克服欲望，不要因为有点压力就心里浮躁，遇到一点不称心的事就大发脾气。
@@ -744,8 +653,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org6ff87da" class="outline-3">
-<h3 id="org6ff87da"><span class="section-number-3">3.3</span> 3、把情感装入理性之盒</h3>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> 3、把情感装入理性之盒</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 一种抵触情绪的产生往往是潜移默化的，但它对人一生的影响却是巨大的，这种影响从诸多小事上体现出来。我们应尽量消除自己的不良情绪、因为它不仅会给我们造成身心上的伤害，而且在我们通往成功的路途上，不良情绪有时会成为绊脚石。
@@ -761,8 +670,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgbed245a" class="outline-3">
-<h3 id="orgbed245a"><span class="section-number-3">3.4</span> 4、独处可以激发思考的力量</h3>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> 4、独处可以激发思考的力量</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 如果你知道怎么独处的话，成大事者都是善于独处的人－－在独处的过程中激发思考的力量。
@@ -790,8 +699,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org396dc6f" class="outline-3">
-<h3 id="org396dc6f"><span class="section-number-3">3.5</span> 5、压力是最好的推动力</h3>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> 5、压力是最好的推动力</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 欲成大事者，因目标高远，压力可能会更大。但若欲成大事，就必须能承受这种压力，把压力当成推进人生的动力。
@@ -813,8 +722,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orga79475d" class="outline-3">
-<h3 id="orga79475d"><span class="section-number-3">3.6</span> 6、以变应变，才有出路</h3>
+<div id="outline-container-sec-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> 6、以变应变，才有出路</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 顺应时势，善于变化，及时调整自己的行动方案，这是成大事者适应现实的一种方法。
@@ -836,8 +745,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org864af50" class="outline-3">
-<h3 id="org864af50"><span class="section-number-3">3.7</span> 7、自信心是人生的坚强支柱</h3>
+<div id="outline-container-sec-3-7" class="outline-3">
+<h3 id="sec-3-7"><span class="section-number-3">3.7</span> 7、自信心是人生的坚强支柱</h3>
 <div class="outline-text-3" id="text-3-7">
 <p>
 自信心充足者的适应能力就高，反之则适应能力较低。
@@ -871,8 +780,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orge60e169" class="outline-3">
-<h3 id="orge60e169"><span class="section-number-3">3.8</span> 8、把精力投入到自己的强项上</h3>
+<div id="outline-container-sec-3-8" class="outline-3">
+<h3 id="sec-3-8"><span class="section-number-3">3.8</span> 8、把精力投入到自己的强项上</h3>
 <div class="outline-text-3" id="text-3-8">
 <p>
 大多数人的生活层次只停留在：为吃饭而吃、为搭公车而搭、为工作而工作、为了回家而回家。
@@ -912,8 +821,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org7b9a9de" class="outline-3">
-<h3 id="org7b9a9de"><span class="section-number-3">3.9</span> 9、要专心地做好一件事</h3>
+<div id="outline-container-sec-3-9" class="outline-3">
+<h3 id="sec-3-9"><span class="section-number-3">3.9</span> 9、要专心地做好一件事</h3>
 <div class="outline-text-3" id="text-3-9">
 <p>
 如果大多数人集中精力专注于一项工作，他们都能把这项工作做得很好。
@@ -946,11 +855,11 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org2af36ec" class="outline-2">
-<h2 id="org2af36ec"><span class="section-number-2">4</span> 成大事必备的9种心态</h2>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 成大事必备的9种心态</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-orgfea5670" class="outline-3">
-<h3 id="orgfea5670"><span class="section-number-3">4.1</span> 心态之一：积极向上</h3>
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> 心态之一：积极向上</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 　　1.时刻想着出人头地
@@ -1002,8 +911,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org3f74651" class="outline-3">
-<h3 id="org3f74651"><span class="section-number-3">4.2</span> 　　心态之二：勤勉谦恭</h3>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> 　　心态之二：勤勉谦恭</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 　　1.壮志凌云地想，脚踏实地地干　　
@@ -1055,8 +964,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org0e4b094" class="outline-3">
-<h3 id="org0e4b094"><span class="section-number-3">4.3</span> 　　心态之三：诚实守信</h3>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> 　　心态之三：诚实守信</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 　　1.诚实是一种源自自身的本质
@@ -1108,8 +1017,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-orgd0f9f31" class="outline-3">
-<h3 id="orgd0f9f31"><span class="section-number-3">4.4</span> 　　心态之四：敢于挑战</h3>
+<div id="outline-container-sec-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> 　　心态之四：敢于挑战</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 　　1.敢于挑战自我，克服贬低心理
@@ -1163,8 +1072,8 @@ for the JavaScript code in this tag.
 
 
 
-<div id="outline-container-org159f79c" class="outline-3">
-<h3 id="org159f79c"><span class="section-number-3">4.5</span> 　　 心态之五：善于合作</h3>
+<div id="outline-container-sec-4-5" class="outline-3">
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> 　　 心态之五：善于合作</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 　　 心态之六：知足平衡
@@ -1194,7 +1103,8 @@ for the JavaScript code in this tag.
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-03-22 Fri 22:40</p>
+<p class="date">Created: 2019-04-14 Sun 19:06</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
