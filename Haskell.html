@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Haskell</title>
-<!-- 2019-04-19 Fri 21:59 -->
+<!-- 2019-04-19 Fri 22:35 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
@@ -154,6 +154,7 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#sec-2-1">2.1. Default Prompt</a></li>
 <li><a href="#sec-2-2">2.2. Load File</a></li>
+<li><a href="#sec-2-3">2.3. Explicit Type Declaration</a></li>
 </ul>
 </li>
 <li><a href="#sec-3">3. Syntax</a>
@@ -164,6 +165,14 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#sec-3-2">3.2. curried functions.</a></li>
+<li><a href="#sec-3-3">3.3. list comprehension</a></li>
+<li><a href="#sec-3-4">3.4. <span class="todo TODO">TODO</span> type class</a></li>
+<li><a href="#sec-3-5">3.5. pattern matching</a>
+<ul>
+<li><a href="#sec-3-5-1">3.5.1. simply pattern matching</a></li>
+<li><a href="#sec-3-5-2">3.5.2. case expression</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -204,6 +213,24 @@ File has to been at the same root
 </pre>
 </div>
 </div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Explicit Type Declaration</h3>
+<div class="outline-text-3" id="text-2-3">
+<pre class="example">
+ ghci&gt; :t 'a'
+'a' :: Char
+ ghci&gt; :t True
+ True :: Bool
+ ghci&gt; :t "HELLO!"
+ "HELLO!" :: [Char]
+  ghci&gt; :t (True, 'a')
+ (True, 'a') :: (Bool, Char)
+  ghci&gt; :t 4 == 5
+  4 == 5 :: Bool
+</pre>
+</div>
+</div>
 </div>
 
 
@@ -238,12 +265,67 @@ Then when it’s called with that parameter, it returns a function that takes th
 </p>
 </div>
 </div>
+
+
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> list comprehension</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+They’re very similar to the mathematical concept of set comprehensions. 
+Set comprehensions are normally used for building sets out of other sets. 
+An example of a simple set comprehension is: { 2 · x|x ∈ N, x ≤ 10}
+</p>
+
+<pre class="example">
+ghci&gt; [x*2 | x &lt;- [1..10]]
+[2,4,6,8,10,12,14,16,18,20]
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> <span class="todo TODO">TODO</span> type class</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+comparing with scala
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> pattern matching</h3>
+<div class="outline-text-3" id="text-3-5">
+</div><div id="outline-container-sec-3-5-1" class="outline-4">
+<h4 id="sec-3-5-1"><span class="section-number-4">3.5.1</span> simply pattern matching</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<pre class="example">
+factorial :: Int -&gt; Int
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-3-5-2" class="outline-4">
+<h4 id="sec-3-5-2"><span class="section-number-4">3.5.2</span> case expression</h4>
+<div class="outline-text-4" id="text-3-5-2">
+<pre class="example">
+describeList :: [a] -&gt; String
+describeList ls = "The list is " ++ case ls of [] -&gt; "empty."
+                                               [x] -&gt; "a singleton list."
+                                               xs -&gt; "a longer list."
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-04-19 Fri 21:59</p>
+<p class="date">Created: 2019-04-19 Fri 22:35</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
