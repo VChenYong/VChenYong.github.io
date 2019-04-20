@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Java 8 new features</title>
-<!-- 2019-04-14 Sun 19:06 -->
+<!-- 2019-04-19 Fri 21:59 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
@@ -177,10 +177,10 @@ for the JavaScript code in this tag.
 
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">The JDK 8 way</span>
-<span style="color: #98fb98;">StringJoiner</span> <span style="color: #eedd82;">sj</span> = <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">StringJoiner</span><span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">", "</span><span style="color: #8c8c8c;">)</span>;
-sj.add<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"one"</span><span style="color: #8c8c8c;">)</span>.add<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"two"</span><span style="color: #8c8c8c;">)</span>.add<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"three"</span><span style="color: #8c8c8c;">)</span>;
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">&gt; one, two, three</span>
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">The JDK 8 way</span>
+<span style="color: #7aa6da;">StringJoiner</span> <span style="color: #e7c547;">sj</span> = <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">StringJoiner</span><span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">", "</span><span style="color: #eaeaea;">)</span>;
+sj.add<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"one"</span><span style="color: #eaeaea;">)</span>.add<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"two"</span><span style="color: #eaeaea;">)</span>.add<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"three"</span><span style="color: #eaeaea;">)</span>;
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">&gt; one, two, three</span>
 </pre>
 </div>
 </li>
@@ -189,10 +189,10 @@ sj.add<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"one"<
 
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">List</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">Integer</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">numbers</span> = Arrays.asList<span style="color: #8c8c8c;">(</span>1, 2, 3, 4<span style="color: #8c8c8c;">)</span>;
-<span style="color: #98fb98;">String</span> <span style="color: #eedd82;">commaSeparatedNumbers</span> = numbers.stream<span style="color: #8c8c8c;">()</span>
-    .map<span style="color: #8c8c8c;">(</span>i -&gt; i.toString<span style="color: #93a8c6;">()</span><span style="color: #8c8c8c;">)</span>
-    .collect<span style="color: #8c8c8c;">(</span>Collectors.joining<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">", "</span><span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #7aa6da;">List</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">Integer</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">numbers</span> = Arrays.asList<span style="color: #eaeaea;">(</span>1, 2, 3, 4<span style="color: #eaeaea;">)</span>;
+<span style="color: #7aa6da;">String</span> <span style="color: #e7c547;">commaSeparatedNumbers</span> = numbers.stream<span style="color: #eaeaea;">()</span>
+    .map<span style="color: #eaeaea;">(</span>i -&gt; i.toString<span style="color: #70c0b1;">()</span><span style="color: #eaeaea;">)</span>
+    .collect<span style="color: #eaeaea;">(</span>Collectors.joining<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">", "</span><span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </li>
@@ -208,13 +208,13 @@ sj.add<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"one"<
 <li>Exmaple 1
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">The JDK 8 way</span>
-<span style="color: #98fb98;">StringJoiner</span> <span style="color: #eedd82;">sj</span> = <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">StringJoiner</span><span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">", "</span>, <span style="color: #ffa07a;">"{"</span>, <span style="color: #ffa07a;">"}"</span><span style="color: #8c8c8c;">)</span>;
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">we leave the joiner empty</span>
-<span style="color: #98fb98;">String</span> <span style="color: #eedd82;">s</span> = sj.toString<span style="color: #8c8c8c;">()</span>;
-System.out.println<span style="color: #8c8c8c;">(</span>s<span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">The JDK 8 way</span>
+<span style="color: #7aa6da;">StringJoiner</span> <span style="color: #e7c547;">sj</span> = <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">StringJoiner</span><span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">", "</span>, <span style="color: #70c0b1;">"{"</span>, <span style="color: #70c0b1;">"}"</span><span style="color: #eaeaea;">)</span>;
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">we leave the joiner empty</span>
+<span style="color: #7aa6da;">String</span> <span style="color: #e7c547;">s</span> = sj.toString<span style="color: #eaeaea;">()</span>;
+System.out.println<span style="color: #eaeaea;">(</span>s<span style="color: #eaeaea;">)</span>;
 
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">&gt; {}</span>
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">&gt; {}</span>
 </pre>
 </div>
 </li>
@@ -223,12 +223,12 @@ System.out.println<span style="color: #8c8c8c;">(</span>s<span style="color: #8c
 
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">The JDK 8 way</span>
-<span style="color: #98fb98;">StringJoiner</span> <span style="color: #eedd82;">sj</span> = <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">StringJoiner</span><span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">", "</span>, <span style="color: #ffa07a;">"{"</span>, <span style="color: #ffa07a;">"}"</span><span style="color: #8c8c8c;">)</span>;
-sj.add<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"one"</span><span style="color: #8c8c8c;">)</span>.add<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"two"</span><span style="color: #8c8c8c;">)</span>.add<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"three"</span><span style="color: #8c8c8c;">)</span>;
-<span style="color: #98fb98;">String</span> <span style="color: #eedd82;">s</span> = sj.toString<span style="color: #8c8c8c;">()</span>;
-System.out.println<span style="color: #8c8c8c;">(</span>s<span style="color: #8c8c8c;">)</span>;
-<span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">&gt; {one, two, three}</span>
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">The JDK 8 way</span>
+<span style="color: #7aa6da;">StringJoiner</span> <span style="color: #e7c547;">sj</span> = <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">StringJoiner</span><span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">", "</span>, <span style="color: #70c0b1;">"{"</span>, <span style="color: #70c0b1;">"}"</span><span style="color: #eaeaea;">)</span>;
+sj.add<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"one"</span><span style="color: #eaeaea;">)</span>.add<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"two"</span><span style="color: #eaeaea;">)</span>.add<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"three"</span><span style="color: #eaeaea;">)</span>;
+<span style="color: #7aa6da;">String</span> <span style="color: #e7c547;">s</span> = sj.toString<span style="color: #eaeaea;">()</span>;
+System.out.println<span style="color: #eaeaea;">(</span>s<span style="color: #eaeaea;">)</span>;
+<span style="color: #969896; font-style: italic;">//</span><span style="color: #969896; font-style: italic;">&gt; {one, two, three}</span>
 </pre>
 </div>
 </li>
@@ -249,10 +249,10 @@ Returns a new String composed of copies of the CharSequence elements joined toge
 
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">From the String class, with a vararg</span>
-<span style="color: #98fb98;">String</span> <span style="color: #eedd82;">s</span> = String.join<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">", "</span>, <span style="color: #ffa07a;">"one"</span>, <span style="color: #ffa07a;">"two"</span>, <span style="color: #ffa07a;">"three"</span><span style="color: #8c8c8c;">)</span>;
-System.out.println<span style="color: #8c8c8c;">(</span>s<span style="color: #8c8c8c;">)</span>;
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">&gt; one, two, three</span>
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">From the String class, with a vararg</span>
+<span style="color: #7aa6da;">String</span> <span style="color: #e7c547;">s</span> = String.join<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">", "</span>, <span style="color: #70c0b1;">"one"</span>, <span style="color: #70c0b1;">"two"</span>, <span style="color: #70c0b1;">"three"</span><span style="color: #eaeaea;">)</span>;
+System.out.println<span style="color: #eaeaea;">(</span>s<span style="color: #eaeaea;">)</span>;
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">&gt; one, two, three</span>
 </pre>
 </div>
 </li>
@@ -265,11 +265,11 @@ Returns a new String composed of copies of the CharSequence elements joined toge
 
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">From the String class, with an Iterable</span>
-  <span style="color: #98fb98;">String</span> <span style="color: #8c8c8c;">[]</span> <span style="color: #eedd82;">tab</span> = <span style="color: #8c8c8c;">{</span><span style="color: #ffa07a;">"one"</span>, <span style="color: #ffa07a;">"two"</span>, <span style="color: #ffa07a;">"three"</span><span style="color: #8c8c8c;">}</span>;
-  <span style="color: #98fb98;">String</span> <span style="color: #eedd82;">s</span> = String.join<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">", "</span>, tab<span style="color: #8c8c8c;">)</span>;
-  System.out.println<span style="color: #8c8c8c;">(</span>s<span style="color: #8c8c8c;">)</span>;
-  <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">&gt; one, two, three</span>
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">From the String class, with an Iterable</span>
+  <span style="color: #7aa6da;">String</span> <span style="color: #eaeaea;">[]</span> <span style="color: #e7c547;">tab</span> = <span style="color: #eaeaea;">{</span><span style="color: #70c0b1;">"one"</span>, <span style="color: #70c0b1;">"two"</span>, <span style="color: #70c0b1;">"three"</span><span style="color: #eaeaea;">}</span>;
+  <span style="color: #7aa6da;">String</span> <span style="color: #e7c547;">s</span> = String.join<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">", "</span>, tab<span style="color: #eaeaea;">)</span>;
+  System.out.println<span style="color: #eaeaea;">(</span>s<span style="color: #eaeaea;">)</span>;
+  <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">&gt; one, two, three</span>
 </pre>
 </div>
 </li>
@@ -288,18 +288,18 @@ Returns a new String composed of copies of the CharSequence elements joined toge
 <li>Using new File
 <div class="org-src-container">
 
-<pre class="src src-java"> <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">java 7 : try with resources</span>
-  <span style="color: #00ffff;">try</span> <span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">BufferedReader</span> <span style="color: #eedd82;">reader</span> =
- <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">BufferedReader</span><span style="color: #93a8c6;">(</span>
-                    <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">FileReader</span><span style="color: #b0b1a3;">(</span>
-                                   <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">File</span><span style="color: #97b098;">(</span><span style="color: #ffa07a;">"d:/tmp/debug.log"</span><span style="color: #97b098;">)</span><span style="color: #b0b1a3;">)</span><span style="color: #93a8c6;">)</span>;<span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-<span style="color: #98fb98;">Stream</span><span style="color: #93a8c6;">&lt;</span><span style="color: #98fb98;">String</span><span style="color: #93a8c6;">&gt;</span> <span style="color: #eedd82;">stream</span> = reader.lines<span style="color: #93a8c6;">()</span>;
-stream.filter<span style="color: #93a8c6;">(</span>line &#8208;&gt; line.contains<span style="color: #b0b1a3;">(</span><span style="color: #ffa07a;">"ERROR"</span><span style="color: #b0b1a3;">)</span><span style="color: #93a8c6;">)</span>
-    .findFirst<span style="color: #93a8c6;">()</span>
-    .ifPresent<span style="color: #93a8c6;">(</span>System.out::println<span style="color: #93a8c6;">)</span>;
-<span style="color: #8c8c8c;">}</span> <span style="color: #00ffff;">catch</span> <span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">IOException</span> <span style="color: #eedd82;">ioe</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">handle the exception</span>
-<span style="color: #8c8c8c;">}</span>
+<pre class="src src-java"> <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">java 7 : try with resources</span>
+  <span style="color: #b9ca4a;">try</span> <span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">BufferedReader</span> <span style="color: #e7c547;">reader</span> =
+ <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">BufferedReader</span><span style="color: #70c0b1;">(</span>
+                    <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">FileReader</span><span style="color: #e7c547;">(</span>
+                                   <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">File</span><span style="color: #b9ca4a;">(</span><span style="color: #70c0b1;">"d:/tmp/debug.log"</span><span style="color: #b9ca4a;">)</span><span style="color: #e7c547;">)</span><span style="color: #70c0b1;">)</span>;<span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+<span style="color: #7aa6da;">Stream</span><span style="color: #70c0b1;">&lt;</span><span style="color: #7aa6da;">String</span><span style="color: #70c0b1;">&gt;</span> <span style="color: #e7c547;">stream</span> = reader.lines<span style="color: #70c0b1;">()</span>;
+stream.filter<span style="color: #70c0b1;">(</span>line &#8208;&gt; line.contains<span style="color: #e7c547;">(</span><span style="color: #70c0b1;">"ERROR"</span><span style="color: #e7c547;">)</span><span style="color: #70c0b1;">)</span>
+    .findFirst<span style="color: #70c0b1;">()</span>
+    .ifPresent<span style="color: #70c0b1;">(</span>System.out::println<span style="color: #70c0b1;">)</span>;
+<span style="color: #eaeaea;">}</span> <span style="color: #b9ca4a;">catch</span> <span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">IOException</span> <span style="color: #e7c547;">ioe</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">handle the exception</span>
+<span style="color: #eaeaea;">}</span>
 </pre>
 </div>
 </li>
@@ -307,14 +307,14 @@ stream.filter<span style="color: #93a8c6;">(</span>line &#8208;&gt; line.contain
 <li>Using method File.lines(path)
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">java 7 : try with resources and use of Paths</span>
-<span style="color: #98fb98;">Path</span> <span style="color: #eedd82;">path</span> = Paths.get<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"d:"</span>, <span style="color: #ffa07a;">"tmp"</span>, <span style="color: #ffa07a;">"debug.log"</span><span style="color: #8c8c8c;">)</span>;
-<span style="color: #00ffff;">try</span> <span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">Stream</span><span style="color: #93a8c6;">&lt;</span><span style="color: #98fb98;">String</span><span style="color: #93a8c6;">&gt;</span> <span style="color: #eedd82;">stream</span> = Files.lines<span style="color: #93a8c6;">(</span>path<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-    stream.filter<span style="color: #93a8c6;">(</span>line &#8208;&gt; line.contains<span style="color: #b0b1a3;">(</span><span style="color: #ffa07a;">"ERROR"</span><span style="color: #b0b1a3;">)</span><span style="color: #93a8c6;">)</span>
-        .findFirst<span style="color: #93a8c6;">()</span>
-        .ifPresent<span style="color: #93a8c6;">(</span>System.out::println<span style="color: #93a8c6;">)</span>;
-    <span style="color: #8c8c8c;">}</span> <span style="color: #00ffff;">catch</span> <span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">IOException</span> <span style="color: #eedd82;">ioe</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-    <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">handle the exception</span>
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">java 7 : try with resources and use of Paths</span>
+<span style="color: #7aa6da;">Path</span> <span style="color: #e7c547;">path</span> = Paths.get<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"d:"</span>, <span style="color: #70c0b1;">"tmp"</span>, <span style="color: #70c0b1;">"debug.log"</span><span style="color: #eaeaea;">)</span>;
+<span style="color: #b9ca4a;">try</span> <span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">Stream</span><span style="color: #70c0b1;">&lt;</span><span style="color: #7aa6da;">String</span><span style="color: #70c0b1;">&gt;</span> <span style="color: #e7c547;">stream</span> = Files.lines<span style="color: #70c0b1;">(</span>path<span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+    stream.filter<span style="color: #70c0b1;">(</span>line &#8208;&gt; line.contains<span style="color: #e7c547;">(</span><span style="color: #70c0b1;">"ERROR"</span><span style="color: #e7c547;">)</span><span style="color: #70c0b1;">)</span>
+        .findFirst<span style="color: #70c0b1;">()</span>
+        .ifPresent<span style="color: #70c0b1;">(</span>System.out::println<span style="color: #70c0b1;">)</span>;
+    <span style="color: #eaeaea;">}</span> <span style="color: #b9ca4a;">catch</span> <span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">IOException</span> <span style="color: #e7c547;">ioe</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+    <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">handle the exception</span>
 </pre>
 </div>
 <p>
@@ -330,14 +330,14 @@ Note : Stream implements AutoCloseable, and will close the underlying file
 <li>Method File.list(path)  (Visits the first level entries)
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">Java 7 : try with resources and use of Paths</span>
-<span style="color: #98fb98;">Path</span> <span style="color: #eedd82;">path</span> = Paths.get<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"c:"</span>, <span style="color: #ffa07a;">"windows"</span><span style="color: #8c8c8c;">)</span>;
-<span style="color: #00ffff;">try</span> <span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">Stream</span><span style="color: #93a8c6;">&lt;</span><span style="color: #98fb98;">Path</span><span style="color: #93a8c6;">&gt;</span> <span style="color: #eedd82;">stream</span> = Files.list<span style="color: #93a8c6;">(</span>path<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-    stream.filter<span style="color: #93a8c6;">(</span>path &#8208;&gt; path.toFile<span style="color: #b0b1a3;">()</span>.isDirectory<span style="color: #b0b1a3;">()</span><span style="color: #93a8c6;">)</span>
-        .forEach<span style="color: #93a8c6;">(</span>System.out::println<span style="color: #93a8c6;">)</span>;
-    <span style="color: #8c8c8c;">}</span> <span style="color: #00ffff;">catch</span> <span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">IOException</span> <span style="color: #eedd82;">ioe</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-    <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">handle the exception</span>
-<span style="color: #8c8c8c;">}</span>
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">Java 7 : try with resources and use of Paths</span>
+<span style="color: #7aa6da;">Path</span> <span style="color: #e7c547;">path</span> = Paths.get<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"c:"</span>, <span style="color: #70c0b1;">"windows"</span><span style="color: #eaeaea;">)</span>;
+<span style="color: #b9ca4a;">try</span> <span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">Stream</span><span style="color: #70c0b1;">&lt;</span><span style="color: #7aa6da;">Path</span><span style="color: #70c0b1;">&gt;</span> <span style="color: #e7c547;">stream</span> = Files.list<span style="color: #70c0b1;">(</span>path<span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+    stream.filter<span style="color: #70c0b1;">(</span>path &#8208;&gt; path.toFile<span style="color: #e7c547;">()</span>.isDirectory<span style="color: #e7c547;">()</span><span style="color: #70c0b1;">)</span>
+        .forEach<span style="color: #70c0b1;">(</span>System.out::println<span style="color: #70c0b1;">)</span>;
+    <span style="color: #eaeaea;">}</span> <span style="color: #b9ca4a;">catch</span> <span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">IOException</span> <span style="color: #e7c547;">ioe</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+    <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">handle the exception</span>
+<span style="color: #eaeaea;">}</span>
 </pre>
 </div>
 </li>
@@ -345,14 +345,14 @@ Note : Stream implements AutoCloseable, and will close the underlying file
 <li>To visit the whole subtree use the Files.walk(path) method (One can limit the depth of the exploration)
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">Java 7 : try with resources and use of Paths</span>
-<span style="color: #98fb98;">Path</span> <span style="color: #eedd82;">path</span> = Paths.get<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"c:"</span>, <span style="color: #ffa07a;">"windows"</span><span style="color: #8c8c8c;">)</span>;
-<span style="color: #00ffff;">try</span> <span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">Stream</span><span style="color: #93a8c6;">&lt;</span><span style="color: #98fb98;">Path</span><span style="color: #93a8c6;">&gt;</span> <span style="color: #eedd82;">stream</span> = Files.walk<span style="color: #93a8c6;">(</span>path<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-    stream.filter<span style="color: #93a8c6;">(</span>path &#8208;&gt; path.toFile<span style="color: #b0b1a3;">()</span>.isDirectory<span style="color: #b0b1a3;">()</span><span style="color: #93a8c6;">)</span>
-        .forEach<span style="color: #93a8c6;">(</span>System.out::println<span style="color: #93a8c6;">)</span>;
-    <span style="color: #8c8c8c;">}</span> <span style="color: #00ffff;">catch</span> <span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">IOException</span> <span style="color: #eedd82;">ioe</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-    <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">handle the exception</span>
-<span style="color: #8c8c8c;">}</span>
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">Java 7 : try with resources and use of Paths</span>
+<span style="color: #7aa6da;">Path</span> <span style="color: #e7c547;">path</span> = Paths.get<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"c:"</span>, <span style="color: #70c0b1;">"windows"</span><span style="color: #eaeaea;">)</span>;
+<span style="color: #b9ca4a;">try</span> <span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">Stream</span><span style="color: #70c0b1;">&lt;</span><span style="color: #7aa6da;">Path</span><span style="color: #70c0b1;">&gt;</span> <span style="color: #e7c547;">stream</span> = Files.walk<span style="color: #70c0b1;">(</span>path<span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+    stream.filter<span style="color: #70c0b1;">(</span>path &#8208;&gt; path.toFile<span style="color: #e7c547;">()</span>.isDirectory<span style="color: #e7c547;">()</span><span style="color: #70c0b1;">)</span>
+        .forEach<span style="color: #70c0b1;">(</span>System.out::println<span style="color: #70c0b1;">)</span>;
+    <span style="color: #eaeaea;">}</span> <span style="color: #b9ca4a;">catch</span> <span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">IOException</span> <span style="color: #e7c547;">ioe</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+    <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">handle the exception</span>
+<span style="color: #eaeaea;">}</span>
 </pre>
 </div>
 </li>
@@ -374,14 +374,14 @@ Note : Stream implements AutoCloseable, and will close the underlying file
 <li>The JDK 7 way:  ( Note :It would also need to check if p1 or p2 is null)
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">comparison using the last name</span>
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">Person</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">compareLastName</span> =
-    <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">Person</span><span style="color: #8c8c8c;">&gt;()</span> <span style="color: #8c8c8c;">{</span>
-    <span style="color: #7fffd4;">@Override</span>
-    <span style="color: #00ffff;">public</span> <span style="color: #98fb98;">int</span> <span style="color: #87cefa;">compare</span><span style="color: #93a8c6;">(</span><span style="color: #98fb98;">Person</span> <span style="color: #eedd82;">p1</span>, <span style="color: #98fb98;">Person</span> <span style="color: #eedd82;">p2</span><span style="color: #93a8c6;">)</span> <span style="color: #93a8c6;">{</span>
-        <span style="color: #00ffff;">return</span> p1.getLastName<span style="color: #b0b1a3;">()</span>.compareTo<span style="color: #b0b1a3;">(</span>p2.getLastName<span style="color: #97b098;">()</span><span style="color: #b0b1a3;">)</span>;
-    <span style="color: #93a8c6;">}</span>
-<span style="color: #8c8c8c;">}</span>
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">comparison using the last name</span>
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">Person</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">compareLastName</span> =
+    <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">Person</span><span style="color: #eaeaea;">&gt;()</span> <span style="color: #eaeaea;">{</span>
+    <span style="color: #7aa6da;">@Override</span>
+    <span style="color: #b9ca4a;">public</span> <span style="color: #7aa6da;">int</span> <span style="color: #e78c45;">compare</span><span style="color: #70c0b1;">(</span><span style="color: #7aa6da;">Person</span> <span style="color: #e7c547;">p1</span>, <span style="color: #7aa6da;">Person</span> <span style="color: #e7c547;">p2</span><span style="color: #70c0b1;">)</span> <span style="color: #70c0b1;">{</span>
+        <span style="color: #b9ca4a;">return</span> p1.getLastName<span style="color: #e7c547;">()</span>.compareTo<span style="color: #e7c547;">(</span>p2.getLastName<span style="color: #b9ca4a;">()</span><span style="color: #e7c547;">)</span>;
+    <span style="color: #70c0b1;">}</span>
+<span style="color: #eaeaea;">}</span>
 </pre>
 </div>
 </li>
@@ -389,8 +389,8 @@ Note : Stream implements AutoCloseable, and will close the underlying file
 <li>The JDK 8 way:
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">comparison using the last name</span>
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">Person</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">compareLastName</span> = Comparator.comparing<span style="color: #8c8c8c;">(</span>Person::getLastName<span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">comparison using the last name</span>
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">Person</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">compareLastName</span> = Comparator.comparing<span style="color: #eaeaea;">(</span>Person::getLastName<span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </li>
@@ -402,28 +402,28 @@ Note : Stream implements AutoCloseable, and will close the underlying file
 <li>The JDK 7 way:  (Note :It would also need to check if p1 or p2 is null)
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">comparison using the last name then the first name</span>
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">Person</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">compareLastNameThenFirstName</span> =
-    <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">Person</span><span style="color: #8c8c8c;">&gt;()</span> <span style="color: #8c8c8c;">{</span>
-    <span style="color: #7fffd4;">@Override</span>
-    <span style="color: #00ffff;">public</span> <span style="color: #98fb98;">int</span> <span style="color: #87cefa;">compare</span><span style="color: #93a8c6;">(</span><span style="color: #98fb98;">Person</span> <span style="color: #eedd82;">p1</span>, <span style="color: #98fb98;">Person</span> <span style="color: #eedd82;">p2</span><span style="color: #93a8c6;">)</span> <span style="color: #93a8c6;">{</span>
-        <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">lastNameComparison</span> =
-        p1.getLastName<span style="color: #b0b1a3;">()</span>.compareTo<span style="color: #b0b1a3;">(</span>p2.getLastName<span style="color: #97b098;">()</span><span style="color: #b0b1a3;">)</span>;
-        <span style="color: #00ffff;">return</span> lastNameComparison == 0 ?
-        p2.getFirstName<span style="color: #b0b1a3;">()</span>.compareTo<span style="color: #b0b1a3;">(</span>p2.getFirstName<span style="color: #97b098;">()</span><span style="color: #b0b1a3;">)</span>;
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">comparison using the last name then the first name</span>
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">Person</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">compareLastNameThenFirstName</span> =
+    <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">Person</span><span style="color: #eaeaea;">&gt;()</span> <span style="color: #eaeaea;">{</span>
+    <span style="color: #7aa6da;">@Override</span>
+    <span style="color: #b9ca4a;">public</span> <span style="color: #7aa6da;">int</span> <span style="color: #e78c45;">compare</span><span style="color: #70c0b1;">(</span><span style="color: #7aa6da;">Person</span> <span style="color: #e7c547;">p1</span>, <span style="color: #7aa6da;">Person</span> <span style="color: #e7c547;">p2</span><span style="color: #70c0b1;">)</span> <span style="color: #70c0b1;">{</span>
+        <span style="color: #7aa6da;">int</span> <span style="color: #e7c547;">lastNameComparison</span> =
+        p1.getLastName<span style="color: #e7c547;">()</span>.compareTo<span style="color: #e7c547;">(</span>p2.getLastName<span style="color: #b9ca4a;">()</span><span style="color: #e7c547;">)</span>;
+        <span style="color: #b9ca4a;">return</span> lastNameComparison == 0 ?
+        p2.getFirstName<span style="color: #e7c547;">()</span>.compareTo<span style="color: #e7c547;">(</span>p2.getFirstName<span style="color: #b9ca4a;">()</span><span style="color: #e7c547;">)</span>;
         lastNameComparison;
-    <span style="color: #93a8c6;">}</span>
-<span style="color: #8c8c8c;">}</span>;
+    <span style="color: #70c0b1;">}</span>
+<span style="color: #eaeaea;">}</span>;
 </pre>
 </div>
 </li>
 <li>The JDK 8 way:
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">comparison using the last name and then the first name</span>
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">Person</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">compareLastNameThenFirstName</span> =
-    Comparator.comparing<span style="color: #8c8c8c;">(</span>Person::getLastName<span style="color: #8c8c8c;">)</span>
-    .thenComparing<span style="color: #8c8c8c;">(</span>Person::getFirstName<span style="color: #8c8c8c;">)</span>; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">thenComparing() is a default method of the interface Comparator</span>
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">comparison using the last name and then the first name</span>
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">Person</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">compareLastNameThenFirstName</span> =
+    Comparator.comparing<span style="color: #eaeaea;">(</span>Person::getLastName<span style="color: #eaeaea;">)</span>
+    .thenComparing<span style="color: #eaeaea;">(</span>Person::getFirstName<span style="color: #eaeaea;">)</span>; <span style="color: #969896; font-style: italic;">//</span><span style="color: #969896; font-style: italic;">thenComparing() is a default method of the interface Comparator</span>
 </pre>
 </div>
 </li>
@@ -435,9 +435,9 @@ Note : Stream implements AutoCloseable, and will close the underlying file
 <li>reverse a given comparator
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">reverses a comparator</span>
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">Person</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">comp</span> = ...;
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">Person</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">reversedComp</span> = comp.reversed<span style="color: #8c8c8c;">()</span>;
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">reverses a comparator</span>
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">Person</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">comp</span> = ...;
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">Person</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">reversedComp</span> = comp.reversed<span style="color: #eaeaea;">()</span>;
 </pre>
 </div>
 </li>
@@ -445,11 +445,11 @@ Note : Stream implements AutoCloseable, and will close the underlying file
 <li>The natural comparator and the reversed natural comparator
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">compares comparable objects</span>
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">String</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">c</span> = Comparator.naturalOrder<span style="color: #8c8c8c;">()</span>;
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">compares comparable objects</span>
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">String</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">c</span> = Comparator.naturalOrder<span style="color: #eaeaea;">()</span>;
 
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">compares comparable objects in the reverse order</span>
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">String</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">c</span> = Comparator.reversedOrder<span style="color: #8c8c8c;">()</span>;
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">compares comparable objects in the reverse order</span>
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">String</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">c</span> = Comparator.reversedOrder<span style="color: #eaeaea;">()</span>;
 </pre>
 </div>
 </li>
@@ -457,11 +457,11 @@ Note : Stream implements AutoCloseable, and will close the underlying file
 <li>Null values?
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">considers null values lesser than non&#8208;null values</span>
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">String</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">c</span> = Comparator.nullsFirst<span style="color: #8c8c8c;">(</span>Comparator.naturalOrder<span style="color: #93a8c6;">()</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">considers null values lesser than non&#8208;null values</span>
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">String</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">c</span> = Comparator.nullsFirst<span style="color: #eaeaea;">(</span>Comparator.naturalOrder<span style="color: #70c0b1;">()</span><span style="color: #eaeaea;">)</span>;
 
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">considers null values greater than non&#8208;null values</span>
-<span style="color: #98fb98;">Comparator</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">String</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">c</span> = Comparator.nullsLast<span style="color: #8c8c8c;">(</span>Comparator.naturalOrder<span style="color: #93a8c6;">()</span><span style="color: #8c8c8c;">)</span>;
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">considers null values greater than non&#8208;null values</span>
+<span style="color: #7aa6da;">Comparator</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">String</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">c</span> = Comparator.nullsLast<span style="color: #eaeaea;">(</span>Comparator.naturalOrder<span style="color: #70c0b1;">()</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </li>
@@ -485,9 +485,9 @@ Note : Stream implements AutoCloseable, and will close the underlying file
 Example
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">Instant</span> <span style="color: #eedd82;">start</span> = Instant.now<span style="color: #8c8c8c;">()</span>;
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">some long computations</span>
-<span style="color: #98fb98;">Instant</span> <span style="color: #eedd82;">end</span> = Instant.now<span style="color: #8c8c8c;">()</span>;
+<pre class="src src-java"><span style="color: #7aa6da;">Instant</span> <span style="color: #e7c547;">start</span> = Instant.now<span style="color: #eaeaea;">()</span>;
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">some long computations</span>
+<span style="color: #7aa6da;">Instant</span> <span style="color: #e7c547;">end</span> = Instant.now<span style="color: #eaeaea;">()</span>;
 </pre>
 </div>
 
@@ -510,8 +510,8 @@ Example
 Exmaple
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">Duration</span> <span style="color: #eedd82;">elapsed</span> = Duration.between<span style="color: #8c8c8c;">(</span>start, end<span style="color: #8c8c8c;">)</span>;
-<span style="color: #98fb98;">long</span> <span style="color: #eedd82;">millis</span> = elapsed.toMillis<span style="color: #8c8c8c;">()</span>;
+<pre class="src src-java"><span style="color: #7aa6da;">Duration</span> <span style="color: #e7c547;">elapsed</span> = Duration.between<span style="color: #eaeaea;">(</span>start, end<span style="color: #eaeaea;">)</span>;
+<span style="color: #7aa6da;">long</span> <span style="color: #e7c547;">millis</span> = elapsed.toMillis<span style="color: #eaeaea;">()</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -546,8 +546,8 @@ Exmaple
 Example
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">LocalDate</span> <span style="color: #eedd82;">now</span> = LocalDate.now<span style="color: #8c8c8c;">()</span>;
-<span style="color: #98fb98;">LocalDate</span> <span style="color: #eedd82;">dateOfBirth</span> =  LocalDate.of<span style="color: #8c8c8c;">(</span>1564, <span style="color: #7fffd4;">Month</span>.APRIL, 23<span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #7aa6da;">LocalDate</span> <span style="color: #e7c547;">now</span> = LocalDate.now<span style="color: #eaeaea;">()</span>;
+<span style="color: #7aa6da;">LocalDate</span> <span style="color: #e7c547;">dateOfBirth</span> =  LocalDate.of<span style="color: #eaeaea;">(</span>1564, <span style="color: #7aa6da;">Month</span>.APRIL, 23<span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </li>
@@ -556,12 +556,12 @@ Example
 Example
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">LocalDate</span> <span style="color: #eedd82;">dateOfBirth</span> =  LocalDate.of<span style="color: #8c8c8c;">(</span>1564, <span style="color: #7fffd4;">Month</span>.APRIL, 23<span style="color: #8c8c8c;">)</span>;
-<span style="color: #98fb98;">Period</span> <span style="color: #eedd82;">p</span> = dateOfBirth.until<span style="color: #8c8c8c;">(</span>now<span style="color: #8c8c8c;">)</span>;
-System.out.println<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"# years = "</span> + p.getYears<span style="color: #93a8c6;">()</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #7aa6da;">LocalDate</span> <span style="color: #e7c547;">dateOfBirth</span> =  LocalDate.of<span style="color: #eaeaea;">(</span>1564, <span style="color: #7aa6da;">Month</span>.APRIL, 23<span style="color: #eaeaea;">)</span>;
+<span style="color: #7aa6da;">Period</span> <span style="color: #e7c547;">p</span> = dateOfBirth.until<span style="color: #eaeaea;">(</span>now<span style="color: #eaeaea;">)</span>;
+System.out.println<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"# years = "</span> + p.getYears<span style="color: #70c0b1;">()</span><span style="color: #eaeaea;">)</span>;
 
-<span style="color: #98fb98;">long</span> <span style="color: #eedd82;">days</span> = dateOfBirth.until<span style="color: #8c8c8c;">(</span>now, <span style="color: #7fffd4;">ChronoUnit</span>.DAYS<span style="color: #8c8c8c;">)</span>;
-System.out.println<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"# days = "</span> + days<span style="color: #8c8c8c;">)</span>;
+<span style="color: #7aa6da;">long</span> <span style="color: #e7c547;">days</span> = dateOfBirth.until<span style="color: #eaeaea;">(</span>now, <span style="color: #7aa6da;">ChronoUnit</span>.DAYS<span style="color: #eaeaea;">)</span>;
+System.out.println<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"# days = "</span> + days<span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 
@@ -584,8 +584,8 @@ Example
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">LocalDate</span> <span style="color: #eedd82;">now</span> = LocalDate.now<span style="color: #8c8c8c;">()</span>;
-<span style="color: #98fb98;">LocalDate</span> <span style="color: #eedd82;">nextSunday</span> = now.with<span style="color: #8c8c8c;">(</span>TemporalAdjusters.next<span style="color: #93a8c6;">(</span><span style="color: #7fffd4;">DayOfWeek</span>.SUNDAY<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #7aa6da;">LocalDate</span> <span style="color: #e7c547;">now</span> = LocalDate.now<span style="color: #eaeaea;">()</span>;
+<span style="color: #7aa6da;">LocalDate</span> <span style="color: #e7c547;">nextSunday</span> = now.with<span style="color: #eaeaea;">(</span>TemporalAdjusters.next<span style="color: #70c0b1;">(</span><span style="color: #7aa6da;">DayOfWeek</span>.SUNDAY<span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 <ul class="org-ul">
@@ -635,11 +635,11 @@ Example
 Example
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">LocalTime</span> <span style="color: #eedd82;">now</span> = LocalTime.now<span style="color: #8c8c8c;">()</span>;
-<span style="color: #98fb98;">LocalTime</span> <span style="color: #eedd82;">time</span> = LocalTime.of<span style="color: #8c8c8c;">(</span>10, 20<span style="color: #8c8c8c;">)</span> ; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">10:20</span>
+<pre class="src src-java"><span style="color: #7aa6da;">LocalTime</span> <span style="color: #e7c547;">now</span> = LocalTime.now<span style="color: #eaeaea;">()</span>;
+<span style="color: #7aa6da;">LocalTime</span> <span style="color: #e7c547;">time</span> = LocalTime.of<span style="color: #eaeaea;">(</span>10, 20<span style="color: #eaeaea;">)</span> ; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">10:20</span>
 
-<span style="color: #98fb98;">LocalTime</span> <span style="color: #eedd82;">bedTime</span> = LocalTime.of<span style="color: #8c8c8c;">(</span>23, 0<span style="color: #8c8c8c;">)</span>;
-<span style="color: #98fb98;">LocalTime</span> <span style="color: #eedd82;">wakeUpTime</span> = bedTime.plusHours<span style="color: #8c8c8c;">(</span>8<span style="color: #8c8c8c;">)</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">7:00</span>
+<span style="color: #7aa6da;">LocalTime</span> <span style="color: #e7c547;">bedTime</span> = LocalTime.of<span style="color: #eaeaea;">(</span>23, 0<span style="color: #eaeaea;">)</span>;
+<span style="color: #7aa6da;">LocalTime</span> <span style="color: #e7c547;">wakeUpTime</span> = bedTime.plusHours<span style="color: #eaeaea;">(</span>8<span style="color: #eaeaea;">)</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">7:00</span>
 </pre>
 </div>
 </li>
@@ -656,20 +656,20 @@ Example
 <li>The zones are available from
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">Set</span><span style="color: #8c8c8c;">&lt;</span><span style="color: #98fb98;">String</span><span style="color: #8c8c8c;">&gt;</span> <span style="color: #eedd82;">allZonesIds</span> = ZoneId.getAvailableZoneIds<span style="color: #8c8c8c;">()</span>;
-<span style="color: #98fb98;">String</span> <span style="color: #eedd82;">ukTZ</span> = ZoneId.of<span style="color: #8c8c8c;">(</span><span style="color: #ffa07a;">"Europe/London"</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #7aa6da;">Set</span><span style="color: #eaeaea;">&lt;</span><span style="color: #7aa6da;">String</span><span style="color: #eaeaea;">&gt;</span> <span style="color: #e7c547;">allZonesIds</span> = ZoneId.getAvailableZoneIds<span style="color: #eaeaea;">()</span>;
+<span style="color: #7aa6da;">String</span> <span style="color: #e7c547;">ukTZ</span> = ZoneId.of<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">"Europe/London"</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </li>
 <li>How to create a zoned time
 <div class="org-src-container">
 
-<pre class="src src-java">System.out.println<span style="color: #8c8c8c;">(</span>
-ZonedDateTime.of<span style="color: #93a8c6;">(</span>
-1564, <span style="color: #7fffd4;">Month</span>.APRIL.getValue<span style="color: #b0b1a3;">()</span>, 23, <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">year / month / day</span>
-10, 0, 0, 0, <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">h / mn / s / nanos</span>
-ZoneId.of<span style="color: #b0b1a3;">(</span><span style="color: #ffa07a;">"Europe/London"</span><span style="color: #b0b1a3;">)</span><span style="color: #93a8c6;">)</span>
-<span style="color: #8c8c8c;">)</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">prints 1564&#8208;04&#8208;23T10:00&#8208;00:01:15[Europe/London]</span>
+<pre class="src src-java">System.out.println<span style="color: #eaeaea;">(</span>
+ZonedDateTime.of<span style="color: #70c0b1;">(</span>
+1564, <span style="color: #7aa6da;">Month</span>.APRIL.getValue<span style="color: #e7c547;">()</span>, 23, <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">year / month / day</span>
+10, 0, 0, 0, <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">h / mn / s / nanos</span>
+ZoneId.of<span style="color: #e7c547;">(</span><span style="color: #70c0b1;">"Europe/London"</span><span style="color: #e7c547;">)</span><span style="color: #70c0b1;">)</span>
+<span style="color: #eaeaea;">)</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">prints 1564&#8208;04&#8208;23T10:00&#8208;00:01:15[Europe/London]</span>
 </pre>
 </div>
 </li>
@@ -678,14 +678,14 @@ ZoneId.of<span style="color: #b0b1a3;">(</span><span style="color: #ffa07a;">"Eu
 <li>Example
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">ZonedDateTime</span> <span style="color: #eedd82;">currentMeeting</span> =
-ZonedDateTime.of<span style="color: #8c8c8c;">(</span>
-                 LocalDate.of<span style="color: #93a8c6;">(</span>2014, <span style="color: #7fffd4;">Month</span>.MARCH, 12<span style="color: #93a8c6;">)</span>, <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">LocalDate</span>
-                 LocalTime.of<span style="color: #93a8c6;">(</span>9, 30<span style="color: #93a8c6;">)</span>,
-                 <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">LocalTime</span>
-                 ZoneId.of<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"Europe/London"</span><span style="color: #93a8c6;">)</span>
-                 <span style="color: #8c8c8c;">)</span>;
-<span style="color: #98fb98;">ZonedDateTime</span> <span style="color: #eedd82;">nextMeeting</span> = currentMeeting.plus<span style="color: #8c8c8c;">(</span>Period.ofMonth<span style="color: #93a8c6;">(</span>1<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #7aa6da;">ZonedDateTime</span> <span style="color: #e7c547;">currentMeeting</span> =
+ZonedDateTime.of<span style="color: #eaeaea;">(</span>
+                 LocalDate.of<span style="color: #70c0b1;">(</span>2014, <span style="color: #7aa6da;">Month</span>.MARCH, 12<span style="color: #70c0b1;">)</span>, <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">LocalDate</span>
+                 LocalTime.of<span style="color: #70c0b1;">(</span>9, 30<span style="color: #70c0b1;">)</span>,
+                 <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">LocalTime</span>
+                 ZoneId.of<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"Europe/London"</span><span style="color: #70c0b1;">)</span>
+                 <span style="color: #eaeaea;">)</span>;
+<span style="color: #7aa6da;">ZonedDateTime</span> <span style="color: #e7c547;">nextMeeting</span> = currentMeeting.plus<span style="color: #eaeaea;">(</span>Period.ofMonth<span style="color: #70c0b1;">(</span>1<span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </li>
@@ -693,7 +693,7 @@ ZonedDateTime.of<span style="color: #8c8c8c;">(</span>
 <li>And to change the time zone:
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">ZonedDateTime</span> <span style="color: #eedd82;">nextMeetingUS</span> = nextMeeting.withZoneSameInstant<span style="color: #8c8c8c;">(</span>ZoneId.of<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"US/Central"</span><span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #7aa6da;">ZonedDateTime</span> <span style="color: #e7c547;">nextMeetingUS</span> = nextMeeting.withZoneSameInstant<span style="color: #eaeaea;">(</span>ZoneId.of<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"US/Central"</span><span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </li>
@@ -714,11 +714,11 @@ ZonedDateTime.of<span style="color: #8c8c8c;">(</span>
 </ul>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">ZonedDateTime</span> <span style="color: #eedd82;">nextMeetingUS</span> = nextMeeting.withZoneSameInstant<span style="color: #8c8c8c;">(</span>ZoneId.of<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"US/Central"</span><span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>;
-System.out.println<span style="color: #8c8c8c;">(</span><span style="color: #7fffd4;">DateTimeFormatter</span>.ISO_DATE_TIME.format<span style="color: #93a8c6;">(</span>nextMeetingUS<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>;
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">prints 2014&#8208;04&#8208;12T03:30:00&#8208;05:00[US/Central]</span>
-System.out.println<span style="color: #8c8c8c;">(</span><span style="color: #7fffd4;">DateTimeFormatter</span>.RFC_1123_DATE_TIME.format<span style="color: #93a8c6;">(</span>nextMeetingUS<span style="color: #93a8c6;">)</span><span style="color: #8c8c8c;">)</span>;
-<span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">prints Sat, 12 Apr 2014 03:30:00 &#8208;0500</span>
+<pre class="src src-java"><span style="color: #7aa6da;">ZonedDateTime</span> <span style="color: #e7c547;">nextMeetingUS</span> = nextMeeting.withZoneSameInstant<span style="color: #eaeaea;">(</span>ZoneId.of<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"US/Central"</span><span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span>;
+System.out.println<span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">DateTimeFormatter</span>.ISO_DATE_TIME.format<span style="color: #70c0b1;">(</span>nextMeetingUS<span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span>;
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">prints 2014&#8208;04&#8208;12T03:30:00&#8208;05:00[US/Central]</span>
+System.out.println<span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">DateTimeFormatter</span>.RFC_1123_DATE_TIME.format<span style="color: #70c0b1;">(</span>nextMeetingUS<span style="color: #70c0b1;">)</span><span style="color: #eaeaea;">)</span>;
+<span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">prints Sat, 12 Apr 2014 03:30:00 &#8208;0500</span>
 </pre>
 </div>
 </div>
@@ -731,32 +731,32 @@ System.out.println<span style="color: #8c8c8c;">(</span><span style="color: #7ff
 <li>Instant &amp; Date:
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">Date</span> <span style="color: #eedd82;">date</span> = Date.from<span style="color: #8c8c8c;">(</span>instant<span style="color: #8c8c8c;">)</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">legacy &#8208;&gt; new API</span>
-<span style="color: #98fb98;">Instant</span> <span style="color: #eedd82;">instant</span> = date.toInstant<span style="color: #8c8c8c;">()</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">API &#8208;&gt; legacy</span>
+<pre class="src src-java"><span style="color: #7aa6da;">Date</span> <span style="color: #e7c547;">date</span> = Date.from<span style="color: #eaeaea;">(</span>instant<span style="color: #eaeaea;">)</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">legacy &#8208;&gt; new API</span>
+<span style="color: #7aa6da;">Instant</span> <span style="color: #e7c547;">instant</span> = date.toInstant<span style="color: #eaeaea;">()</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">API &#8208;&gt; legacy</span>
 </pre>
 </div>
 </li>
 <li>Instant &amp; TimeStamp:
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">TimeStamp</span> <span style="color: #eedd82;">time</span> = TimeStamp.from<span style="color: #8c8c8c;">(</span>instant<span style="color: #8c8c8c;">)</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">legacy &#8208;&gt; new API</span>
-<span style="color: #98fb98;">Instant</span> <span style="color: #eedd82;">instant</span> = time.toInstant<span style="color: #8c8c8c;">()</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">API &#8208;&gt; legacy</span>
+<pre class="src src-java"><span style="color: #7aa6da;">TimeStamp</span> <span style="color: #e7c547;">time</span> = TimeStamp.from<span style="color: #eaeaea;">(</span>instant<span style="color: #eaeaea;">)</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">legacy &#8208;&gt; new API</span>
+<span style="color: #7aa6da;">Instant</span> <span style="color: #e7c547;">instant</span> = time.toInstant<span style="color: #eaeaea;">()</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">API &#8208;&gt; legacy</span>
 </pre>
 </div>
 </li>
 <li>LocalDate &amp; Date :
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">TimeStamp</span> <span style="color: #eedd82;">time</span> = TimeStamp.from<span style="color: #8c8c8c;">(</span>instant<span style="color: #8c8c8c;">)</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">legacy &#8208;&gt; new API</span>
-<span style="color: #98fb98;">Instant</span> <span style="color: #eedd82;">instant</span> = time.toInstant<span style="color: #8c8c8c;">()</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">API &#8208;&gt; legacy</span>
+<pre class="src src-java"><span style="color: #7aa6da;">TimeStamp</span> <span style="color: #e7c547;">time</span> = TimeStamp.from<span style="color: #eaeaea;">(</span>instant<span style="color: #eaeaea;">)</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">legacy &#8208;&gt; new API</span>
+<span style="color: #7aa6da;">Instant</span> <span style="color: #e7c547;">instant</span> = time.toInstant<span style="color: #eaeaea;">()</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">API &#8208;&gt; legacy</span>
 </pre>
 </div>
 </li>
 <li>LocalTime &amp; Time
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #98fb98;">Time</span> <span style="color: #eedd82;">time</span> = Time.from<span style="color: #8c8c8c;">(</span>localTime<span style="color: #8c8c8c;">)</span>;         <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">legacy &#8208;&gt; new API</span>
-<span style="color: #98fb98;">LocalTime</span> <span style="color: #eedd82;">localTime</span> = time.toLocalTime<span style="color: #8c8c8c;">()</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">API &#8208;&gt; legac</span>
+<pre class="src src-java"><span style="color: #7aa6da;">Time</span> <span style="color: #e7c547;">time</span> = Time.from<span style="color: #eaeaea;">(</span>localTime<span style="color: #eaeaea;">)</span>;         <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">legacy &#8208;&gt; new API</span>
+<span style="color: #7aa6da;">LocalTime</span> <span style="color: #e7c547;">localTime</span> = time.toLocalTime<span style="color: #eaeaea;">()</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">API &#8208;&gt; legac</span>
 </pre>
 </div>
 </li>
@@ -769,7 +769,7 @@ System.out.println<span style="color: #8c8c8c;">(</span><span style="color: #7ff
 <div id="postamble" class="status">
 <p class="date">Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-03-25 Fri&gt;</span></span></p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-04-14 Sun 19:06</p>
+<p class="date">Created: 2019-04-19 Fri 21:59</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

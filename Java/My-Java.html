@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>My Java</title>
-<!-- 2019-04-14 Sun 19:06 -->
+<!-- 2019-04-19 Fri 21:59 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
@@ -557,12 +557,12 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 
 <div class="org-src-container">
 
-<pre class="src src-java">    <span style="color: #00ffff;">public</span> <span style="color: #00ffff;">class</span> <span style="color: #98fb98;">Sample</span> <span style="color: #8c8c8c;">{</span>
-    <span style="color: #00ffff;">private</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">count</span> = 0;
-    <span style="color: #00ffff;">public</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">void</span> <span style="color: #87cefa;">increment</span><span style="color: #93a8c6;">()</span> <span style="color: #93a8c6;">{</span>
+<pre class="src src-java">    <span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">class</span> <span style="color: #7aa6da;">Sample</span> <span style="color: #eaeaea;">{</span>
+    <span style="color: #b9ca4a;">private</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">int</span> <span style="color: #e7c547;">count</span> = 0;
+    <span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">void</span> <span style="color: #e78c45;">increment</span><span style="color: #70c0b1;">()</span> <span style="color: #70c0b1;">{</span>
     count++;
-  <span style="color: #93a8c6;">}</span>
-<span style="color: #8c8c8c;">}</span>
+  <span style="color: #70c0b1;">}</span>
+<span style="color: #eaeaea;">}</span>
 </pre>
 </div>
 </li>
@@ -575,12 +575,12 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java">  <span style="color: #00ffff;">public</span> <span style="color: #00ffff;">class</span> <span style="color: #98fb98;">Sample</span> <span style="color: #8c8c8c;">{</span>
-  <span style="color: #00ffff;">private</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">count</span> = 0;
-  <span style="color: #00ffff;">synchronized</span> <span style="color: #00ffff;">public</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">void</span> <span style="color: #87cefa;">increment</span><span style="color: #93a8c6;">()</span> <span style="color: #93a8c6;">{</span>
+<pre class="src src-java">  <span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">class</span> <span style="color: #7aa6da;">Sample</span> <span style="color: #eaeaea;">{</span>
+  <span style="color: #b9ca4a;">private</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">int</span> <span style="color: #e7c547;">count</span> = 0;
+  <span style="color: #b9ca4a;">synchronized</span> <span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">void</span> <span style="color: #e78c45;">increment</span><span style="color: #70c0b1;">()</span> <span style="color: #70c0b1;">{</span>
     count++;
-  <span style="color: #93a8c6;">}</span>
-<span style="color: #8c8c8c;">}</span>
+  <span style="color: #70c0b1;">}</span>
+<span style="color: #eaeaea;">}</span>
 </pre>
 </div>
 
@@ -589,12 +589,12 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java">   <span style="color: #00ffff;">public</span> <span style="color: #00ffff;">class</span> <span style="color: #98fb98;">Sample</span> <span style="color: #8c8c8c;">{</span>
-  <span style="color: #00ffff;">private</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">AtomicInteger</span> <span style="color: #eedd82;">count</span> = <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">AtomicInteger</span><span style="color: #93a8c6;">(</span>0<span style="color: #93a8c6;">)</span>;
-  <span style="color: #00ffff;">public</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">void</span> <span style="color: #87cefa;">increment</span><span style="color: #93a8c6;">()</span> <span style="color: #93a8c6;">{</span>
-    count.getAndIncrement<span style="color: #b0b1a3;">()</span>;
-  <span style="color: #93a8c6;">}</span>
-<span style="color: #8c8c8c;">}</span>
+<pre class="src src-java">   <span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">class</span> <span style="color: #7aa6da;">Sample</span> <span style="color: #eaeaea;">{</span>
+  <span style="color: #b9ca4a;">private</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">AtomicInteger</span> <span style="color: #e7c547;">count</span> = <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">AtomicInteger</span><span style="color: #70c0b1;">(</span>0<span style="color: #70c0b1;">)</span>;
+  <span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">void</span> <span style="color: #e78c45;">increment</span><span style="color: #70c0b1;">()</span> <span style="color: #70c0b1;">{</span>
+    count.getAndIncrement<span style="color: #e7c547;">()</span>;
+  <span style="color: #70c0b1;">}</span>
+<span style="color: #eaeaea;">}</span>
 </pre>
 </div>
 </li>
@@ -652,12 +652,12 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java">  <span style="color: #00ffff;">public</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">void</span> <span style="color: #87cefa;">main</span><span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">String</span><span style="color: #93a8c6;">[]</span> <span style="color: #eedd82;">args</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">i</span> = 0;
+<pre class="src src-java">  <span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">void</span> <span style="color: #e78c45;">main</span><span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">String</span><span style="color: #70c0b1;">[]</span> <span style="color: #e7c547;">args</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+  <span style="color: #7aa6da;">int</span> <span style="color: #e7c547;">i</span> = 0;
   i += 1;
   i *= 1;
-  System.out.println<span style="color: #93a8c6;">(</span>i<span style="color: #93a8c6;">)</span>;
-<span style="color: #8c8c8c;">}</span>
+  System.out.println<span style="color: #70c0b1;">(</span>i<span style="color: #70c0b1;">)</span>;
+<span style="color: #eaeaea;">}</span>
 </pre>
 </div>
 
@@ -666,7 +666,7 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #00ffff;">public</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">void</span> <span style="color: #87cefa;">main</span><span style="color: #8c8c8c;">(</span><span style="color: #7fffd4;">java</span>.<span style="color: #7fffd4;">lang</span>.<span style="color: #98fb98;">String</span><span style="color: #93a8c6;">[]</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-java"><span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">void</span> <span style="color: #e78c45;">main</span><span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">java</span>.<span style="color: #7aa6da;">lang</span>.<span style="color: #7aa6da;">String</span><span style="color: #70c0b1;">[]</span><span style="color: #eaeaea;">)</span>;
   Code:
    Stack=2, Locals=2, Args_size=1
    0:   iconst_0
@@ -676,10 +676,10 @@ C++ volatile关键字和Java volatile关键字 happens-before语义 编译器指
    6:   iconst_1
    7:   imul
    8:   istore_1
-   9:   getstatic       #2; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">Field java/lang/System.out:Ljava/io/PrintStream;</span>
+   9:   getstatic       #2; <span style="color: #969896; font-style: italic;">//</span><span style="color: #969896; font-style: italic;">Field java/lang/System.out:Ljava/io/PrintStream;</span>
    12:  iload_1
-   13:  invokevirtual   #3; <span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">Method java/io/PrintStream.println:(I)V</span>
-   16:  <span style="color: #00ffff;">return</span>
+   13:  invokevirtual   #3; <span style="color: #969896; font-style: italic;">//</span><span style="color: #969896; font-style: italic;">Method java/io/PrintStream.println:(I)V</span>
+   16:  <span style="color: #b9ca4a;">return</span>
   LineNumberTable:
    line 4: 0
    line 5: 2
@@ -1199,16 +1199,16 @@ Groovy Scala LISP, Common LISP, Schema, Clojure R Julia Lua Ruby
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="color: #00ffff;">public</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">void</span> <span style="color: #87cefa;">main</span><span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">String</span><span style="color: #93a8c6;">[]</span> <span style="color: #eedd82;">args</span><span style="color: #8c8c8c;">)</span> <span style="color: #00ffff;">throws</span> <span style="color: #98fb98;">IOException</span> <span style="color: #8c8c8c;">{</span>
-<span style="color: #98fb98;">String</span> <span style="color: #eedd82;">str</span> = <span style="color: #ffa07a;">"Hello, &#25105;&#20204;&#26159;&#20013;&#22269;&#20154;&#12290;"</span>;
-<span style="color: #98fb98;">byte</span><span style="color: #93a8c6;">[]</span> <span style="color: #eedd82;">utf8Bytes</span> = toUTF8Bytes<span style="color: #93a8c6;">(</span>str<span style="color: #93a8c6;">)</span>;
-<span style="color: #98fb98;">FileOutputStream</span> <span style="color: #eedd82;">fos</span> = <span style="color: #00ffff;">new</span> <span style="color: #98fb98;">FileOutputStream</span><span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"f.txt"</span><span style="color: #93a8c6;">)</span>;
-fos.write<span style="color: #93a8c6;">(</span>utf8Bytes<span style="color: #93a8c6;">)</span>;
-fos.close<span style="color: #93a8c6;">()</span>;
-<span style="color: #8c8c8c;">}</span>
-<span style="color: #00ffff;">public</span> <span style="color: #00ffff;">static</span> <span style="color: #98fb98;">byte</span><span style="color: #8c8c8c;">[]</span> <span style="color: #87cefa;">toUTF8Bytes</span><span style="color: #8c8c8c;">(</span><span style="color: #98fb98;">String</span> <span style="color: #eedd82;">str</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
-<span style="color: #00ffff;">return</span> <span style="color: #7fffd4;">null</span>; <span style="color: #ff7f24;">// </span><span style="color: #ff7f24;">TODO</span>
-<span style="color: #8c8c8c;">}</span>
+<pre class="src src-java"><span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">void</span> <span style="color: #e78c45;">main</span><span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">String</span><span style="color: #70c0b1;">[]</span> <span style="color: #e7c547;">args</span><span style="color: #eaeaea;">)</span> <span style="color: #b9ca4a;">throws</span> <span style="color: #7aa6da;">IOException</span> <span style="color: #eaeaea;">{</span>
+<span style="color: #7aa6da;">String</span> <span style="color: #e7c547;">str</span> = <span style="color: #70c0b1;">"Hello, &#25105;&#20204;&#26159;&#20013;&#22269;&#20154;&#12290;"</span>;
+<span style="color: #7aa6da;">byte</span><span style="color: #70c0b1;">[]</span> <span style="color: #e7c547;">utf8Bytes</span> = toUTF8Bytes<span style="color: #70c0b1;">(</span>str<span style="color: #70c0b1;">)</span>;
+<span style="color: #7aa6da;">FileOutputStream</span> <span style="color: #e7c547;">fos</span> = <span style="color: #b9ca4a;">new</span> <span style="color: #7aa6da;">FileOutputStream</span><span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"f.txt"</span><span style="color: #70c0b1;">)</span>;
+fos.write<span style="color: #70c0b1;">(</span>utf8Bytes<span style="color: #70c0b1;">)</span>;
+fos.close<span style="color: #70c0b1;">()</span>;
+<span style="color: #eaeaea;">}</span>
+<span style="color: #b9ca4a;">public</span> <span style="color: #b9ca4a;">static</span> <span style="color: #7aa6da;">byte</span><span style="color: #eaeaea;">[]</span> <span style="color: #e78c45;">toUTF8Bytes</span><span style="color: #eaeaea;">(</span><span style="color: #7aa6da;">String</span> <span style="color: #e7c547;">str</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
+<span style="color: #b9ca4a;">return</span> <span style="color: #7aa6da;">null</span>; <span style="color: #969896; font-style: italic;">// </span><span style="color: #969896; font-style: italic;">TODO</span>
+<span style="color: #eaeaea;">}</span>
 </pre>
 </div>
 <p>
@@ -1404,7 +1404,7 @@ ArgularJS，<a href="https://docs.angularjs.org/api">https://docs.angularjs.org/
 <div id="postamble" class="status">
 <p class="date">Date: date</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-04-14 Sun 19:06</p>
+<p class="date">Created: 2019-04-19 Fri 21:59</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

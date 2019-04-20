@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Java script</title>
-<!-- 2019-04-14 Sun 19:06 -->
+<!-- 2019-04-19 Fri 21:59 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
@@ -213,8 +213,8 @@ for the JavaScript code in this tag.
 </div><ol class="org-ol"><li><a id="sec-1-1-2-1" name="sec-1-1-2-1"></a>Arrays<br  /><div class="outline-text-5" id="text-1-1-2-1">
 <div class="org-src-container">
 
-<pre class="src src-js"><span style="color: #00ffff;">var</span> <span style="color: #eedd82;">entry</span> = <span style="color: #8c8c8c;">[</span><span style="color: #ffa07a;">'Trains'</span>, <span style="color: #ffa07a;">'Plains'</span>,<span style="color: #ffa07a;">'automobiles'</span><span style="color: #8c8c8c;">]</span>;
-console.log <span style="color: #8c8c8c;">(</span>entry<span style="color: #8c8c8c;">)</span>;
+<pre class="src src-js"><span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">entry</span> = <span style="color: #eaeaea;">[</span><span style="color: #70c0b1;">'Trains'</span>, <span style="color: #70c0b1;">'Plains'</span>,<span style="color: #70c0b1;">'automobiles'</span><span style="color: #eaeaea;">]</span>;
+console.log <span style="color: #eaeaea;">(</span>entry<span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </div>
@@ -236,11 +236,11 @@ console.log <span style="color: #8c8c8c;">(</span>entry<span style="color: #8c8c
 <li><a id="sec-1-1-2-4-3" name="sec-1-1-2-4-3"></a>using Call and Apply<br  /><ol class="org-ol"><li><a id="sec-1-1-2-4-3-1" name="sec-1-1-2-4-3-1"></a>Normal function call<br  /><div class="outline-text-7" id="text-1-1-2-4-3-1">
 <div class="org-src-container">
 
-<pre class="src src-js"><span style="color: #ffa07a;">"use strict"</span>;
-<span style="color: #00ffff;">var</span> <span style="color: #eedd82;">updateZipCode</span> = <span style="color: #00ffff;">function</span><span style="color: #8c8c8c;">(){</span>
-console.log<span style="color: #93a8c6;">(</span><span style="color: #7fffd4;">this</span><span style="color: #93a8c6;">)</span>;
-<span style="color: #8c8c8c;">}</span>
-updateZipCode<span style="color: #8c8c8c;">()</span>;
+<pre class="src src-js"><span style="color: #70c0b1;">"use strict"</span>;
+<span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">updateZipCode</span> = <span style="color: #b9ca4a;">function</span><span style="color: #eaeaea;">(){</span>
+console.log<span style="color: #70c0b1;">(</span><span style="color: #7aa6da;">this</span><span style="color: #70c0b1;">)</span>;
+<span style="color: #eaeaea;">}</span>
+updateZipCode<span style="color: #eaeaea;">()</span>;
 </pre>
 </div>
 </div>
@@ -251,11 +251,11 @@ updateZipCode<span style="color: #8c8c8c;">()</span>;
 <li><a id="sec-1-1-2-4-3-2" name="sec-1-1-2-4-3-2"></a>Using Call on function<br  /><ol class="org-ol"><li><a id="sec-1-1-2-4-3-2-1" name="sec-1-1-2-4-3-2-1"></a>Passing a object in to call<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-1">
 <div class="org-src-container">
 
-<pre class="src src-js"><span style="color: #ffa07a;">"use strict"</span>;
-<span style="color: #00ffff;">var</span> <span style="color: #eedd82;">updateZipCode</span> = <span style="color: #00ffff;">function</span><span style="color: #8c8c8c;">(){</span>
-console.log<span style="color: #93a8c6;">(</span><span style="color: #7fffd4;">this</span><span style="color: #93a8c6;">)</span>;
-<span style="color: #8c8c8c;">}</span>;
-updateZipCode.call<span style="color: #8c8c8c;">(</span><span style="color: #93a8c6;">{</span>zip: <span style="color: #ffa07a;">'123456'</span><span style="color: #93a8c6;">}</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-js"><span style="color: #70c0b1;">"use strict"</span>;
+<span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">updateZipCode</span> = <span style="color: #b9ca4a;">function</span><span style="color: #eaeaea;">(){</span>
+console.log<span style="color: #70c0b1;">(</span><span style="color: #7aa6da;">this</span><span style="color: #70c0b1;">)</span>;
+<span style="color: #eaeaea;">}</span>;
+updateZipCode.call<span style="color: #eaeaea;">(</span><span style="color: #70c0b1;">{</span>zip: <span style="color: #70c0b1;">'123456'</span><span style="color: #70c0b1;">}</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 
@@ -270,15 +270,15 @@ undefined
 <li><a id="sec-1-1-2-4-3-2-2" name="sec-1-1-2-4-3-2-2"></a>Passing a object varibale<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-2">
 <div class="org-src-container">
 
-<pre class="src src-js"> <span style="color: #ffa07a;">"use strict"</span>;
- <span style="color: #00ffff;">var</span> <span style="color: #eedd82;">updateZipCode</span> = <span style="color: #00ffff;">function</span><span style="color: #8c8c8c;">(){</span>
- console.log<span style="color: #93a8c6;">(</span><span style="color: #7fffd4;">this</span><span style="color: #93a8c6;">)</span>;
- <span style="color: #8c8c8c;">}</span>;
+<pre class="src src-js"> <span style="color: #70c0b1;">"use strict"</span>;
+ <span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">updateZipCode</span> = <span style="color: #b9ca4a;">function</span><span style="color: #eaeaea;">(){</span>
+ console.log<span style="color: #70c0b1;">(</span><span style="color: #7aa6da;">this</span><span style="color: #70c0b1;">)</span>;
+ <span style="color: #eaeaea;">}</span>;
 
-<span style="color: #00ffff;">var</span> <span style="color: #eedd82;">zipCode</span> = <span style="color: #8c8c8c;">{</span>
-zipJson: <span style="color: #ffa07a;">'654321'</span>
-<span style="color: #8c8c8c;">}</span>;
-updateZipCode.call<span style="color: #8c8c8c;">(</span>zipCode<span style="color: #8c8c8c;">)</span>;
+<span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">zipCode</span> = <span style="color: #eaeaea;">{</span>
+zipJson: <span style="color: #70c0b1;">'654321'</span>
+<span style="color: #eaeaea;">}</span>;
+updateZipCode.call<span style="color: #eaeaea;">(</span>zipCode<span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </div>
@@ -289,17 +289,17 @@ updateZipCode.call<span style="color: #8c8c8c;">(</span>zipCode<span style="colo
 <li><a id="sec-1-1-2-4-3-2-3" name="sec-1-1-2-4-3-2-3"></a>Using Call on function with paramters<br  /><div class="outline-text-8" id="text-1-1-2-4-3-2-3">
 <div class="org-src-container">
 
-<pre class="src src-js"><span style="color: #ffa07a;">"use strict"</span>;
-   <span style="color: #00ffff;">var</span> <span style="color: #eedd82;">updateZipCode2</span> = <span style="color: #00ffff;">function</span><span style="color: #8c8c8c;">(</span><span style="color: #eedd82;">newZip</span>, <span style="color: #eedd82;">country</span><span style="color: #8c8c8c;">){</span>
-   console.log<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"old zipcode:"</span> + <span style="color: #7fffd4;">this</span>.zipJson<span style="color: #93a8c6;">)</span>;
-   console.log<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"new zipcode:"</span> + newZip<span style="color: #93a8c6;">)</span>;
-   console.log<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"country:"</span> + country<span style="color: #93a8c6;">)</span>;
-     <span style="color: #8c8c8c;">}</span>;
+<pre class="src src-js"><span style="color: #70c0b1;">"use strict"</span>;
+   <span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">updateZipCode2</span> = <span style="color: #b9ca4a;">function</span><span style="color: #eaeaea;">(</span><span style="color: #e7c547;">newZip</span>, <span style="color: #e7c547;">country</span><span style="color: #eaeaea;">){</span>
+   console.log<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"old zipcode:"</span> + <span style="color: #7aa6da;">this</span>.zipJson<span style="color: #70c0b1;">)</span>;
+   console.log<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"new zipcode:"</span> + newZip<span style="color: #70c0b1;">)</span>;
+   console.log<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"country:"</span> + country<span style="color: #70c0b1;">)</span>;
+     <span style="color: #eaeaea;">}</span>;
 
-  <span style="color: #00ffff;">var</span> <span style="color: #eedd82;">zipCode</span> = <span style="color: #8c8c8c;">{</span>
-  zipJson: <span style="color: #ffa07a;">'654321'</span>
-  <span style="color: #8c8c8c;">}</span>;
-  updateZipCode2.call<span style="color: #8c8c8c;">(</span>zipCode,<span style="color: #ffa07a;">'1111111'</span>,<span style="color: #ffa07a;">'quebec'</span><span style="color: #8c8c8c;">)</span>;
+  <span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">zipCode</span> = <span style="color: #eaeaea;">{</span>
+  zipJson: <span style="color: #70c0b1;">'654321'</span>
+  <span style="color: #eaeaea;">}</span>;
+  updateZipCode2.call<span style="color: #eaeaea;">(</span>zipCode,<span style="color: #70c0b1;">'1111111'</span>,<span style="color: #70c0b1;">'quebec'</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 
@@ -320,17 +320,17 @@ The apply() method calls a function with a given this value and arguments provid
 
 <div class="org-src-container">
 
-<pre class="src src-js"><span style="color: #ffa07a;">"use strict"</span>;
-   <span style="color: #00ffff;">var</span> <span style="color: #eedd82;">updateZipCode2</span> = <span style="color: #00ffff;">function</span><span style="color: #8c8c8c;">(</span><span style="color: #eedd82;">newZip</span>, <span style="color: #eedd82;">country</span><span style="color: #8c8c8c;">){</span>
-   console.log<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"old zipcode:"</span> + <span style="color: #7fffd4;">this</span>.zipJson<span style="color: #93a8c6;">)</span>;
-   console.log<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"new zipcode:"</span> + newZip<span style="color: #93a8c6;">)</span>;
-   console.log<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">"country:"</span> + country<span style="color: #93a8c6;">)</span>;
-     <span style="color: #8c8c8c;">}</span>;
+<pre class="src src-js"><span style="color: #70c0b1;">"use strict"</span>;
+   <span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">updateZipCode2</span> = <span style="color: #b9ca4a;">function</span><span style="color: #eaeaea;">(</span><span style="color: #e7c547;">newZip</span>, <span style="color: #e7c547;">country</span><span style="color: #eaeaea;">){</span>
+   console.log<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"old zipcode:"</span> + <span style="color: #7aa6da;">this</span>.zipJson<span style="color: #70c0b1;">)</span>;
+   console.log<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"new zipcode:"</span> + newZip<span style="color: #70c0b1;">)</span>;
+   console.log<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">"country:"</span> + country<span style="color: #70c0b1;">)</span>;
+     <span style="color: #eaeaea;">}</span>;
 
-  <span style="color: #00ffff;">var</span> <span style="color: #eedd82;">zipCode</span> = <span style="color: #8c8c8c;">{</span>
-  zipJson: <span style="color: #ffa07a;">'654321'</span>
-  <span style="color: #8c8c8c;">}</span>;
-  updateZipCode2.apply<span style="color: #8c8c8c;">(</span>zipCode,<span style="color: #93a8c6;">[</span><span style="color: #ffa07a;">'1111111'</span>,<span style="color: #ffa07a;">'quebec'</span><span style="color: #93a8c6;">]</span><span style="color: #8c8c8c;">)</span>;
+  <span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">zipCode</span> = <span style="color: #eaeaea;">{</span>
+  zipJson: <span style="color: #70c0b1;">'654321'</span>
+  <span style="color: #eaeaea;">}</span>;
+  updateZipCode2.apply<span style="color: #eaeaea;">(</span>zipCode,<span style="color: #70c0b1;">[</span><span style="color: #70c0b1;">'1111111'</span>,<span style="color: #70c0b1;">'quebec'</span><span style="color: #70c0b1;">]</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 
@@ -349,11 +349,11 @@ undefined
 <li><a id="sec-1-1-2-4-5" name="sec-1-1-2-4-5"></a>IIFEs<br  /><ol class="org-ol"><li><a id="sec-1-1-2-4-5-1" name="sec-1-1-2-4-5-1"></a>IIFE<br  /><div class="outline-text-7" id="text-1-1-2-4-5-1">
 <div class="org-src-container">
 
-<pre class="src src-js"> <span style="color: #00ffff;">var</span> <span style="color: #eedd82;">app</span> = <span style="color: #8c8c8c;">{}</span>;
- <span style="color: #00ffff;">var</span> <span style="color: #eedd82;">value</span> = <span style="color: #8c8c8c;">(</span><span style="color: #00ffff;">function</span><span style="color: #93a8c6;">(</span><span style="color: #eedd82;">ns</span><span style="color: #93a8c6;">)</span> <span style="color: #93a8c6;">{</span>
-  ns.name = <span style="color: #ffa07a;">'angular'</span>;
-  <span style="color: #93a8c6;">}</span><span style="color: #8c8c8c;">)(</span>app<span style="color: #8c8c8c;">)</span>;
-console.log<span style="color: #8c8c8c;">(</span>app.name<span style="color: #8c8c8c;">)</span>;
+<pre class="src src-js"> <span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">app</span> = <span style="color: #eaeaea;">{}</span>;
+ <span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">value</span> = <span style="color: #eaeaea;">(</span><span style="color: #b9ca4a;">function</span><span style="color: #70c0b1;">(</span><span style="color: #e7c547;">ns</span><span style="color: #70c0b1;">)</span> <span style="color: #70c0b1;">{</span>
+  ns.name = <span style="color: #70c0b1;">'angular'</span>;
+  <span style="color: #70c0b1;">}</span><span style="color: #eaeaea;">)(</span>app<span style="color: #eaeaea;">)</span>;
+console.log<span style="color: #eaeaea;">(</span>app.name<span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 
@@ -367,22 +367,22 @@ undefined
 <li><a id="sec-1-1-2-4-5-2" name="sec-1-1-2-4-5-2"></a>we can use unary operator instead of parentheses.( advatnage or disadvantage?)<br  /><div class="outline-text-7" id="text-1-1-2-4-5-2">
 <div class="org-src-container">
 
-<pre class="src src-js">+<span style="color: #00ffff;">function</span><span style="color: #8c8c8c;">(){</span>
-<span style="color: #00ffff;">var</span> <span style="color: #eedd82;">iife</span> = <span style="color: #ffa07a;">'example 1'</span>;
-console.log<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">'Executed example 1'</span><span style="color: #93a8c6;">)</span>;
-<span style="color: #8c8c8c;">}()</span>;
+<pre class="src src-js">+<span style="color: #b9ca4a;">function</span><span style="color: #eaeaea;">(){</span>
+<span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">iife</span> = <span style="color: #70c0b1;">'example 1'</span>;
+console.log<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">'Executed example 1'</span><span style="color: #70c0b1;">)</span>;
+<span style="color: #eaeaea;">}()</span>;
 
 
-!<span style="color: #00ffff;">function</span> example2<span style="color: #8c8c8c;">(){</span>
-<span style="color: #00ffff;">var</span> <span style="color: #eedd82;">iife</span> = <span style="color: #ffa07a;">'example 2'</span>;
-console.log<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">'Executed example 2'</span><span style="color: #93a8c6;">)</span>;
-<span style="color: #8c8c8c;">}()</span>;
+!<span style="color: #b9ca4a;">function</span> example2<span style="color: #eaeaea;">(){</span>
+<span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">iife</span> = <span style="color: #70c0b1;">'example 2'</span>;
+console.log<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">'Executed example 2'</span><span style="color: #70c0b1;">)</span>;
+<span style="color: #eaeaea;">}()</span>;
 
 
--<span style="color: #00ffff;">function</span> example2<span style="color: #8c8c8c;">(){</span>
-<span style="color: #00ffff;">var</span> <span style="color: #eedd82;">iife</span> = <span style="color: #ffa07a;">'example 3'</span>;
-console.log<span style="color: #93a8c6;">(</span><span style="color: #ffa07a;">'Executed example 3'</span><span style="color: #93a8c6;">)</span>;
-<span style="color: #8c8c8c;">}()</span>;
+-<span style="color: #b9ca4a;">function</span> example2<span style="color: #eaeaea;">(){</span>
+<span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">iife</span> = <span style="color: #70c0b1;">'example 3'</span>;
+console.log<span style="color: #70c0b1;">(</span><span style="color: #70c0b1;">'Executed example 3'</span><span style="color: #70c0b1;">)</span>;
+<span style="color: #eaeaea;">}()</span>;
 </pre>
 </div>
 
@@ -649,10 +649,10 @@ eval
 <li><a id="sec-1-4-6-4" name="sec-1-4-6-4"></a>Arguments<br  /><div class="outline-text-5" id="text-1-4-6-4">
 <div class="org-src-container">
 
-<pre class="src src-js"><span style="color: #00ffff;">var</span> <span style="color: #eedd82;">validateValues</span> = <span style="color: #00ffff;">function</span> <span style="color: #8c8c8c;">(){</span>
-console.log<span style="color: #93a8c6;">(</span><span style="color: #7fffd4;">arguments</span>.length<span style="color: #93a8c6;">)</span>;
-<span style="color: #8c8c8c;">}</span>
-validateValues<span style="color: #8c8c8c;">(</span>1, <span style="color: #7fffd4;">true</span>,<span style="color: #ffa07a;">'settings'</span><span style="color: #8c8c8c;">)</span>;
+<pre class="src src-js"><span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">validateValues</span> = <span style="color: #b9ca4a;">function</span> <span style="color: #eaeaea;">(){</span>
+console.log<span style="color: #70c0b1;">(</span><span style="color: #7aa6da;">arguments</span>.length<span style="color: #70c0b1;">)</span>;
+<span style="color: #eaeaea;">}</span>
+validateValues<span style="color: #eaeaea;">(</span>1, <span style="color: #7aa6da;">true</span>,<span style="color: #70c0b1;">'settings'</span><span style="color: #eaeaea;">)</span>;
 </pre>
 </div>
 </div>
@@ -669,38 +669,38 @@ validateValues<span style="color: #8c8c8c;">(</span>1, <span style="color: #7fff
 
 <div class="org-src-container">
 
-<pre class="src src-js"><span style="color: #00ffff;">function</span> <span style="color: #87cefa;">fun</span><span style="color: #8c8c8c;">(</span><span style="color: #eedd82;">n</span>,<span style="color: #eedd82;">o</span><span style="color: #8c8c8c;">)</span> <span style="color: #8c8c8c;">{</span>
+<pre class="src src-js"><span style="color: #b9ca4a;">function</span> <span style="color: #e78c45;">fun</span><span style="color: #eaeaea;">(</span><span style="color: #e7c547;">n</span>,<span style="color: #e7c547;">o</span><span style="color: #eaeaea;">)</span> <span style="color: #eaeaea;">{</span>
 
-  console.log<span style="color: #93a8c6;">(</span>o<span style="color: #93a8c6;">)</span>
+  console.log<span style="color: #70c0b1;">(</span>o<span style="color: #70c0b1;">)</span>
 
-  <span style="color: #00ffff;">return</span> <span style="color: #93a8c6;">{</span>
+  <span style="color: #b9ca4a;">return</span> <span style="color: #70c0b1;">{</span>
 
-    <span style="color: #87cefa;">fun</span>:<span style="color: #00ffff;">function</span><span style="color: #b0b1a3;">(</span><span style="color: #eedd82;">m</span><span style="color: #b0b1a3;">){</span>
+    <span style="color: #e78c45;">fun</span>:<span style="color: #b9ca4a;">function</span><span style="color: #e7c547;">(</span><span style="color: #e7c547;">m</span><span style="color: #e7c547;">){</span>
 
-      <span style="color: #00ffff;">return</span> fun<span style="color: #97b098;">(</span>m,n<span style="color: #97b098;">)</span>;
+      <span style="color: #b9ca4a;">return</span> fun<span style="color: #b9ca4a;">(</span>m,n<span style="color: #b9ca4a;">)</span>;
 
-    <span style="color: #b0b1a3;">}</span>
+    <span style="color: #e7c547;">}</span>
 
-  <span style="color: #93a8c6;">}</span>;
+  <span style="color: #70c0b1;">}</span>;
 
-<span style="color: #8c8c8c;">}</span>
+<span style="color: #eaeaea;">}</span>
 
 
-<span style="color: #00ffff;">var</span> <span style="color: #eedd82;">a</span> = fun<span style="color: #8c8c8c;">(</span>0<span style="color: #8c8c8c;">)</span>;  a.fun<span style="color: #8c8c8c;">(</span>1<span style="color: #8c8c8c;">)</span>;  a.fun<span style="color: #8c8c8c;">(</span>2<span style="color: #8c8c8c;">)</span>;  a.fun<span style="color: #8c8c8c;">(</span>3<span style="color: #8c8c8c;">)</span>;<span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">undefined,?,?,?</span>
-<span style="color: #00ffff;">var</span> <span style="color: #eedd82;">b</span> = fun<span style="color: #8c8c8c;">(</span>0<span style="color: #8c8c8c;">)</span>.fun<span style="color: #8c8c8c;">(</span>1<span style="color: #8c8c8c;">)</span>.fun<span style="color: #8c8c8c;">(</span>2<span style="color: #8c8c8c;">)</span>.fun<span style="color: #8c8c8c;">(</span>3<span style="color: #8c8c8c;">)</span>;<span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">undefined,?,?,?</span>
-<span style="color: #00ffff;">var</span> <span style="color: #eedd82;">c</span> = fun<span style="color: #8c8c8c;">(</span>0<span style="color: #8c8c8c;">)</span>.fun<span style="color: #8c8c8c;">(</span>1<span style="color: #8c8c8c;">)</span>;  c.fun<span style="color: #8c8c8c;">(</span>2<span style="color: #8c8c8c;">)</span>;  c.fun<span style="color: #8c8c8c;">(</span>3<span style="color: #8c8c8c;">)</span>;<span style="color: #ff7f24;">//</span><span style="color: #ff7f24;">undefined,?,?,?</span>
+<span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">a</span> = fun<span style="color: #eaeaea;">(</span>0<span style="color: #eaeaea;">)</span>;  a.fun<span style="color: #eaeaea;">(</span>1<span style="color: #eaeaea;">)</span>;  a.fun<span style="color: #eaeaea;">(</span>2<span style="color: #eaeaea;">)</span>;  a.fun<span style="color: #eaeaea;">(</span>3<span style="color: #eaeaea;">)</span>;<span style="color: #969896; font-style: italic;">//</span><span style="color: #969896; font-style: italic;">undefined,?,?,?</span>
+<span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">b</span> = fun<span style="color: #eaeaea;">(</span>0<span style="color: #eaeaea;">)</span>.fun<span style="color: #eaeaea;">(</span>1<span style="color: #eaeaea;">)</span>.fun<span style="color: #eaeaea;">(</span>2<span style="color: #eaeaea;">)</span>.fun<span style="color: #eaeaea;">(</span>3<span style="color: #eaeaea;">)</span>;<span style="color: #969896; font-style: italic;">//</span><span style="color: #969896; font-style: italic;">undefined,?,?,?</span>
+<span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">c</span> = fun<span style="color: #eaeaea;">(</span>0<span style="color: #eaeaea;">)</span>.fun<span style="color: #eaeaea;">(</span>1<span style="color: #eaeaea;">)</span>;  c.fun<span style="color: #eaeaea;">(</span>2<span style="color: #eaeaea;">)</span>;  c.fun<span style="color: #eaeaea;">(</span>3<span style="color: #eaeaea;">)</span>;<span style="color: #969896; font-style: italic;">//</span><span style="color: #969896; font-style: italic;">undefined,?,?,?</span>
 </pre>
 </div>
 
 
 <div class="org-src-container">
 
-<pre class="src src-js">  <span style="color: #00ffff;">function</span> <span style="color: #87cefa;">myFunction</span><span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">{</span>
-    <span style="color: #00ffff;">var</span> <span style="color: #eedd82;">a</span> = 4;
-    <span style="color: #00ffff;">return</span> a * a;
-<span style="color: #8c8c8c;">}</span>
+<pre class="src src-js">  <span style="color: #b9ca4a;">function</span> <span style="color: #e78c45;">myFunction</span><span style="color: #eaeaea;">()</span> <span style="color: #eaeaea;">{</span>
+    <span style="color: #b9ca4a;">var</span> <span style="color: #e7c547;">a</span> = 4;
+    <span style="color: #b9ca4a;">return</span> a * a;
+<span style="color: #eaeaea;">}</span>
 
-<span style="color: #00ffff;">return</span> myFunction<span style="color: #8c8c8c;">()</span>;
+<span style="color: #b9ca4a;">return</span> myFunction<span style="color: #eaeaea;">()</span>;
 </pre>
 </div>
 
@@ -714,7 +714,7 @@ validateValues<span style="color: #8c8c8c;">(</span>1, <span style="color: #7fff
 <div id="postamble" class="status">
 <p class="date">Date: date</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-04-14 Sun 19:06</p>
+<p class="date">Created: 2019-04-19 Fri 21:59</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
