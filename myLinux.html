@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>My Linux</title>
-<!-- 2019-04-21 Sun 14:21 -->
+<!-- 2019-09-08 Sun 14:02 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
@@ -152,15 +152,14 @@ for the JavaScript code in this tag.
 <li><a href="#sec-1">1. Debian</a>
 <ul>
 <li><a href="#sec-1-1">1.1. install java</a></li>
-<li><a href="#sec-1-2">1.2. Install wireless device</a></li>
-<li><a href="#sec-1-3">1.3. tools</a>
+<li><a href="#sec-1-2">1.2. Install wireless device</a>
 <ul>
-<li><a href="#sec-1-3-1">1.3.1. Shell (oh my zsh)</a></li>
-<li><a href="#sec-1-3-2">1.3.2. gddbi</a></li>
-<li><a href="#sec-1-3-3">1.3.3. copyQ</a></li>
-<li><a href="#sec-1-3-4">1.3.4. Synapse</a></li>
-<li><a href="#sec-1-3-5">1.3.5. Emacs</a></li>
-<li><a href="#sec-1-3-6">1.3.6. chrome</a></li>
+<li><a href="#sec-1-2-1">1.2.1. Shell (oh my zsh)</a></li>
+<li><a href="#sec-1-2-2">1.2.2. gddbi</a></li>
+<li><a href="#sec-1-2-3">1.2.3. copyQ</a></li>
+<li><a href="#sec-1-2-4">1.2.4. Synapse</a></li>
+<li><a href="#sec-1-2-5">1.2.5. Emacs</a></li>
+<li><a href="#sec-1-2-6">1.2.6. chrome</a></li>
 </ul>
 </li>
 </ul>
@@ -230,16 +229,12 @@ copied this drivers into /lib/firmware/ath10k/QCA6174 directory
 reload
 </pre>
 </div>
-</div>
 
 
 
-<div id="outline-container-sec-1-3" class="outline-3">
-<h3 id="sec-1-3"><span class="section-number-3">1.3</span> tools</h3>
-<div class="outline-text-3" id="text-1-3">
-</div><div id="outline-container-sec-1-3-1" class="outline-4">
-<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Shell (oh my zsh)</h4>
-<div class="outline-text-4" id="text-1-3-1">
+<div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Shell (oh my zsh)</h4>
+<div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li>查看当前环境shell
 <pre class="example">
@@ -248,21 +243,16 @@ echo $SHELL
 </li>
 
 <li>查看系统自带哪些shell
-<pre class="example">
-cat /etc/shells
-</pre>
 </li>
 
 <li>安装zsh
 
 <pre class="example">
-sudo apt install zsh
-</pre>
-</li>
+ sudo apt install zsh
 
-<li>将zsh设置为默认shell
-<pre class="example">
-chsh -s /bin/zsh
+- 将zsh设置为默认shell
+   #+BEGIN_SRC
+   chsh -s /bin/zsh
 </pre>
 </li>
 
@@ -277,9 +267,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 </div>
 
 
-<div id="outline-container-sec-1-3-2" class="outline-4">
-<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> gddbi</h4>
-<div class="outline-text-4" id="text-1-3-2">
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> gddbi</h4>
+<div class="outline-text-4" id="text-1-2-2">
 <pre class="example">
 sudo apt install gdebi
 </pre>
@@ -287,25 +277,25 @@ sudo apt install gdebi
 </div>
 
 
-<div id="outline-container-sec-1-3-3" class="outline-4">
-<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> copyQ</h4>
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> copyQ</h4>
 </div>
 
-<div id="outline-container-sec-1-3-4" class="outline-4">
-<h4 id="sec-1-3-4"><span class="section-number-4">1.3.4</span> Synapse</h4>
-<div class="outline-text-4" id="text-1-3-4">
+<div id="outline-container-sec-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> Synapse</h4>
+<div class="outline-text-4" id="text-1-2-4">
 <pre class="example">
 sudo apt install syapse
 </pre>
 </div>
 </div>
 
-<div id="outline-container-sec-1-3-5" class="outline-4">
-<h4 id="sec-1-3-5"><span class="section-number-4">1.3.5</span> Emacs</h4>
+<div id="outline-container-sec-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Emacs</h4>
 </div>
 
-<div id="outline-container-sec-1-3-6" class="outline-4">
-<h4 id="sec-1-3-6"><span class="section-number-4">1.3.6</span> chrome</h4>
+<div id="outline-container-sec-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6"><span class="section-number-4">1.2.6</span> chrome</h4>
 </div>
 </div>
 </div>
@@ -313,7 +303,7 @@ sudo apt install syapse
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-04-21 Sun 14:21</p>
+<p class="date">Created: 2019-09-08 Sun 14:02</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
