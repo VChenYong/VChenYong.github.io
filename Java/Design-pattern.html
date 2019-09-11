@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Design Pattern</title>
-<!-- 2019-09-08 Sun 22:15 -->
+<!-- 2019-09-10 Tue 22:14 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
@@ -248,10 +248,95 @@ for the JavaScript code in this tag.
 
 <div id="outline-container-sec-1-1-4" class="outline-4">
 <h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> Singleton Pattern(单例模式)</h4>
+<div class="outline-text-4" id="text-1-1-4">
+</div><ol class="org-ol"><li><a id="sec-1-1-4-1" name="sec-1-1-4-1"></a>eager vs lazy instantiation<br  /><ol class="org-ol"><li><a id="sec-1-1-4-1-1" name="sec-1-1-4-1-1"></a>eager<br  /><div class="outline-text-6" id="text-1-1-4-1-1">
+<div class="org-src-container">
+
+<pre class="src src-Java">class EagerSingleton { 
+  private static final EagerSingleton instance = new EagerSingleton(); 
+  private EagerSingleton() { } 
+
+  public static EagerSingleton getInstance() {
+      return instance; 
+  }
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="sec-1-1-4-1-2" name="sec-1-1-4-1-2"></a>lazy<br  /><div class="outline-text-6" id="text-1-1-4-1-2">
+<div class="org-src-container">
+
+<pre class="src src-Java">public class LazySingleton {
+
+  public static volatile LazySingleton instance = null;
+
+  private LazySingleton(){};
+
+  public static LazySingleton instance(){
+
+      if(instance == null){
+
+          synchronized (this){
+
+              if(instance== null)
+
+                  instance = new LazySingleton();
+
+          }
+
+      }
+
+      return instance;
+
+  }
+
+}
+</pre>
+</div>
+</div>
+</li></ol>
+</li>
+
+
+<li><a id="sec-1-1-4-2" name="sec-1-1-4-2"></a>Initialization Demand Holder (IoDH)<br  /><div class="outline-text-5" id="text-1-1-4-2">
+<div class="org-src-container">
+
+<pre class="src src-Java">/Initialization on Demand Holder
+ class Singleton {
+         private Singleton() {
+         }
+
+         private static class HolderClass {
+             private final static Singleton instance = new Singleton();
+         }
+
+         public static Singleton getInstance() {
+             return HolderClass.instance;
+         }
+
+ }
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="sec-1-1-4-3" name="sec-1-1-4-3"></a>enum<br  /></li></ol>
 </div>
 <div id="outline-container-sec-1-1-5" class="outline-4">
 <h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> Prototype Pattern(原型模式)</h4>
+<div class="outline-text-4" id="text-1-1-5">
+</div><ol class="org-ol"><li><a id="sec-1-1-5-1" name="sec-1-1-5-1"></a>uml<br  /><div class="outline-text-5" id="text-1-1-5-1">
+
+<div class="figure">
+<p><img src="../Img/Prototype.png" alt="Prototype.png" />
+</p>
 </div>
+</div>
+</li></ol>
+</div>
+
 <div id="outline-container-sec-1-1-6" class="outline-4">
 <h4 id="sec-1-1-6"><span class="section-number-4">1.1.6</span> Builder Pattern(建造者模式)</h4>
 </div>
@@ -344,7 +429,7 @@ nnnnnn
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-09-08 Sun 22:15</p>
+<p class="date">Created: 2019-09-10 Tue 22:14</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
