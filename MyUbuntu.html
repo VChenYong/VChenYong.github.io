@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>My Ubuntu</title>
-<!-- 2019-09-10 Tue 22:13 -->
+<!-- 2020-06-11 Thu 22:13 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="YONG" />
@@ -143,26 +143,26 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. Ubuntu</a>
+<li><a href="#sec-1">1. Ubuntu</a>
 <ul>
-<li><a href="#sec-1-1">1.1. install</a>
+<li><a href="#sec-1-1">1.1. install</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1. install keepass</a></li>
-<li><a href="#sec-1-1-2">1.1.2. TeamViewer</a></li>
-<li><a href="#sec-1-1-3">1.1.3. TypeSafe</a></li>
-<li><a href="#sec-1-1-4">1.1.4. Haskell</a></li>
-<li><a href="#sec-1-1-5">1.1.5. Synapse</a></li>
-<li><a href="#sec-1-1-6">1.1.6. IntelliJ</a></li>
-<li><a href="#sec-1-1-7">1.1.7. Nodejs</a></li>
+<li><a href="#sec-1-1-1">1.1.1. install keepass</a></li>
+<li><a href="#sec-1-1-2">1.1.2. TeamViewer</a></li>
+<li><a href="#sec-1-1-3">1.1.3. TypeSafe</a></li>
+<li><a href="#sec-1-1-4">1.1.4. Haskell</a></li>
+<li><a href="#sec-1-1-5">1.1.5. Synapse</a></li>
+<li><a href="#sec-1-1-6">1.1.6. IntelliJ</a></li>
+<li><a href="#sec-1-1-7">1.1.7. Nodejs</a></li>
 </ul>
 </li>
-<li><a href="#sec-1-2">1.2. Info</a>
+<li><a href="#sec-1-2">1.2. Info</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1. Check RAM Memory Chip Speed and Specification</a></li>
-<li><a href="#sec-1-2-2">1.2.2. exiftool</a></li>
-<li><a href="#sec-1-2-3">1.2.3. graphviz</a></li>
-<li><a href="#sec-1-2-4">1.2.4. access to windows</a></li>
-<li><a href="#sec-1-2-5">1.2.5. Misc</a></li>
+<li><a href="#sec-1-2-1">1.2.1. Check RAM Memory Chip Speed and Specification</a></li>
+<li><a href="#sec-1-2-2">1.2.2. exiftool</a></li>
+<li><a href="#sec-1-2-3">1.2.3. graphviz</a></li>
+<li><a href="#sec-1-2-4">1.2.4. access to windows</a></li>
+<li><a href="#sec-1-2-5">1.2.5. Misc</a></li>
 </ul>
 </li>
 </ul>
@@ -173,83 +173,94 @@ for the JavaScript code in this tag.
 
 
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Ubuntu</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Ubuntu</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1"><span class="section-number-3">1.1</span> install</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> install</h3>
 <div class="outline-text-3" id="text-1-1">
 </div><div id="outline-container-sec-1-1-1" class="outline-4">
-<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> install keepass</h4>
+<h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> install keepass</h4>
 <div class="outline-text-4" id="text-1-1-1">
-<pre class="example">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
 sudo apt-add-repository ppa:jtaylor/keepass
 sudo apt-get update
 sudo apt-get install keepass2
-</pre>
+</p>
+<p>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </div>
 
 <div id="outline-container-sec-1-1-2" class="outline-4">
-<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> TeamViewer</h4>
+<h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> TeamViewer</h4>
 </div>
 
 <div id="outline-container-sec-1-1-3" class="outline-4">
-<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> TypeSafe</h4>
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> TypeSafe</h4>
 <div class="outline-text-4" id="text-1-1-3">
-</div><ol class="org-ol"><li><a id="sec-1-1-3-1" name="sec-1-1-3-1"></a>home/yong/.bashrc<br  /><div class="outline-text-5" id="text-1-1-3-1">
-<pre class="example">
+</div><ol class="org-ol"><li><a id="sec-1-1-3-1" name="sec-1-1-3-1"></a>home/yong/.bashrc<br  /><div class="outline-text-5" id="text-1-1-3-1">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
 export PATH=/home/yong/Linux/TypeSafe/sbt/bin:$PATH
-export SCALA_HOME=/home/yong/Linux/TypeSafe/scala-2.11.6
-export PATH=$PATH:$SCALA_HOME/bin
+export SCALA<sub>HOME</sub>=/home/yong/Linux/TypeSafe/scala-2.11.6
+export PATH=$PATH:$SCALA<sub>HOME</sub>/bin
 export PATH=/home/yong/Linux/TypeSafe/activator-1.3.2:$PATH
 export PATH=$PATH:/usr/bin
-</pre>
+</p>
+<p>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </li>
 
-<li><a id="sec-1-1-3-2" name="sec-1-1-3-2"></a>create symlink<br  /><div class="outline-text-5" id="text-1-1-3-2">
-<pre class="example">
+<li><a id="sec-1-1-3-2" name="sec-1-1-3-2"></a>create symlink<br  /><div class="outline-text-5" id="text-1-1-3-2">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
 sudo ln -s /home/yong/Linux/TypeSafe/scala/bin/scala /usr/bin/scala
 sudo ln -s /home/yong/Linux/TypeSafe/scala/bin/scalac /usr/bin/scalac
-</pre>
+</p>
+<p>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </li></ol>
 </div>
 
 <div id="outline-container-sec-1-1-4" class="outline-4">
-<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> Haskell</h4>
+<h4 id="sec-1-1-4"><span class="section-number-4">1.1.4</span> Haskell</h4>
 <div class="outline-text-4" id="text-1-1-4">
-<pre class="example">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
 sudo apt-get install haskell-platform
-</pre>
-
-<p>
-Checking That the Installation is Successful
 </p>
-
 <p>
-It’s now time to see whether your Haskell Platform is correctly installed. To do so open a console, type ghci –e 5+3
-</p>
+ #+END<sub>EXAMPLE</sub>
 
-<p>
-and press Enter. You should see 8 as output.
+ Checking That the Installation is Successful
+
+ It’s now time to see whether your Haskell Platform is correctly installed. To do so open a console, type ghci –e 5+3
+
+ and press Enter. You should see 8 as output.
 </p>
 </div>
 </div>
 <div id="outline-container-sec-1-1-5" class="outline-4">
-<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> Synapse</h4>
+<h4 id="sec-1-1-5"><span class="section-number-4">1.1.5</span> Synapse</h4>
 </div>
 <div id="outline-container-sec-1-1-6" class="outline-4">
-<h4 id="sec-1-1-6"><span class="section-number-4">1.1.6</span> IntelliJ</h4>
+<h4 id="sec-1-1-6"><span class="section-number-4">1.1.6</span> IntelliJ</h4>
 <div class="outline-text-4" id="text-1-1-6">
-</div><ol class="org-ol"><li><a id="sec-1-1-6-1" name="sec-1-1-6-1"></a>steps<br  /><div class="outline-text-5" id="text-1-1-6-1">
+</div><ol class="org-ol"><li><a id="sec-1-1-6-1" name="sec-1-1-6-1"></a>steps<br  /><div class="outline-text-5" id="text-1-1-6-1">
 <ul class="org-ul">
 <li>Download Intellij
 </li>
 <li>Extract intellij to <i>opt-folder: sudo tar -xvf &lt;intellij.tar&gt; -C /opt</i> (the -C option extracts the tar to the folder <i>opt</i>)
 </li>
 <li>Create a Desktop Entry File called idea.desktop (see example file below) and store it anywhere you want (let's assume in your home directory)
-<pre class="example">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
 [Desktop Entry]
   Encoding=UTF-8
   Name=IntelliJ IDEA
@@ -259,24 +270,31 @@ and press Enter. You should see 8 as output.
   Terminal=false
   StartupNotify=true
   Type=Application
-</pre>
+</p>
+<p>
+#+END<sub>EXAMPLE</sub>
+</p>
 </li>
-<li>Move the idea.desktop from your home directory to <i>usr/share/applications: sudo mv ~/idea.desktop /usr/share/applications</i>
+<li>Move the idea.desktop from your home directory to /usr/share/applications: sudo mv ~/idea.desktop /usr/share/applications/
+</li>
+</ul>
 
 <ul class="org-ul">
 <li>Make a launcher for IntelliJ and Synapse should automatically pick it up
 Content of ~/.local/share/applications/intellij.desktop
 <a href="http://unix.stackexchange.com/questions/76828/how-to-add-a-program-to-be-indexed-by-synapse">link</a>
-<pre class="example">
-[Desktop Entry]
-Name=IntelliJ
-Exec=/your/path/to/idea-IC-129.451/bin/idea.sh
-Icon=/your/path/to/idea-IC-129.451/bin/idea.png
-Type=Application
-Categories=GTK;GNOME;Utility;
-</pre>
-</li>
-</ul>
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
+ [Desktop Entry]
+ Name=IntelliJ
+ Exec=/your/path/to/idea-IC-129.451/bin/idea.sh
+ Icon=/your/path/to/idea-IC-129.451/bin/idea.png
+ Type=Application
+ Categories=GTK;GNOME;Utility;
+</p>
+<p>
+#+END<sub>EXAMPLE</sub>
+</p>
 </li>
 </ul>
 </div>
@@ -284,150 +302,168 @@ Categories=GTK;GNOME;Utility;
 </div>
 
 <div id="outline-container-sec-1-1-7" class="outline-4">
-<h4 id="sec-1-1-7"><span class="section-number-4">1.1.7</span> Nodejs</h4>
+<h4 id="sec-1-1-7"><span class="section-number-4">1.1.7</span> Nodejs</h4>
 <div class="outline-text-4" id="text-1-1-7">
-</div><ol class="org-ol"><li><a id="sec-1-1-7-1" name="sec-1-1-7-1"></a>Install<br  /><div class="outline-text-5" id="text-1-1-7-1">
-<pre class="example">
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get install -y nodejs
+</div><ol class="org-ol"><li><a id="sec-1-1-7-1" name="sec-1-1-7-1"></a>Install<br  /><div class="outline-text-5" id="text-1-1-7-1">
+<p>
+    #+BEGIN<sub>EXAMPLE</sub>
+    curl -sL <a href="https://deb.nodesource.com/setup_4.x">https://deb.nodesource.com/setup_4.x</a> | sudo -E bash -
+    sudo apt-get install -y nodejs
 
-// version node js version
-nodejs --version
-</pre>
+    // version node js version
+    nodejs &#x2013;version
+</p>
+<p>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </li>
-<li><a id="sec-1-1-7-2" name="sec-1-1-7-2"></a>org mode babel<br  /><div class="outline-text-5" id="text-1-1-7-2">
+<li><a id="sec-1-1-7-2" name="sec-1-1-7-2"></a>org mode babel<br  /><div class="outline-text-5" id="text-1-1-7-2">
 <p>
 symbol link for node js in linux
 </p>
-<pre class="example">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
 sudo ln -s /usr/bin/nodejs /usr/bin/node
-</pre>
+</p>
+<p>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </li></ol>
 </div>
 </div>
 <div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Info</h3>
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Info</h3>
 <div class="outline-text-3" id="text-1-2">
 </div><div id="outline-container-sec-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Check RAM Memory Chip Speed and Specification</h4>
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Check RAM Memory Chip Speed and Specification</h4>
 <div class="outline-text-4" id="text-1-2-1">
-<pre class="example">
-sudo dmidecode --type memory
-//or
-dmidecode --type memory | less
-//or
-$ sudo dmidecode --type 17
-</pre>
-
-<pre class="example">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
+ sudo dmidecode &#x2013;type memory
+ //or
+ dmidecode &#x2013;type memory | less
+ //or
+ $ sudo dmidecode &#x2013;type 17
+</p>
+<p>
+#+END<sub>EXAMPLE</sub>
+</p>
+<p>
+   #+BEGIN<sub>EXAMPLE</sub>
    Handle 0x000D, DMI type 16, 15 bytes
 Physical Memory Array
-	Location: System Board Or Motherboard
-	Use: System Memory
-	Error Correction Type: None
-	Maximum Capacity: 16 GB
-	Error Information Handle: Not Provided
-	Number Of Devices: 4
+        Location: System Board Or Motherboard
+        Use: System Memory
+        Error Correction Type: None
+        Maximum Capacity: 16 GB
+        Error Information Handle: Not Provided
+        Number Of Devices: 4
 
 Handle 0x000E, DMI type 17, 28 bytes
 Memory Device
-	Array Handle: 0x000D
-	Error Information Handle: No Error
-	Total Width: 64 bits
-	Data Width: 64 bits
-	Size: 2048 MB
-	Form Factor: SODIMM
-	Set: 1
-	Locator: M1
-	Bank Locator: Bank 0
-	Type: DDR3
-	Type Detail: Synchronous
-	Speed: 1334 MHz
-	Manufacturer: 80CE
-	Serial Number: 95E58999
-	Asset Tag: 1024
-	Part Number: M471B5673FH0-CH9
-	Rank: Unknown
+        Array Handle: 0x000D
+        Error Information Handle: No Error
+        Total Width: 64 bits
+        Data Width: 64 bits
+        Size: 2048 MB
+        Form Factor: SODIMM
+        Set: 1
+        Locator: M1
+        Bank Locator: Bank 0
+        Type: DDR3
+        Type Detail: Synchronous
+        Speed: 1334 MHz
+        Manufacturer: 80CE
+        Serial Number: 95E58999
+        Asset Tag: 1024
+        Part Number: M471B5673FH0-CH9
+        Rank: Unknown
 
 Handle 0x000F, DMI type 17, 28 bytes
 Memory Device
-	Array Handle: 0x000D
-	Error Information Handle: No Error
-	Total Width: 64 bits
-	Data Width: 64 bits
-	Size: 2048 MB
-	Form Factor: SODIMM
-	Set: 1
-	Locator: M2
-	Bank Locator: Bank 1
-	Type: DDR3
-	Type Detail: Synchronous
-	Speed: 1334 MHz
-	Manufacturer: 80CE
-	Serial Number: 95E5898C
-	Asset Tag: 1024
-	Part Number: M471B5673FH0-CH9
-	Rank: Unknown
+        Array Handle: 0x000D
+        Error Information Handle: No Error
+        Total Width: 64 bits
+        Data Width: 64 bits
+        Size: 2048 MB
+        Form Factor: SODIMM
+        Set: 1
+        Locator: M2
+        Bank Locator: Bank 1
+        Type: DDR3
+        Type Detail: Synchronous
+        Speed: 1334 MHz
+        Manufacturer: 80CE
+        Serial Number: 95E5898C
+        Asset Tag: 1024
+        Part Number: M471B5673FH0-CH9
+        Rank: Unknown
 
 Handle 0x0010, DMI type 17, 28 bytes
 Memory Device
-	Array Handle: 0x000D
-	Error Information Handle: No Error
-	Total Width: Unknown
-	Data Width: Unknown
-	Size: No Module Installed
-	Form Factor: SODIMM
-	Set: 1
-	Locator: M3
-	Bank Locator: Bank 2
-	Type: DDR3
-	Type Detail: Synchronous
-	Speed: Unknown
-	Manufacturer:
-	Serial Number:
-	Asset Tag:
-	Part Number:
-	Rank: Unknown
+        Array Handle: 0x000D
+        Error Information Handle: No Error
+        Total Width: Unknown
+        Data Width: Unknown
+        Size: No Module Installed
+        Form Factor: SODIMM
+        Set: 1
+        Locator: M3
+        Bank Locator: Bank 2
+        Type: DDR3
+        Type Detail: Synchronous
+        Speed: Unknown
+        Manufacturer:
+        Serial Number:
+        Asset Tag:
+        Part Number:
+        Rank: Unknown
 
 Handle 0x0011, DMI type 17, 28 bytes
 Memory Device
-	Array Handle: 0x000D
-	Error Information Handle: No Error
-	Total Width: Unknown
-	Data Width: Unknown
-	Size: No Module Installed
-	Form Factor: SODIMM
-	Set: 1
-	Locator: M4
-	Bank Locator: Bank 3
-	Type: DDR3
-	Type Detail: Synchronous
-	Speed: Unknown
-	Manufacturer:
-	Serial Number:
-	Asset Tag:
-	Part Number:
-	Rank: Unknown
-</pre>
+        Array Handle: 0x000D
+        Error Information Handle: No Error
+        Total Width: Unknown
+        Data Width: Unknown
+        Size: No Module Installed
+        Form Factor: SODIMM
+        Set: 1
+        Locator: M4
+        Bank Locator: Bank 3
+        Type: DDR3
+        Type Detail: Synchronous
+        Speed: Unknown
+        Manufacturer:
+        Serial Number:
+        Asset Tag:
+        Part Number:
+        Rank: Unknown
+</p>
+<p>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </div>
 <div id="outline-container-sec-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> exiftool</h4>
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> exiftool</h4>
 <div class="outline-text-4" id="text-1-2-2">
-<pre class="example">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
 exiftool -AllDates="2008:2:16 00:00:00" *.jpg
 exiftool -sep ", " -keywords="Canyon Ste-Anne, Québec, Family trip, " DIR
-</pre>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
-<ol class="org-ol"><li><a id="sec-1-2-2-1" name="sec-1-2-2-1"></a>change file name after exiftool command<br  /><div class="outline-text-5" id="text-1-2-2-1">
-<pre class="example">
+<ol class="org-ol"><li><a id="sec-1-2-2-1" name="sec-1-2-2-1"></a>change file name after exiftool command<br  /><div class="outline-text-5" id="text-1-2-2-1">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
 M-x wdired-change-to-wdired-mode
-</pre>
+#+END<sub>EXAMPLE</sub>
 
-<pre class="example">
-    % m test &lt;RET&gt; will mark all files with names containing the string “test” (equivalent to *test* on the command line.
+#+BEGIN<sub>EXAMPLE</sub>
+    % m test &lt;RET&gt; will mark all files with names containing the string “test” (equivalent to <b>test</b> on the command line.
     % m ^test &lt;RET&gt; will mark all files with names starting with the string “test” (equivalent to test* on the command line).
     % m txt$ &lt;RET&gt; will mark all files with names ending with the string “txt” (equivalent to *txt on the command line).
     % m ^test.*org$ &lt;RET&gt; will mark all files with names starting with the string “test” and ending with “org” (equivalent to test*org on the command line).
@@ -438,39 +474,57 @@ M-x wdired-change-to-wdired-mode
 Read more about emacs’ regular expressions here.
 
 Once you have marked files, use C, R, or D as before to copy, move or delete them.
-</pre>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </li></ol>
 </div>
 <div id="outline-container-sec-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> graphviz</h4>
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> graphviz</h4>
 <div class="outline-text-4" id="text-1-2-3">
-<pre class="example">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
 sudo apt-get update
 sudo apt-get install graphviz
-</pre>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </div>
 <div id="outline-container-sec-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> access to windows</h4>
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> access to windows</h4>
 <div class="outline-text-4" id="text-1-2-4">
-<pre class="example">
-smb:// ip_of_computer
-</pre>
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
+smb:// ip<sub>of</sub><sub>computer</sub>
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </div>
 <div id="outline-container-sec-1-2-5" class="outline-4">
-<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Misc</h4>
+<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Misc</h4>
 <div class="outline-text-4" id="text-1-2-5">
-</div><ol class="org-ol"><li><a id="sec-1-2-5-1" name="sec-1-2-5-1"></a>youtube-dl<br  /><div class="outline-text-5" id="text-1-2-5-1">
-<pre class="example">
-youtube-dl -F "http://www.youtube.com/watch?v=P9pzm5b6FFY"
-youtube-dl -f 22 "http://www.youtube.com/watch?v=P9pzm5b6FFY"
+</div><ol class="org-ol"><li><a id="sec-1-2-5-1" name="sec-1-2-5-1"></a>youtube-dl<br  /><div class="outline-text-5" id="text-1-2-5-1">
+<p>
+#+BEGIN<sub>EXAMPLE</sub>
+youtube-dl -F "<a href="http://www.youtube.com/watch?v=P9pzm5b6FFY%22%0D">http://www.youtube.com/watch?v=P9pzm5b6FFY%22%0D</a>
+youtube-dl -f 22 "<a href="http://www.youtube.com/watch?v=P9pzm5b6FFY%22%0D">http://www.youtube.com/watch?v=P9pzm5b6FFY%22%0D</a>
+</p>
 
-youtube-dl --extract-audio --audio-format mp3 url
+<p>
+batch download
+youtube-dl -c &#x2013;title -f best &#x2013;batch-file batchlist.txt 
+</p>
 
-youtube-dl --extract-audio --audio-format mp3 url --username username@gmail.com
-</pre>
+
+<p>
+youtube-dl &#x2013;extract-audio &#x2013;audio-format mp3 url
+
+youtube-dl &#x2013;extract-audio &#x2013;audio-format mp3 url &#x2013;username username@gmail.com
+
+
+
+#+END<sub>EXAMPLE</sub>
+</p>
 </div>
 </li></ol>
 </div>
@@ -480,7 +534,7 @@ youtube-dl --extract-audio --audio-format mp3 url --username username@gmail.com
 <div id="postamble" class="status">
 <p class="date">Date: 2013-02-16 Sat</p>
 <p class="author">Author: YONG</p>
-<p class="date">Created: 2019-09-10 Tue 22:13</p>
+<p class="date">Created: 2020-06-11 Thu 22:13</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
